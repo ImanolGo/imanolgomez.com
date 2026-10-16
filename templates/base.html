@@ -76,6 +76,16 @@
           </li>
           <li><a href="{{ config.extra.linkedin }}">LinkedIn</a></li>
           <li><a href="{{ config.extra.github }}">GitHub</a></li>
+          {#
+            Legal pages are scaffolded as drafts (see docs/PLAN.md phase 10).
+            `allow_missing` makes these links appear by themselves the moment the
+            pages stop being drafts — no template edit, and no broken link while
+            they are still drafts, which would fail `zola check`.
+          #}
+          {% set impressum = get_page(path="impressum.md", allow_missing=true) %}
+          {% set privacy = get_page(path="privacy.md", allow_missing=true) %}
+          {% if impressum %}<li><a href="{{ impressum.permalink }}">Impressum</a></li>{% endif %}
+          {% if privacy %}<li><a href="{{ privacy.permalink }}">Privacy</a></li>{% endif %}
         </ul>
         <p class="site-footer__meta">&copy; {{ now() | date(format="%Y") }} {{ config.extra.author }}</p>
       </div>
