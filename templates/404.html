@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Page not found — {{ config.title }}{% endblock title %}
+
+{% block main %}
+<div class="prose">
+  <h1>Page not found</h1>
+  <p>That page doesn’t exist. Try <a href="{{ get_url(path='@/projects/_index.md') }}">selected work</a>, or go back to the <a href="{{ get_url(path='@/_index.md') }}">home page</a>.</p>
+</div>
+{% endblock main %}

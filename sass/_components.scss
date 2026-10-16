@@ -1,0 +1,201 @@
+// Components: card, meta row, figure, gallery, callout, timeline, tag list and
+// prev/next navigation. Every value comes from _tokens.scss.
+
+// --- Card -------------------------------------------------------------------
+// The whole card is one link, so the link wraps the cover, title, description
+// and meta row.
+
+.card__link {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  color: inherit;
+  text-decoration: none;
+}
+
+.card__cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  background-color: var(--surface);
+  border-radius: var(--radius);
+}
+
+.card__title {
+  font-size: var(--text-xl);
+  transition: color 150ms ease;
+}
+
+.card__link:hover .card__title {
+  color: var(--accent);
+}
+
+.card__desc {
+  color: var(--text-muted);
+}
+
+// --- Meta row ---------------------------------------------------------------
+// Mono, small and muted: `2017–2020 · ProtoPixel · embedded, lighting`.
+// Separators are decorative, so screen readers just read the items.
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+.meta > * + *::before {
+  content: "·";
+  margin-inline: var(--space-2);
+}
+
+// --- Figure -----------------------------------------------------------------
+
+figure {
+  margin: 0;
+}
+
+figure img,
+figure video {
+  display: block;
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+figcaption {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+// --- Gallery ----------------------------------------------------------------
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+  gap: var(--space-4);
+}
+
+// --- Callout ----------------------------------------------------------------
+
+.callout {
+  padding: var(--space-4) var(--space-5);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.callout > :first-child {
+  margin-top: 0;
+}
+
+.callout > :last-child {
+  margin-bottom: 0;
+}
+
+// --- Timeline ---------------------------------------------------------------
+
+.timeline {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.timeline__item {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.timeline__period {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+.timeline__role {
+  font-size: var(--text-lg);
+}
+
+.timeline__org {
+  color: var(--text);
+}
+
+.timeline__summary,
+.timeline__highlights {
+  color: var(--text-muted);
+}
+
+.timeline__highlights {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+@media (min-width: 48rem) {
+  .timeline__item {
+    grid-template-columns: 9rem minmax(0, 1fr);
+    gap: var(--space-5);
+    align-items: baseline;
+  }
+}
+
+// --- Tag list ---------------------------------------------------------------
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+}
+
+.tag a {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+
+.tag a:hover,
+.tag a[aria-current="page"] {
+  color: var(--accent);
+  border-color: currentColor;
+}
+
+// --- Prev / next ------------------------------------------------------------
+
+.prev-next {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-5);
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border);
+}
+
+.prev-next__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+.prev-next__title {
+  font-size: var(--text-sm);
+}
+
+.prev-next__next {
+  margin-left: auto;
+  text-align: right;
+}

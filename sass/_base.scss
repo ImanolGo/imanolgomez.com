@@ -76,6 +76,72 @@ li {
   text-wrap: pretty;
 }
 
+// Vertical rhythm. The reset above removes every default margin, so spacing is
+// rebuilt here from the spacing scale rather than inherited from the browser.
+// Everything is wrapped in :where() so this stays at the specificity of a single
+// class — component rules in the later layers still win over it.
+.prose > :where(* + *) {
+  margin-block-start: var(--space-4);
+}
+
+.prose > :where(h2, h3, h4) {
+  margin-block-start: var(--space-7);
+  margin-block-end: var(--space-2);
+}
+
+.prose > :where(h2, h3, h4):first-child {
+  margin-block-start: 0;
+}
+
+// Plain lists only. A list carrying a component class (.tag-list, .card-grid,
+// .timeline, …) keeps its own display.
+.prose > :where(ul, ol):not([class]) {
+  padding-inline-start: var(--space-5);
+  display: grid;
+  gap: var(--space-2);
+}
+
+p + p {
+  margin-block-start: var(--space-4);
+}
+
+blockquote {
+  padding-inline-start: var(--space-5);
+  border-inline-start: 2px solid var(--border);
+  color: var(--text-muted);
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  background-color: var(--border);
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+code {
+  padding: 0.1em 0.3em;
+  background-color: var(--surface);
+  border-radius: var(--radius-sm);
+}
+
+pre {
+  padding: var(--space-4);
+  overflow-x: auto;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+pre code {
+  padding: 0;
+  background: none;
+}
+
 a {
   color: inherit;
   text-decoration-line: underline;

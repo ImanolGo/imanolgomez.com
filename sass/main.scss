@@ -1,6 +1,7 @@
 // Entry point. Zola compiles this to public/main.css.
-// The component and print layers are added in Phase 2.
 
 @import "tokens";
 @import "base";
 @import "layout";
+@import "components";
+@import "print";

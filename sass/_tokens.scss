@@ -73,6 +73,14 @@
   --focus-ring: #0b6b76;
 }
 
+// Print is always black on white, whatever the theme. Declared here so that
+// _print.scss holds no colour values of its own.
+:root {
+  --print-ink: #000000;
+  --print-paper: #ffffff;
+  --print-rule: #999999;
+}
+
 // Dark theme: follow the OS unless the visitor has explicitly chosen light.
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {

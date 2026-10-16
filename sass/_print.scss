@@ -1,0 +1,87 @@
+// Print. Always black on white, no navigation chrome, and no page breaks inside
+// a timeline entry, card or figure. Colours come from the print tokens in
+// _tokens.scss, so no colour values live here.
+
+@media print {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    display: block;
+    min-height: 0;
+    background-color: var(--print-paper);
+    color: var(--print-ink);
+    font-size: 11pt;
+  }
+
+  // Chrome that makes no sense on paper.
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .theme-toggle,
+  .prev-next,
+  .tag-list,
+  .card__cover {
+    display: none !important;
+  }
+
+  // The prose column is no longer constrained by the screen.
+  .container,
+  .prose {
+    max-width: none;
+    padding-inline: 0;
+    margin-inline: 0;
+  }
+
+  .breakout {
+    width: 100%;
+    margin-inline: 0;
+  }
+
+  main {
+    padding-block: 0;
+  }
+
+  a {
+    color: var(--print-ink);
+    text-decoration: none;
+  }
+
+  // Keep the destination visible once the link can no longer be clicked.
+  .cv a[href^="http"]::after,
+  .prose a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    overflow-wrap: anywhere;
+    font-size: 0.85em;
+    color: var(--print-rule);
+  }
+
+  h1,
+  h2,
+  h3,
+  .timeline__item,
+  .timeline__role,
+  .card,
+  figure,
+  .callout {
+    break-inside: avoid;
+  }
+
+  .callout {
+    background-color: var(--print-paper);
+    color: var(--print-ink);
+    border-color: var(--print-rule);
+  }
+
+  // Links are never decorated on paper, including figures inside them.
+  figure img,
+  figure video,
+  .callout {
+    border-radius: 0;
+  }
+}
+
+@page {
+  margin: 16mm;
+}
