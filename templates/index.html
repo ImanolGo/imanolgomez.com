@@ -13,10 +13,10 @@
 
 {% if config.extra.email or config.extra.linkedin or config.extra.github %}
 <nav class="cta-row" aria-label="Contact and profiles">
-  <a class="btn" href="#selected-work">Selected work ↓</a>
+  <a class="btn" href="#selected-work">Selected work {{ <icon name="down" /> }}</a>
   {% if config.extra.email %}<a class="btn" href="mailto:{{ config.extra.email }}">Email</a>{% endif %}
-  {% if config.extra.linkedin %}<a class="btn" href="{{ config.extra.linkedin }}">LinkedIn ↗</a>{% endif %}
-  {% if config.extra.github %}<a class="btn" href="{{ config.extra.github }}">GitHub ↗</a>{% endif %}
+  {% if config.extra.linkedin %}<a class="btn" href="{{ config.extra.linkedin }}">LinkedIn {{ <icon name="external" /> }}</a>{% endif %}
+  {% if config.extra.github %}<a class="btn" href="{{ config.extra.github }}">GitHub {{ <icon name="external" /> }}</a>{% endif %}
 </nav>
 {% endif %}
 

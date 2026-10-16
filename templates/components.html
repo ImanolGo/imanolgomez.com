@@ -113,6 +113,17 @@
 {%- endcomponent callout %}
 
 
+{#- Tiny inline icons for buttons and links. Inline SVG rather than a glyph:
+    the arrows (↓ ↗) come from a fallback font inside a mono stack and end up
+    with the wrong weight and alignment. -#}
+{% component icon(name, size=12) -%}
+{%- if name == "down" -%}
+<svg class="icon" width="{{ size }}" height="{{ size }}" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 2v8M3 7l3 3 3-3"/></svg>
+{%- elif name == "external" -%}
+<svg class="icon" width="{{ size }}" height="{{ size }}" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 7.5 9.5 2.5M6 2.5h3.5V6M9 8.5v1.5a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h1.5"/></svg>
+{%- endif -%}
+{%- endcomponent icon %}
+
 {% component repo_row(name, url, year="", lang="", blurb="") -%}
 <li class="repo">
   {%- if year or lang %}

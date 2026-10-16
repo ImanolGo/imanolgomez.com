@@ -44,6 +44,12 @@
   border-color: var(--accent);
 }
 
+// Inline icons sit on the text baseline and never shrink.
+.icon {
+  flex: none;
+  margin-block-start: 1px;
+}
+
 // --- Card -------------------------------------------------------------------
 // The whole card is one link. Hairline border, cover flush with the card
 // edges, text in a padded body. Lifting the card on hover would move the
