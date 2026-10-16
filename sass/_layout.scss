@@ -82,13 +82,21 @@ main {
 .site-nav__list {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-4);
+  align-items: center;
+  gap: var(--space-1);
   font-size: var(--text-sm);
 }
 
+// Interactive targets are at least 24x24 CSS px (WCAG 2.2 SC 2.5.8): padding
+// inside the link, a small gap between them, so the tap area grows without the
+// visual spacing changing much.
 .site-nav a {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  margin-inline: calc(-1 * var(--space-2));
   color: var(--text-muted);
   text-decoration: none;
+  border-radius: var(--radius-sm);
 }
 
 .site-nav a:hover,
@@ -140,7 +148,16 @@ main {
 .site-footer__links {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-5);
+  align-items: center;
+  gap: var(--space-2);
+}
+
+// Same 24x24 minimum as the nav.
+.site-footer__links a {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  margin-inline: calc(-1 * var(--space-2));
+  border-radius: var(--radius-sm);
 }
 
 .site-footer__meta {

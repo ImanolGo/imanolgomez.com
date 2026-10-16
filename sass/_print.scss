@@ -12,7 +12,7 @@
     min-height: 0;
     background-color: var(--print-paper);
     color: var(--print-ink);
-    font-size: 11pt;
+    font-size: 9.5pt;
   }
 
   // Chrome that makes no sense on paper.
@@ -63,7 +63,7 @@
   h1,
   h2,
   h3,
-  .timeline__item,
+  .timeline__group,
   .timeline__role,
   .card,
   figure,
@@ -77,18 +77,50 @@
     border-color: var(--print-rule);
   }
 
-  // Squeeze the CV onto fewer sheets: the timeline is the bulk of the page.
+  // The CV is the one page that has to print well, so the type is tighter here
+  // than on screen and the section headings lose their mono/uppercase dress.
+  .cv-section {
+    margin-block-start: var(--space-5);
+  }
+
+  .prose > h2 {
+    display: block;
+    font-family: inherit;
+    font-size: 12pt;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--print-ink);
+    margin-block: 10pt 4pt;
+  }
+
+  .prose > h2::after {
+    display: none;
+  }
+
   .timeline__group {
-    padding-block: 6pt;
+    padding-block: 5pt;
+  }
+
+  .timeline__role + .timeline__role {
+    margin-block-start: 4pt;
+    padding-block-start: 4pt;
   }
 
   .timeline__highlights {
-    font-size: 10pt;
+    gap: 1pt;
+    font-size: 8.5pt;
   }
 
   .skill-group__items,
-  .timeline__role-summary {
-    font-size: 10pt;
+  .timeline__role-summary,
+  .publication__title {
+    font-size: 9pt;
+  }
+
+  .skill-groups,
+  .publications {
+    gap: 3pt;
   }
 
   // Links are never decorated on paper, including figures inside them.
@@ -100,5 +132,5 @@
 }
 
 @page {
-  margin: 16mm;
+  margin: 13mm;
 }
