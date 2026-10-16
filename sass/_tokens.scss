@@ -1,0 +1,90 @@
+// Design tokens — the single source of truth for colour, type, spacing and radii.
+// AGENTS.md rule 8: no hard-coded colour values anywhere else in sass/.
+// Colour pairs are checked for WCAG AA contrast in both themes.
+
+// Dark theme values, applied both by `prefers-color-scheme` and by the
+// `data-theme` attribute the theme toggle sets. Declared once as a mixin so the
+// two can never drift apart.
+@mixin theme-dark {
+  color-scheme: dark;
+
+  --bg: #101214;
+  --surface: #181b1e;
+  --text: #ecedee;
+  --text-muted: #a3aab2;
+  --accent: #6fd3de;
+  --border: #2a2f35;
+
+  // Focus ring needs 3:1 against both the background and the surface it sits on.
+  --focus-ring: #6fd3de;
+}
+
+:root {
+  // Light theme is the default.
+  color-scheme: light;
+
+  // Font stacks — system fonts only, no webfont download (AGENTS.md rule 3).
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+
+  // Type scale, fluid. Body sits at 17–18px.
+  --text-xs: clamp(0.8125rem, 0.78rem + 0.16vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.85rem + 0.16vw, 0.9375rem);
+  --text-base: clamp(1.0625rem, 1.03rem + 0.16vw, 1.125rem);
+  --text-lg: clamp(1.1875rem, 1.12rem + 0.3vw, 1.3125rem);
+  --text-xl: clamp(1.375rem, 1.26rem + 0.55vw, 1.625rem);
+  --text-2xl: clamp(1.75rem, 1.5rem + 1.1vw, 2.375rem);
+  --text-3xl: clamp(2.125rem, 1.7rem + 1.9vw, 3rem);
+
+  // Line heights
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-normal: 1.6;
+
+  // Spacing scale — drives all vertical rhythm and gaps.
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+
+  // Layout: prose measure and the width media may break out to.
+  --measure: 42rem;
+  --wide: 64rem;
+
+  // Radii
+  --radius-sm: 3px;
+  --radius: 6px;
+
+  // Focus
+  --focus-width: 2px;
+  --focus-offset: 2px;
+
+  // Light theme colours
+  --bg: #fbf9f6;
+  --surface: #f3f0eb;
+  --text: #17191c;
+  --text-muted: #5c6268;
+  --accent: #0b6b76;
+  --border: #e4dfd8;
+  --focus-ring: #0b6b76;
+}
+
+// Dark theme: follow the OS unless the visitor has explicitly chosen light.
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    @include theme-dark;
+  }
+}
+
+// Explicit choice wins over the OS setting.
+:root[data-theme="dark"] {
+  @include theme-dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}

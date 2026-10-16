@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
+    {% block head %}{% endblock head %}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="site-header__brand" href="{{ get_url(path='@/_index.md') }}">{{ config.title }}</a>
+
+        {# Writing only appears once it has at least one published post. #}
+        {% set writing = get_section(path="writing/_index.md") %}
+        {% set current = current_path | default(value="/") %}
+        <nav class="site-nav" aria-label="Main">
+          <ul class="site-nav__list">
+            <li>
+              <a href="{{ get_url(path='@/projects/_index.md') }}"{% if current is starting_with(pat="/projects") %} aria-current="page"{% endif %}>Work</a>
+            </li>
+            <li>
+              <a href="{{ get_url(path='@/about.md') }}"{% if current is starting_with(pat="/about") %} aria-current="page"{% endif %}>About</a>
+            </li>
+            <li>
+              <a href="{{ get_url(path='@/cv.md') }}"{% if current is starting_with(pat="/cv") %} aria-current="page"{% endif %}>CV</a>
+            </li>
+            {% if config.extra.show_writing and writing.pages | length > 0 %}
+            <li>
+              <a href="{{ get_url(path='@/writing/_index.md') }}"{% if current is starting_with(pat="/writing") %} aria-current="page"{% endif %}>Writing</a>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="container">
+        {% block main %}{% endblock main %}
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <ul class="site-footer__links">
+          <li>
+            {% if config.extra.email %}
+            <a href="mailto:{{ config.extra.email }}">Email</a>
+            {% else %}
+            <span class="placeholder">TODO(imanol): publish email address</span>
+            {% endif %}
+          </li>
+          <li><a href="{{ config.extra.linkedin }}">LinkedIn</a></li>
+          <li><a href="{{ config.extra.github }}">GitHub</a></li>
+        </ul>
+        <p class="site-footer__meta">&copy; {{ now() | date(format="%Y") }} {{ config.extra.author }}</p>
+      </div>
+    </footer>
+  </body>
+</html>

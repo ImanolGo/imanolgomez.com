@@ -1,0 +1,101 @@
+// Layout: container, page frame, header and footer.
+// Phase 2 adds the prose/break-out rules and the card grid.
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@supports (min-height: 100dvh) {
+  body {
+    min-height: 100dvh;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: var(--wide);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+main {
+  flex: 1 0 auto;
+  padding-block: var(--space-7) var(--space-8);
+}
+
+// Prose measure — text columns never run wider than this.
+.prose {
+  max-width: var(--measure);
+}
+
+// Visible marker for missing content. Used until every TODO(imanol) is resolved.
+.placeholder {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--accent);
+  border-bottom: 1px dashed currentColor;
+}
+
+.site-header {
+  padding-block: var(--space-5);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-5);
+}
+
+.site-header__brand {
+  font-weight: 640;
+  letter-spacing: -0.015em;
+  text-decoration: none;
+}
+
+.site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  font-size: var(--text-sm);
+}
+
+.site-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--accent);
+}
+
+.site-footer {
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-5);
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+
+.site-footer__meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+}

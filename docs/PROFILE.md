@@ -100,14 +100,68 @@ NELA: a system for tele-monitoring and self-management of patients with chronic 
 - AZ-220 Microsoft Azure IoT Developer (Nov 2022)
 - Certified SAFe 6 Product Owner/Product Manager (Oct 2023, expired Oct 2024) — omit from site unless renewed.
 
-## Open-source highlights (GitHub)
+## GitHub repositories (github.com/ImanolGo)
 
-- **emma-claude** — implementation of EMMA (End-to-End Multimodal Model for Autonomous Driving) using the Claude API, based on the EMMA paper. Python.
-- **BrainSonification** — fMRI data visualization and sonification tool, used for a 3D audio composition and performance. Python.
-- **MHD-barcelona-2011** — "Drop'Em Dub", music hack from Music Hack Day Barcelona 2011 (Sónar).
-- **GenerativeArtWorkshop** — Processing generative-art workshop material.
-- **Hearing-View** — sound-art installation. C++.
-- **ofxDmx4All** — DMX4All wrapper for openFrameworks. C++.
+Descriptions below are taken from the repos' own descriptions. Many older repos have no README;
+before linking a repo from the site, check it has one (`TODO(imanol)` if not). Repos that name a
+client or brand (Jimmy Choo, Bentley, Amazon, Telekom, Instagram/ThePowerHouse) may only be named on
+the site if Imanol confirms it's OK — `TODO(imanol)`.
+
+### Recent personal work (2023–2026) — edge AI, GPU, Rust
+- **local-ai-robot-assistant** (Python, 2025–26) — private, autonomous AI robot assistant running fully on an NVIDIA Jetson Orin Nano.
+- **rover-assistant** (Python, 2026) — voice and vision assistant for a Jetson Orin Nano rover, fully on-device, no cloud.
+- **emma-claude** (Python, 2024, ★13) — implementation of EMMA (End-to-End Multimodal Model for Autonomous Driving) using the Claude API, based on the EMMA paper.
+- **ADAS-Projects-In-Rust** (Rust, 2023) — ADAS feature implementations in Rust, for performance and safety.
+- **pico-deployment-demo** (CMake, 2023) — no description; `TODO(imanol)`: what it is (deployment on Raspberry Pi Pico?).
+- **alibi** (Python, 2026) — murder-mystery game where each suspect is an LLM agent; LangGraph, MCP tools, RAG memory, CI evals, and a fine-tuned lie detector.
+- **murmuration-gpu** (Rust, 2026) — GPU starling-flock simulation rendering up to millions of birds in real time with wgpu.
+- **murmuration** (Rust, 2026) — terminal starling-flock simulation modelled on murmuration research.
+- **cuda-particles** (CUDA, 2026) — step-by-step CUDA course for creative coders, ending in an interactive GPU particle system.
+- **overflight** (Rust, 2026) — terminal app showing planes overhead as a live sky from real-time data.
+- **procquarium** (Rust, 2026) — terminal aquarium showing running processes as fish.
+- **Visual-Whispers** (TypeScript, 2024) — AI art "telephone": images described and re-imagined through different personas.
+
+### Lighting, LEDs & installations (2015–2019)
+- **LedMapper** (C++, ★3) — custom software for Moritz Waldemeyer mapping LEDs on 3D objects and exporting them.
+- **IngoLedMapper**, **IngoLightAndBuilding** (C++, 2018) — LED mapping from 3D models to ProtoPixel, and software for Ingo Maurer's Light + Building 2018 installation. `TODO(imanol)`: confirm spelling/name usage.
+- **LaRinascente** (C++, 2017) — Christmas light experience on the facade of La Rinascente, Rome (= Stella Rinascente).
+- **TheJourneyOfColor** (C++, 2018) — installation where a camera reads an object's colour palette and shows it on a light sculpture (= Journey of Colour).
+- **WinchesLightPainting** (C++, 2018) — long-exposure light painting with DMX-controlled winches, with Moritz Waldemeyer.
+- **ofxDmx4All** (C++, ★3) — DMX4All wrapper for openFrameworks.
+- **VideoPixels** (C++) — records pixel-mapped video to SD for playback on a Teensy SD player. **UdpPixels** — streams video pixel data over UDP.
+- **ParticleLamp** (C++) — lamp with Teensy, accelerometers and an LED matrix.
+- **CoralSoul** (C++) — 3D-mapped generative visuals projected onto volcanic rock.
+- **Equalizer** (JS) — light installation representing tax inequality.
+- **Jimmy-Choo-Shop-Window** (C++) — interaction, visuals and motor control for shop windows (client name: confirm).
+- **TheOther** (C++, 2015) — indoor particle-projection installation on emerging cosmology theories, Havana Biennial 2015.
+- **Hearing-View** (C++) — sound-art installation.
+- Also: ProtoPixelSyphon, SubtitlesSyphon, VideoLedMapper, HaloLight, LedVase, BacterialDisplay, WindowTree, CalmTechnology.
+
+### Wearables & fashion tech (2015–2019)
+- **NUIT-BLANCHE** (C++, 2017) — lighting and interaction with ElektroCouture and designer Anja Dragan, Fashion Tech Berlin 2017.
+- **MarleneGlows** (C++, 2017) — visualization/export for Forster Rohner LED textile technology (= Marlene).
+- **NormaLedDresses** (2019) — LED dress visuals for the opera *Norma* at the Greek National Opera.
+- **LightPainting** (C++, 2018–19) — long-exposure light-painting fashion photography with Anja Dragan.
+- **SymaLine** (Max) — fashion-tech collection where sound frequencies drive each outfit's visuals.
+- **CapacitiveSensingDress**, **LedNecklace** (with ElektroCouture), **LedCostume** (Burning Man), **CityOfSound** (wearable LEDs controlled by SMS), **CirqueDuSoleilDress**, **InstagramDress** / **ProtoPixelDress** (ThePowerHouse; confirm names).
+
+### Stage & performance
+- **MurmurRenderer**, **MurmurFloorTracking** (C++, 2016) — rendering and floor tracking for Aakash Odedra Company's *Murmur*. (Also a later **Murmur** repo, 2022.)
+- **SpiritWorld** (C++, 2018) — contemporary dance performance.
+
+### Research, music tech & hacks (2011–2014)
+- **BrainSonification** (Python, ★7) — fMRI visualization and sonification tool used for a 3D-audio composition and performance.
+- **fMRI-Sonification** (2011) — Master's thesis app exploring the brain through visualization and sonification.
+- **Human-Brain-Mapping** (Python, 2014).
+- **GaitSensing** (Arduino, 2013) + **GaitSensingVideoRenderer** — code supporting a PhD project; renders video from sensed footsteps.
+- **MHD-barcelona-2011** (★9) — "Drop'Em Dub", Music Hack Day Barcelona 2011 (Sónar). **MHD-Barcelona-2014**.
+- **Slime-Mold** (C, 2012), **MushroomAutomator** (Python, 2014), **QUINL** (Java), **OneColor** (Java app).
+
+### Teaching & workshops
+- **GenerativeArtWorkshop** (Processing), **PervasiveMediaWorkshop** (HfG Offenbach, Nov 2015), **WearableTechnology_FashionHD** (Fashion Hack Day 2016, FabLab Berlin), **FutureFashionWorkshopBangkok** (Goethe-Institut Bangkok, 2016), **SoundInteractionWorkshop** (Pure Data, 2017), **IoTWorkshop2019** (iSpace, Accra, Jan 2019).
+
+### Do not feature
+Forks (adobe.github.com, Arduino), dotfiles, myscripts, MailChecker, c-unit-test, c-actions-test, advent-of-code-2024, open-sauced-goals, Sculpteo (empty), ImanolGo (profile README), and client repos without descriptions (AmazonOffice, Bentley, TelekomAnimations, AudioOnsetImagesApp, PNC, Jukebox, WearableEK) unless Imanol adds context.
 
 ## Skills (for CV page)
 

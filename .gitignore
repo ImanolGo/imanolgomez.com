@@ -1,0 +1,7 @@
+/public/
+.DS_Store
+/wasm/target/
+
+# Zola writes generated image variants (resize_image output) here as a build cache.
+# Verified on 0.23.6: the files land in static/processed_images/ as well as public/.
+/static/processed_images/

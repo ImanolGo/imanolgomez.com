@@ -1,0 +1,40 @@
+# Zola configuration — https://www.getzola.org/documentation/getting-started/configuration/
+# Verified against Zola 0.23.6 (the version installed). Keys below exist in that release.
+
+base_url = "https://imanolgomez.com"
+title = "Imanol Gómez"
+description = "Engineering leader in edge AI — getting models and real-time systems to run on constrained hardware, from LED wearables and stage lighting to automotive AI accelerators."
+default_language = "en"
+
+# The default author for pages (used by feeds).
+author = "Imanol Gómez"
+
+compile_sass = true
+minify_html = true
+build_search_index = false
+
+# Feeds are off site-wide and enabled per section. In Zola 0.23 the section front
+# matter key of the same name is independent of this one, so the writing section
+# opts in on its own (see content/writing/_index.md).
+generate_feeds = false
+feed_filenames = ["atom.xml"]
+
+# Renders /tags/ and /tags/<term>/. Taxonomy templates are required only once a
+# page actually carries a tag.
+taxonomies = [{ name = "tags" }]
+
+[extra]
+author = "Imanol Gómez"
+
+# TODO(imanol): which address to publish. Left empty on purpose so the footer
+# renders a visible placeholder instead of a mailto: that goes nowhere.
+email = ""
+
+linkedin = "https://www.linkedin.com/in/imanolgo/"
+github = "https://github.com/ImanolGo"
+
+# Writing stays out of the navigation until it has at least one published post.
+show_writing = false
+
+# Optional Phase 9 WebAssembly hero piece.
+hero_canvas = false

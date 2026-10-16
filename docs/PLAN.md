@@ -119,14 +119,21 @@ project photos (light installations, wearables, stages); the interface stays qui
    | slug | title (working) | featured | notes |
    |---|---|---|---|
    | `ai-deployment-cariad` | AI deployment for automated driving | ✓ (weight 10) | `confidential = true`. Public context only: Automated Driving Alliance (CARIAD + Bosch), Qualcomm SoCs. Role/scope from PROFILE. |
-   | `edge-ai-medical-nela` | Edge AI for remote patient monitoring | ✓ (20) | NELA cough monitoring, AI on MCUs, production firmware. |
-   | `realtime-lighting-protopixel` | Real-time smart lighting | ✓ (30) | Firmware + GPU generative content; Primavera Sound smart stage, club & creative-space projects. |
-   | `wearables-elektrocouture` | Light-emitting wearables | ✓ (40) | FireFly, Nuit Blanche, Marlene; driver firmware. |
-   | `murmur-world-tour` | Multimedia software for a touring dance show | ✓ (50) | Aakash Odedra Company, *Murmur*; software operated on world tour. |
-   | `installations` | Light & interactive installations | ✓ (60) | Stella Rinascente (Rome, 2017, with Studio Waldemeyer), Journey of Colour, re.show. |
+   | `on-device-robot-assistant` | A fully on-device AI robot assistant | ✓ (20) | Repos `local-ai-robot-assistant` + `rover-assistant`: voice + vision on a Jetson Orin Nano, no cloud. Public and recent — the best *showable* proof of edge-AI skills. Needs a photo/video of the robot (`TODO(imanol)`). |
+   | `edge-ai-medical-nela` | Edge AI for remote patient monitoring | ✓ (30) | NELA cough monitoring, AI on MCUs, production firmware. |
+   | `realtime-lighting-protopixel` | Real-time smart lighting | ✓ (40) | Firmware + GPU generative content; Primavera Sound smart stage, club & creative-space projects. Link repos `VideoPixels`, `UdpPixels`, `ProtoPixelSyphon`. |
+   | `wearables` | Light-emitting wearables | ✓ (50) | ElektroCouture (FireFly, Nuit Blanche, Marlene/MarleneGlows), *Norma* LED dresses (Greek National Opera), light-painting fashion with Anja Dragan; driver firmware. |
+   | `installations` | Light & interactive installations | ✓ (60) | Stella Rinascente (`LaRinascente`), Journey of Colour (`TheJourneyOfColor`), LED mapping tools for Moritz Waldemeyer (`LedMapper`, `WinchesLightPainting`), Ingo Maurer Light + Building 2018, TheOther (Havana Biennial 2015), re.show. |
+   | `murmur-world-tour` | Multimedia software for a touring dance show | – | Aakash Odedra Company, *Murmur*; repos `MurmurRenderer`, `MurmurFloorTracking`; software operated on world tour. |
+   | `murmuration-gpu` | Millions of starlings in real time | – | Rust + wgpu GPU flock simulation (+ terminal `murmuration`). Nice echo of *Murmur*. Candidate for the Phase 9 hero. |
+   | `alibi` | Alibi: LLM agents that lie | – | LangGraph, MCP tools, RAG memory, CI evals, fine-tuned lie detector. Shows current LLM/agent engineering. |
+   | `emma-claude` | EMMA end-to-end driving model with Claude | – | Open-source repo (★13); link to GitHub. |
    | `geopulse-ars-electronica` | GeoPulse & interactive exhibits | – | Ars Electronica Center, Linz. |
-   | `neurospaces` | Neurospaces: sonifying fMRI data in 3D audio | – | Publications 2012 & 2014; BrainSonification repo. |
-   | `emma-claude` | EMMA end-to-end driving model with Claude | – | Open-source repo; link to GitHub. |
+   | `neurospaces` | Neurospaces: sonifying fMRI data in 3D audio | – | Publications 2012 & 2014; repos `BrainSonification`, `fMRI-Sonification`. |
+
+   Only name clients/brands that appear in `docs/PROFILE.md` without a "confirm" note.
+
+3b. **Code & experiments** — a compact list (no images) at the bottom of `/projects/`, rendered from `data/repos.toml` (`name`, `url`, `year`, `lang`, `blurb`, `group`). Groups: *Edge AI & systems*, *GPU & creative code*, *Lighting & hardware tools*, *Research & music tech*, *Teaching*. Seed it from the "GitHub repositories" section of PROFILE (skip the "Do not feature" list). Each entry is one line: mono year + lang, linked name, blurb. Adding a repo = adding 5 lines of TOML.
 4. **About (`/about/`)**: longer narrative (the arc from music technology and creative engineering to edge AI leadership), what he's interested in, how he works. `TODO(imanol)` for personal voice; draft from PROFILE only.
 5. **CV (`/cv/`)**: full experience, education, publications, languages, skills — all from `data/`. Prominent "Download PDF" link to `static/cv/imanol-gomez-cv.pdf` (`TODO(imanol)`: provide PDF). Must print cleanly to 1–2 A4 pages via `_print.scss`.
 6. **Writing (`/writing/`)**: section scaffolded, `show_writing = false` until the first post exists; nav link appears automatically when there is at least one non-draft page.
@@ -205,7 +212,7 @@ project photos (light installations, wearables, stages); the interface stays qui
 
 ## Phase 9 — Optional: WebAssembly hero piece (only if Imanol asks)
 
-A small generative light field in the home hero, nodding to his LED/lighting work, written in Rust.
+Preferred idea: a small starling murmuration in the home hero, reusing the flocking code from the `murmuration-gpu` repo (Rust; render with WebGL2 or 2D canvas for the web build, a few thousand birds, not millions). It ties together the *Murmur* dance work, real-time GPU code and Rust. Fallback idea: a generative light field nodding to the LED work.
 - Crate in `/wasm` (`wasm-bindgen`, `web-sys`; WebGL2 or 2D canvas). Built in CI (`wasm-pack build --target web --release`, or `cargo` + `wasm-bindgen-cli`), output copied to `static/wasm/` before `zola build`. Don't commit build artefacts.
 - Enabled by `extra.hero_canvas = true`. The hero renders a static poster image first; a `type="module"` script loads the WASM only after `load` + `requestIdleCallback`, and only if the hero is visible, WebGL/WASM are supported, and `prefers-reduced-motion` is not set.
 - Budget: ≤ 80 KB gzipped (WASM + glue JS). Must not affect LCP or CLS; pause when off-screen or tab hidden.

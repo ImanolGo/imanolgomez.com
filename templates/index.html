@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block main %}
+<header class="prose home-header">
+  <h1>{{ section.title }}</h1>
+  <p class="home-tagline">{{ config.description }}</p>
+</header>
+
+<div class="prose">
+  {{ section.content | safe }}
+</div>
+{% endblock main %}
