@@ -1,6 +1,5 @@
 +++
 title = "CV"
-description = "Experience, education and publications."
+description = "Experience, education, skills and publications — Imanol Gómez."
+template = "cv.html"
 +++
-
-TODO(imanol): the CV is rendered from data/*.toml in Phase 4.

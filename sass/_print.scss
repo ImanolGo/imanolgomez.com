@@ -22,6 +22,9 @@
   .theme-toggle,
   .prev-next,
   .tag-list,
+  .cta-row,
+  .eyebrow,
+  .cv-header .btn,
   .card__cover {
     display: none !important;
   }
@@ -72,6 +75,20 @@
     background-color: var(--print-paper);
     color: var(--print-ink);
     border-color: var(--print-rule);
+  }
+
+  // Squeeze the CV onto fewer sheets: the timeline is the bulk of the page.
+  .timeline__group {
+    padding-block: 6pt;
+  }
+
+  .timeline__highlights {
+    font-size: 10pt;
+  }
+
+  .skill-group__items,
+  .timeline__role-summary {
+    font-size: 10pt;
   }
 
   // Links are never decorated on paper, including figures inside them.

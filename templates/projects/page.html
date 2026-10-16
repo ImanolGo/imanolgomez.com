@@ -4,6 +4,7 @@
 
 {% block main %}
 <article class="prose">
+  <p class="eyebrow"><a href="{{ get_url(path='@/projects/_index.md') }}">Work</a> /</p>
   <header class="case-header">
     <h1>{{ page.title }}</h1>
     {% if page.description %}<p class="case-header__summary">{{ page.description }}</p>{% endif %}

@@ -3,7 +3,7 @@ title = "Real-time smart lighting"
 template = "projects/page.html"
 description = "Firmware and GPU-based generative content for real-time smart lighting hardware."
 date = 2017-01-01
-weight = 40
+weight = 10
 [taxonomies]
 tags = ["embedded", "lighting", "real-time"]
 [extra]
@@ -43,6 +43,7 @@ they must not be guessed here.
 
 - Firmware for real-time smart lighting hardware products.
 - OpenGL / GPU-based generative content.
+- Delivered the main product software as a snap package for Ubuntu machines.
 - Tech and design evangelist for the product line.
 
 ## Outcome

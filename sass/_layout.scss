@@ -14,11 +14,14 @@ body {
 
 // The container's *content* box is --wide; the padding is added on top so a
 // break-out can reach the full media width without touching the page edge.
+// It is also a size container, so `.breakout` can measure the *available*
+// width (100cqw) rather than 100vw, which would ignore classic scrollbars.
 .container {
   width: 100%;
   max-width: calc(var(--wide) + 2 * var(--space-5));
   margin-inline: auto;
   padding-inline: var(--space-5);
+  container-type: inline-size;
 }
 
 main {
@@ -32,15 +35,13 @@ main {
   margin-inline: auto;
 }
 
-// Break out of the prose measure up to the container width. `.breakout-inset` is
-// negative exactly when there is room to grow, so on narrow screens the element
-// simply stays at 100%.
+// Break out of the prose measure up to the container's content width. The
+// margins go negative exactly when there is room to grow, so on narrow
+// screens the element simply stays at 100%.
 .breakout {
-  --breakout-width: min(var(--wide), calc(100vw - 2 * var(--space-5)));
-  --breakout-inset: calc((var(--breakout-width) - 100%) / 2);
-
-  width: max(100%, var(--breakout-width));
-  margin-inline: calc(-1 * max(0px, var(--breakout-inset)));
+  --breakout-width: min(var(--wide), 100cqw);
+  width: var(--breakout-width);
+  margin-inline: calc((100% - var(--breakout-width)) / 2);
 }
 
 // Visible marker for missing content. Used until every TODO(imanol) is resolved.
@@ -65,8 +66,9 @@ main {
 }
 
 .site-header__brand {
-  font-weight: 640;
-  letter-spacing: -0.015em;
+  font-size: var(--text-lg);
+  font-weight: 650;
+  letter-spacing: -0.02em;
   text-decoration: none;
 }
 
@@ -148,18 +150,28 @@ main {
 
 // Home page
 .home-header {
-  margin-bottom: var(--space-7);
+  margin-block-end: var(--space-6);
 }
 
-// A second prose block on the same page ("Selected work" on the home page).
+// A second prose block on the same page ("Selected work", "Experience").
 .home-section {
   margin-block-start: var(--space-7);
 }
 
 .home-tagline {
-  margin-top: var(--space-3);
+  margin-block-start: var(--space-3);
   font-size: var(--text-lg);
   text-wrap: pretty;
+}
+
+// Call-to-action row: centred on the prose measure, buttons wrapped.
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  max-width: var(--measure);
+  margin-inline: auto;
+  margin-block-start: var(--space-5);
 }
 
 // Card grid: one column on mobile, two from 48rem.

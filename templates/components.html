@@ -131,19 +131,24 @@
       <img class="card__cover" src="{{ c_auto.url }}" width="900" height="600" alt="{{ cover_alt }}" loading="lazy" decoding="async">
     </picture>
     {%- else %}
-    <span class="card__cover card__cover--missing"><span class="placeholder">TODO(imanol): add cover.jpg</span></span>
+    <span class="card__cover card__cover--missing">
+      <span class="card__missing-note">no image yet</span>
+      <span class="placeholder">TODO(imanol): add cover.jpg</span>
+    </span>
     {%- endif %}
-    <h{{ level }} class="card__title">{{ title }}</h{{ level }}>
-    {%- if description %}
-    <p class="card__desc">{{ description }}</p>
-    {%- endif %}
-    {%- if period != "" or org != "" or tags != "" %}
-    <p class="meta">
-      {%- if period %}<span>{{ period }}</span>{% endif %}
-      {%- if org %}<span>{{ org }}</span>{% endif %}
-      {%- if tags %}<span>{{ tags }}</span>{% endif %}
-    </p>
-    {%- endif %}
+    <div class="card__body">
+      <h{{ level }} class="card__title">{{ title }}</h{{ level }}>
+      {%- if description %}
+      <p class="card__desc">{{ description }}</p>
+      {%- endif %}
+      {%- if period != "" or org != "" or tags != "" %}
+      <p class="meta">
+        {%- if period %}<span>{{ period }}</span>{% endif %}
+        {%- if org %}<span>{{ org }}</span>{% endif %}
+        {%- if tags %}<span>{{ tags }}</span>{% endif %}
+      </p>
+      {%- endif %}
+    </div>
   </a>
 </li>
 {%- endcomponent project_card %}

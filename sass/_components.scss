@@ -1,14 +1,71 @@
-// Components: card, meta row, figure, gallery, callout, timeline, tag list and
-// prev/next navigation. Every value comes from _tokens.scss.
+// Components. Every value comes from _tokens.scss (AGENTS.md rule 8).
+// Design language: hairline borders, quiet mono labels, one accent, fast
+// (≤150 ms) transitions — minimal, slightly techie.
+
+// --- Eyebrow ----------------------------------------------------------------
+// Quiet mono micro-label above titles and section headers.
+.eyebrow {
+  margin-block-end: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.eyebrow a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.eyebrow a:hover {
+  color: var(--accent);
+}
+
+// --- Button -----------------------------------------------------------------
+// Used sparingly: primary calls to action. Mono, outlined, quiet lift on hover.
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text);
+  text-decoration: none;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color 120ms ease, color 120ms ease;
+}
+
+.btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
 
 // --- Card -------------------------------------------------------------------
-// The whole card is one link, so the link wraps the cover, title, description
-// and meta row.
+// The whole card is one link. Hairline border, cover flush with the card
+// edges, text in a padded body. Lifting the card on hover would move the
+// border too, so the border colour warms instead.
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--bg);
+  overflow: hidden;
+  transition: border-color 120ms ease;
+}
+
+.card:hover,
+.card:focus-within {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+}
 
 .card__link {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  height: 100%;
   color: inherit;
   text-decoration: none;
 }
@@ -19,77 +76,53 @@
   aspect-ratio: 3 / 2;
   object-fit: cover;
   background-color: var(--surface);
-  border-radius: var(--radius);
 }
 
-// Stand-in for a project that has no cover yet: same box, same aspect ratio, so
-// the grid does not jump once the image is added.
+// Stand-in for a project with no cover yet: same 3:2 box so the grid does not
+// jump once the image lands, with a faint grid-paper hatch.
 .card__cover--missing {
   display: grid;
-  place-items: center;
-  border: 1px dashed var(--border);
-}
-
-// --- Case study header ------------------------------------------------------
-
-.case-header {
-  margin-bottom: var(--space-6);
-}
-
-.case-header__summary {
-  margin-top: var(--space-3);
-  font-size: var(--text-lg);
-  color: var(--text-muted);
-  text-wrap: pretty;
-}
-
-.case-meta {
-  display: grid;
-  gap: var(--space-2);
-  margin-top: var(--space-5);
-  font-size: var(--text-sm);
-}
-
-.case-meta__row {
-  display: grid;
+  place-content: center;
   gap: var(--space-1);
+  background-color: var(--surface);
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0 7px,
+    var(--border) 7px 8px
+  );
 }
 
-.case-meta__label {
+.card__missing-note {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   color: var(--text-muted);
 }
 
-.case-meta__row dd {
-  margin: 0;
-}
-
-@media (min-width: 30rem) {
-  .case-meta__row {
-    grid-template-columns: 8rem minmax(0, 1fr);
-    gap: var(--space-3);
-    align-items: baseline;
-  }
+.card__body {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-5) var(--space-5);
 }
 
 .card__title {
-  font-size: var(--text-xl);
-  transition: color 150ms ease;
+  font-size: var(--text-lg);
+  transition: color 120ms ease;
 }
 
-.card__link:hover .card__title {
+.card__link:hover .card__title,
+.card:focus-within .card__title {
   color: var(--accent);
 }
 
 .card__desc {
+  font-size: var(--text-sm);
   color: var(--text-muted);
 }
 
 // --- Meta row ---------------------------------------------------------------
-// Mono, small and muted: `2017–2020 · ProtoPixel · embedded, lighting`.
-// Separators are decorative, so screen readers just read the items.
-
+// Mono, small and muted: `2017 – 2020 · ProtoPixel · embedded, lighting`.
+// The separator hangs off the *preceding* item so a wrapped row never starts
+// a line with a bare "·"; it is decorative, so screen readers read words.
 .meta {
   display: flex;
   flex-wrap: wrap;
@@ -99,9 +132,6 @@
   color: var(--text-muted);
 }
 
-// The separator hangs off the *preceding* item so a wrapped meta row never
-// starts a line with a bare "·". `content` is decorative, so screen readers read
-// the items as separate words.
 .meta > *:not(:last-child)::after {
   content: "·";
   margin-inline: var(--space-2);
@@ -140,30 +170,42 @@ figcaption {
   padding: var(--space-4) var(--space-5);
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
   border-radius: var(--radius);
   font-size: var(--text-sm);
   color: var(--text-muted);
 }
 
 .callout > :first-child {
-  margin-top: 0;
+  margin-block-start: 0;
 }
 
 .callout > :last-child {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 
 // --- Timeline ---------------------------------------------------------------
+// One group per organisation (CV) or per entry (home). Period in mono on the
+// left, content on the right; hairline separators instead of a vertical rail.
 
 .timeline {
   display: grid;
-  gap: var(--space-6);
 }
 
-.timeline__item {
+.timeline__group {
   display: grid;
-  gap: var(--space-2);
+  gap: var(--space-3);
+  padding-block: var(--space-5);
+  border-top: 1px solid var(--border);
+}
+
+.timeline__group:first-child {
+  padding-block-start: 0;
+  border-top: 0;
+}
+
+.timeline__head {
+  display: grid;
+  gap: var(--space-1);
 }
 
 .timeline__period {
@@ -172,32 +214,79 @@ figcaption {
   color: var(--text-muted);
 }
 
-.timeline__role {
-  font-size: var(--text-lg);
-}
-
 .timeline__org {
-  color: var(--text);
+  font-size: var(--text-lg);
+  font-weight: 640;
 }
 
-.timeline__summary,
-.timeline__highlights {
+.timeline__location {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.timeline__note {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.timeline__role {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.timeline__role + .timeline__role {
+  margin-block-start: var(--space-4);
+  padding-block-start: var(--space-4);
+  border-top: 1px dashed var(--border);
+}
+
+.timeline__role-title {
+  font-weight: 640;
+}
+
+.timeline__role-period {
+  margin-inline-start: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.timeline__role-summary {
+  font-size: var(--text-sm);
   color: var(--text-muted);
 }
 
 .timeline__highlights {
   display: grid;
-  gap: var(--space-2);
-  margin-top: var(--space-2);
+  gap: var(--space-1);
+  padding-inline-start: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.timeline__highlights li::marker {
+  color: var(--accent);
+}
+
+.timeline__case {
   font-size: var(--text-sm);
 }
 
-@media (min-width: 48rem) {
-  .timeline__item {
+// Compact variant (home): period left, org + latest role right.
+@media (min-width: 40rem) {
+  .timeline--compact .timeline__group {
     grid-template-columns: 9rem minmax(0, 1fr);
-    gap: var(--space-5);
+    gap: var(--space-3);
     align-items: baseline;
   }
+}
+
+.timeline--compact .timeline__role-title {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--text-muted);
 }
 
 // --- Tag list ---------------------------------------------------------------
@@ -215,9 +304,9 @@ figcaption {
   padding: var(--space-1) var(--space-3);
   color: var(--text-muted);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-pill);
   text-decoration: none;
-  transition: color 150ms ease, border-color 150ms ease;
+  transition: color 120ms ease, border-color 120ms ease;
 }
 
 .tag a:hover,
@@ -231,6 +320,123 @@ figcaption {
   color: var(--text-muted);
 }
 
+// --- Case study header ------------------------------------------------------
+
+.case-header {
+  margin-block-end: var(--space-6);
+}
+
+.case-header__summary {
+  margin-block-start: var(--space-3);
+  font-size: var(--text-lg);
+  color: var(--text-muted);
+  text-wrap: pretty;
+}
+
+.case-meta {
+  display: grid;
+  gap: var(--space-2);
+  margin-block-start: var(--space-5);
+  font-size: var(--text-sm);
+}
+
+.case-meta__row {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.case-meta__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.case-meta__row dd {
+  margin: 0;
+}
+
+@media (min-width: 30rem) {
+  .case-meta__row {
+    grid-template-columns: 8rem minmax(0, 1fr);
+    gap: var(--space-3);
+    align-items: baseline;
+  }
+}
+
+// --- CV page ----------------------------------------------------------------
+
+.cv-header {
+  .cv-header__meta {
+    margin-block-start: var(--space-3);
+  }
+
+  .btn {
+    margin-block-start: var(--space-4);
+  }
+}
+
+.cv-section + .cv-section {
+  margin-block-start: var(--space-7);
+}
+
+.skill-groups {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.skill-group {
+  display: grid;
+  gap: var(--space-1);
+}
+
+@media (min-width: 30rem) {
+  .skill-group {
+    grid-template-columns: 12rem minmax(0, 1fr);
+    gap: var(--space-3);
+    align-items: baseline;
+  }
+}
+
+.skill-group__name {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.skill-group__items {
+  margin: 0;
+  font-size: var(--text-sm);
+}
+
+.meta--languages {
+  display: grid;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.meta--languages li {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.meta--languages li > *:not(:last-child)::after {
+  content: "·";
+  margin-inline: var(--space-2);
+}
+
+.publications {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.publication__title {
+  font-weight: 600;
+}
+
 // --- Prev / next ------------------------------------------------------------
 
 .prev-next {
@@ -238,8 +444,8 @@ figcaption {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--space-5);
-  margin-top: var(--space-7);
-  padding-top: var(--space-5);
+  margin-block-start: var(--space-7);
+  padding-block-start: var(--space-5);
   border-top: 1px solid var(--border);
 }
 

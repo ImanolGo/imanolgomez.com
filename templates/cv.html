@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} — {{ config.title }}{% endblock title %}
+
+{% block main %}
+{% set experience = load_data(path="data/experience.toml") %}
+{% set education = load_data(path="data/education.toml") %}
+{% set skills = load_data(path="data/skills.toml") %}
+{% set languages = load_data(path="data/languages.toml") %}
+{% set publications = load_data(path="data/publications.toml") %}
+
+<div class="prose cv-header">
+  <h1>{{ page.title }}</h1>
+  <p class="cv-header__meta meta">
+    <span>{{ config.extra.author }}</span><span>Berlin</span><span>{{ config.extra.email }}</span>
+  </p>
+  <p><a class="btn" href="{{ get_url(path='cv/imanol-gomez-cv.pdf') }}">Download CV (PDF) ↓</a></p>
+</div>
+
+{% if page.content %}
+<div class="prose">
+  {{ page.content | safe }}
+</div>
+{% endif %}
+
+<section class="prose cv-section" aria-labelledby="cv-experience">
+  <h2 id="cv-experience">Experience</h2>
+  <ol class="timeline">
+    {%- for o in experience.org %}
+    <li class="timeline__group">
+      <header class="timeline__head">
+        <p class="timeline__period">{{ o.period }}</p>
+        <h3 class="timeline__org">{{ o.name }}{% if o.location %} <span class="timeline__location">· {{ o.location }}</span>{% endif %}</h3>
+        {% if o.note %}<p class="timeline__note">{{ o.note }}</p>{% endif %}
+      </header>
+      {%- for r in o.roles %}
+      <div class="timeline__role">
+        <p class="timeline__role-title">{{ r.role }} <span class="timeline__role-period">{{ r.start }} – {{ r.end }}</span></p>
+        {% if r.summary %}<p class="timeline__role-summary">{{ r.summary }}</p>{% endif %}
+        {%- if r.highlights | length > 0 %}
+        <ul class="timeline__highlights">
+          {%- for h in r.highlights %}<li>{{ h }}</li>{% endfor -%}
+        </ul>
+        {%- endif %}
+        {%- if r.project %}
+        <p class="timeline__case"><a href="{{ get_url(path='@/projects/' ~ r.project ~ '/index.md') }}">Case study →</a></p>
+        {%- endif %}
+      </div>
+      {%- endfor %}
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+
+<section class="prose cv-section" aria-labelledby="cv-education">
+  <h2 id="cv-education">Education</h2>
+  <ol class="timeline timeline--education">
+    {%- for e in education.education %}
+    <li class="timeline__group">
+      <p class="timeline__period">{{ e.period }}</p>
+      <div>
+        <h3 class="timeline__org">{{ e.institution }}{% if e.location %} <span class="timeline__location">· {{ e.location }}</span>{% endif %}</h3>
+        <p class="timeline__role-title">{{ e.degree }}</p>
+        {% if e.summary %}<p class="timeline__role-summary">{{ e.summary }}</p>{% endif %}
+        {%- if e.highlights | length > 0 %}
+        <ul class="timeline__highlights">
+          {%- for h in e.highlights %}<li>{{ h }}</li>{% endfor -%}
+        </ul>
+        {%- endif %}
+      </div>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+
+<section class="prose cv-section" aria-labelledby="cv-skills">
+  <h2 id="cv-skills">Skills</h2>
+  <dl class="skill-groups">
+    {%- for g in skills.group %}
+    <div class="skill-group">
+      <dt class="skill-group__name">{{ g.name }}</dt>
+      <dd class="skill-group__items">{{ g.items | join(sep=" · ") }}</dd>
+    </div>
+    {%- endfor %}
+  </dl>
+</section>
+
+<section class="prose cv-section" aria-labelledby="cv-languages">
+  <h2 id="cv-languages">Languages</h2>
+  <ul class="meta meta--languages">
+    {%- for l in languages.language %}<li><span>{{ l.name }}</span><span>{{ l.level }}</span></li>{% endfor -%}
+  </ul>
+</section>
+
+<section class="prose cv-section" aria-labelledby="cv-publications">
+  <h2 id="cv-publications">Publications</h2>
+  <ul class="publications">
+    {%- for p in publications.publications %}
+    <li class="publication">
+      <p class="publication__title">{{ p.title }}</p>
+      <p class="meta"><span>{{ p.venue }}</span>{% if p.location %}<span>{{ p.location }}</span>{% endif %}<span>{{ p.date }}</span></p>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{% endblock main %}

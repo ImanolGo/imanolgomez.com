@@ -2,6 +2,7 @@
 
 {% block main %}
 <header class="prose home-header">
+  <p class="eyebrow">AI engineer · creative technologist · Berlin</p>
   <h1>{{ section.title }}</h1>
   <p class="home-tagline">{{ config.description }}</p>
 </header>
@@ -10,9 +11,15 @@
   {{ section.content | safe }}
 </div>
 
-{#- Selected work: featured projects. `projects.pages` is sorted by `weight
-    (lower first), so filtering keeps that order. Everything here is derived
-    from content/projects/; no template edits are needed to add a project. -#}
+{% if config.extra.email or config.extra.linkedin or config.extra.github %}
+<nav class="cta-row" aria-label="Contact and profiles">
+  <a class="btn" href="#selected-work">Selected work ↓</a>
+  {% if config.extra.email %}<a class="btn" href="mailto:{{ config.extra.email }}">Email</a>{% endif %}
+  {% if config.extra.linkedin %}<a class="btn" href="{{ config.extra.linkedin }}">LinkedIn ↗</a>{% endif %}
+  {% if config.extra.github %}<a class="btn" href="{{ config.extra.github }}">GitHub ↗</a>{% endif %}
+</nav>
+{% endif %}
+
 {% set projects = get_section(path="projects/_index.md") %}
 {%- set featured = [p for p in projects.pages if p.extra?.featured] -%}
 {% if featured | length > 0 %}
@@ -32,6 +39,25 @@
     {%- endfor %}
   </ul>
   <p><a href="{{ get_url(path='@/projects/_index.md') }}">All work →</a></p>
+</section>
+{% endif %}
+
+{% set experience = load_data(path="data/experience.toml") %}
+{% if experience.org | length > 0 %}
+<section class="prose home-section" aria-labelledby="experience">
+  <h2 id="experience">Experience</h2>
+  <ol class="timeline timeline--compact">
+    {%- for o in experience.org %}
+    <li class="timeline__group">
+      <p class="timeline__period">{{ o.period }}</p>
+      <div>
+        <p class="timeline__org">{{ o.name }}{% if o.location %} <span class="timeline__location">· {{ o.location }}</span>{% endif %}</p>
+        <p class="timeline__role-title">{{ o.roles[0].role }}</p>
+      </div>
+    </li>
+    {%- endfor %}
+  </ol>
+  <p><a href="{{ get_url(path='@/cv.md') }}">Full CV →</a></p>
 </section>
 {% endif %}
 {% endblock main %}

@@ -12,10 +12,15 @@ Scratch page for checking that every component renders correctly in both themes 
 <ul class="card-grid breakout">
 <li class="card">
 <a class="card__link" href="#">
-<span class="card__cover card__cover--missing"><span class="placeholder">TODO(imanol): add cover.jpg</span></span>
-<h3 class="card__title">A card with no cover</h3>
-<p class="card__desc">The placeholder box must keep the 3:2 box so the grid does not jump.</p>
+<span class="card__cover card__cover--missing">
+<span class="card__missing-note">no image yet</span>
+<span class="placeholder">TODO(imanol): add cover.jpg</span>
+</span>
+<div class="card__body">
+<h2 class="card__title">A card with no cover</h2>
+<p class="card__desc">The placeholder box must keep the 3:2 slot so the grid does not jump.</p>
 <p class="meta"><span>2026</span><span>Org</span><span>tag-one, tag-two</span></p>
+</div>
 </a>
 </li>
 <li class="card">
@@ -24,9 +29,11 @@ Scratch page for checking that every component renders correctly in both themes 
 <source type="image/webp" srcset="{{ get_url(path='styleguide/cover.jpg') }}">
 <img class="card__cover" src="{{ get_url(path='styleguide/cover.jpg') }}" width="900" height="600" alt="Neutral placeholder image" loading="lazy" decoding="async">
 </picture>
-<h3 class="card__title">A card with a cover</h3>
+<div class="card__body">
+<h2 class="card__title">A card with a cover</h2>
 <p class="card__desc">Whole card is one link, title turns accent on hover.</p>
 <p class="meta"><span>2017 – 2020</span><span>ProtoPixel</span><span>embedded, lighting</span></p>
+</div>
 </a>
 </li>
 </ul>
@@ -78,23 +85,33 @@ A second kind, for warnings.
 ## Timeline
 
 <ol class="timeline">
-  <li class="timeline__item">
-    <p class="timeline__period">Apr 2023 – present</p>
-    <div>
-      <h3 class="timeline__role">Head of AI Deployment</h3>
-      <p class="timeline__org">CARIAD</p>
-      <p class="timeline__summary">Leads the AI Deployment team to optimize, integrate and deploy AI models on embedded hardware.</p>
-      <div class="timeline__highlights">
-        <p>Drives tooling and automation for scalable, multi-platform deployment.</p>
-      </div>
+  <li class="timeline__group">
+    <header class="timeline__head">
+      <p class="timeline__period">Apr 2023 – present</p>
+      <h3 class="timeline__org">CARIAD <span class="timeline__location">· Berlin</span></h3>
+      <p class="timeline__note">Volkswagen Group software company</p>
+    </header>
+    <div class="timeline__role">
+      <p class="timeline__role-title">Head of AI Deployment <span class="timeline__role-period">Oct 2025 – present</span></p>
+      <p class="timeline__role-summary">Leads a team of 12 engineers that takes AI models from research to production.</p>
+      <ul class="timeline__highlights">
+        <li>Owns production reliability under ISO 26262 and ASPICE.</li>
+        <li>Works with Volkswagen, Audi, Qualcomm, Samsung and NVIDIA.</li>
+      </ul>
+    </div>
+    <div class="timeline__role">
+      <p class="timeline__role-title">Senior ML Software Engineer <span class="timeline__role-period">Apr 2023 – Oct 2025</span></p>
+      <p class="timeline__role-summary">Technical Product Owner for the AI Runtime Environment.</p>
     </div>
   </li>
-  <li class="timeline__item">
-    <p class="timeline__period">Jan 2017 – Aug 2020</p>
-    <div>
-      <h3 class="timeline__role">Software Engineer – Real-Time Hardware</h3>
-      <p class="timeline__org">ProtoPixel</p>
-      <p class="timeline__summary">Firmware for real-time smart lighting hardware products.</p>
+  <li class="timeline__group">
+    <header class="timeline__head">
+      <p class="timeline__period">Aug 2020 – Apr 2023</p>
+      <h3 class="timeline__org">NELA by Carepath Technologies <span class="timeline__location">· Berlin</span></h3>
+    </header>
+    <div class="timeline__role">
+      <p class="timeline__role-title">AI Software Engineer → Senior IoT Engineer</p>
+      <p class="timeline__role-summary">Built NELA Cough in a regulated healthcare environment.</p>
     </div>
   </li>
 </ol>
