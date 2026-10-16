@@ -1,0 +1,47 @@
+name: Check
+
+# Runs on pull requests and on any branch that is not `main` (main is covered by
+# deploy.yml, which does the same build). Keeps broken internal links and
+# unresolved content placeholders out of the published site.
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      ZOLA_VERSION: "0.23.6"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Install Zola
+        run: |
+          curl -sL "https://github.com/getzola/zola/releases/download/v${ZOLA_VERSION}/zola-v${ZOLA_VERSION}-x86_64-unknown-linux-gnu.tar.gz" | tar xz
+          sudo mv zola /usr/local/bin/
+          zola --version
+
+      # `zola check` renders in memory and does not populate public/ in 0.23,
+      # so the build runs explicitly first — the placeholder gate below reads
+      # public/. External link problems are warnings (config.toml →
+      # [link_checker]); broken internal links are errors and fail here.
+      - name: Build and check links
+        run: |
+          zola build
+          zola check
+
+      - name: Fail on unresolved placeholders
+        run: |
+          # AGENTS.md rule 4: the production build must not ship with TODOs.
+          # Draft pages are excluded from public/ automatically.
+          if grep -rn "TODO(" public/; then
+            echo "::error::TODO(...) placeholders found in the built site — see AGENTS.md rule 4"
+            exit 1
+          fi
+          echo "No unresolved placeholders."
