@@ -3,11 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
-    <link rel="icon" href="{{ get_url(path='favicon.svg') }}" type="image/svg+xml">
-    <meta name="theme-color" content="#fbf9f6" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#101214" media="(prefers-color-scheme: dark)">
-    <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
+    {% include "partials/head.html" %}
     {#
       Theme: the saved choice is applied before first paint so there is no flash
       of the wrong theme. Storage access is wrapped because it throws in some

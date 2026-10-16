@@ -1,0 +1,70 @@
+{#
+  Shared <head> metadata. Tera v2 removed macros, so this is an `include` rather
+  than `macros/head.html` — an include sees the template context, which is
+  exactly what we need (`page`, `section`, `term`, `terms`, `current_url`).
+
+  Titles and descriptions are derived here once, so no child template declares
+  them: the 404 page has no `current_path`, taxonomy templates only have
+  `term`/`terms`, and everything else has a `page` or a `section`.
+#}
+{%- set is_home = current_path == "/" -%}
+{%- set page_title = page?.title or section?.title or config.title -%}
+{%- set doc_title = page_title ~ " — " ~ config.title -%}
+{%- set doc_desc = page?.description or section?.description or config.description -%}
+
+{%- if is_home -%}
+  {%- set doc_title = config.title ~ " — " ~ (config.extra?.short_description or config.description) -%}
+{%- endif -%}
+{%- if term -%}
+  {%- set doc_title = "Projects tagged “" ~ term.name ~ "” — " ~ config.title -%}
+  {%- set doc_desc = "Projects tagged “" ~ term.name ~ "”." -%}
+{%- endif -%}
+{%- if terms -%}
+  {%- set doc_title = "Tags — " ~ config.title -%}
+  {%- set doc_desc = "Every tag used across the project pages." -%}
+{%- endif -%}
+{%- if not current_path -%}
+  {%- set doc_title = "Page not found — " ~ config.title -%}
+  {%- set doc_desc = "That page does not exist. The work, about and CV pages are one click away." -%}
+{%- endif -%}
+
+{#- Social image: the page's own cover, cropped to the 1.91:1 card ratio, or the
+    typographic default. Confidential pages never expose an image. -#}
+{%- set cover = "" -%}
+{%- if page and not page.extra?.confidential -%}
+  {%- set cover = page.extra?.cover or "" -%}
+{%- endif -%}
+{%- if cover -%}
+  {%- set crop = resize_image(path=(page.path | trim_start(pat="/")) ~ cover, width=1200, height=630, op="fill", format="auto", quality=82) -%}
+  {%- set og_image = crop.url -%}
+{%- else -%}
+  {%- set og_image = get_url(path="og-default.png") -%}
+{%- endif -%}
+
+<title>{{ doc_title }}</title>
+<meta name="description" content="{{ doc_desc }}">
+{%- if current_url %}
+<link rel="canonical" href="{{ current_url }}">
+{%- endif %}
+<meta property="og:site_name" content="{{ config.title }}">
+<meta property="og:type" content="{% if page %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{{ doc_title }}">
+<meta property="og:description" content="{{ doc_desc }}">
+<meta property="og:url" content="{{ current_url or config.base_url }}">
+<meta property="og:image" content="{{ og_image }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ doc_title }}">
+<meta name="twitter:description" content="{{ doc_desc }}">
+<meta name="twitter:image" content="{{ og_image }}">
+<link rel="icon" href="{{ get_url(path='favicon.svg') }}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ get_url(path='apple-touch-icon.png') }}">
+<meta name="theme-color" content="#fbf9f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101214" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="{{ get_url(path='main.css') }}">
+{%- if is_home %}
+{#- Person markup. Single line so HTML minification cannot disturb it. -#}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"{{ config.extra.author }}","jobTitle":"{{ config.extra.job_title }}","worksFor":{"@type":"Organization","name":"{{ config.extra.employer }}"},"url":"{{ config.base_url }}","sameAs":["{{ config.extra.linkedin }}","{{ config.extra.github }}"]}</script>
+{%- endif %}

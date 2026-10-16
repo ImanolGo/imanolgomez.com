@@ -34,6 +34,14 @@ skip_prefixes = ["https://www.linkedin.com/", "https://github.com/"]
 [extra]
 author = "Imanol Gómez"
 
+# Short form of the one-liner, used in the home page <title> where the long
+# description would be truncated by search engines.
+short_description = "AI engineer & creative technologist"
+
+# Current role, used in the JSON-LD Person markup on the home page.
+job_title = "Head of AI Deployment"
+employer = "CARIAD"
+
 # Public address (on the resume header). The footer links it directly.
 email = "imanol@steinergomez.com"
 

@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 
-{% block title %}{{ page.title }} — {{ config.title }}{% endblock title %}
-
 {% block main %}
 {% set experience = load_data(path="data/experience.toml") %}
 {% set education = load_data(path="data/education.toml") %}
