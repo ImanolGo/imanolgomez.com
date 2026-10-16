@@ -56,7 +56,7 @@ AVIF + WebP `srcset`s at 640/960/1440/1920 px, plus a same-format fallback. Keep
 `prefers-reduced-motion`.
 
 ### A new job
-Add an entry at the top of `data/experience.toml`. The home page timeline and the CV page update automatically.
+Add a role to `data/experience.toml` — newest org first; consecutive `[[org.roles]]` entries under an `[[org]]` are grouped into one timeline entry. The home page timeline and the CV page update automatically.
 
 ### A new post
 Add `content/writing/<slug>.md`. The "Writing" link appears in the navigation once at least one post is published.

@@ -1,0 +1,33 @@
+# Skill groups for the CV page. Rendered in this order. Facts from docs/PROFILE.md.
+
+[[group]]
+name = "LLM & agents"
+items = ["Agentic workflows (LangGraph)", "RAG & pgvector", "MCP", "Structured outputs (Pydantic)", "Prompt engineering", "LiteLLM / OpenRouter"]
+
+[[group]]
+name = "Evaluation & observability"
+items = ["Eval frameworks & LLM-as-judge", "CI eval gates", "Accuracy / safety / latency / cost metrics", "OpenTelemetry", "Arize Phoenix"]
+
+[[group]]
+name = "Machine learning"
+items = ["PyTorch", "TensorFlow", "Fine-tuning", "ONNX", "TensorRT", "Model optimization & deployment"]
+
+[[group]]
+name = "Software engineering"
+items = ["Python (production)", "C++", "Rust", "FastAPI", "PostgreSQL", "Docker & Compose", "GitHub Actions / CI-CD", "HTMX / Jinja", "Linux & snap packaging"]
+
+[[group]]
+name = "Edge & embedded"
+items = ["Qualcomm NPU", "NVIDIA Jetson Orin", "ROS 2", "Embedded Linux / QNX", "RTOS & MCUs", "Firmware", "GLSL / CUDA"]
+
+[[group]]
+name = "Regulated environments"
+items = ["IEC 60601 (healthcare)", "ISO 26262 (automotive)", "ASPICE", "Compliance & auditability"]
+
+[[group]]
+name = "Creative technology"
+items = ["OpenGL", "openFrameworks (contributor)", "OpenCV", "DMX & LED systems", "Interactive installations"]
+
+[[group]]
+name = "Delivery & leadership"
+items = ["Team leadership (12 engineers)", "Product ownership (SAFe PO/PM)", "Stakeholder management", "Mentoring", "Talks & workshops"]

@@ -3,7 +3,7 @@
 
 base_url = "https://imanolgomez.com"
 title = "Imanol Gómez"
-description = "Engineering leader in edge AI — getting models and real-time systems to run on constrained hardware, from LED wearables and stage lighting to automotive AI accelerators."
+description = "AI engineer & creative technologist — 15+ years shipping production software, from LLM agents to real-time light installations."
 default_language = "en"
 
 # The default author for pages (used by feeds).
@@ -26,9 +26,8 @@ taxonomies = [{ name = "tags" }]
 [extra]
 author = "Imanol Gómez"
 
-# TODO(imanol): which address to publish. Left empty on purpose so the footer
-# renders a visible placeholder instead of a mailto: that goes nowhere.
-email = ""
+# Public address (on the resume header). The footer links it directly.
+email = "imanol@steinergomez.com"
 
 linkedin = "https://www.linkedin.com/in/imanolgo/"
 github = "https://github.com/ImanolGo"

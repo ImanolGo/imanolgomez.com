@@ -1,0 +1,13 @@
+# Languages. Facts from docs/PROFILE.md.
+
+[[language]]
+name = "Spanish"
+level = "Native"
+
+[[language]]
+name = "English"
+level = "Professional proficiency"
+
+[[language]]
+name = "German"
+level = "Professional proficiency"

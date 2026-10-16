@@ -1,36 +1,20 @@
-# Education, newest first. From docs/PROFILE.md. Entries we know exist but lack
-# details are marked `todo`, and the templates render those visibly.
+# Education, newest first. Facts from docs/PROFILE.md.
 
 [[education]]
 institution = "Universitat Pompeu Fabra"
 location = "Barcelona"
-degree = "MSc in Sound and Music Computing"
-field = "Master's, Music Technologies"
-start = "2009"
-end = "2011"
-summary = "Brain-activity sonification projects, led interactive projects and taught creative-coding workshops."
+degree = "Master's Degree, Sound and Music Computing"
+period = "2009 – 2011"
+summary = "Focus: computational modeling, perception, cognition and interactive systems."
 highlights = []
 
 [[education]]
-institution = "TU Berlin"
-location = "Berlin"
-degree = "TODO(imanol): degree"
-field = ""
-start = ""
-end = ""
-summary = ""
-highlights = []
-todo = "TODO(imanol): degree and years at TU Berlin."
-
-# PROFILE.md notes four educations in total on LinkedIn; the two above are the
-# ones we have details for.
-[[education]]
-institution = "TODO(imanol): fourth education"
-location = ""
-degree = "TODO(imanol): degree"
-field = ""
-start = ""
-end = ""
-summary = ""
-highlights = []
-todo = "TODO(imanol): the remaining education(s) listed on LinkedIn."
+institution = "Universidad Autónoma de Madrid"
+location = "Madrid"
+degree = "Master's Degree, Telecommunication Engineering"
+period = "2003 – 2009"
+summary = "Specialization: Multimedia Signal Processing, Electronic Systems."
+highlights = [
+  "Erasmus year at TU Berlin (2007 – 2008).",
+  "Research student at Fraunhofer HHI, Image Processing Department (2008 – 2009): forward error correction for video compression.",
+]
