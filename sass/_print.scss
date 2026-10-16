@@ -52,7 +52,6 @@
   }
 
   // Keep the destination visible once the link can no longer be clicked.
-  .cv a[href^="http"]::after,
   .prose a[href^="http"]::after {
     content: " (" attr(href) ")";
     overflow-wrap: anywhere;
@@ -83,6 +82,17 @@
     margin-block-start: var(--space-5);
   }
 
+  .cv-header {
+    margin-block-end: var(--space-4);
+  }
+
+  // A shallower list indent on paper: the highlight lines wrap less, which
+  // saves most of a page across four organisations.
+  ul.timeline__highlights {
+    padding-inline-start: 4mm;
+    font-size: 8.5pt;
+  }
+
   .prose > h2 {
     display: block;
     font-family: inherit;
@@ -108,8 +118,11 @@
   }
 
   .timeline__highlights {
-    gap: 1pt;
     font-size: 8.5pt;
+  }
+
+  ul.timeline__highlights li + li {
+    margin-block-start: 1pt;
   }
 
   .skill-group__items,

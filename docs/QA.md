@@ -28,9 +28,9 @@ poll with `setInterval` instead.
 |---|---|
 | `zola build` | passes, no warnings |
 | `zola check` | passes; internal links fatal, external links warn |
-| Horizontal overflow, 320/360/768/1280 px × light/dark × 9 pages | 72 combinations, **0 problems** |
-| HTML + CSS weight, largest page | 37.9 KB uncompressed (`/projects/`), budget 50 KB |
-| CSS | 14.9 KB uncompressed / 3.5 KB gzip, one file |
+| Horizontal overflow, 320/360/768/1280 px × light/dark × 12 pages | 96 combinations, **0 problems** |
+| HTML + CSS weight, largest page | 39.8 KB uncompressed (`/projects/`), budget 50 KB |
+| CSS | 15.8 KB uncompressed / 3.7 KB gzip, one file — see the note below |
 | Third-party requests | **none** — all 141 subresource references are same-origin |
 | Inline JS | 753 B on every page (theme toggle, `hidden` without JS); home adds a JSON-LD block |
 | JS disabled | every page readable, theme follows `prefers-color-scheme`, toggle stays hidden |
@@ -77,10 +77,18 @@ TODO.
 
 ## Deviation from the plan
 
-`docs/PLAN.md` asks the CV to print to 1–2 A4 pages. It prints to **3**. The content
-is what it is: four organisations with multiple roles each, plus skills, education,
-languages and publications. Two experiments were run and both were rejected as
-unhelpful: dropping the highlight bullets in print still produced 3 pages (the bulk
-is role titles and summaries), and shrinking type further would push it below
+**CSS is 15.8 KB, over the 15 KB figure in Phase 2.** That number is a design-system
+milestone, not the site budget — `AGENTS.md` asks for HTML + CSS ≤ 50 KB per page,
+and the largest page is 39.8 KB. Every class in the stylesheet is used somewhere in
+the build (checked mechanically) and unused views of it have been removed, so the
+only way further down is to drop design decisions rather than to clean up. Gzipped
+it is 3.7 KB. If 15 KB must hold, the honest options are dropping the mono section
+labels or the card treatment — say the word.
+
+**The CV prints to 3 A4 pages, not the 1–2 in Phase 8.** The content is what it is:
+four organisations with multiple roles each, plus skills, education, languages and
+publications. Dropping the highlight bullets in print still produced 3 pages (the
+bulk is role titles and summaries), and shrinking type further would push it below
 readable. The canonical recruiter artefact is the 3-page resume PDF linked from the
-page, and the printed page is clean, so this is documented rather than forced.
+page, and the printed sheet is clean — no chrome, no breaks inside an entry — so
+this is documented rather than forced.

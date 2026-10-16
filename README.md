@@ -58,6 +58,15 @@ AVIF + WebP `srcset`s at 640/960/1440/1920 px, plus a same-format fallback. Keep
 ### A new job
 Add a role to `data/experience.toml` — newest org first; consecutive `[[org.roles]]` entries under an `[[org]]` are grouped into one timeline entry. The home page timeline and the CV page update automatically.
 
+### A repository in "Code & experiments"
+Add a `[[repo]]` block to `data/repos.toml` with `name`, `url`, `year`, `lang`, `blurb` and `group`. The five groups are rendered in the order they first appear in the file, so a new group name is enough to add a section.
+
+### CV skills and languages
+`data/skills.toml` is a list of `[[group]]` entries (`name` + `items`); `data/languages.toml` is a list of `[[language]]` entries (`name` + `level`). Both render on `/cv/` only.
+
+### Publishing the legal pages
+`content/impressum.md` and `content/privacy.md` are `draft = true`, so they are not built and the footer does not link to them. Delete `draft = true` when the content is reviewed — the footer links appear on their own.
+
 ### A new post
 Add `content/writing/<slug>.md`. The "Writing" link appears in the navigation once at least one post is published.
 

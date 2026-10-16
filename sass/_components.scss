@@ -258,15 +258,21 @@ figcaption {
   color: var(--text-muted);
 }
 
-.timeline__highlights {
-  display: grid;
-  gap: var(--space-1);
-  padding-inline-start: var(--space-4);
+// Role highlights. `.timeline__highlights` is a `ul[class]`, which the reset in
+// _base.scss sets to `padding: 0; list-style: none` at a higher specificity
+// than a bare class — hence the `ul.` prefix here to bring the markers back.
+ul.timeline__highlights {
+  padding-inline-start: var(--space-5);
   font-size: var(--text-sm);
   color: var(--text-muted);
+  list-style: disc;
 }
 
-.timeline__highlights li::marker {
+ul.timeline__highlights li + li {
+  margin-block-start: var(--space-1);
+}
+
+ul.timeline__highlights li::marker {
   color: var(--accent);
 }
 
@@ -275,14 +281,6 @@ figcaption {
 }
 
 // Compact variant (home): period left, org + latest role right.
-@media (min-width: 40rem) {
-  .timeline--compact .timeline__group {
-    grid-template-columns: 9rem minmax(0, 1fr);
-    gap: var(--space-3);
-    align-items: baseline;
-  }
-}
-
 .timeline--compact .timeline__role-title {
   font-size: var(--text-sm);
   font-weight: 400;
@@ -357,17 +355,11 @@ figcaption {
   margin: 0;
 }
 
-@media (min-width: 30rem) {
-  .case-meta__row {
-    grid-template-columns: 8rem minmax(0, 1fr);
-    gap: var(--space-3);
-    align-items: baseline;
-  }
-}
-
 // --- CV page ----------------------------------------------------------------
 
 .cv-header {
+  margin-block-end: var(--space-7);
+
   .cv-header__meta {
     margin-block-start: var(--space-3);
   }
@@ -377,8 +369,15 @@ figcaption {
   }
 }
 
-.cv-section + .cv-section {
+// Section headings reset their own top margin when they start a block (see
+// _base.scss), so the space between CV sections has to come from the wrapper —
+// and the first section needs it too, not just `.cv-section + .cv-section`.
+.cv-section {
   margin-block-start: var(--space-7);
+}
+
+.cv-section:first-of-type {
+  margin-block-start: 0;
 }
 
 .skill-groups {
@@ -391,9 +390,19 @@ figcaption {
   gap: var(--space-1);
 }
 
+// Two-up label/value layout, shared by the case-study meta list and the CV
+// skill groups.
 @media (min-width: 30rem) {
+  .case-meta__row {
+    grid-template-columns: 8rem minmax(0, 1fr);
+  }
+
   .skill-group {
     grid-template-columns: 12rem minmax(0, 1fr);
+  }
+
+  .case-meta__row,
+  .skill-group {
     gap: var(--space-3);
     align-items: baseline;
   }
@@ -492,8 +501,16 @@ figcaption {
 }
 
 @media (min-width: 40rem) {
+  .timeline--compact .timeline__group {
+    grid-template-columns: 9rem minmax(0, 1fr);
+  }
+
   .repo {
     grid-template-columns: 7rem minmax(0, 1fr);
+  }
+
+  .timeline--compact .timeline__group,
+  .repo {
     gap: var(--space-3);
     align-items: baseline;
   }
