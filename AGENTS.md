@@ -64,7 +64,8 @@ zola check          # build + check internal/external links
 ├── data/
 │   ├── experience.toml
 │   ├── education.toml
-│   └── publications.toml
+│   ├── publications.toml
+│   └── repos.toml              # "Code & experiments" list
 ├── docs/
 │   ├── PLAN.md
 │   ├── PROFILE.md
