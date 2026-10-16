@@ -9,22 +9,27 @@ alone.
 
 ## 1. Repo settings (GitHub)
 
-**Already done** (via `gh api` on 2026-10-16): Settings → Pages → Source is
-`GitHub Actions`, i.e. the Pages site exists with `build_type = workflow`. The
-first Deploy run failed at the `configure-pages` step with `Get Pages site failed`
-purely because no Pages site existed yet.
+**Already done** (via `gh api`, 2026-10-16):
 
-1. **Settings → Pages → Build and deployment → Source:** `GitHub Actions`.
-   (Not "Deploy from a branch" — the site is built by `deploy.yml`.)
-2. **Settings → Pages → Custom domain:** `imanolgomez.com`, then **Save**.
-   Do this *after* the DNS below, otherwise `imanolgo.github.io/imanolgomez.com`
-   starts redirecting to a domain that still shows the registrar's parking page.
-3. Tick **Enforce HTTPS** once the certificate is issued (can take up to an hour).
-   Until then the checkbox is disabled.
+- Pages source is `GitHub Actions` (`build_type = workflow`). The first Deploy run
+  failed at `configure-pages` with `Get Pages site failed` purely because no Pages
+  site existed yet.
+- Custom domain is `imanolgomez.com` and **Enforce HTTPS** is on
+  (`https_enforced = true`). The certificate is a Let's Encrypt cert for
+  `CN=imanolgomez.com`, issued automatically once DNS pointed at GitHub.
+
+Check the current state any time with:
+
+```sh
+gh api repos/ImanolGo/imanolgomez.com/pages --jq '{cname,https_enforced,build_type,status}'
+```
 
 No `CNAME` file is committed on purpose: with the GitHub Actions source, the custom
 domain lives in repository settings, and a stale `CNAME` file is a classic way to
 break a deploy.
+
+Everything below is the order it was actually done in, kept for reference and for
+setting up the next domain.
 
 ### While DNS is not set up yet
 
@@ -85,18 +90,41 @@ that is a different domain and carries email.
 ## 4. Verify
 
 ```sh
-dig +short imanolgomez.com A          # the four 185.199.x.153 addresses
-dig +short www.imanolgomez.com        # -> imanolgo.github.io.
-curl -sI https://imanolgomez.com | head -1        # HTTP/2 200
-curl -sI https://www.imanolgomez.com | head -1    # redirects to the apex
+dig +short @1.1.1.1 imanolgomez.com A       # the four 185.199.x.153 addresses
+dig +short @1.1.1.1 www.imanolgomez.com     # -> imanolgo.github.io.
+curl -sI https://imanolgomez.com | head -1                     # HTTP/2 200
+curl -sI http://imanolgomez.com | head -3                      # 301 -> https://
+curl -sI https://www.imanolgomez.com | grep -i '^location'     # -> https://imanolgomez.com/
 ```
 
-Then confirm in a browser:
+Note the `@1.1.1.1`: a local resolver can keep serving the old parked address for
+hours after the change, which makes it look like nothing happened.
+
+Confirm in a browser:
 
 - `https://imanolgomez.com` and `https://www.imanolgomez.com` both load over HTTPS.
 - `www` ends up on the apex (one redirect).
-- `https://imanolgomez.com/robots.txt` mentions the sitemap, and
-  `/sitemap.xml` lists the pages.
+- `https://imanolgomez.com/robots.txt` mentions the sitemap, and `/sitemap.xml`
+  lists the pages.
+
+### Verify domain ownership (recommended, not done yet)
+
+This is the one remaining manual step. It stops anyone else claiming a subdomain of
+`imanolgomez.com` with a dangling CNAME.
+
+1. **GitHub → Settings (personal account, not the repo) → Pages → Add a verified
+   domain** → `imanolgomez.com`. GitHub shows a `TXT` record whose value is a random
+   token; it cannot be generated from the API, which is why this needs the UI.
+2. Add that `TXT` at Namecheap, then click **Verify**. Re-click Verify after a few
+   minutes rather than re-adding the record.
+
+Check whether it is in place:
+
+```sh
+dig +short @1.1.1.1 _github-pages-challenge-imanolgo.imanolgomez.com TXT
+```
+
+Keep the record afterwards — GitHub re-checks it.
 
 ## 5. What each workflow does
 
@@ -138,6 +166,18 @@ gh workflow run deploy.yml && gh run watch
 
 `workflow_dispatch` is the quickest way to re-verify after a settings change: it
 re-runs the workflow on `main` without needing a new commit.
+
+### A single URL serves a cached "Site not found" page
+
+Right after the custom domain was attached, `http://imanolgomez.com/` returned
+GitHub's 9115-byte "Site not found" page while every other path redirected
+correctly. The tell is the `Age:` response header climbing on each request — the
+Fastly edge had cached the error from the minutes when the domain was not yet
+associated with the repo. A cache-busting query string does not help.
+
+Fix: re-run Deploy (`gh workflow run deploy.yml`), which re-associates the domain
+and purges it. If it persists, it is a cache TTL and clears on its own within the
+hour. HTTPS redirects were correct throughout, so no visitor was affected.
 
 Ignore the `ubuntu-latest label will migrate to Ubuntu 26` annotation — it is
 informational. If it ever causes trouble, pin `runs-on: ubuntu-24.04` in both
