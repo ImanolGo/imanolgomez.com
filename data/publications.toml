@@ -1,0 +1,28 @@
+# Publications, newest first. From docs/PROFILE.md.
+
+[[publications]]
+title = "Three dimensional sonification of fMRI brain data in the musical composition Neurospaces"
+venue = "Proceedings of the 9th Conference on Interdisciplinary Musicology (CIM14)"
+location = "Berlin"
+date = "Dec 2014"
+authors = "With co-authors."
+url = ""
+notes = ""
+
+[[publications]]
+title = "Exploring 3D audio for brain sonification"
+venue = "International Conference on Auditory Display (ICAD)"
+location = ""
+date = "Jun 2012"
+authors = "With co-authors."
+url = ""
+notes = ""
+
+[[publications]]
+title = "TODO(imanol): third publication"
+venue = ""
+location = ""
+date = ""
+authors = ""
+url = ""
+notes = "TODO(imanol): PROFILE.md mentions a third publication but does not name it."

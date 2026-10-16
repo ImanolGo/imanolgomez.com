@@ -1,0 +1,149 @@
+{#
+  Components — the Zola 0.23 replacement for shortcodes (shortcodes were removed
+  in 0.23). This file is compiled into every template and into content, so
+  `{{ <figure … /> }}` works from any .md file without an import.
+
+  Conventions
+  - `src` / `poster` / `cover` are paths relative to the `content/` directory,
+    e.g. `projects/<slug>/cover.jpg`. `resize_image` searches `/content`, so a
+    bare filename is not enough.
+  - Components are hygienic: they only see the arguments passed to them, which
+    is why `callout` and `gallery` use the implicit `body` and nothing else.
+  - A missing required argument fails the build natively; an empty `alt` is
+    caught below with `throw()` so no content image can ship unlabelled.
+#}
+
+{% component figure(src, alt, caption="", wide=false, eager=false, sizes="") -%}
+{%- if alt == "" -%}{{ throw(message="figure: `alt` must not be empty — every content image needs alt text") }}{%- endif -%}
+{%- set meta = get_image_metadata(path=src) -%}
+{#- Skip any step wider than the original so we never upscale. -#}
+{%- set_global avif = [] -%}
+{%- set_global webp = [] -%}
+{%- set_global plain = [] -%}
+{%- set_global fallback = "" -%}
+{%- for w in [640, 960, 1440, 1920] -%}
+  {%- if w <= meta.width -%}
+    {%- set r_avif = resize_image(path=src, width=w, op="fit_width", format="avif", quality=65) -%}
+    {%- set r_webp = resize_image(path=src, width=w, op="fit_width", format="webp", quality=80) -%}
+    {%- set r_auto = resize_image(path=src, width=w, op="fit_width", format="auto", quality=80) -%}
+    {%- set_global avif = [...avif, r_avif.url ~ " " ~ w ~ "w"] -%}
+    {%- set_global webp = [...webp, r_webp.url ~ " " ~ w ~ "w"] -%}
+    {%- set_global plain = [...plain, r_auto.url ~ " " ~ w ~ "w"] -%}
+    {%- set_global fallback = r_auto.url -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if fallback == "" -%}
+  {#- Image narrower than 640 px: re-encode once in its original format. -#}
+  {%- set r_auto = resize_image(path=src, width=meta.width, op="fit_width", format="auto", quality=80) -%}
+  {%- set_global fallback = r_auto.url -%}
+{%- endif -%}
+{%- if sizes == "" -%}
+  {%- if wide -%}{%- set sizes = "(min-width: 64rem) 64rem, 100vw" -%}{%- else -%}{%- set sizes = "(min-width: 42rem) 42rem, 100vw" -%}{%- endif -%}
+{%- endif -%}
+<figure{% if wide %} class="breakout"{% endif %}>
+  <picture>
+    {%- if avif | length > 0 %}
+    <source type="image/avif" srcset="{{ avif | join(sep=", ") }}" sizes="{{ sizes }}">
+    {%- endif %}
+    {%- if webp | length > 0 %}
+    <source type="image/webp" srcset="{{ webp | join(sep=", ") }}" sizes="{{ sizes }}">
+    {%- endif %}
+    <img src="{{ fallback }}"{% if plain | length > 0 %} srcset="{{ plain | join(sep=", ") }}" sizes="{{ sizes }}"{% endif %} width="{{ meta.width }}" height="{{ meta.height }}" alt="{{ alt }}" loading="{% if eager %}eager{% else %}lazy{% endif %}" decoding="async">
+  </picture>
+  {%- if caption %}
+  <figcaption>{{ caption }}</figcaption>
+  {%- endif %}
+</figure>
+{%- endcomponent figure %}
+
+
+{% component gallery() -%}
+{#- Body is one `path/to/image.jpg | alt text` per line; a third field is a caption. -#}
+{%- if body | trim == "" -%}{{ throw(message="gallery: the body must list one `path | alt` per line") }}{%- endif -%}
+<div class="gallery">
+{%- for line in body | split(pat="\n") -%}
+  {%- if line | trim != "" -%}
+    {%- set parts = line | split(pat="|") -%}
+    {%- if parts | length < 2 -%}{{ throw(message="gallery: every line must be `path/to/image.jpg | alt text`") }}{%- endif -%}
+    {%- set gsrc = parts[0] | trim -%}
+    {%- set galt = parts[1] | trim -%}
+    {%- set gcap = "" -%}
+    {%- if parts | length > 2 -%}{%- set gcap = parts[2] | trim -%}{%- endif -%}
+    {{ <figure src={gsrc} alt={galt} caption={gcap} sizes="(min-width: 48rem) 50vw, 100vw" /> }}
+  {%- endif -%}
+{%- endfor -%}
+</div>
+{%- endcomponent gallery %}
+
+
+{% component video(src, poster, alt, caption="", autoplay=false) -%}
+{%- if alt == "" -%}{{ throw(message="video: `alt` must not be empty — every content video needs a description") }}{%- endif -%}
+{%- set meta = get_image_metadata(path=poster) -%}
+{#- Width and height come from the poster so the box is reserved before load. -#}
+<figure>
+  <video src="{{ get_url(path=src) }}" poster="{{ get_url(path=poster) }}" width="{{ meta.width }}" height="{{ meta.height }}"{% if not autoplay %} controls{% endif %} playsinline preload="none" aria-label="{{ alt }}"{% if autoplay %} muted loop autoplay{% endif %}></video>
+  {%- if caption %}
+  <figcaption>{{ caption }}</figcaption>
+  {%- endif %}
+</figure>
+{%- if autoplay %}
+{#- Only emitted for autoplaying video: honour prefers-reduced-motion. -#}
+<script>
+  (function () {
+    var self = document.currentScript;
+    var v = self && self.previousElementSibling ? self.previousElementSibling.querySelector("video") : null;
+    if (!v) return;
+    var q = matchMedia("(prefers-reduced-motion: reduce)");
+    function sync() {
+      if (q.matches) { v.pause(); v.removeAttribute("autoplay"); }
+      else { v.setAttribute("autoplay", ""); var p = v.play(); if (p) p.catch(function () {}); }
+    }
+    sync();
+    q.addEventListener("change", sync);
+  })();
+</script>
+{%- endif %}
+{%- endcomponent video %}
+
+
+{% component callout(kind="note") -%}
+<aside class="callout callout--{{ kind }}">
+{{ body | markdown | safe }}
+</aside>
+{%- endcomponent callout %}
+
+
+{#
+  Project card. The whole card is a single link. `period`, `org` and `tags` make
+  the mono meta row; empty ones are simply dropped. Without a cover the card
+  shows a visible TODO placeholder instead of collapsing. `level` keeps the
+  heading order valid: 3 under "Selected work" on the home page, 2 everywhere the
+  grid sits directly under the h1.
+#}
+{% component project_card(title, url, cover="", cover_alt="", description="", period="", org="", tags="", level=3) -%}
+<li class="card">
+  <a class="card__link" href="{{ url }}">
+    {%- if cover and cover_alt %}
+      {%- set c_webp = resize_image(path=cover, width=900, height=600, op="fill", format="webp", quality=80) -%}
+      {%- set c_auto = resize_image(path=cover, width=900, height=600, op="fill", format="auto", quality=80) -%}
+    <picture>
+      <source type="image/webp" srcset="{{ c_webp.url }}">
+      <img class="card__cover" src="{{ c_auto.url }}" width="900" height="600" alt="{{ cover_alt }}" loading="lazy" decoding="async">
+    </picture>
+    {%- else %}
+    <span class="card__cover card__cover--missing"><span class="placeholder">TODO(imanol): add cover.jpg</span></span>
+    {%- endif %}
+    <h{{ level }} class="card__title">{{ title }}</h{{ level }}>
+    {%- if description %}
+    <p class="card__desc">{{ description }}</p>
+    {%- endif %}
+    {%- if period != "" or org != "" or tags != "" %}
+    <p class="meta">
+      {%- if period %}<span>{{ period }}</span>{% endif %}
+      {%- if org %}<span>{{ org }}</span>{% endif %}
+      {%- if tags %}<span>{{ tags }}</span>{% endif %}
+    </p>
+    {%- endif %}
+  </a>
+</li>
+{%- endcomponent project_card %}

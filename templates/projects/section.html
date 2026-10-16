@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title or config.title }} — {{ config.title }}{% endblock title %}
+
+{% block main %}
+<header class="prose">
+  <h1>{{ section.title }}</h1>
+</header>
+
+{% if section.content %}
+<div class="prose">
+  {{ section.content | safe }}
+</div>
+{% endif %}
+
+{#- The section is ordered by `weight` for the home page; the Work list reads
+    newest first, so sort by date and reverse (Tera's sort is ascending only). -#}
+{%- set pages = (section.pages | sort(attribute="date"))[::-1] -%}
+
+{% if pages | length > 0 %}
+
+{#- Tag filter: plain links into the tag taxonomy, no JavaScript. -#}
+{%- set_global tag_names = [] -%}
+{%- for p in pages -%}
+  {%- for t in p.taxonomies?.tags or [] -%}
+    {%- if not (t in tag_names) -%}{%- set_global tag_names = [...tag_names, t] -%}{%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- set tag_names = tag_names | sort -%}
+
+{% if tag_names | length > 0 %}
+<nav class="prose" aria-label="Filter projects by tag">
+  <ul class="tag-list">
+    <li class="tag"><a href="{{ current_url }}" aria-current="page">all</a></li>
+    {%- for name in tag_names %}
+    <li class="tag"><a href="{{ get_taxonomy_url(kind='tags', term=name) }}">{{ name }}</a></li>
+    {%- endfor %}
+  </ul>
+</nav>
+{% endif %}
+
+<ul class="card-grid breakout">
+  {%- for p in pages %}
+  {{ <project_card
+       title={p.title}
+       url={p.permalink}
+       cover={(p.path | trim_start(pat="/")) ~ (p.extra?.cover or "")}
+       cover_alt={p.extra?.cover_alt or ""}
+       description={p.description or ""}
+       period={p.extra?.period or ""}
+       org={p.extra?.org or ""}
+       tags={p.taxonomies?.tags | default(value=[]) | join(sep=", ")}
+       level={2} /> }}
+  {%- endfor %}
+</ul>
+
+{% else %}
+<div class="prose">
+  <p class="placeholder">TODO(imanol): no projects yet — every folder under content/projects/ with an index.md shows up here.</p>
+</div>
+{% endif %}
+{% endblock main %}

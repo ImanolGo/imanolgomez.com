@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} — {{ config.title }}{% endblock title %}
+
+{% block main %}
+<article class="prose">
+  <header class="case-header">
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="case-header__summary">{{ page.description }}</p>{% endif %}
+
+    {%- set stack = page.extra?.stack or [] -%}
+    {%- set links = page.extra?.links or [] -%}
+    <dl class="case-meta">
+      {%- if page.extra?.role %}
+      <div class="case-meta__row"><dt class="case-meta__label">Role</dt><dd>{{ page.extra.role }}</dd></div>
+      {%- endif %}
+      {%- if page.extra?.org %}
+      <div class="case-meta__row"><dt class="case-meta__label">Organisation</dt><dd>{{ page.extra.org }}</dd></div>
+      {%- endif %}
+      {%- if page.extra?.period %}
+      <div class="case-meta__row"><dt class="case-meta__label">Period</dt><dd>{{ page.extra.period }}{% if page.extra?.location %} · {{ page.extra.location }}{% endif %}</dd></div>
+      {%- endif %}
+      {%- if stack | length > 0 %}
+      <div class="case-meta__row"><dt class="case-meta__label">Stack</dt><dd>{{ stack | join(sep=", ") }}</dd></div>
+      {%- endif %}
+      {%- if links | length > 0 %}
+      <div class="case-meta__row"><dt class="case-meta__label">Links</dt><dd>
+        {%- for l in links %}<a href="{{ l.url }}">{{ l.label }}</a>{% if not loop.last %}, {% endif %}{%- endfor %}
+      </dd></div>
+      {%- endif %}
+    </dl>
+  </header>
+
+  {% if page.extra?.confidential %}
+  {% <callout kind="note"> %}
+Details of this work are confidential. This page describes my role and scope, plus context that is
+already public, and shows no internal material.
+  {% </callout> %}
+  {% elif page.extra?.cover %}
+    {%- if page.extra?.cover_alt %}
+      {{ <figure src={(page.path | trim_start(pat="/")) ~ page.extra.cover} alt={page.extra.cover_alt} wide={true} eager={true} /> }}
+    {%- else %}
+      <p class="placeholder">TODO(imanol): add <code>cover_alt</code> — the cover image needs alt text before it can render.</p>
+    {%- endif %}
+  {% else %}
+  <p class="placeholder">TODO(imanol): add a cover image to this page bundle.</p>
+  {% endif %}
+
+  {{ page.content | safe }}
+
+  {%- set tags = page.taxonomies?.tags or [] -%}
+  {% if tags | length > 0 %}
+  <ul class="tag-list">
+    {%- for name in tags | sort %}
+    <li class="tag"><a href="{{ get_taxonomy_url(kind='tags', term=name) }}">{{ name }}</a></li>
+    {%- endfor %}
+  </ul>
+  {% endif %}
+</article>
+
+{#
+  Previous / next follow the order the Work page shows (newest first), not the
+  section's sort order — Zola exposes `lower`/`higher` only for the latter and
+  does not expose `page.weight` at all, so we walk the same list here.
+#}
+{%- set projects = get_section(path="projects/_index.md") -%}
+{%- set ordered = (projects.pages | sort(attribute="date"))[::-1] -%}
+{%- set_global idx = -1 -%}
+{%- for p in ordered -%}{%- if p.permalink == page.permalink -%}{%- set_global idx = loop.index0 -%}{%- endif -%}{%- endfor -%}
+{%- set previous = "" -%}
+{%- set next = "" -%}
+{% if idx > 0 %}{% set previous = ordered[idx - 1] %}{% endif %}
+{% if idx >= 0 and idx + 1 < ordered | length %}{% set next = ordered[idx + 1] %}{% endif %}
+{% if previous or next %}
+<nav class="prose prev-next" aria-label="Projects">
+  {% if previous %}
+  <a class="prev-next__link" href="{{ previous.permalink }}">
+    <span class="prev-next__label">Previous</span>
+    <span class="prev-next__title">{{ previous.title }}</span>
+  </a>
+  {% endif %}
+  {% if next %}
+  <a class="prev-next__link prev-next__next" href="{{ next.permalink }}">
+    <span class="prev-next__label">Next</span>
+    <span class="prev-next__title">{{ next.title }}</span>
+  </a>
+  {% endif %}
+</nav>
+{% endif %}
+{% endblock main %}

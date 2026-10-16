@@ -1,0 +1,36 @@
+# Education, newest first. From docs/PROFILE.md. Entries we know exist but lack
+# details are marked `todo`, and the templates render those visibly.
+
+[[education]]
+institution = "Universitat Pompeu Fabra"
+location = "Barcelona"
+degree = "MSc in Sound and Music Computing"
+field = "Master's, Music Technologies"
+start = "2009"
+end = "2011"
+summary = "Brain-activity sonification projects, led interactive projects and taught creative-coding workshops."
+highlights = []
+
+[[education]]
+institution = "TU Berlin"
+location = "Berlin"
+degree = "TODO(imanol): degree"
+field = ""
+start = ""
+end = ""
+summary = ""
+highlights = []
+todo = "TODO(imanol): degree and years at TU Berlin."
+
+# PROFILE.md notes four educations in total on LinkedIn; the two above are the
+# ones we have details for.
+[[education]]
+institution = "TODO(imanol): fourth education"
+location = ""
+degree = "TODO(imanol): degree"
+field = ""
+start = ""
+end = ""
+summary = ""
+highlights = []
+todo = "TODO(imanol): the remaining education(s) listed on LinkedIn."

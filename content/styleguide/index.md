@@ -4,71 +4,76 @@ description = "Scratch page that exercises every component in the design system.
 draft = true
 +++
 
-Scratch page for checking that every component renders correctly in both
-themes at 360, 768 and 1280 px. It is a draft, so it is never part of the
-published site.
+Scratch page for checking that every component renders correctly in both themes at
+360, 768 and 1280 px. It is a draft, so it is never part of the published site.
 
 ## Project cards
 
 <ul class="card-grid breakout">
-  <li class="card">
-    <a class="card__link" href="#">
-      <img class="card__cover" src="cover.jpg" alt="Neutral grey placeholder image" width="1600" height="1067">
-      <h3 class="card__title">Real-time smart lighting</h3>
-      <p class="card__desc">One-line description of the project goes here.</p>
-      <p class="meta"><span>2017 – 2020</span><span>ProtoPixel</span><span>embedded, lighting</span></p>
-    </a>
-  </li>
-  <li class="card">
-    <a class="card__link" href="#">
-      <img class="card__cover" src="cover.jpg" alt="Neutral grey placeholder image" width="1600" height="1067">
-      <h3 class="card__title">AI deployment for automated driving</h3>
-      <p class="card__desc">A second card, to check the two-column grid.</p>
-      <p class="meta"><span>Apr 2023 – present</span><span>CARIAD</span><span>edge AI, automotive</span></p>
-    </a>
-  </li>
+<li class="card">
+<a class="card__link" href="#">
+<span class="card__cover card__cover--missing"><span class="placeholder">TODO(imanol): add cover.jpg</span></span>
+<h3 class="card__title">A card with no cover</h3>
+<p class="card__desc">The placeholder box must keep the 3:2 box so the grid does not jump.</p>
+<p class="meta"><span>2026</span><span>Org</span><span>tag-one, tag-two</span></p>
+</a>
+</li>
+<li class="card">
+<a class="card__link" href="#">
+<picture>
+<source type="image/webp" srcset="{{ get_url(path='styleguide/cover.jpg') }}">
+<img class="card__cover" src="{{ get_url(path='styleguide/cover.jpg') }}" width="900" height="600" alt="Neutral placeholder image" loading="lazy" decoding="async">
+</picture>
+<h3 class="card__title">A card with a cover</h3>
+<p class="card__desc">Whole card is one link, title turns accent on hover.</p>
+<p class="meta"><span>2017 – 2020</span><span>ProtoPixel</span><span>embedded, lighting</span></p>
+</a>
+</li>
 </ul>
 
 ## Meta row
 
 <p class="meta"><span>Apr 2023 – present</span><span>CARIAD</span><span>edge AI, automotive, leadership</span></p>
 
+## Case-study header
+
+<header class="case-header">
+<h2>Case-study heading</h2>
+<p class="case-header__summary">One sentence summary, slightly larger and muted.</p>
+<dl class="case-meta">
+<div class="case-meta__row"><dt class="case-meta__label">Role</dt><dd>Head of AI Deployment</dd></div>
+<div class="case-meta__row"><dt class="case-meta__label">Organisation</dt><dd>CARIAD</dd></div>
+<div class="case-meta__row"><dt class="case-meta__label">Period</dt><dd>Apr 2023 – present · Berlin</dd></div>
+<div class="case-meta__row"><dt class="case-meta__label">Stack</dt><dd>Python, Qualcomm NPU, ISO 26262</dd></div>
+<div class="case-meta__row"><dt class="case-meta__label">Links</dt><dd><a href="#">Case study</a></dd></div>
+</dl>
+</header>
+
 ## Figure
 
-<figure>
-  <img src="cover.jpg" alt="Neutral grey placeholder image" width="1600" height="1067">
-  <figcaption>A caption in muted small text.</figcaption>
-</figure>
+{{ <figure src="styleguide/cover.jpg" alt="Neutral placeholder image" caption="A caption in muted small text." /> }}
 
 ## Figure, wide break-out
 
-<figure class="breakout">
-  <img src="cover.jpg" alt="Neutral grey placeholder image" width="1600" height="1067">
-  <figcaption>The same figure breaking out to the container width.</figcaption>
-</figure>
+{{ <figure src="styleguide/cover.jpg" alt="Neutral placeholder image" caption="The same figure breaking out to the container width." wide={true} /> }}
 
 ## Gallery
 
-<div class="gallery">
-  <figure>
-    <img src="cover.jpg" alt="Neutral grey placeholder image" width="1600" height="1067">
-    <figcaption>Grid item one.</figcaption>
-  </figure>
-  <figure>
-    <img src="cover.jpg" alt="Neutral grey placeholder image" width="1600" height="1067">
-    <figcaption>Grid item two.</figcaption>
-  </figure>
-  <figure>
-    <img src="cover.jpg" alt="Neutral grey placeholder image" width="1600" height="1067">
-    <figcaption>Grid item three.</figcaption>
-  </figure>
-</div>
+{% <gallery> %}
+styleguide/cover.jpg | Grid item one
+styleguide/cover.jpg | Grid item two | With a caption
+styleguide/cover.jpg | Grid item three
+{% </gallery> %}
 
 ## Callout
 
-<aside class="callout">
-<p>Details of this work are confidential; this page describes my role and the public context only.</p>
-</aside>
+{% <callout kind="note"> %}
+**Note.** The body is parsed as Markdown, so *emphasis*, `code` and [links](#) work.
+{% </callout> %}
+
+{% <callout kind="warning"> %}
+A second kind, for warnings.
+{% </callout> %}
 
 ## Timeline
 

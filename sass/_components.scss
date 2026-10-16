@@ -22,6 +22,57 @@
   border-radius: var(--radius);
 }
 
+// Stand-in for a project that has no cover yet: same box, same aspect ratio, so
+// the grid does not jump once the image is added.
+.card__cover--missing {
+  display: grid;
+  place-items: center;
+  border: 1px dashed var(--border);
+}
+
+// --- Case study header ------------------------------------------------------
+
+.case-header {
+  margin-bottom: var(--space-6);
+}
+
+.case-header__summary {
+  margin-top: var(--space-3);
+  font-size: var(--text-lg);
+  color: var(--text-muted);
+  text-wrap: pretty;
+}
+
+.case-meta {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  font-size: var(--text-sm);
+}
+
+.case-meta__row {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.case-meta__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+.case-meta__row dd {
+  margin: 0;
+}
+
+@media (min-width: 30rem) {
+  .case-meta__row {
+    grid-template-columns: 8rem minmax(0, 1fr);
+    gap: var(--space-3);
+    align-items: baseline;
+  }
+}
+
 .card__title {
   font-size: var(--text-xl);
   transition: color 150ms ease;
@@ -48,7 +99,10 @@
   color: var(--text-muted);
 }
 
-.meta > * + *::before {
+// The separator hangs off the *preceding* item so a wrapped meta row never
+// starts a line with a bare "·". `content` is decorative, so screen readers read
+// the items as separate words.
+.meta > *:not(:last-child)::after {
   content: "·";
   margin-inline: var(--space-2);
 }
@@ -170,6 +224,11 @@ figcaption {
 .tag a[aria-current="page"] {
   color: var(--accent);
   border-color: currentColor;
+}
+
+// The "how many projects" suffix stays quiet even when the chip is hovered.
+.tag__count {
+  color: var(--text-muted);
 }
 
 // --- Prev / next ------------------------------------------------------------

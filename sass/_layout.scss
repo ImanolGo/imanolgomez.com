@@ -151,6 +151,11 @@ main {
   margin-bottom: var(--space-7);
 }
 
+// A second prose block on the same page ("Selected work" on the home page).
+.home-section {
+  margin-block-start: var(--space-7);
+}
+
 .home-tagline {
   margin-top: var(--space-3);
   font-size: var(--text-lg);

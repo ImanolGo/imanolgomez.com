@@ -1,0 +1,200 @@
+# Experience, newest first. One entry per role: several consecutive entries can
+# share an `org`, and the templates group them into a single timeline entry.
+# Everything here comes from docs/PROFILE.md; anything unknown is a TODO(imanol)
+# and must not be invented.
+#
+# Fields: org, org_note, location, type, role, start, end ("present" for the
+# current role), summary (one line), highlights (array), skills (array) and an
+# optional `project` slug linking to a case study in content/projects/.
+
+[[experience]]
+org = "CARIAD"
+org_note = "Volkswagen Group software company"
+location = "Berlin"
+type = "Full-time"
+role = "Head of AI Deployment"
+start = "Oct 2025"
+end = "present"
+summary = "Leads the AI Deployment team to optimize, integrate and deploy AI models on embedded hardware."
+highlights = [
+  "Drives tooling and automation for scalable, multi-platform deployment.",
+  "Ensures on-target performance (latency, power, memory) and compliance with automotive standards.",
+]
+skills = ["Python", "Qualcomm NPU", "ISO 26262", "embedded systems", "automotive standards", "team leadership"]
+project = "ai-deployment-cariad"
+
+[[experience]]
+org = "CARIAD"
+org_note = "Volkswagen Group software company"
+location = "Berlin"
+type = "Full-time"
+role = "Senior ML Software Engineer – AI Prediction"
+start = "Apr 2025"
+end = "Oct 2025"
+summary = "Prediction models forecasting traffic-agent behaviour for ADAS."
+highlights = [
+  "Model integration across environments.",
+  "Optimization for Qualcomm AI accelerators.",
+]
+skills = ["Python", "Qualcomm NPU", "embedded systems"]
+project = "ai-deployment-cariad"
+
+[[experience]]
+org = "CARIAD"
+org_note = "Volkswagen Group software company"
+location = "Berlin"
+type = "Full-time"
+role = "Senior ML Software Engineer – AI Occupancy"
+start = "May 2024"
+end = "Apr 2025"
+summary = "3D occupancy networks for spatial perception in ADAS."
+highlights = [
+  "Model integration.",
+  "Optimization for Qualcomm AI accelerators.",
+]
+skills = ["Python", "Qualcomm NPU", "embedded systems"]
+project = "ai-deployment-cariad"
+
+[[experience]]
+org = "CARIAD"
+org_note = "Volkswagen Group software company"
+location = "Berlin"
+type = "Full-time"
+role = "Senior ML Software Engineer – AI Sensor Fusion"
+start = "Nov 2023"
+end = "May 2024"
+summary = "AI-based sensor data fusion for ADAS."
+highlights = [
+  "Deployment and optimization for Qualcomm accelerators.",
+]
+skills = ["Python", "Qualcomm NPU", "embedded systems"]
+project = "ai-deployment-cariad"
+
+[[experience]]
+org = "CARIAD"
+org_note = "Volkswagen Group software company"
+location = "Berlin"
+type = "Full-time"
+role = "Senior ML Software Engineer – AI RTE"
+start = "Apr 2023"
+end = "Nov 2023"
+summary = "Abstraction layer for integrating AI models into various runtime environments."
+highlights = [
+  "SDK for model conversion, quantization, optimization and pruning.",
+]
+skills = ["Python", "Qualcomm NPU", "embedded systems"]
+project = "ai-deployment-cariad"
+
+[[experience]]
+org = "NELA by Carepath Technologies GmbH"
+org_note = "NELA: tele-monitoring and self-management of patients with chronic diseases, including NELA Cough."
+location = "Berlin"
+type = "Full-time"
+role = "Senior IoT Engineer"
+start = "Oct 2022"
+end = "Apr 2023"
+summary = "IoT system architecture, requirements and design for hardware and software, and firmware."
+highlights = [
+  "Deployed AI models on edge devices and microcontrollers.",
+]
+skills = ["Python", "TensorFlow", "embedded systems", "RTOS"]
+
+[[experience]]
+org = "NELA by Carepath Technologies GmbH"
+org_note = "NELA: tele-monitoring and self-management of patients with chronic diseases, including NELA Cough."
+location = "Berlin"
+type = "Full-time"
+role = "AI Software Engineer"
+start = "Aug 2020"
+end = "Oct 2022"
+summary = "Led design and development of AI models for medical applications."
+highlights = [
+  "Deployment and real-time monitoring of AI on IoT devices.",
+  "Production firmware.",
+]
+skills = ["Python", "TensorFlow", "embedded systems", "RTOS"]
+
+[[experience]]
+org = "ProtoPixel"
+location = ""
+type = "Contract"
+role = "Software Engineer – Real-Time Hardware"
+start = "Jan 2017"
+end = "Aug 2020"
+summary = "Firmware for real-time smart lighting hardware products."
+highlights = [
+  "OpenGL / GPU-based generative content.",
+  "Tech and design evangelist.",
+  "Public case studies: \"Designing the Ultimate Club Experience\", \"Bringing Dynamism to a Creative Space\" and \"Primavera Sound's First Smart Stage\".",
+]
+skills = ["Python", "Embedded C"]
+project = "realtime-lighting-protopixel"
+
+[[experience]]
+org = "ElektroCouture"
+location = "Berlin"
+type = "Contract"
+role = "Software Engineer – Wearable Technology"
+start = "Jan 2016"
+end = "Dec 2018"
+summary = "Led design and development of wearable products."
+highlights = [
+  "Main developer of wearable driver firmware.",
+  "Fashion-tech mentor.",
+  "Pieces: FireFly, Nuit Blanche, Marlene.",
+]
+skills = ["microcontrollers", "embedded systems"]
+
+[[experience]]
+org = "Aakash Odedra Company"
+location = ""
+type = "Freelance"
+role = "Software Engineer – Multimedia Dance Show"
+start = "Sep 2014"
+end = "Mar 2018"
+summary = "Software for the multimedia dance show Murmur (Aakash Odedra with choreographer Lewis Major)."
+highlights = [
+  "Operated the software during the world tour.",
+]
+
+[[experience]]
+org = "Freelance — Audiovisual & Interactive Exhibitions"
+location = "Berlin"
+type = "Freelance"
+role = "Creative engineer"
+start = "Jul 2014"
+end = "Aug 2020"
+summary = "Hardware for audiovisual and interactive pieces, and production software for permanent exhibitions."
+highlights = [
+  "Stella Rinascente — facade Christmas installation for Rinascente's flagship store in Rome, 2017, by Studio Waldemeyer with Slamp.",
+  "Journey of Colour.",
+  "re.show — dance-theatre premiere for the 15th anniversary of the kontrastmoment agency.",
+  "Creative-technology evangelist.",
+]
+skills = ["embedded systems", "computer graphics"]
+
+[[experience]]
+org = "Ars Electronica Linz GmbH"
+location = "Linz"
+type = "Full-time"
+role = "Creative Engineer"
+start = "Oct 2011"
+end = "Aug 2014"
+summary = "Multiple interactive and new-media installations."
+highlights = [
+  "Main developer of GeoPulse, a platform for accessible visualization of spatial data (Ars Electronica Center).",
+  "Techkriti 2012 \"Brain Battle\".",
+  "MED-EL Audioversum exhibits.",
+]
+skills = ["Python", "OpenGL"]
+
+[[experience]]
+org = "Fraunhofer HHI"
+location = "Berlin"
+type = "Research student"
+role = "Research Student, Image Processing Department"
+start = "Sep 2008"
+end = "Sep 2009"
+summary = "Research on Forward Error Correction techniques for video compression."
+highlights = []
+skills = []
