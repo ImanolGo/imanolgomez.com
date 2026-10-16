@@ -1,0 +1,316 @@
+# "Code & experiments" list on /projects/. One entry per repository, grouped by
+# `group` in the order below. Blurbs are the repos' own descriptions, taken from
+# docs/PROFILE.md — repos that need confirmation or have no description are left
+# out on purpose (docs/PROFILE.md "Do not feature" and its README caveat).
+
+[[repo]]
+name = "local-ai-robot-assistant"
+url = "https://github.com/ImanolGo/local-ai-robot-assistant"
+year = "2025–26"
+lang = "Python"
+blurb = "Fully on-device AI robot assistant on an NVIDIA Jetson Orin Nano."
+group = "Edge AI & systems"
+
+[[repo]]
+name = "rover-assistant"
+url = "https://github.com/ImanolGo/rover-assistant"
+year = "2026"
+lang = "Python"
+blurb = "Voice and vision assistant for a Jetson Orin Nano rover — fully on-device, no cloud."
+group = "Edge AI & systems"
+
+[[repo]]
+name = "emma-claude"
+url = "https://github.com/ImanolGo/emma-claude"
+year = "2024"
+lang = "Python"
+blurb = "EMMA (end-to-end multimodal driving) implemented with the Claude API."
+group = "Edge AI & systems"
+
+[[repo]]
+name = "ADAS-Projects-In-Rust"
+url = "https://github.com/ImanolGo/ADAS-Projects-In-Rust"
+year = "2023"
+lang = "Rust"
+blurb = "ADAS feature implementations in Rust, for performance and safety."
+group = "Edge AI & systems"
+
+[[repo]]
+name = "alibi"
+url = "https://github.com/ImanolGo/alibi"
+year = "2026"
+lang = "Python"
+blurb = "Murder-mystery game where each suspect is an LLM agent: LangGraph, MCP, pgvector RAG, CI evals."
+group = "Edge AI & systems"
+
+[[repo]]
+name = "murmuration-gpu"
+url = "https://github.com/ImanolGo/murmuration-gpu"
+year = "2026"
+lang = "Rust"
+blurb = "GPU starling-flock simulation rendering up to millions of birds in real time with wgpu."
+group = "GPU & creative code"
+
+[[repo]]
+name = "murmuration"
+url = "https://github.com/ImanolGo/murmuration"
+year = "2026"
+lang = "Rust"
+blurb = "Terminal starling-flock simulation modelled on murmuration research."
+group = "GPU & creative code"
+
+[[repo]]
+name = "cuda-particles"
+url = "https://github.com/ImanolGo/cuda-particles"
+year = "2026"
+lang = "CUDA"
+blurb = "Step-by-step CUDA course for creative coders, ending in an interactive GPU particle system."
+group = "GPU & creative code"
+
+[[repo]]
+name = "overflight"
+url = "https://github.com/ImanolGo/overflight"
+year = "2026"
+lang = "Rust"
+blurb = "Terminal app showing planes overhead as a live sky from real-time data."
+group = "GPU & creative code"
+
+[[repo]]
+name = "procquarium"
+url = "https://github.com/ImanolGo/procquarium"
+year = "2026"
+lang = "Rust"
+blurb = "Terminal aquarium showing running processes as fish."
+group = "GPU & creative code"
+
+[[repo]]
+name = "Visual-Whispers"
+url = "https://github.com/ImanolGo/Visual-Whispers"
+year = "2024"
+lang = "TypeScript"
+blurb = "AI art \"telephone\": images described and re-imagined through different personas."
+group = "GPU & creative code"
+
+[[repo]]
+name = "LedMapper"
+url = "https://github.com/ImanolGo/LedMapper"
+year = ""
+lang = "C++"
+blurb = "Custom software for mapping LEDs on 3D objects and exporting them (with Moritz Waldemeyer)."
+group = "Lighting & hardware tools"
+
+[[repo]]
+name = "ofxDmx4All"
+url = "https://github.com/ImanolGo/ofxDmx4All"
+year = ""
+lang = "C++"
+blurb = "DMX4All wrapper for openFrameworks — an openFrameworks addon I authored."
+group = "Lighting & hardware tools"
+
+[[repo]]
+name = "VideoPixels"
+url = "https://github.com/ImanolGo/VideoPixels"
+year = ""
+lang = "C++"
+blurb = "Records pixel-mapped video to SD for playback on a Teensy SD player."
+group = "Lighting & hardware tools"
+
+[[repo]]
+name = "UdpPixels"
+url = "https://github.com/ImanolGo/UdpPixels"
+year = ""
+lang = "C++"
+blurb = "Streams video pixel data over UDP."
+group = "Lighting & hardware tools"
+
+[[repo]]
+name = "ParticleLamp"
+url = "https://github.com/ImanolGo/ParticleLamp"
+year = ""
+lang = "C++"
+blurb = "Lamp with a Teensy, accelerometers and an LED matrix."
+group = "Lighting & hardware tools"
+
+[[repo]]
+name = "LaRinascente"
+url = "https://github.com/ImanolGo/LaRinascente"
+year = "2017"
+lang = "C++"
+blurb = "Christmas light experience on the facade of La Rinascente, Rome."
+group = "Lighting & hardware tools"
+
+[[repo]]
+name = "TheJourneyOfColor"
+url = "https://github.com/ImanolGo/TheJourneyOfColor"
+year = "2018"
+lang = "C++"
+blurb = "A camera reads an object's colour palette and shows it on a light sculpture."
+group = "Lighting & hardware tools"
+
+[[repo]]
+name = "WinchesLightPainting"
+url = "https://github.com/ImanolGo/WinchesLightPainting"
+year = "2018"
+lang = "C++"
+blurb = "Long-exposure light painting with DMX-controlled winches, with Moritz Waldemeyer."
+group = "Lighting & hardware tools"
+
+[[repo]]
+name = "CoralSoul"
+url = "https://github.com/ImanolGo/CoralSoul"
+year = ""
+lang = "C++"
+blurb = "3D-mapped generative visuals projected onto volcanic rock."
+group = "Lighting & hardware tools"
+
+[[repo]]
+name = "NUIT-BLANCHE"
+url = "https://github.com/ImanolGo/NUIT-BLANCHE"
+year = "2017"
+lang = "C++"
+blurb = "Lighting and interaction with ElektroCouture and the designer Anja Dragan."
+group = "Lighting & hardware tools"
+
+[[repo]]
+name = "MarleneGlows"
+url = "https://github.com/ImanolGo/MarleneGlows"
+year = "2017"
+lang = "C++"
+blurb = "Visualization and export for Forster Rohner LED textile technology."
+group = "Lighting & hardware tools"
+
+[[repo]]
+name = "NormaLedDresses"
+url = "https://github.com/ImanolGo/NormaLedDresses"
+year = "2019"
+lang = ""
+blurb = "LED dress visuals for the opera Norma at the Greek National Opera."
+group = "Lighting & hardware tools"
+
+[[repo]]
+name = "MurmurRenderer"
+url = "https://github.com/ImanolGo/MurmurRenderer"
+year = "2016"
+lang = "C++"
+blurb = "Rendering for Aakash Odedra Company's multimedia dance show Murmur."
+group = "Lighting & hardware tools"
+
+[[repo]]
+name = "MurmurFloorTracking"
+url = "https://github.com/ImanolGo/MurmurFloorTracking"
+year = "2016"
+lang = "C++"
+blurb = "Floor tracking for Murmur, so the visuals follow the performer."
+group = "Lighting & hardware tools"
+
+[[repo]]
+name = "TheOther"
+url = "https://github.com/ImanolGo/TheOther"
+year = "2015"
+lang = "C++"
+blurb = "Indoor particle-projection installation on emerging cosmology theories (Havana Biennial 2015)."
+group = "Lighting & hardware tools"
+
+[[repo]]
+name = "Equalizer"
+url = "https://github.com/ImanolGo/Equalizer"
+year = ""
+lang = "JS"
+blurb = "Light installation representing tax inequality."
+group = "Lighting & hardware tools"
+
+[[repo]]
+name = "BrainSonification"
+url = "https://github.com/ImanolGo/BrainSonification"
+year = ""
+lang = "Python"
+blurb = "fMRI visualization and sonification tool used for a 3D-audio composition and performance."
+group = "Research & music tech"
+
+[[repo]]
+name = "fMRI-Sonification"
+url = "https://github.com/ImanolGo/fMRI-Sonification"
+year = "2011"
+lang = ""
+blurb = "Master's thesis app exploring the brain through visualization and sonification."
+group = "Research & music tech"
+
+[[repo]]
+name = "GaitSensing"
+url = "https://github.com/ImanolGo/GaitSensing"
+year = "2013"
+lang = "Arduino"
+blurb = "Code supporting a PhD project; renders video from sensed footsteps."
+group = "Research & music tech"
+
+[[repo]]
+name = "MHD-barcelona-2011"
+url = "https://github.com/ImanolGo/MHD-barcelona-2011"
+year = "2011"
+lang = ""
+blurb = "\"Drop'Em Dub\", Music Hack Day Barcelona 2011 (Sónar)."
+group = "Research & music tech"
+
+[[repo]]
+name = "Slime-Mold"
+url = "https://github.com/ImanolGo/Slime-Mold"
+year = "2012"
+lang = "C"
+blurb = "Slime-mould growth simulation."
+group = "Research & music tech"
+
+[[repo]]
+name = "MushroomAutomator"
+url = "https://github.com/ImanolGo/MushroomAutomator"
+year = "2014"
+lang = "Python"
+blurb = "Automating a mushroom-growing box."
+group = "Research & music tech"
+
+[[repo]]
+name = "GenerativeArtWorkshop"
+url = "https://github.com/ImanolGo/GenerativeArtWorkshop"
+year = ""
+lang = "Processing"
+blurb = "Workshop material for generative art with Processing."
+group = "Teaching & workshops"
+
+[[repo]]
+name = "PervasiveMediaWorkshop"
+url = "https://github.com/ImanolGo/PervasiveMediaWorkshop"
+year = "2015"
+lang = ""
+blurb = "Workshop at HfG Offenbach."
+group = "Teaching & workshops"
+
+[[repo]]
+name = "WearableTechnology_FashionHD"
+url = "https://github.com/ImanolGo/WearableTechnology_FashionHD"
+year = "2016"
+lang = ""
+blurb = "Wearable-technology workshop at Fashion Hack Day, FabLab Berlin."
+group = "Teaching & workshops"
+
+[[repo]]
+name = "FutureFashionWorkshopBangkok"
+url = "https://github.com/ImanolGo/FutureFashionWorkshopBangkok"
+year = "2016"
+lang = ""
+blurb = "Workshop at the Goethe-Institut Bangkok."
+group = "Teaching & workshops"
+
+[[repo]]
+name = "SoundInteractionWorkshop"
+url = "https://github.com/ImanolGo/SoundInteractionWorkshop"
+year = "2017"
+lang = "Pure Data"
+blurb = "Workshop material for sound interaction with Pure Data."
+group = "Teaching & workshops"
+
+[[repo]]
+name = "IoTWorkshop2019"
+url = "https://github.com/ImanolGo/IoTWorkshop2019"
+year = "2019"
+lang = ""
+blurb = "IoT workshop material, iSpace Accra."
+group = "Teaching & workshops"

@@ -59,4 +59,31 @@
   <p class="placeholder">TODO(imanol): no projects yet — every folder under content/projects/ with an index.md shows up here.</p>
 </div>
 {% endif %}
+
+{#- "Code & experiments": a compact list from data/repos.toml, grouped, no images.
+    Adding a repo is five lines of TOML. -#}
+{% set repo_data = load_data(path="data/repos.toml") %}
+{% set repos = repo_data.repo %}
+{% if repos | length > 0 %}
+<section class="prose home-section" aria-labelledby="code-experiments">
+  <h2 id="code-experiments">Code &amp; experiments</h2>
+  <p>Older work, side projects and workshop material. Contributor to
+    <a href="https://github.com/openframeworks/openFrameworks">openFrameworks</a> (C++);
+    80+ public repositories on <a href="{{ config.extra.github }}">GitHub</a>.</p>
+  {%- set_global groups = [] -%}
+  {%- for r in repos -%}
+    {%- if not (r.group in groups) -%}{%- set_global groups = [...groups, r.group] -%}{%- endif -%}
+  {%- endfor -%}
+  {%- for g in groups %}
+  <div class="repo-group">
+    <h3 class="repo-group__name">{{ g }}</h3>
+    <ul class="repo-list">
+      {%- for r in repos %}{% if r.group == g %}
+      {{ <repo_row name={r.name} url={r.url} year={r.year} lang={r.lang} blurb={r.blurb} /> }}
+      {%- endif %}{% endfor %}
+    </ul>
+  </div>
+  {%- endfor %}
+</section>
+{% endif %}
 {% endblock main %}

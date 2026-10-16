@@ -5,7 +5,7 @@ description = "Optimizing, integrating and deploying AI models on automotive emb
 date = 2023-04-01
 weight = 20
 [taxonomies]
-tags = ["edge-ai", "automotive"]
+tags = ["edge-ai", "automotive", "embedded"]
 [extra]
 period = "Apr 2023 – present"
 org = "CARIAD"

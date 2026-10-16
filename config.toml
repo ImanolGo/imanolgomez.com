@@ -23,6 +23,14 @@ feed_filenames = ["atom.xml"]
 # page actually carries a tag.
 taxonomies = [{ name = "tags" }]
 
+# Link checking (`zola check`). Internal problems stay fatal; external ones are
+# reported but do not fail the build, because third-party hosts rot, rate-limit
+# or block automated requests (LinkedIn answers 999). LinkedIn and GitHub are
+# skipped outright so `zola check` stays fast and offline-friendly-ish.
+[link_checker]
+external_level = "warn"
+skip_prefixes = ["https://www.linkedin.com/", "https://github.com/"]
+
 [extra]
 author = "Imanol Gómez"
 

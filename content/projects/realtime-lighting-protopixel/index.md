@@ -5,7 +5,7 @@ description = "Firmware and GPU-based generative content for real-time smart lig
 date = 2017-01-01
 weight = 10
 [taxonomies]
-tags = ["embedded", "lighting", "real-time"]
+tags = ["lighting", "embedded", "real-time"]
 [extra]
 period = "Jan 2017 – Aug 2020"
 org = "ProtoPixel"

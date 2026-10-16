@@ -113,6 +113,25 @@
 {%- endcomponent callout %}
 
 
+{% component repo_row(name, url, year="", lang="", blurb="") -%}
+<li class="repo">
+  {%- if year or lang %}
+  <p class="repo__meta meta">
+    {%- if year %}<span>{{ year }}</span>{% endif %}
+    {%- if lang %}<span>{{ lang }}</span>{% endif %}
+  </p>
+  {%- else %}
+  <p class="repo__meta meta" aria-hidden="true"></p>
+  {%- endif %}
+  <div class="repo__body">
+    <a class="repo__name" href="{{ url }}">{{ name }}</a>
+    {%- if blurb %}
+    <span class="repo__blurb">{{ blurb }}</span>
+    {%- endif %}
+  </div>
+</li>
+{%- endcomponent repo_row %}
+
 {#
   Project card. The whole card is a single link. `period`, `org` and `tags` make
   the mono meta row; empty ones are simply dropped. Without a cover the card
