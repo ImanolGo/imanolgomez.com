@@ -9,15 +9,31 @@ alone.
 
 ## 1. Repo settings (GitHub)
 
+**Already done** (via `gh api` on 2026-10-16): Settings → Pages → Source is
+`GitHub Actions`, i.e. the Pages site exists with `build_type = workflow`. The
+first Deploy run failed at the `configure-pages` step with `Get Pages site failed`
+purely because no Pages site existed yet.
+
 1. **Settings → Pages → Build and deployment → Source:** `GitHub Actions`.
    (Not "Deploy from a branch" — the site is built by `deploy.yml`.)
 2. **Settings → Pages → Custom domain:** `imanolgomez.com`, then **Save**.
+   Do this *after* the DNS below, otherwise `imanolgo.github.io/imanolgomez.com`
+   starts redirecting to a domain that still shows the registrar's parking page.
 3. Tick **Enforce HTTPS** once the certificate is issued (can take up to an hour).
-   Until then the checkbox is disabled and the site may briefly serve over HTTP.
+   Until then the checkbox is disabled.
 
 No `CNAME` file is committed on purpose: with the GitHub Actions source, the custom
 domain lives in repository settings, and a stale `CNAME` file is a classic way to
 break a deploy.
+
+### While DNS is not set up yet
+
+The site is served at `https://imanolgo.github.io/imanolgomez.com/` but renders
+**without styling** there, and the same is true for any preview URL. Nothing is
+broken: `base_url` is the custom domain, so the deployed HTML asks for
+`https://imanolgomez.com/main.css`, which still resolves to the registrar's parking
+page. It fixes itself the moment the DNS records below are live. Use `zola serve`
+for local previewing in the meantime.
 
 ## 2. Verify the domain at the account level
 
@@ -32,8 +48,24 @@ subdomain of `imanolgomez.com`.
 
 ## 3. DNS (Namecheap)
 
-**Domain List → imanolgomez.com → Advanced DNS.** Delete the default parking
-records (`CNAME www → parkingpage.namecheap.com` and the `URL Redirect @`), then add:
+The domain's nameservers are `dns1/dns2.registrar-servers.com` — Namecheap BasicDNS.
+**Domain List → imanolgomez.com → Advanced DNS.**
+
+Two records exist today and both must go:
+
+| Type | Host | Current value | Action |
+|---|---|---|---|
+| A | `@` | `192.64.119.15` | delete (registrar parking) |
+| CNAME | `www` | `parkingpage.namecheap.com.` | delete (registrar parking) |
+
+**Keep this one — do not delete it.** It is Namecheap email forwarding, and
+deleting it breaks mail for the domain:
+
+| Type | Host | Value |
+|---|---|---|
+| TXT | `@` | `v=spf1 include:spf.efwd.registrar-servers.com ~all` |
+
+Then add:
 
 | Type | Host | Value | TTL |
 |---|---|---|---|
@@ -47,8 +79,8 @@ records (`CNAME www → parkingpage.namecheap.com` and the `URL Redirect @`), th
 | AAAA | `@` | `2606:50c0:8003::153` | Automatic |
 | CNAME | `www` | `imanolgo.github.io.` | Automatic |
 
-Keep the `TXT` record from step 2. Leave any `MX` record for `steinergomez.com` or
-mail alone — that is a different domain and unrelated to this site.
+Keep the `TXT` record from step 2 as well. Do not touch DNS for `steinergomez.com` —
+that is a different domain and carries email.
 
 ## 4. Verify
 
@@ -76,15 +108,42 @@ Then confirm in a browser:
 
 `check.yml` — on every pull request and on pushes to branches other than `main`:
 
-1. `zola check` — builds and checks links. Broken **internal** links fail the run;
-   external link problems are warnings (`config.toml` → `[link_checker]`), because
-   third-party hosts rot, rate-limit or block bots.
+1. `zola build` then `zola check` — builds and checks links. Broken **internal**
+   links fail the run; external link problems are warnings (`config.toml` →
+   `[link_checker]`), because third-party hosts rot, rate-limit or block bots. The
+   explicit `zola build` is needed because `zola check` renders in memory and leaves
+   no `public/` to inspect.
 2. Fails if the built site contains a `TODO(` placeholder (AGENTS.md rule 4). Until
    the content placeholders listed in the project pages are resolved, this check is
    **expected to fail** — that is the gate working, not a bug. Draft pages are
    excluded from `public/`, so drafts never trip it.
 
-## 6. Rotating the pinned Zola version
+## 6. If Deploy fails
+
+The most likely failure by far, and the one this repo actually hit first:
+
+```
+##[error]Get Pages site failed. Please verify that the repository has Pages
+enabled and configured to build using GitHub Actions
+```
+
+It means the Pages site does not exist yet, or its Source is not "GitHub Actions".
+Check, then create it if needed:
+
+```sh
+gh api repos/ImanolGo/imanolgomez.com/pages            # 404 means it does not exist
+gh api -X POST repos/ImanolGo/imanolgomez.com/pages -f build_type=workflow
+gh workflow run deploy.yml && gh run watch
+```
+
+`workflow_dispatch` is the quickest way to re-verify after a settings change: it
+re-runs the workflow on `main` without needing a new commit.
+
+Ignore the `ubuntu-latest label will migrate to Ubuntu 26` annotation — it is
+informational. If it ever causes trouble, pin `runs-on: ubuntu-24.04` in both
+workflows.
+
+## 7. Rotating the pinned Zola version
 
 `ZOLA_VERSION` lives in both workflows and a comment ties it to the locally
 installed version. To upgrade: bump both files, run `zola build && zola check`
