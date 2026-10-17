@@ -16,20 +16,34 @@ earlier revisions. When a resume contradicts this file, the newest resume wins; 
 - **Links:** LinkedIn https://www.linkedin.com/in/imanolgo/ · GitHub https://github.com/ImanolGo
 - **Interests (optional for About):** environment and animal welfare (vegan), sports and nutrition; causes: arts & culture, environment, health, science & technology, human rights, humanitarian relief.
 
-## Positioning — generic core + adaptable variants
+## Positioning — site default
 
-The site should stay **generic and adaptable**: it shows both halves of the work — the technical
-(AI in production, real-time systems) and the creative (installations, light, stage, wearables) —
-so it works for edge-AI roles, LLM/agentic roles, and creative-technology roles alike.
+Lead with hands-on engineering and technical leadership. AI is a clear area of expertise;
+embedded systems and creative technology demonstrate range rather than competing identities.
+Keep the first screen accessible to a non-specialist, with technical detail in the projects and CV.
 
-**Umbrella one-liner (site default):**
-> AI engineer & creative technologist — 15+ years shipping production software, from LLM
-> agents to real-time light installations.
+**Professional headline:**
+> Technical lead & AI engineer
 
-**Resume title variants used so far (tailor per audience, do not mix):**
-- *Applied AI Engineer | LLM Agents, RAG & Evaluation | Customer-Facing Technical Lead* (2026-10-16)
-- *Engineering Leader | Embedded Linux & AI* (2026-10-03/06)
-- *Head of AI Deployment | Edge AI & GPU Inference | Creative Technologist & Speaker* (2026-09-28)
+**Home page tagline:**
+> I turn ambitious ideas into reliable software.
+
+**Site description (metadata):**
+> Technical lead & AI engineer with 15+ years building production software, from AI systems
+> and medical devices to interactive installations.
+
+**Short bio:**
+> Imanol Gómez is a technical lead and AI engineer based in Berlin, with 15+ years building
+> production software across automotive AI, medical devices and interactive installations.
+> As Head of AI Deployment at CARIAD, part of the Volkswagen Group, he leads 12 engineers
+> bringing AI models to automotive hardware. His background spans hands-on development,
+> team leadership, customer collaboration and teaching. Outside work, he builds LLM agents,
+> on-device robot assistants and real-time graphics.
+
+Use **Head of AI Deployment** as the factual current role, not the umbrella identity.
+Use **creative technologist** for the freelance work and creative background, not as the
+only professional label. Do not imply that personal LLM projects are employer deployments,
+or that all 15+ years were spent in AI or management.
 
 **Core paragraph (from the latest resume, safe to reuse):**
 Applied AI engineer and technical lead with 15+ years of building production software end to

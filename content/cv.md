@@ -1,5 +1,5 @@
 +++
 title = "CV"
-description = "Experience, education, skills and publications — Imanol Gómez."
+description = "Imanol Gómez — technical lead & AI engineer. Experience in production AI, embedded systems, team leadership and creative technology."
 template = "cv.html"
 +++

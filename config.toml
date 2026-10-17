@@ -3,7 +3,7 @@
 
 base_url = "https://imanolgomez.com"
 title = "Imanol Gómez"
-description = "AI engineer & creative technologist — 15+ years shipping production software, from LLM agents to real-time light installations."
+description = "Technical lead & AI engineer with 15+ years building production software, from AI systems and medical devices to interactive installations."
 default_language = "en"
 
 # The default author for pages (used by feeds).
@@ -36,7 +36,7 @@ author = "Imanol Gómez"
 
 # Short form of the one-liner, used in the home page <title> where the long
 # description would be truncated by search engines.
-short_description = "AI engineer & creative technologist"
+short_description = "Technical lead & AI engineer"
 
 # Current role, used in the JSON-LD Person markup on the home page.
 job_title = "Head of AI Deployment"

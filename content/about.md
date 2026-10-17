@@ -1,39 +1,60 @@
 +++
 title = "About"
-description = "AI engineer & creative technologist — from sound and music computing to LLM agents in production."
+description = "Hands-on engineering, team leadership and a creative background — from interactive installations to medical devices and production AI."
 +++
 
-I started in sound and music computing — a Master's at Universitat Pompeu Fabra in Barcelona,
-brain-activity sonification, fMRI data turned into 3D audio. That led to Ars Electronica in
-Linz, where I built interactive computer-vision installations and led development of
-GeoPulse, a spatial-data visualization platform.
+I'm a technical lead and AI engineer based in Berlin. My work connects software, hardware
+and people: building systems end to end, leading engineering teams, and helping customers
+and developers turn ideas into something they can use.
 
-From 2014 I worked freelance out of Berlin: interactive installations, light and video
-projection, live performance software, fashion tech — clients included ProtoPixel,
-ElektroCouture and Moritz Waldemeyer. I engineered and ran live the show software for
-*Murmur*, a multimedia dance performance by Aakash Odedra, on its world tour, and gave
-talks and workshops from Porto to Accra. Real-time or nothing: everything I shipped had to
-survive being touched by strangers, hauled to a venue, and switched on in front of an
-audience.
+Over 15+ years, that's taken me from interactive art and live performance to medical
+devices and automotive AI. Different settings, but a familiar challenge: make an ambitious
+idea work reliably in the real world.
 
-The through-line to the last decade is smaller hardware and stricter rules. At NELA
-(Carepath Technologies) I built **NELA Cough**, an AI-based tele-monitoring product for
-chronic-disease patients — edge devices and MCUs under IEC 60601, from requirements to
-series production. At CARIAD (Volkswagen Group software company) I've been taking AI to
-volume production since 2023: first the AI Runtime Environment — a Python SDK and runtime
-abstraction layer for model conversion, quantization and optimization — then perception
-models on Qualcomm accelerators, and since October 2025 **Head of AI Deployment**, leading
-a team of 12 engineers on the CARIAD–Bosch Automated Driving Alliance, with Volkswagen, Audi,
-Qualcomm, Samsung and NVIDIA at the table.
+## Building systems, enabling teams
 
-In my own time I keep building: a fully on-device robot assistant on a Jetson Orin Nano
-(TensorRT, DeepStream, llama.cpp), GPU flocking simulations in Rust and wgpu, and *Alibi*, a
-murder-mystery game where every suspect is an LLM agent with RAG memory and eval gates in CI.
+Today I'm **Head of AI Deployment at CARIAD**, the Volkswagen Group software company,
+leading 12 engineers taking AI models from research prototypes to automotive hardware.
+I work with engineering teams, Volkswagen Group brands and semiconductor partners on
+reliability, performance and delivery.
+
+Before leading the team, I built a Python SDK for model conversion and optimization,
+and a runtime abstraction layer used by other engineering teams. Supporting those teams
+from their first requirements to production integration is a part of the work I value:
+building tools that help other people build.
+
+Earlier, at NELA by Carepath Technologies, I worked on an AI-based tele-monitoring product
+for chronic-disease patients. My scope covered model design, device firmware and IoT
+architecture, from requirements to series production in a regulated healthcare environment.
+
+## A creative foundation
+
+My background is in telecommunication engineering and sound and music computing. At
+Ars Electronica in Linz, I built interactive computer-vision installations and led
+development of GeoPulse, a spatial-data visualization platform.
+
+Six years of freelance creative technology followed: lighting products for ProtoPixel,
+wearables with ElektroCouture, installations with Moritz Waldemeyer, and show software
+I engineered and operated on the world tour of Aakash Odedra Company's *Murmur*.
+I also taught, gave talks and ran workshops and hackathons, from Barcelona and Berlin
+to Bangkok and Accra.
+
+That creative work is still part of how I approach engineering: prototype early, make
+something tangible, and learn from the people using it.
+
+## Still hands-on
+
+Outside work, I build [Alibi](@/projects/alibi/index.md), a murder-mystery game with LLM
+suspects, memory and automated evaluations; an [on-device robot assistant](@/projects/on-device-robot-assistant/index.md)
+that combines voice and vision without the cloud; and [GPU flocking simulations](@/projects/murmuration-gpu/index.md)
+in Rust. My main languages are Python and C++; Rust is part of my personal projects.
 
 ## How I work
 
-- Ship small, measure, keep what works.
-- Real hardware early — benchmarks and evals over slide decks.
-- Standards are load-bearing: IEC 60601, ISO 26262, ASPICE taught me that traceability is a
-  feature, not overhead.
-- Vegan, into sports and nutrition; care a lot about animals and the environment.
+- **Stay close to the problem.** Work with the people who will use the system, not just its specification.
+- **Build, measure, improve.** Use working prototypes, benchmarks and evaluations to decide what to keep.
+- **Help others ship.** Through shared tools, mentoring, documentation and hands-on workshops.
+- **Treat reliability as part of the product.** Performance, testing and traceability belong in the design, not at the end.
+
+Away from the keyboard, I'm into sports and nutrition. I'm vegan and care about animals
+and the environment.

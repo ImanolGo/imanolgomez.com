@@ -12,10 +12,11 @@ not a template, not a "dev portfolio" with gradients and particle effects. The v
 project photos (light installations, wearables, stages); the interface stays quiet so they carry the page.
 
 **Story the site tells (one line, used on the home page and in meta):**
-> Engineering leader in edge AI — getting models and real-time systems to run on constrained hardware,
-> from LED wearables and stage lighting to automotive AI accelerators.
+> Technical lead & AI engineer. I turn ambitious ideas into reliable software.
 
-(Final wording: `TODO(imanol)`; use the above until replaced.)
+The home page pairs this broad positioning with concrete experience in AI, medical devices
+and creative technology. Use the factual current job title in experience and structured data,
+not as the umbrella headline. See `docs/PROFILE.md` for the canonical copy.
 
 **Typography**
 - Body: system UI sans stack (`system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif`). No webfont download by default.

@@ -2,9 +2,9 @@
 
 {% block main %}
 <header class="prose home-header">
-  <p class="eyebrow">AI engineer · creative technologist · Berlin</p>
+  <p class="eyebrow">{{ config.extra.short_description }} · Berlin</p>
   <h1>{{ section.title }}</h1>
-  <p class="home-tagline">{{ config.description }}</p>
+  <p class="home-tagline">{{ section.extra.tagline }}</p>
 </header>
 
 <div class="prose">

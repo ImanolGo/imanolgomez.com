@@ -1,6 +1,6 @@
 # imanolgomez.com
 
-Personal site and portfolio of Imanol Gómez — edge AI deployment, from real-time hardware to automotive AI accelerators.
+Personal site and portfolio of Imanol Gómez — technical lead & AI engineer, building reliable software across AI, embedded systems and creative technology.
 
 Built with [Zola](https://www.getzola.org/) — static HTML, no JavaScript framework, no tracking. Deployed to GitHub Pages.
 
@@ -16,6 +16,13 @@ zola check     # build + link check
 Pushing to `main` deploys automatically via `.github/workflows/deploy.yml`.
 
 ## Adding content
+
+### Home page positioning
+`config.toml` holds the site-wide `description` (metadata) and `extra.short_description`
+(professional headline, also used in the home page title and eyebrow). `content/_index.md`
+holds the home page introduction and `extra.tagline`, the short statement below the name.
+Keep its front-matter `description` aligned with the site description. The actual current
+job title stays in `config.toml` → `extra.job_title` for structured data and in the experience data.
 
 Zola 0.23 removed shortcodes. Reusable markup lives in `templates/components.html` as
 [Tera components](https://keats.github.io/tera/#components), and they can be called from Markdown as
