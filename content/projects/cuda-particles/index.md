@@ -3,14 +3,14 @@ title = "CUDA particles: Particle Atlas"
 template = "projects/page.html"
 description = "Learning CUDA through six small lessons and an interactive particle artwork with glowing trails."
 date = 2026-01-01
-weight = 150
+weight = 60
 [taxonomies]
 tags = ["gpu", "creative-code"]
 [extra]
 period = "2026"
 org = "Open source"
 role = "Personal project"
-featured = false
+featured = true
 confidential = false
 cover = "cover.jpg"
 cover_alt = "Particle Atlas drawing a luminous spiral of cyan and amber particles against a dark background"

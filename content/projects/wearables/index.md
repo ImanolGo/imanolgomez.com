@@ -3,7 +3,7 @@ title = "Light-emitting wearables"
 template = "projects/page.html"
 description = "Driver firmware and visuals for LED wearables and fashion-tech pieces, from the driver board to the runway."
 date = 2015-01-01
-weight = 60
+weight = 150
 [taxonomies]
 tags = ["wearables", "lighting", "embedded"]
 [extra]
@@ -11,7 +11,7 @@ period = "Jan 2016 – Dec 2018"
 org = "ElektroCouture"
 location = "Berlin"
 role = "Software Engineer – Wearable Technology"
-featured = true
+featured = false
 confidential = false
 cover = "cover.jpg"
 cover_alt = "A model wearing a floor-length light-emitting garment with LEDs tracing the fabric"
