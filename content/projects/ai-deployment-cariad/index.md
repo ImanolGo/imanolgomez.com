@@ -14,11 +14,11 @@ role = "Senior ML Software Engineer → Head of AI Deployment"
 featured = true
 confidential = true
 cover = "cover.jpg"
-cover_alt = "Public CARIAD–Bosch illustration of a car surrounded by sensor fields on a road"
+cover_alt = "Overhead view of a car at a road junction with green sensor rings extending towards pedestrians"
 cover_public = true
-cover_caption = "Public CARIAD–Bosch press image, published on CARIAD's website. Used as context for the Automated Driving Alliance."
+cover_caption = "Image: CARIAD, published with Luxoft's CARIAD announcement. Public illustration used for context."
 stack = ["Python", "Qualcomm NPU", "ISO 26262", "embedded systems", "automotive standards"]
-links = [{ label = "CARIAD–Bosch announcement and image source", url = "https://cariad.technology/de/en/news/stories/bosch-cariad-partnership-automated-driving.html" }]
+links = [{ label = "CARIAD–Bosch announcement", url = "https://cariad.technology/de/en/news/stories/bosch-cariad-partnership-automated-driving.html" }, { label = "Image source (Luxoft)", url = "https://www.luxoft.com/pr/vws-cariad-taps-luxoft-for-futureoriented-incar-software-solutions" }]
 +++
 
 ## Context

@@ -1,5 +1,15 @@
 # QA pass
 
+## Preferred CARIAD image
+
+Replaced the CARIAD–Bosch cover with Imanol's preferred
+`luxoft-and-cariad-16-9.webp`, credited to CARIAD with a link to Luxoft's announcement.
+The confidentiality note remains. Build and link checks pass without warnings.
+Home, Work and the case study passed 36 viewport/theme/JavaScript combinations at
+360/768/1280 px, with no overflow or third-party requests. The new cover loaded in
+each combination, and the mobile screenshot was inspected. The largest HTML + CSS
+page is Work at 49,939 bytes. Production HTML contains no TODO placeholders.
+
 ## Public CARIAD cover correction
 
 Imanol clarified that the supplied CARIAD images are published on CARIAD's website.

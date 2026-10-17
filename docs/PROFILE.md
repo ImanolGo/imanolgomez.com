@@ -13,7 +13,8 @@ Imanol confirmed that the supplied media may be published. Keep known credits; r
 photographer credits before launch. Bentley, Hyundai and unidentified Studio Waldemeyer projects
 remain excluded until their names and Imanol's role are confirmed. Imanol confirmed that the
 CARIAD reference images come from CARIAD's public website and requested their use. The
-CARIAD–Bosch press image is approved as a contextual cover, with attribution and a source link;
+public image `Cariad/luxoft-and-cariad-16-9.webp` is his preferred contextual cover, with
+attribution to CARIAD and a link to Luxoft's announcement;
 the case study remains confidential and shows no internal material.
 
 ## Identity

@@ -11,7 +11,8 @@ later. He also asked that public pages use verified facts, with optional questio
 kept here instead of visible placeholders. The two confirmed publications remain in
 the CV; the unnamed third publication is still unresolved.
 
-The home page keeps its existing six selected projects. New experiments appear on
+The home page shows six selected projects, with CUDA particles replacing wearables.
+Wearables remains on Work. New experiments appear on
 Work, their tag pages and their own case-study pages. The three terminal apps share
 one case study. EMMA-VLM redirects the old `/projects/emma-claude/` URL.
 
@@ -46,17 +47,22 @@ timing is preserved to the nearest 20 FPS frame. The two source-film excerpts ar
 | Neurospaces | `Neurospaces/59-Figure4-1.webp`, `12-Figure1.1-1.webp` | Software and brain visualizations; figure/publication credits pending. |
 | On-device assistant | `~/repos/rover-assistant/assets/images/jetson-rover-ai-assistant.jpg` | Hardware photo from the repo README. The page distinguishes this rover from the older ROS 2 pipeline. |
 
-The CARIAD–Bosch reference image is used as a public contextual cover on the confidential
-case study and its cards, following Imanol's clarification that it comes from CARIAD's website.
-Source: https://cariad.technology/de/en/news/stories/bosch-cariad-partnership-automated-driving.html.
-The supplied file is `Cariad/cariad-bosch-pressemotiv-final-highres-clean-1200.jpeg`.
-The confidentiality note remains; no internal material is shown. The Luxoft image is not used.
+Imanol selected `Cariad/luxoft-and-cariad-16-9.webp` as the public contextual cover for
+the confidential CARIAD case study and its cards, replacing the CARIAD–Bosch illustration.
+Source: https://www.luxoft.com/pr/vws-cariad-taps-luxoft-for-futureoriented-incar-software-solutions.
+The matching press release credits the illustration to CARIAD:
+https://www.prnewswire.com/news-releases/vws-cariad-taps-luxoft-for-future-oriented-in-car-software-solutions-301553401.html.
+The image is general context, not a claim that Imanol worked on the Luxoft partnership.
+The confidentiality note remains; no internal material is shown.
 Bentley, Hyundai and unidentified Studio Waldemeyer photos/recordings are
 held back until the project names, roles and public naming permission are confirmed.
 Unused alternate photos remain in Downloads; they have not been copied into the site.
 
 ## Still to collect
 
+- Legal review and the details needed to finish the draft Impressum and privacy
+  pages: an appropriate public business/c/o address, applicable operator details,
+  and email-provider and retention information. Do not publish a private home address.
 - The missing media credits listed above.
 - Full citation for the third publication: title, authors, venue and date.
 - EMMA-VLM evaluation findings, if there are results worth publishing. The current
