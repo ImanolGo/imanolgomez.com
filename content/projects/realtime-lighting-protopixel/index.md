@@ -24,10 +24,10 @@ Replace the marked placeholders with real copy and photos.
 
 ## Context
 
-ProtoPixel, contract, January 2017 – August 2020, as **Software Engineer – Real-Time
-Hardware**. The work covered firmware for real-time (smart lighting) hardware products
-and OpenGL / GPU-based generative content, alongside a public-facing role as tech and
-design evangelist.
+I worked with ProtoPixel on contract from January 2017 to August 2020 as a
+Software Engineer – Real-Time Hardware. I built firmware for real-time smart
+lighting products and OpenGL / GPU-based generative content. I also worked as a
+tech and design evangelist.
 
 Three case studies are public: *Designing the Ultimate Club Experience*, *Bringing
 Dynamism to a Creative Space*, and *Primavera Sound's First Smart Stage* — smart

@@ -23,30 +23,27 @@ TODO(imanol): exhibition photos — there is nothing publishable in docs/PROFILE
 
 ## Context
 
-Three years as a **Creative Engineer** at Ars Electronica in Linz, building interactive
-and new-media installations for the center and its partners. The flagship piece was
-**GeoPulse**, a platform for accessible visualization of spatial data, of which I was
-the lead developer. Other work included Techkriti 2012's "Brain Battle" and exhibits
-for MED-EL's Audioversum.
+I spent three years as a Creative Engineer at Ars Electronica in Linz, building
+interactive and new-media installations for the center and its partners. I was
+lead developer of GeoPulse, a platform for accessible visualization of spatial data.
+Other work included Techkriti 2012's "Brain Battle" and exhibits for MED-EL's Audioversum.
 
 ## The problem
 
-Museum exhibits have a brutal specification. They run for a full day, seven days a
-week, for years, with a general public that includes small children, and they have to
-be legible to someone who stops walking for eight seconds. Any interface that needs
-instructions has already failed.
+Museum exhibits need to run for a full day, seven days a week, for years. Visitors
+include small children, and the interface has to make sense to someone who stops
+for eight seconds, without requiring instructions.
 
-For GeoPulse specifically, the data was geospatial and the audience was not: the
-challenge was making spatial datasets — the kind normally read through a GIS tool by a
-specialist — immediately graspable, and doing it at a frame rate that feels alive.
+For GeoPulse, I had to make spatial datasets understandable to visitors who did
+not use specialist GIS tools, while keeping the visualization responsive.
 
 ## What I did
 
 - Led development of **GeoPulse**, the spatial-data visualization platform.
 - Built the interactive and computer-vision software for the center's installations and
   partner exhibits (C++, Python, OpenGL, OpenCV).
-- Worked on exhibits end to end: concept, implementation, and the unglamorous
-  hardening that lets a piece run untended.
+- Worked on exhibits from concept and implementation through the reliability work
+  needed to run them unattended.
 
 ## Outcome
 

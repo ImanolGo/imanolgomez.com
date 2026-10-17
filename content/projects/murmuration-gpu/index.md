@@ -25,31 +25,29 @@ simulation does not do it justice.
 ## Context
 
 A personal project: `murmuration-gpu`, a starling-flock simulation written in Rust and
-rendered with **wgpu**, running up to millions of birds in real time. There is a
-terminal companion too — `murmuration`, a text-mode version modelled on the same
+rendered with wgpu, running up to millions of birds in real time. There is a
+terminal companion too: `murmuration`, a text-mode version modelled on the same
 flocking research.
 
-It is a deliberate callback: years ago I built the show software for *Murmur*, a dance
-piece about exactly this — how a flock behaves as one body. This time the constraint
-is not a theatre but the frame budget.
+Years ago I built the show software for *Murmur*, a dance piece about how a flock
+behaves as one body. This project returns to that subject through a simulation,
+with the number of birds limited by the frame budget.
 
 ## The problem
 
-A murmuration is a worst-case workload for the naive approach: every bird interacts
-with its neighbours, so the cost is quadratic and the data has to cross the CPU/GPU
-boundary every frame. Millions of agents at interactive frame rates only works if the
-neighbour search, the state update and the draw call all stay resident on the GPU, and
-if the memory layout is built for the access pattern rather than for the programmer's
-convenience.
+A naive neighbour search has a quadratic cost. Moving simulation data between the
+CPU and GPU every frame adds transfer overhead. To simulate millions of birds at
+interactive frame rates, I kept the neighbour search, state updates and rendering
+on the GPU, with a memory layout suited to those access patterns.
 
 ## What I did
 
 - Wrote the flocking simulation in Rust, with the per-agent state and the neighbour
   search on the GPU.
-- Rendered through **wgpu** (WGSL compute and render pipelines), so the same code path
+- Rendered through wgpu (WGSL compute and render pipelines), so the same code path
   targets Vulkan, Metal and DX12.
-- Kept simulation parameters tweakable at runtime, because the interesting part of
-  flocking is the parameter space, not any single run.
+- Kept simulation parameters tweakable at runtime to explore how they change the
+  flock's behaviour.
 
 ## Outcome
 

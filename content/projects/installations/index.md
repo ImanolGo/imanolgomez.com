@@ -40,22 +40,20 @@ these I built LED-mapping tools for the designer Moritz Waldemeyer
 
 ## The problem
 
-Installations are delivered once and then run unattended for weeks, in a room with
-visitors who will touch, lean on and unplug everything. The software has to survive
-that without a technician: recover from a crashed camera, calibrate for the actual
-light in the room, and keep running on hardware that was specified before anyone knew
-what the piece would be.
+Installations may run unattended for weeks. Visitors can touch, lean on or unplug
+equipment, so the software needs to recover from interruptions without a technician.
+It also has to handle camera failures and calibrate for the room's lighting,
+using hardware that may have been specified before the piece was fully defined.
 
-Commissioning is also where the real work hides. The brief is a mood board; the
-installation is a large physical object that has to be mapped, aligned and tuned in
-minutes before the doors open.
+A brief might start as a mood board. At the venue, the physical installation has
+to be mapped, aligned and tuned, sometimes with only minutes before the doors open.
 
 ## What I did
 
 - Built the interactive and computer-vision software (C++, Python, OpenGL, OpenCV) and
   the hardware that drove it.
-- Developed production software for **permanent exhibitions**, where "restart it" is
-  not an option.
+- Developed production software for permanent exhibitions that needed to run
+  without manual restarts.
 - Wrote the LED-mapping and calibration tooling that mapped 3D models onto physical
   light objects and exported them to the lighting hardware.
 - Was lead developer of **GeoPulse**, a spatial-data visualization platform at Ars

@@ -23,40 +23,37 @@ TODO(imanol): add a screenshot of the game or of the evaluation dashboard.
 
 ## Context
 
-`alibi` is a murder-mystery game with an unusual cast: **every suspect is an LLM
-agent**. It is also the piece of my own work that best shows how I think about agentic
-systems — the game is almost incidental to the engineering.
+In `alibi`, every suspect is an LLM agent. I use the murder-mystery game to work on
+agent memory, tool use and evaluation.
 
 The suspects are LangGraph state machines running a
-**retrieve → think → act → remember** loop, with long-term memory in
+retrieve → think → act → remember loop, with long-term memory in
 PostgreSQL/pgvector. The player interrogates them; each character has its own secret,
 its own incentive to lie, and code-enforced limits on what it is allowed to reveal.
 
 ## The problem
 
-Agent demos are easy; agent *products* are not. Three problems get in the way, and all
-three are evaluation problems before they are prompting problems:
+The characters need to stay consistent across turns and keep their secrets when a
+player tries to extract them. Prompt instructions alone are not enough to control
+what they reveal.
 
-1. **Grounding.** A character that contradicts itself two turns apart breaks the
-   illusion instantly, and a naive prompt makes that likely.
-2. **Information control.** A suspect must not leak the solution, and this cannot be
-   left to the prompt — the model will happily comply with a clever player.
-3. **Knowing whether it works.** "It feels better" is not a measure. Accuracy, safety,
-   latency and cost all need to be numbers, on every commit.
+I needed evaluations that could catch contradictions and information leaks, and
+measure accuracy, safety, latency and cost on every commit. That also gave me a way
+to check whether a prompt change actually improved the game.
 
 ## What I did
 
-- Modelled each suspect as a **LangGraph state machine**, with RAG memory in
-  PostgreSQL/pgvector and **code-enforced access control** over sensitive
-  information — the model is never the last line of defence.
-- Exposed the application as an **MCP server**, so any MCP client can call its tools,
+- Modelled each suspect as a LangGraph state machine, with RAG memory in
+  PostgreSQL/pgvector. Code enforces access to sensitive information independently
+  of the model's instructions.
+- Exposed the application as an MCP server, so any MCP client can call its tools,
   with structured outputs (Pydantic) and validation and repair loops.
 - Built a FastAPI + HTMX web interface, deployed with Docker Compose.
-- Built an **evaluation framework** around it: an automated tool-using agent that plays
-  the game, plus an LLM judge, running a 20-round evaluation with **CI quality gates**
+- Built an evaluation framework around it: an automated tool-using agent that plays
+  the game, plus an LLM judge, running a 20-round evaluation with CI quality gates
   on accuracy, safety, cost and agreement with a human labeller.
-- Fine-tuned a **DistilBERT** classifier and exported it to ONNX as a cheap local judge.
-- Instrumented every agent step and LLM call with **OpenTelemetry** in Arize Phoenix,
+- Fine-tuned a DistilBERT classifier and exported it to ONNX as a cheap local judge.
+- Instrumented every agent step and LLM call with OpenTelemetry in Arize Phoenix,
   with token, cost and latency accounting and a daily spend cap.
 
 ## Outcome

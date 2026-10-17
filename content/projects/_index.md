@@ -10,6 +10,5 @@ description = "Selected work in applied AI, embedded software and creative techn
 sort_by = "weight"
 +++
 
-AI systems, medical devices, lighting products and live performance: different settings
-for the same hands-on approach, from idea to working software. Professional work sits
-alongside personal projects in LLM agents, robotics and real-time graphics.
+I've built software for AI systems, medical devices, lighting products and live
+performance. My personal projects include LLM agents, robotics and real-time graphics.

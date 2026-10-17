@@ -33,12 +33,12 @@ Keep the first screen accessible to a non-specialist, with technical detail in t
 > and medical devices to interactive installations.
 
 **Short bio:**
-> Imanol Gómez is a technical lead and AI engineer based in Berlin, with 15+ years building
-> production software across automotive AI, medical devices and interactive installations.
-> As Head of AI Deployment at CARIAD, part of the Volkswagen Group, he leads 12 engineers
-> bringing AI models to automotive hardware. His background spans hands-on development,
-> team leadership, customer collaboration and teaching. Outside work, he builds LLM agents,
-> on-device robot assistants and real-time graphics.
+> Imanol Gómez is a technical lead and AI engineer based in Berlin. He has spent 15+ years
+> building production software for automotive AI, medical devices and interactive
+> installations. He is Head of AI Deployment at CARIAD, part of the Volkswagen Group,
+> where he leads 12 engineers bringing AI models to automotive hardware. He works directly
+> with customers and engineering teams, and has taught and run workshops. Outside work,
+> he builds LLM agents, on-device robot assistants and real-time graphics.
 
 Use **Head of AI Deployment** as the factual current role, not the umbrella identity.
 Use **creative technologist** for the freelance work and creative background, not as the

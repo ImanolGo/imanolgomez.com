@@ -25,26 +25,25 @@ TODO(imanol): add tour photos or a still from the piece.
 
 **Murmur** is a multimedia dance work by Aakash Odedra with the choreographer Lewis
 Major. I wrote the show software and then travelled with it, operating it live on a
-world tour between 2014 and 2018 — the same two pieces of code in a new theatre every
-few weeks.
+world tour between 2014 and 2018. I used the same two pieces of code in a new theatre
+every few weeks.
 
 ## The problem
 
-Theatre is the least forgiving deployment target there is. There are no second takes,
-no logs anyone will read mid-show, no way to tell the audience to wait while the
-renderer restarts. The projection surface is a moving dancer, the stage is whatever
-size the venue happens to have, and you get one technical rehearsal in the room to
-make the mapping line up.
+The software had to run throughout a performance without stopping to inspect logs
+or restart the renderer. There were no second takes. The projection surface was
+a moving dancer, and stage sizes varied between venues. I had one technical
+rehearsal in each room to get the mapping aligned.
 
-That means the software has to be calibratable fast, deterministic once calibrated,
-and recoverable by a single person under time pressure, from a laptop, in a dark
-theatre.
+Calibration had to be quick and the results repeatable. If something went wrong,
+I had to be able to recover it alone from a laptop in a dark theatre, under time
+pressure.
 
 ## What I did
 
 - Wrote the multimedia rendering software for the piece (`MurmurRenderer`).
-- Built the floor tracking (`MurmurFloorTracking`), so the visuals respond to where the
-  performer actually is rather than following a fixed timeline.
+- Built the floor tracking (`MurmurFloorTracking`), so the visuals respond to the
+  performer's position instead of following a fixed timeline.
 - Set up and tuned the projection mapping at each venue, and drove the show live
   through the run.
 - Kept the whole thing running on tour hardware for years.

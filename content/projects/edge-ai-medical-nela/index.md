@@ -24,35 +24,34 @@ docs/PROFILE.md.
 
 ## Context
 
-Almost three years at NELA (Carepath Technologies GmbH), building **NELA Cough**: a
-system for tele-monitoring and self-management of patients with chronic diseases.
-I joined as an AI Software Engineer and left as Senior IoT Engineer, which means I
-saw it from the first model to production hardware in the hands of patients.
+I spent almost three years at NELA (Carepath Technologies GmbH), building NELA Cough,
+a system for tele-monitoring and self-management of patients with chronic diseases.
+I joined as an AI Software Engineer and left as Senior IoT Engineer, working on the
+product from the first model to production hardware used by patients.
 
-This is a **regulated medical device** environment: IEC 60601, traceability, and
-clinical stakeholders who have to be able to defend every decision.
+The work involved IEC 60601 requirements, traceability and clinical stakeholders
+in a regulated medical device environment.
 
 ## The problem
 
 The product has to detect and characterise a cough from a device in a patient's home.
-That puts the interesting constraint on the wrong side of the network: the audio
-cannot be shipped to a server continuously, the MCU has limited compute, and the
-model has to behave predictably on a device that is never going to be debugged by
-its owner.
+The audio cannot be sent continuously to a server, so the model has to run
+predictably within the MCU's limited compute budget. Patients cannot be expected
+to debug it.
 
-Add a perpetual tension — clinical requirements arriving as prose, hardware suppliers
-changing their timelines, and a device that eventually has to pass certification.
+Clinical requirements arrived as prose, and hardware suppliers' timelines could
+change. The device also had to meet certification requirements.
 
 ## What I did
 
-- Led development of AI models for medical applications, and their **real-time
-  deployment on edge devices and MCUs**.
+- Led development of AI models for medical applications, and their real-time
+  deployment on edge devices and MCUs.
 - Owned the IoT system architecture end to end: requirements, hardware and software
   design, and firmware, from prototype to series production.
-- Built out the cloud side on **Azure IoT**, and production firmware for the devices.
+- Built the cloud back end on Azure IoT, and production firmware for the devices.
 - Worked directly with customers, partners and external medical hardware suppliers on
   integration and deployment issues, and wrote the demos and technical documentation
-  that let them get unstuck.
+  to support that work.
 
 ## Outcome
 

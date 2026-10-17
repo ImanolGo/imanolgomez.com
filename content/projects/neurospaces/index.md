@@ -21,11 +21,10 @@ links = []
 
 ## Context
 
-Where my career starts. During a Master's in Sound and Music Computing at Universitat
-Pompeu Fabra, and for a few years afterwards, I worked on **sonification**: using sound
-rather than colour to make scientific data legible. The subject was brain data — fMRI
-volumes — and the output was *Neurospaces*, a musical composition in 3D audio, plus the
-tooling that produced it.
+During my Master's in Sound and Music Computing at Universitat Pompeu Fabra, and
+for a few years afterwards, I worked on sonification: using sound rather than
+colour to represent scientific data. I worked with fMRI brain volumes to produce
+*Neurospaces*, a musical composition in 3D audio, and the tools behind it.
 
 Two peer-reviewed publications came out of it:
 
@@ -35,15 +34,14 @@ Two peer-reviewed publications came out of it:
 
 ## The problem
 
-The premise of sonification is that the ear is better than the eye at some things —
-spotting change over time, hearing a pattern in a dense signal. Getting that to work
-means making design decisions that are more like composition than like charts: which
-dimension of the data becomes pitch, which becomes position, what the listener's
-expectation does to their reading of the result. Get it wrong and you have made a
-very elaborate alarm, not a tool.
+Sound can make changes over time and patterns in dense signals easier to notice.
+The mapping determines what a listener can hear: which data dimension controls
+pitch, which controls position, and how expectations affect their interpretation.
+A poor mapping can leave the data difficult to understand despite an elaborate
+audio treatment.
 
-Doing it in 3D audio raises the stakes: spatialization is expensive, the perceptual
-cues for elevation are weak, and the source data is large.
+In 3D audio, spatialization adds computational cost. Perceptual cues for elevation
+are weak, and the source fMRI data is large.
 
 ## What I did
 
