@@ -146,15 +146,16 @@
 {#
   Project card. The whole card is a single link. `period`, `org` and `tags` make
   the mono meta row; empty ones are simply dropped. Without a cover the card
-  is deliberately typographic. Confidential cards never render media. `level` keeps the
+   is deliberately typographic. Confidential cards only show explicitly approved public covers. `level` keeps the
   heading order valid: 3 under "Selected work" on the home page, 2 everywhere the
   grid sits directly under the h1.
 #}
-{% component project_card(title, url, cover="", cover_alt="", description="", period="", org="", tags="", level=3, confidential=false, lead=false) -%}
-{%- if cover and not confidential and cover_alt == "" -%}{{ throw(message="project_card: a cover requires meaningful `cover_alt`") }}{%- endif -%}
-<li class="card{% if lead %} card--lead{% endif %}{% if not cover or confidential %} card--text{% endif %}">
+{% component project_card(title, url, cover="", cover_alt="", description="", period="", org="", tags="", level=3, confidential=false, cover_public=false, lead=false) -%}
+{%- set show_cover = cover and (not confidential or cover_public) -%}
+{%- if show_cover and cover_alt == "" -%}{{ throw(message="project_card: a cover requires meaningful `cover_alt`") }}{%- endif -%}
+<li class="card{% if lead %} card--lead{% endif %}{% if not show_cover %} card--text{% endif %}">
   <a class="card__link" href="{{ url }}">
-    {%- if cover and not confidential %}
+    {%- if show_cover %}
       {%- set c_webp = resize_image(path=cover, width=900, height=600, op="fill", format="webp", quality=80) -%}
       {%- set c_auto = resize_image(path=cover, width=900, height=600, op="fill", format="auto", quality=80) -%}
     <picture>
@@ -175,7 +176,7 @@
       </p>
       {%- endif %}
       {% if confidential %}<p class="card__note">Public role &amp; scope. No internal material.</p>{% endif %}
-      <span class="card__cta" aria-hidden="true">Read case study {{ <icon name="external" /> }}</span>
+      <span class="card__cta" aria-hidden="true">Read case study</span>
     </div>
   </a>
 </li>

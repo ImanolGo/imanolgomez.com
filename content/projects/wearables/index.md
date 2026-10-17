@@ -13,14 +13,13 @@ location = "Berlin"
 role = "Software Engineer – Wearable Technology"
 featured = true
 confidential = false
-cover = ""
-cover_alt = ""
+cover = "cover.jpg"
+cover_alt = "A model wearing a floor-length light-emitting garment with LEDs tracing the fabric"
 stack = ["microcontrollers", "embedded systems", "C++"]
 links = []
 +++
 
-TODO(imanol): add photos of the pieces — FireFly, Nuit Blanche, Marlene or the Norma
-dresses.
+Photo: Andreas Waldschuetz for ElektroCouture.
 
 ## Context
 
@@ -54,12 +53,9 @@ sometimes only hours before a show.
   being worn, including the Forster Rohner LED textile work behind **Marlene**.
 - Mentored on fashion-tech projects and workshops.
 
-## Outcome
-
-TODO(imanol): which pieces shipped or were shown where, and anything you can say about
-audience numbers or clients.
-
 ## Stack & notes
+
+{{ <figure src="projects/wearables/light-painting.jpg" alt="A figure in a long-exposure fashion photograph surrounded by flowing multicoloured light trails" caption="Light-painting fashion work with Anja Dragan." /> }}
 
 Microcontrollers · embedded systems · C++.
 

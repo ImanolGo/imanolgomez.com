@@ -18,11 +18,5 @@ authors = "With co-authors."
 url = ""
 notes = ""
 
-[[publications]]
-title = "TODO(imanol): third publication"
-venue = ""
-location = ""
-date = ""
-authors = ""
-url = ""
-notes = "TODO(imanol): PROFILE.md mentions a third publication but does not name it."
+# A third publication is mentioned in PROFILE.md but has no confirmed details.
+# Keep it out of the CV until Imanol supplies the citation; see docs/CONTENT.md.

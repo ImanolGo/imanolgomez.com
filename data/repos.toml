@@ -2,45 +2,15 @@
 # `group` in the order below. Blurbs are the repos' own descriptions, taken from
 # docs/PROFILE.md — repos that need confirmation or have no description are left
 # out on purpose (docs/PROFILE.md "Do not feature" and its README caveat).
-
-[[repo]]
-name = "local-ai-robot-assistant"
-url = "https://github.com/ImanolGo/local-ai-robot-assistant"
-year = "2025–26"
-lang = "Python"
-blurb = "Fully on-device AI robot assistant on an NVIDIA Jetson Orin Nano."
-group = "Edge AI & systems"
-
-[[repo]]
-name = "rover-assistant"
-url = "https://github.com/ImanolGo/rover-assistant"
-year = "2026"
-lang = "Python"
-blurb = "Voice and vision assistant for a Jetson Orin Nano rover — fully on-device, no cloud."
-group = "Edge AI & systems"
-
-[[repo]]
-name = "emma-claude"
-url = "https://github.com/ImanolGo/emma-claude"
-year = "2024"
-lang = "Python"
-blurb = "EMMA (end-to-end multimodal driving) implemented with the Claude API."
-group = "Edge AI & systems"
+# Alibi, Rover Assistant and EMMA-VLM already have case studies above this list.
+# The older local-ai-robot-assistant repository is private, so it is not linked.
 
 [[repo]]
 name = "ADAS-Projects-In-Rust"
 url = "https://github.com/ImanolGo/ADAS-Projects-In-Rust"
 year = "2023"
 lang = "Rust"
-blurb = "ADAS feature implementations in Rust, for performance and safety."
-group = "Edge AI & systems"
-
-[[repo]]
-name = "alibi"
-url = "https://github.com/ImanolGo/alibi"
-year = "2026"
-lang = "Python"
-blurb = "Murder-mystery game where each suspect is an LLM agent: LangGraph, MCP, pgvector RAG, CI evals."
+blurb = "Seven ADAS learning activities in Rust, ending in an integrated dashcam demo with ONNX inference."
 group = "Edge AI & systems"
 
 [[repo]]
@@ -48,7 +18,7 @@ name = "murmuration-gpu"
 url = "https://github.com/ImanolGo/murmuration-gpu"
 year = "2026"
 lang = "Rust"
-blurb = "GPU starling-flock simulation rendering up to millions of birds in real time with wgpu."
+blurb = "Research-inspired starling flock in Rust and wgpu, with an 8,000-bird interactive default."
 group = "GPU & creative code"
 
 [[repo]]
@@ -57,7 +27,7 @@ url = "https://github.com/ImanolGo/murmuration"
 year = "2026"
 lang = "Rust"
 blurb = "Terminal starling-flock simulation modelled on murmuration research."
-group = "GPU & creative code"
+group = "Terminal interfaces"
 
 [[repo]]
 name = "cuda-particles"
@@ -73,7 +43,7 @@ url = "https://github.com/ImanolGo/overflight"
 year = "2026"
 lang = "Rust"
 blurb = "Terminal app showing planes overhead as a live sky from real-time data."
-group = "GPU & creative code"
+group = "Terminal interfaces"
 
 [[repo]]
 name = "procquarium"
@@ -81,14 +51,14 @@ url = "https://github.com/ImanolGo/procquarium"
 year = "2026"
 lang = "Rust"
 blurb = "Terminal aquarium showing running processes as fish."
-group = "GPU & creative code"
+group = "Terminal interfaces"
 
 [[repo]]
 name = "Visual-Whispers"
 url = "https://github.com/ImanolGo/Visual-Whispers"
 year = "2024"
 lang = "TypeScript"
-blurb = "AI art \"telephone\": images described and re-imagined through different personas."
+blurb = "Picture telephone: an image model paints, a character describes it, and that description starts the next round."
 group = "GPU & creative code"
 
 [[repo]]

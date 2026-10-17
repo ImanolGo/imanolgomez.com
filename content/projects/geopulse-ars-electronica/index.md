@@ -13,13 +13,11 @@ location = "Linz"
 role = "Creative Engineer"
 featured = false
 confidential = false
-cover = ""
-cover_alt = ""
+cover = "cover.jpg"
+cover_alt = "Visitors exploring a large circular map table surrounded by projected spatial data at Ars Electronica"
 stack = ["C++", "Python", "OpenGL", "OpenCV"]
 links = []
 +++
-
-TODO(imanol): exhibition photos — there is nothing publishable in docs/PROFILE.md.
 
 ## Context
 
@@ -45,10 +43,11 @@ not use specialist GIS tools, while keeping the visualization responsive.
 - Worked on exhibits from concept and implementation through the reliability work
   needed to run them unattended.
 
-## Outcome
-
-TODO(imanol): how long GeoPulse ran, visitor numbers, or any awards or coverage.
-
 ## Stack & notes
+
+{% <gallery> %}
+projects/geopulse-ars-electronica/geopulse.jpg | Printed maps and a tablet at the GeoPulse exhibit | GeoPulse at Ars Electronica Center.
+projects/geopulse-ars-electronica/audioversum.jpg | Visitors interacting with illuminated vertical rods in an Audioversum exhibit | Interactive exhibit at MED-EL's Audioversum.
+{% </gallery> %}
 
 C++ · Python · OpenGL · OpenCV.

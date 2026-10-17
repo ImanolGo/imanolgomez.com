@@ -29,9 +29,9 @@
 {%- endif -%}
 
 {#- Social image: the page's own cover, cropped to the 1.91:1 card ratio, or the
-    typographic default. Confidential pages never expose an image. -#}
+    typographic default. Confidential pages only expose explicitly approved public covers. -#}
 {%- set cover = "" -%}
-{%- if page and not page.extra?.confidential -%}
+{%- if page and (not page.extra?.confidential or page.extra?.cover_public) -%}
   {%- set cover = page.extra?.cover or "" -%}
 {%- endif -%}
 {%- if cover -%}

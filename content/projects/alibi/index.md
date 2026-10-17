@@ -13,13 +13,13 @@ location = ""
 role = "Personal project"
 featured = true
 confidential = false
-cover = ""
-cover_alt = ""
+cover = "cover.jpg"
+cover_alt = "Alibi's detective board with suspect cards, collected evidence, an interrogation and the story clock"
 stack = ["Python", "LangGraph", "pgvector", "MCP", "FastAPI", "LiteLLM", "OpenTelemetry"]
 links = [{ label = "GitHub", url = "https://github.com/ImanolGo/alibi" }]
 +++
 
-TODO(imanol): add a screenshot of the game or of the evaluation dashboard.
+The screenshots on this page use a test case with scripted answers.
 
 ## Context
 
@@ -65,6 +65,8 @@ to check whether a prompt change actually improved the game.
   **40 ms** per prediction instead of **7.7 s**.
 
 ## Stack & notes
+
+{{ <figure src="projects/alibi/reveal.jpg" alt="Alibi's reveal screen showing the detective's rank, missed clues and the true timeline" caption="The reveal explains what happened and which clues the player missed." /> }}
 
 Python · LangGraph · pgvector · MCP · FastAPI · HTMX · LiteLLM · OpenTelemetry ·
 Arize Phoenix · Docker Compose · ONNX.

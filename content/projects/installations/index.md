@@ -1,42 +1,44 @@
 +++
 title = "Light & interactive installations"
 template = "projects/page.html"
-description = "Facades, kinetic light and computer-vision pieces for museums, brands and events."
+description = "Software and hardware for light installations, including work for Studio Waldemeyer and earlier museum exhibits."
 date = 2014-07-01
 weight = 70
 [taxonomies]
 tags = ["installations", "lighting", "computer-vision"]
 [extra]
 period = "2011 – 2018"
-org = "Freelance & Ars Electronica"
+org = "Studio Waldemeyer / freelance"
 location = "Berlin & international"
 role = "Creative technologist"
 featured = false
 confidential = false
-cover = ""
-cover_alt = ""
+cover = "journey-of-colour.jpg"
+cover_alt = "Journey of Colour light sculpture with coloured octagonal outlines, a camera and colour samples in front"
 stack = ["C++", "Python", "OpenGL", "OpenCV", "DMX", "openFrameworks"]
 links = []
 +++
 
-TODO(imanol): add photos of the installations — they are the whole point of this page.
-
 ## Context
 
-The installations in this list span two stretches: **Ars Electronica** in Linz
-(2011 – 2014), where I built interactive computer-vision pieces as a Creative
-Engineer, and my freelance years in Berlin (2014 – 2018), delivering projects for
-brands, museums and events.
+Most of my freelance light and interactive installation work was made for Studio
+Waldemeyer, Moritz Waldemeyer's studio. I worked on the software, LED mapping and
+hardware that brought the studio's designs into a working installation.
+
+This page also includes independent projects from my freelance years. My earlier
+museum work in Linz has its own [Ars Electronica case study](@/projects/geopulse-ars-electronica/index.md).
 
 Some of the pieces: **Stella Rinascente** (Rome, 2017), a Christmas facade
 installation for Rinascente's flagship store by Studio Waldemeyer with Slamp;
 **Journey of Colour**, where a camera reads an object's colour palette and projects it
-onto a light sculpture; **TheOther**, a particle-projection piece on emerging
+onto a light sculpture, also for Studio Waldemeyer; **TheOther**, a particle-projection piece on emerging
 cosmology theories shown at the Havana Biennial 2015; and **re.show**, a
 dance-theatre premiere for the kontrastmoment agency's 15th anniversary. Alongside
 these I built LED-mapping tools for the designer Moritz Waldemeyer
 (`LedMapper`, `WinchesLightPainting`) and software for Ingo Maurer's Light + Building
 2018 installation.
+
+{{ <video src="projects/installations/journey-of-colour.mp4" poster="projects/installations/journey-of-colour.jpg" alt="Journey of Colour translating the colours of objects in front of a camera into light around a wall of geometric shapes" caption="Journey of Colour, Studio Waldemeyer. A silent excerpt from the supplied project film." /> }}
 
 ## The problem
 
@@ -56,14 +58,7 @@ to be mapped, aligned and tuned, sometimes with only minutes before the doors op
   without manual restarts.
 - Wrote the LED-mapping and calibration tooling that mapped 3D models onto physical
   light objects and exported them to the lighting hardware.
-- Was lead developer of **GeoPulse**, a spatial-data visualization platform at Ars
-  Electronica Center.
 - Handled delivery end to end, from an ambiguous brief to a tuned, running piece.
-
-## Outcome
-
-TODO(imanol): which pieces ran longest or reached the most visitors, and any client you
-are happy to name beyond the ones in docs/PROFILE.md.
 
 ## Stack & notes
 

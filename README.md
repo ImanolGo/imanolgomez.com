@@ -39,10 +39,16 @@ well as from templates.
 3. Put `cover.jpg` (and any other images/videos) in the same folder, and set `cover` + `cover_alt`.
 4. Set `featured = true` to show it in "Selected work" on the home page (lower `weight` = shown first).
 
+When renaming a project, add its old URL to a top-level `aliases` array. For example,
+EMMA-VLM uses `aliases = ["/projects/emma-claude/"]` so existing links still work.
+
 No template has to be edited: the project shows up on `/projects/`, on `/tags/<tag>/` and on the home
 page by itself. The first featured project gets the large lead treatment automatically.
 Cards without a `cover` use a deliberate text-only layout; a cover with missing or empty
-`cover_alt` fails the build. Confidential cards never render media, even if a cover is set.
+`cover_alt` fails the build. Confidential cards hide covers by default. An approved public
+press image can be shown with `cover_public = true`; add `cover_caption` with its source credit
+and a source link in `links`. The confidentiality note stays visible. This exception applies
+only to the cover, not to internal screenshots or galleries.
 The case-study page still flags missing photography with a TODO until its content is completed.
 
 ### Images and video (always use the components)
@@ -69,13 +75,20 @@ AVIF + WebP `srcset`s at 640/960/1440/1920 px, plus a same-format fallback. Keep
 (H.264 MP4, short, muted loops); `autoplay={true}` adds a few lines of JS that pause the clip under
 `prefers-reduced-motion`.
 
+Prefer click-to-play video for project recordings: leave `autoplay` unset. Use a
+static cover and a poster with the same aspect ratio as the clip. Convert GIFs and
+animated WebPs to H.264 MP4 before adding them, keeping the original playback timing.
+Label offline captures, time-lapses, replay data and scripted screenshots in captions.
+Media sources, credits still to collect and optional content gaps are tracked in
+`docs/CONTENT.md`; they are not rendered on the site.
+
 ### A new job
 Add a role to `data/experience.toml` — newest org first; consecutive `[[org.roles]]` entries under an `[[org]]` are grouped into one timeline entry. The home page timeline and the CV page update automatically.
 An optional integer `team_size` on the newest role also powers the home page leadership highlight;
 omit it to show the current role title instead. Only use an approved, publishable team size.
 
 ### A repository in "Code & experiments"
-Add a `[[repo]]` block to `data/repos.toml` with `name`, `url`, `year`, `lang`, `blurb` and `group`. The five groups are rendered in the order they first appear in the file, so a new group name is enough to add a section.
+Add a `[[repo]]` block to `data/repos.toml` with `name`, `url`, `year`, `lang`, `blurb` and `group`. Groups are rendered in the order they first appear in the file, so a new group name is enough to add a section.
 
 ### CV skills and languages
 `data/skills.toml` is a list of `[[group]]` entries (`name` + `items`); `data/languages.toml` is a list of `[[language]]` entries (`name` + `level`). Both render on `/cv/` only.

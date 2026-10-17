@@ -59,7 +59,8 @@
          period={p.extra?.period or ""}
          org={p.extra?.org or ""}
          tags={p.taxonomies?.tags | default(value=[]) | join(sep=", ")}
-         confidential={p.extra?.confidential or false}
+          confidential={p.extra?.confidential or false}
+          cover_public={p.extra?.cover_public or false}
          lead={loop.first} /> }}
     {%- endfor %}
   </ul>

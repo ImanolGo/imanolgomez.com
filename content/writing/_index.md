@@ -8,4 +8,4 @@ sort_by = "date"
 generate_feeds = true
 +++
 
-TODO(imanol): first post lands here; the Writing nav link appears once it exists.
+No notes published yet.

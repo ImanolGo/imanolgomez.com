@@ -35,13 +35,17 @@
 Details of this work are confidential. This page describes my role and scope, plus context that is
 already public, and shows no internal material.
   {% </callout> %}
-  {% elif page.extra?.cover %}
+  {% endif %}
+  {% if page.extra?.cover and (not page.extra?.confidential or page.extra?.cover_public) %}
+    {%- if page.extra?.confidential and not page.extra?.cover_caption -%}
+      {{ throw(message="A public cover on a confidential page requires a source credit in cover_caption") }}
+    {%- endif -%}
     {%- if page.extra?.cover_alt %}
-      {{ <figure src={(page.path | trim_start(pat="/")) ~ page.extra.cover} alt={page.extra.cover_alt} wide={true} eager={true} /> }}
+      {{ <figure src={(page.path | trim_start(pat="/")) ~ page.extra.cover} alt={page.extra.cover_alt} caption={page.extra?.cover_caption or ""} wide={true} eager={true} /> }}
     {%- else %}
-      <p class="placeholder">TODO(imanol): add <code>cover_alt</code> — the cover image needs alt text before it can render.</p>
+      {{ throw(message="A project cover requires meaningful cover_alt") }}
     {%- endif %}
-  {% else %}
+  {% elif not page.extra?.confidential %}
   <p class="placeholder">TODO(imanol): add a cover image to this page bundle.</p>
   {% endif %}
 

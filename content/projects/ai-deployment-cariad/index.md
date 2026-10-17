@@ -13,8 +13,12 @@ location = "Berlin"
 role = "Senior ML Software Engineer → Head of AI Deployment"
 featured = true
 confidential = true
+cover = "cover.jpg"
+cover_alt = "Public CARIAD–Bosch illustration of a car surrounded by sensor fields on a road"
+cover_public = true
+cover_caption = "Public CARIAD–Bosch press image, published on CARIAD's website. Used as context for the Automated Driving Alliance."
 stack = ["Python", "Qualcomm NPU", "ISO 26262", "embedded systems", "automotive standards"]
-links = []
+links = [{ label = "CARIAD–Bosch announcement and image source", url = "https://cariad.technology/de/en/news/stories/bosch-cariad-partnership-automated-driving.html" }]
 +++
 
 ## Context
@@ -50,11 +54,6 @@ Earlier, as Senior ML Software Engineer, I was Technical Product Owner for the A
 Environment. I built a Python SDK for model conversion, quantization and optimization,
 plus a runtime abstraction layer. I also integrated and deployed prediction, occupancy
 and sensor-fusion models on Qualcomm AI accelerators.
-
-## Outcome
-
-TODO(imanol): any outcome you are allowed to share beyond the above (platforms shipped,
-latency or model-count figures).
 
 ## Stack & notes
 

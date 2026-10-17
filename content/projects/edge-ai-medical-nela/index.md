@@ -13,14 +13,11 @@ location = "Berlin"
 role = "AI Software Engineer → Senior IoT Engineer"
 featured = true
 confidential = false
-cover = ""
-cover_alt = ""
+cover = "cover.jpg"
+cover_alt = "NELA Cough monitoring device, a small rounded white unit on a pale background"
 stack = ["Python", "TensorFlow", "Azure IoT", "RTOS", "embedded systems", "IEC 60601"]
 links = []
 +++
-
-TODO(imanol): add a photo of the device or a product shot — nothing public exists in
-docs/PROFILE.md.
 
 ## Context
 
@@ -52,11 +49,6 @@ change. The device also had to meet certification requirements.
 - Worked directly with customers, partners and external medical hardware suppliers on
   integration and deployment issues, and wrote the demos and technical documentation
   to support that work.
-
-## Outcome
-
-TODO(imanol): what you are allowed to share about accuracy, device numbers or clinical
-outcomes.
 
 ## Stack & notes
 

@@ -13,8 +13,8 @@ location = "Barcelona"
 role = "Researcher"
 featured = false
 confidential = false
-cover = ""
-cover_alt = ""
+cover = "cover.jpg"
+cover_alt = "Brain sonification software showing fMRI slices, a three-dimensional brain view and a signal plot"
 stack = ["Python", "3D audio", "fMRI"]
 links = []
 +++
@@ -53,11 +53,9 @@ are weak, and the source fMRI data is large.
   and continued with `Human-Brain-Mapping`.
 - Co-authored and presented the two papers.
 
-## Outcome
-
-TODO(imanol): anything about performances, citations or how the piece was received.
-
 ## Stack & notes
+
+{{ <figure src="projects/neurospaces/brain.jpg" alt="Three-dimensional brain visualization with many marked points across its surface" caption="A view from the brain visualization and sonification work." /> }}
 
 Python · 3D audio · fMRI.
 

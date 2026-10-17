@@ -20,7 +20,8 @@
        org={p.extra?.org or ""}
        tags={p.taxonomies?.tags | default(value=[]) | join(sep=", ")}
         level={2}
-        confidential={p.extra?.confidential or false} /> }}
+         confidential={p.extra?.confidential or false}
+         cover_public={p.extra?.cover_public or false} /> }}
   {%- endfor %}
 </ul>
 {% endblock main %}

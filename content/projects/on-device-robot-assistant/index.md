@@ -13,14 +13,14 @@ location = ""
 role = "Personal project"
 featured = true
 confidential = false
-cover = ""
-cover_alt = ""
+cover = "cover.jpg"
+cover_alt = "Jetson Orin Nano mounted on a small four-wheel rover chassis with a camera, speaker and cooling fan"
 stack = ["Python", "ROS 2", "TensorRT", "DeepStream", "Whisper", "YOLO", "llama.cpp"]
-links = []
+links = [{ label = "Rover Assistant on GitHub", url = "https://github.com/ImanolGo/rover-assistant" }]
 +++
 
-TODO(imanol): add a photo or a short video of the robot; the card and this page are
-waiting for it.
+The photo shows the later Rover Assistant hardware. The ROS 2 pipeline and
+measurements below refer to the earlier `local-ai-robot-assistant` project.
 
 ## Context
 
@@ -54,9 +54,6 @@ the conversation responsive.
 
 The vision path answers in **~37 ms**, and the language model generates at roughly
 **30 tokens/s**. Both run locally, without network requests.
-
-TODO(imanol): what you would add next, and anything the robot got right or wrong in
-practice.
 
 ## Stack & notes
 

@@ -13,13 +13,11 @@ location = ""
 role = "Software Engineer – Multimedia Dance Show"
 featured = false
 confidential = false
-cover = ""
-cover_alt = ""
+cover = "cover.jpg"
+cover_alt = "A dancer in Murmur surrounded by blue-white projected fragments on a dark stage"
 stack = ["C++", "OpenGL", "floor tracking"]
 links = []
 +++
-
-TODO(imanol): add tour photos or a still from the piece.
 
 ## Context
 
@@ -47,10 +45,6 @@ pressure.
 - Set up and tuned the projection mapping at each venue, and drove the show live
   through the run.
 - Kept the whole thing running on tour hardware for years.
-
-## Outcome
-
-TODO(imanol): how many cities or shows, and anything you want to say about how it went.
 
 ## Stack & notes
 

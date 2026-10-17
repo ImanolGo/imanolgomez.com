@@ -133,9 +133,13 @@ not as the umbrella headline. See `docs/PROFILE.md` for the canonical copy.
    | `wearables` | Light-emitting wearables | ✓ (50) | ElektroCouture (FireFly, Nuit Blanche, Marlene/MarleneGlows), *Norma* LED dresses (Greek National Opera), light-painting fashion with Anja Dragan; driver firmware. |
    | `installations` | Light & interactive installations | ✓ (60) | Stella Rinascente (`LaRinascente`), Journey of Colour (`TheJourneyOfColor`), LED mapping tools for Moritz Waldemeyer (`LedMapper`, `WinchesLightPainting`), Ingo Maurer Light + Building 2018, TheOther (Havana Biennial 2015), re.show. |
    | `murmur-world-tour` | Multimedia software for a touring dance show | – | Aakash Odedra Company, *Murmur*; repos `MurmurRenderer`, `MurmurFloorTracking`; software operated on world tour. |
-   | `murmuration-gpu` | Millions of starlings in real time | – | Rust + wgpu GPU flock simulation (+ terminal `murmuration`). Nice echo of *Murmur*. Candidate for the Phase 9 hero. |
+    | `murmuration-gpu` | Starlings at dusk on the GPU | – | Rust + wgpu GPU flock simulation; 8,000-bird interactive default. Large counts are for profiling and offline rendering. |
    | `alibi` | Alibi: LLM agents that lie | – | LangGraph, MCP tools, RAG memory, CI evals, fine-tuned lie detector. Shows current LLM/agent engineering. |
-   | `emma-claude` | EMMA end-to-end driving model with Claude | – | Open-source repo (★13); link to GitHub. |
+    | `emma-vlm` | EMMA-VLM: driving plans from vision models | – | OpenRouter vision models, nuImages/nuScenes and open-loop trajectory evaluation. Redirect the old `emma-claude` URL. |
+    | `tui-experiments` | Experiments in the terminal | – | Rust/Ratatui: procquarium, overflight and murmuration. |
+    | `visual-whispers` | Visual Whispers: picture telephone | – | Image generation and vision-language descriptions through changing personas. |
+    | `cuda-particles` | CUDA particles: Particle Atlas | – | CUDA lessons and an interactive particle artwork. |
+    | `adas-rust` | ADAS learning projects in Rust | – | Seven exercises ending in an integrated dashcam demo. |
    | `geopulse-ars-electronica` | GeoPulse & interactive exhibits | – | Ars Electronica Center, Linz. |
    | `neurospaces` | Neurospaces: sonifying fMRI data in 3D audio | – | Publications 2012 & 2014; repos `BrainSonification`, `fMRI-Sonification`. |
 

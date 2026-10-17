@@ -7,6 +7,15 @@ Private data (phone number, home address) is deliberately excluded and must neve
 Sources: the four resume PDFs in `~/Downloads/resumes` (latest: 2026-10-16) and this file's
 earlier revisions. When a resume contradicts this file, the newest resume wins; update this file.
 
+Project updates below also use Imanol's October 2026 notes, the READMEs in `~/repos/`,
+and media supplied in `~/Downloads/References/`. These are approved sources for this update.
+Imanol confirmed that the supplied media may be published. Keep known credits; request missing
+photographer credits before launch. Bentley, Hyundai and unidentified Studio Waldemeyer projects
+remain excluded until their names and Imanol's role are confirmed. Imanol confirmed that the
+CARIAD reference images come from CARIAD's public website and requested their use. The
+CARIAD–Bosch press image is approved as a contextual cover, with attribution and a source link;
+the case study remains confidential and shows no internal material.
+
 ## Identity
 
 - **Name:** Imanol Gómez (he/him)
@@ -144,8 +153,52 @@ Driving Alliance**, a volume-production ADAS platform.
   pipeline; VLM served via llama.cpp/Ollama at **~37 ms vision latency, ~30 tokens/s**.
 - **rover-assistant** (Python, 2026) — voice and vision assistant for a Jetson Orin Nano rover,
   fully on-device, no cloud.
-- **murmuration-gpu** (Rust, 2026) — GPU starling-flock simulation with wgpu, up to millions of
-  birds in real time. Phase 9 hero candidate.
+- **murmuration-gpu** (Rust, 2026) — research-inspired starling-flock simulation with wgpu.
+  The current interactive default is 8,000 birds. The README reports a 15-second windowed
+  startup measurement of 59.11 FPS on a GTX 1650 Max-Q at 1268×1380, with seed 1.
+  Million-bird counts are for profiling and offline rendering, not real-time playback on that GPU.
+- **EMMA-VLM** (Python, started 2024) — renamed and reworked from `emma-claude`.
+  An EMMA-style driving planner using vision models through OpenRouter. Inputs: front-camera
+  image, recent ego motion and routing command. Outputs: scene description, critical objects,
+  driving decision and a three-second trajectory. Supports nuImages and nuScenes, comparing
+  trajectory error and smoothness with a constant-velocity baseline, plus latency and cost.
+  An open-loop research experiment, separate from CARIAD work; no validated driving capability
+  or improvement over the baseline is claimed.
+- **TUI experiments** (Rust, 2026) — `procquarium`, `overflight` and `murmuration`, built with
+  Ratatui. Inspired by Awesome TUI and an interest in keyboard-native applications that respect
+  attention. Imanol wanted to explore modern terminals, including GPU-accelerated emulators.
+  These applications draw terminal cells; do not imply their simulations run on the GPU.
+  `procquarium` maps memory to fish size and CPU usage to swimming speed; process-changing
+  actions require explicit opt-in. `overflight` visualizes aircraft overhead and a computed
+  night sky; its supplied demo uses recorded traffic. `murmuration` draws a research-inspired
+  three-dimensional flock in braille, with an optional falcon; it is not a validated animal model.
+- **Visual Whispers** (Python/TypeScript, started 2024) — one of Imanol's first experiments
+  combining LLMs and diffusion models in an interactive app. An image model paints a prompt,
+  a vision model describes it through a chosen persona, and that description becomes the next
+  image prompt. The app streams rounds, tracks surviving original words and exports chains.
+  The current README documents OpenRouter and optional Replicate/FLUX image generation.
+- **CUDA particles / Particle Atlas** (CUDA/C++, 2026) — a personal route through CUDA
+  fundamentals: six small lessons, then an interactive particle artwork. CUDA/OpenGL interop,
+  HDR trails and bloom; Orbit, Aurora and Ink scenes. The supplied recording uses 200,000
+  particles and the explicit staged GPU-to-CPU-to-OpenGL fallback. It is an offline capture,
+  not a frame-rate benchmark or a physical fluid/gravity simulation.
+- **ADAS Projects in Rust** (started 2023) — seven learning activities ending in an integrated
+  dashcam demo: lanes, signs, speed limits, objects, traffic lights and an instrument cluster.
+  Rust with tract/ONNX, image/imageproc and ffmpeg; sample road footage from Udacity (MIT).
+  A learning project, separate from production ADAS work.
+
+### Studio and media credits
+
+- Most freelance light and interactive installations were made for **Studio Waldemeyer**,
+  Moritz Waldemeyer's studio. Credit the studio for the design work and Imanol for his software,
+  mapping and hardware contribution. Confirmed work includes Stella Rinascente, Journey of
+  Colour, LED mapping tools and DMX-controlled winch light painting. Do not attribute every
+  installation or Ars Electronica project to the studio.
+- The supplied fashion photo `Photo-by-Andreas-Waldschuetz-2-for-ElektroCouture-600x900.webp`
+  credits **Andreas Waldschuetz**, for ElektroCouture. Other photo credits still need confirmation.
+- The supplied Alibi screenshots use a test case with scripted answers, as its README states.
+- A rover hardware photo is available in `rover-assistant/assets/images/jetson-rover-ai-assistant.jpg`.
+  The rover is a later project; do not attach the older ROS 2/Moondream latency numbers to it.
 
 ## Education
 
@@ -183,11 +236,11 @@ on the site if Imanol confirms it's OK — `TODO(imanol)`.
 ### Recent personal work (2023–2026) — edge AI, GPU, Rust
 - **local-ai-robot-assistant** (Python, 2025–26) — private, autonomous AI robot assistant running fully on an NVIDIA Jetson Orin Nano.
 - **rover-assistant** (Python, 2026) — voice and vision assistant for a Jetson Orin Nano rover, fully on-device, no cloud.
-- **emma-claude** (Python, 2024, ★13) — implementation of EMMA (End-to-End Multimodal Model for Autonomous Driving) using the Claude API, based on the EMMA paper.
+- **emma-vlm** (Python, started 2024) — EMMA-style multimodal driving planner with interchangeable vision models through OpenRouter and open-loop trajectory evaluation.
 - **ADAS-Projects-In-Rust** (Rust, 2023) — ADAS feature implementations in Rust, for performance and safety.
 - **pico-deployment-demo** (CMake, 2023) — no description; `TODO(imanol)`: what it is (deployment on Raspberry Pi Pico?).
 - **alibi** (Python, 2026) — murder-mystery game where each suspect is an LLM agent; LangGraph, MCP tools, RAG memory, CI evals, and a fine-tuned lie detector.
-- **murmuration-gpu** (Rust, 2026) — GPU starling-flock simulation rendering up to millions of birds in real time with wgpu.
+- **murmuration-gpu** (Rust, 2026) — GPU starling-flock simulation with wgpu; 8,000-bird interactive default, with larger counts for profiling and offline rendering.
 - **murmuration** (Rust, 2026) — terminal starling-flock simulation modelled on murmuration research.
 - **cuda-particles** (CUDA, 2026) — step-by-step CUDA course for creative coders, ending in an interactive GPU particle system.
 - **overflight** (Rust, 2026) — terminal app showing planes overhead as a live sky from real-time data.

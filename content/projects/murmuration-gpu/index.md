@@ -1,7 +1,7 @@
 +++
-title = "Millions of starlings in real time"
+title = "Starlings at dusk on the GPU"
 template = "projects/page.html"
-description = "A GPU flock simulation in Rust and wgpu — the technical echo of the Murmur commission."
+description = "A research-inspired starling flock in Rust and wgpu, moving a terminal simulation into GPU compute shaders."
 date = 2026-02-01
 weight = 80
 [taxonomies]
@@ -13,46 +13,53 @@ location = ""
 role = "Personal project"
 featured = false
 confidential = false
-cover = ""
-cover_alt = ""
+cover = "cover.jpg"
+cover_alt = "A simulated flock of starlings folding above reeds against a procedural evening sky"
 stack = ["Rust", "wgpu", "WGSL"]
-links = []
+links = [{ label = "GitHub", url = "https://github.com/ImanolGo/murmuration-gpu" }]
 +++
-
-TODO(imanol): a still or a short screen recording of the flock — a screenshot of a
-simulation does not do it justice.
 
 ## Context
 
-A personal project: `murmuration-gpu`, a starling-flock simulation written in Rust and
-rendered with wgpu, running up to millions of birds in real time. There is a
-terminal companion too: `murmuration`, a text-mode version modelled on the same
-flocking research.
+I started with [murmuration](@/projects/tui-experiments/index.md), a starling flock
+drawn in a terminal. This version moves the simulation to GPU compute shaders in
+Rust and wgpu, with individual birds banking against a procedural dusk sky.
 
-Years ago I built the show software for *Murmur*, a dance piece about how a flock
-behaves as one body. This project returns to that subject through a simulation,
-with the number of birds limited by the frame budget.
+I had worked on the show software for [Murmur](@/projects/murmur-world-tour/index.md)
+years earlier. This personal project returns to flocking through a different medium.
+
+{{ <video src="projects/murmuration-gpu/evening.mp4" poster="projects/murmuration-gpu/evening.jpg" alt="A simulated starling flock gathering above reeds and descending at dusk while a falcon hunts" caption="An offline time-lapse: one simulated evening minute in about eight seconds, with 8,000 birds and a falcon. It does not show real-time playback speed." /> }}
 
 ## The problem
 
-A naive neighbour search has a quadratic cost. Moving simulation data between the
-CPU and GPU every frame adds transfer overhead. To simulate millions of birds at
-interactive frame rates, I kept the neighbour search, state updates and rendering
-on the GPU, with a memory layout suited to those access patterns.
+A naive neighbour search has a quadratic cost. Moving the whole flock between CPU
+and GPU each frame adds transfer overhead too. I wanted to keep neighbour searches,
+state updates and rendering on one GPU, while retaining a CPU reference to check
+the model's behaviour.
+
+The flock follows local rules inspired by StarDisplay and starling field studies:
+adaptive neighbour attention, banked flight and attraction towards the roost.
+The resulting motion is still a work in progress, especially the complex folding
+seen in reference footage.
 
 ## What I did
 
-- Wrote the flocking simulation in Rust, with the per-agent state and the neighbour
-  search on the GPU.
-- Rendered through wgpu (WGSL compute and render pipelines), so the same code path
-  targets Vulkan, Metal and DX12.
-- Kept simulation parameters tweakable at runtime to explore how they change the
-  flock's behaviour.
+- Moved the neighbour search onto a sorted uniform grid in GPU memory.
+- Shared the bird-state buffer between compute and rendering, avoiding a full
+  flock readback during interactive playback.
+- Rendered birds at different levels of detail, with wingbeats, banking and
+  accumulated darkness where their silhouettes overlap.
+- Compared GPU and CPU flock statistics, with headless analysis and profiling tools.
 
 ## Outcome
 
-TODO(imanol): the bird counts and frame rates you actually see, and whether you plan to
-ship it as the site's hero animation (it is the candidate for Phase 9).
+The interactive default is 8,000 birds. A 15-second windowed startup measurement
+recorded 59.11 FPS on a GTX 1650 Max-Q at 1268×1380, using Vulkan and seed 1.
+That is one measured configuration, not a guarantee for every flock or scene.
+
+Million-bird counts are available for profiling and offline rendering, but they do
+not run in real time on that GPU. This is a research-inspired visual simulation,
+not a validated predictor of wild flock behaviour.
 
 ## Stack & notes
 

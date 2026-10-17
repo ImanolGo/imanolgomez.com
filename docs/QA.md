@@ -1,5 +1,52 @@
 # QA pass
 
+## Public CARIAD cover correction
+
+Imanol clarified that the supplied CARIAD images are published on CARIAD's website.
+The CARIAD–Bosch press illustration is now the case-study cover, with a source credit
+and a link to the original announcement. Home, Work, tag cards and social metadata
+use the same approved cover. The confidentiality note remains, and unapproved covers
+on confidential projects stay hidden by default.
+
+`zola build` and `zola check` pass without warnings. The case study, home, Work and
+three relevant tag pages passed 72 viewport/theme/JavaScript combinations at
+360/768/1280 px. All show the approved cover and retain the confidentiality notice.
+No third-party requests were observed. Mobile light and desktop dark screenshots
+were inspected. The largest HTML + CSS page is Work at 49,925 bytes; production
+HTML contains no TODO placeholders.
+
+## Project content and media update, October 2026
+
+Validated with Zola 0.23.6 and the installed Chromium, using the existing Playwright
+environment outside the repository. No dependencies, site scripts, third-party
+embeds or services were added. New copy was reviewed with the humanizer skill.
+
+| Check | Result |
+| --- | --- |
+| `zola build` / `zola check` | Pass, no warnings. |
+| Responsive and theme checks | Home, Work, CV and 16 project pages at 360/768/1280 px, light/dark, JS on/off: 228 combinations, no horizontal overflow. |
+| Structure | One `h1`, no skipped heading levels, labelled and sized media, readable main content throughout. |
+| Browser requests and errors | No third-party requests or JavaScript exceptions during the page checks. Static subresource audit also found no missing or external assets. |
+| Video | All nine MP4s played successfully in Chromium. Native controls, `preload="none"`, static posters, no autoplay. Largest clip: 2,330,680 bytes. |
+| Keyboard without JavaScript | Tab reached the TUI page's video controls; Space started playback with JavaScript disabled. |
+| Budget | Largest production HTML + CSS total: 49,916 bytes, on Work. One CSS file. |
+| Confidentiality | CARIAD page and cards still render no media. Bentley and Hyundai references are not included. |
+| Rename | `/projects/emma-claude/` redirects to `/projects/emma-vlm/`. |
+| Public placeholders | Zero `TODO(` occurrences in the production HTML. Optional questions and missing credits are in `docs/CONTENT.md`. |
+
+Mobile screenshots of Work, TUI experiments and Visual Whispers, plus a dark desktop
+TUI screenshot, were inspected. Lazy-loaded images were scrolled into view for the
+Visual Whispers screenshot check. Captions distinguish offline capture, recorded
+data and scripted answers from live application behaviour.
+
+After trimming duplicate repository entries, Work was rechecked in all 12
+theme/viewport/JavaScript combinations. The old EMMA URL was also followed in the
+browser with JavaScript disabled and reached the renamed page.
+
+Lighthouse, a human screen-reader pass and field performance measurements were not
+run. Legal pages remain drafts, missing photo credits still need to be supplied,
+and the earlier CV print-pagination deviation has not been rechecked.
+
 ## Visual refinement — 2026-10-17
 
 Validated the editorial home page, project cards, headings and action hierarchy with

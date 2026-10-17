@@ -13,14 +13,11 @@ location = ""
 role = "Software Engineer – Real-Time Hardware"
 featured = true
 confidential = false
-cover = ""
-cover_alt = ""
+cover = "stage.jpg"
+cover_alt = "Blue and violet illuminated arches spanning the Primavera Sound festival stage above a crowd"
 stack = ["Python", "Embedded C", "OpenGL"]
 links = []
 +++
-
-TODO(imanol): this page is written from docs/PROFILE.md only, so it is short.
-Replace the marked placeholders with real copy and photos.
 
 ## Context
 
@@ -33,12 +30,6 @@ Three case studies are public: *Designing the Ultimate Club Experience*, *Bringi
 Dynamism to a Creative Space*, and *Primavera Sound's First Smart Stage* — smart
 lighting for an autonomous festival stage.
 
-## The problem
-
-TODO(imanol): what the platform had to solve. Fixture counts, refresh rates, latency
-budgets and what made the real-time constraint hard are not in docs/PROFILE.md, so
-they must not be guessed here.
-
 ## What I did
 
 - Firmware for real-time smart lighting hardware products.
@@ -46,11 +37,9 @@ they must not be guessed here.
 - Delivered the main product software as a snap package for Ubuntu machines.
 - Tech and design evangelist for the product line.
 
-## Outcome
-
-TODO(imanol): what shipped and what it changed — the outcome you are allowed to share.
-
 ## Stack & notes
+
+{{ <video src="projects/realtime-lighting-protopixel/pixel-mapping.mp4" poster="projects/realtime-lighting-protopixel/pixel-mapping.jpg" alt="A desktop demonstration of ProtoPixel and Arena pixel-mapping software" caption="ProtoPixel and Arena pixel mapping. A silent excerpt from the supplied demonstration." /> }}
 
 Python · Embedded C.
 

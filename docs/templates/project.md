@@ -24,9 +24,11 @@ org = "ProtoPixel"
 location = ""                                # optional
 role = "Software Engineer – Real-Time Hardware"
 featured = true                              # show in "Selected work" on the home page
-confidential = false                         # true = no media, confidentiality note instead
+confidential = false                         # true = hide media by default, retain confidentiality note
 cover = "cover.jpg"                          # filename inside this page bundle
 cover_alt = "Describe the image"             # required when cover is set; empty alt fails the build
+cover_public = false                         # true only for an explicitly approved public press cover
+cover_caption = ""                           # required source credit for a public cover on confidential work
 stack = ["Python", "Embedded C", "OpenGL"]
 links = [{ label = "Live site", url = "https://example.com" }]
 +++
@@ -43,9 +45,10 @@ links = [{ label = "Live site", url = "https://example.com" }]
 - **`cover`** is a filename inside the bundle, e.g. `cover.jpg`. `cover_alt` must be meaningful —
   a missing `alt` fails the build. Without a cover, cards use a text-only layout; case-study pages
   still flag the missing photograph with a TODO. The first featured project gets the lead layout.
-- **`confidential = true`** means the page renders no media at all; it shows a short confidentiality
-  note next to the title. Use it for current-employer work: describe only what is public plus your
-  own role and scope.
+- **`confidential = true`** hides media by default and shows a confidentiality note. Use it for
+  current-employer work: describe only what is public plus your own role and scope. An explicitly
+  approved public press cover may use `cover_public = true`, with meaningful `cover_alt`, a source
+  credit in `cover_caption` and a source link in `links`. This does not permit internal media or galleries.
 - **`tags`** must be lowercase kebab-case. Every tag gets a page under `/tags/<tag>/` automatically.
 - **`weight`** only affects the home page order. On `/projects/` the order is by `date`, newest first.
 - Everything must come from `docs/PROFILE.md`. Where something is missing, write
