@@ -1,23 +1,26 @@
 {% extends "base.html" %}
 
 {% block main %}
-<header class="prose">
+<header class="prose page-heading">
   <h1>Tagged “{{ term.name }}”</h1>
   <p class="meta"><span>{{ term.pages | length }} project{% if term.pages | length != 1 %}s{% endif %}</span><span><a href="{{ get_url(path='@/projects/_index.md') }}">all work</a></span></p>
 </header>
 
-<ul class="card-grid breakout">
+<ul class="card-grid project-list">
   {%- for p in term.pages %}
+  {% set cover = "" %}
+  {% if p.extra?.cover %}{% set cover = (p.path | trim_start(pat="/")) ~ p.extra.cover %}{% endif %}
   {{ <project_card
        title={p.title}
        url={p.permalink}
-       cover={(p.path | trim_start(pat="/")) ~ (p.extra?.cover or "")}
+        cover={cover}
        cover_alt={p.extra?.cover_alt or ""}
        description={p.description or ""}
        period={p.extra?.period or ""}
        org={p.extra?.org or ""}
        tags={p.taxonomies?.tags | default(value=[]) | join(sep=", ")}
-       level={2} /> }}
+        level={2}
+        confidential={p.extra?.confidential or false} /> }}
   {%- endfor %}
 </ul>
 {% endblock main %}

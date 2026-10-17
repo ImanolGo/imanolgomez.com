@@ -3,7 +3,7 @@ title = "Real-time smart lighting"
 template = "projects/page.html"
 description = "Firmware and GPU-based generative content for real-time smart lighting hardware."
 date = 2017-01-01
-weight = 10
+weight = 40
 [taxonomies]
 tags = ["lighting", "embedded", "real-time"]
 [extra]
@@ -13,8 +13,8 @@ location = ""
 role = "Software Engineer – Real-Time Hardware"
 featured = true
 confidential = false
-cover = "cover.jpg"
-cover_alt = "Neutral grey placeholder image standing in for a photo of the installation"
+cover = ""
+cover_alt = ""
 stack = ["Python", "Embedded C", "OpenGL"]
 links = []
 +++

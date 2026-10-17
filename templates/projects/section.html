@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
 {% block main %}
-<header class="prose">
+<header class="prose page-heading">
+  <p class="eyebrow">Engineering &amp; creative technology</p>
   <h1>{{ section.title }}</h1>
 </header>
 
@@ -27,7 +28,7 @@
 {%- set tag_names = tag_names | sort -%}
 
 {% if tag_names | length > 0 %}
-<nav class="prose" aria-label="Filter projects by tag">
+<nav class="project-filters" aria-label="Filter projects by tag">
   <ul class="tag-list">
     <li class="tag"><a href="{{ current_url }}" aria-current="page">all</a></li>
     {%- for name in tag_names %}
@@ -37,18 +38,21 @@
 </nav>
 {% endif %}
 
-<ul class="card-grid breakout">
+<ul class="card-grid">
   {%- for p in pages %}
+  {% set cover = "" %}
+  {% if p.extra?.cover %}{% set cover = (p.path | trim_start(pat="/")) ~ p.extra.cover %}{% endif %}
   {{ <project_card
        title={p.title}
        url={p.permalink}
-       cover={(p.path | trim_start(pat="/")) ~ (p.extra?.cover or "")}
+        cover={cover}
        cover_alt={p.extra?.cover_alt or ""}
        description={p.description or ""}
        period={p.extra?.period or ""}
        org={p.extra?.org or ""}
        tags={p.taxonomies?.tags | default(value=[]) | join(sep=", ")}
-       level={2} /> }}
+        level={2}
+        confidential={p.extra?.confidential or false} /> }}
   {%- endfor %}
 </ul>
 

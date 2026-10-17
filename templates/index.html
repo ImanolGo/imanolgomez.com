@@ -1,51 +1,79 @@
 {% extends "base.html" %}
 
 {% block main %}
-<header class="prose home-header">
-  <p class="eyebrow">{{ config.extra.short_description }} · Berlin</p>
-  <h1>{{ section.title }}</h1>
-  <p class="home-tagline">{{ section.extra.tagline }}</p>
+{% set experience = load_data(path="data/experience.toml") %}
+<header class="home-hero">
+  <div class="home-hero__identity">
+    <p class="eyebrow">{{ config.extra.short_description }}</p>
+    <h1>{{ section.title }}</h1>
+    <p class="home-tagline">{{ section.extra.tagline }}</p>
+    <nav class="cta-row" aria-label="Explore my work">
+      <a class="btn btn--primary" href="#selected-work">View work {{ <icon name="down" /> }}</a>
+      <a class="btn" href="{{ get_url(path='cv/imanol-gomez-cv.pdf') }}" download>Download CV <span class="btn__detail">(PDF)</span> {{ <icon name="down" /> }}</a>
+    </nav>
+  </div>
+  <div class="home-hero__intro">
+    <p class="eyebrow">Based in Berlin</p>
+    <div class="prose">{{ section.content | safe }}</div>
+    <nav class="contact-links" aria-label="Contact and profiles">
+      {% if config.extra.email %}<a href="mailto:{{ config.extra.email }}">Email {{ <icon name="external" /> }}</a>{% endif %}
+      {% if config.extra.linkedin %}<a href="{{ config.extra.linkedin }}">LinkedIn {{ <icon name="external" /> }}</a>{% endif %}
+      {% if config.extra.github %}<a href="{{ config.extra.github }}">GitHub {{ <icon name="external" /> }}</a>{% endif %}
+    </nav>
+  </div>
 </header>
 
-<div class="prose">
-  {{ section.content | safe }}
-</div>
-
-{% if config.extra.email or config.extra.linkedin or config.extra.github %}
-<nav class="cta-row" aria-label="Contact and profiles">
-  <a class="btn" href="#selected-work">Selected work {{ <icon name="down" /> }}</a>
-  {% if config.extra.email %}<a class="btn" href="mailto:{{ config.extra.email }}">Email</a>{% endif %}
-  {% if config.extra.linkedin %}<a class="btn" href="{{ config.extra.linkedin }}">LinkedIn {{ <icon name="external" /> }}</a>{% endif %}
-  {% if config.extra.github %}<a class="btn" href="{{ config.extra.github }}">GitHub {{ <icon name="external" /> }}</a>{% endif %}
-</nav>
-{% endif %}
+<dl class="home-facts" aria-label="Background at a glance">
+  {% for fact in section.extra.highlights %}
+  {% if fact?.source == "current_role" and (experience.org | length) > 0 %}
+  {% set current = experience.org[0] %}
+  {% if current.roles[0]?.team_size %}
+  <div><dt>Current team at {{ current.name }}</dt><dd>{{ current.roles[0].team_size }} engineers</dd></div>
+  {% else %}
+  <div><dt>Currently at {{ current.name }}</dt><dd>{{ current.roles[0].role }}</dd></div>
+  {% endif %}
+  {% elif not fact?.source %}
+  <div><dt>{{ fact.label }}</dt><dd>{{ fact.value }}</dd></div>
+  {% endif %}
+  {% endfor %}
+</dl>
 
 {% set projects = get_section(path="projects/_index.md") %}
 {%- set featured = [p for p in projects.pages if p.extra?.featured] -%}
 {% if featured | length > 0 %}
-<section class="prose home-section" aria-labelledby="selected-work">
-  <h2 id="selected-work">Selected work</h2>
-  <ul class="card-grid breakout">
+<section class="home-section" aria-labelledby="selected-work">
+  <div class="section-heading">
+    <h2 id="selected-work">Selected work<span class="heading-dot" aria-hidden="true">.</span></h2>
+    <a class="text-link" href="{{ get_url(path='@/projects/_index.md') }}">All work {{ <icon name="external" /> }}</a>
+  </div>
+  <ul class="card-grid card-grid--selected">
     {%- for p in featured[:6] %}
+    {% set cover = "" %}
+    {% if p.extra?.cover %}{% set cover = (p.path | trim_start(pat="/")) ~ p.extra.cover %}{% endif %}
     {{ <project_card
          title={p.title}
          url={p.permalink}
-         cover={(p.path | trim_start(pat="/")) ~ (p.extra?.cover or "")}
+         cover={cover}
          cover_alt={p.extra?.cover_alt or ""}
          description={p.description or ""}
          period={p.extra?.period or ""}
          org={p.extra?.org or ""}
-         tags={p.taxonomies?.tags | default(value=[]) | join(sep=", ")} /> }}
+         tags={p.taxonomies?.tags | default(value=[]) | join(sep=", ")}
+         confidential={p.extra?.confidential or false}
+         lead={loop.first} /> }}
     {%- endfor %}
   </ul>
-  <p><a href="{{ get_url(path='@/projects/_index.md') }}">All work →</a></p>
 </section>
 {% endif %}
 
-{% set experience = load_data(path="data/experience.toml") %}
 {% if experience.org | length > 0 %}
-<section class="prose home-section" aria-labelledby="experience">
-  <h2 id="experience">Experience</h2>
+<section class="home-section home-experience" aria-labelledby="experience">
+  <div class="home-experience__intro">
+    <p class="eyebrow">The path so far</p>
+    <h2 id="experience">Built across<br>disciplines<span class="heading-dot" aria-hidden="true">.</span></h2>
+    <p>From creative engineering to production AI.</p>
+    <a class="text-link" href="{{ get_url(path='@/cv.md') }}">Full experience {{ <icon name="external" /> }}</a>
+  </div>
   <ol class="timeline timeline--compact">
     {%- for o in experience.org %}
     <li class="timeline__group">
@@ -57,7 +85,6 @@
     </li>
     {%- endfor %}
   </ol>
-  <p><a href="{{ get_url(path='@/cv.md') }}">Full CV →</a></p>
 </section>
 {% endif %}
 {% endblock main %}

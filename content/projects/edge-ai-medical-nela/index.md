@@ -3,7 +3,7 @@ title = "Edge AI for remote patient monitoring"
 template = "projects/page.html"
 description = "NELA Cough: AI tele-monitoring for chronic-disease patients, from requirements to series production."
 date = 2020-08-01
-weight = 40
+weight = 50
 [taxonomies]
 tags = ["edge-ai", "medical", "embedded"]
 [extra]

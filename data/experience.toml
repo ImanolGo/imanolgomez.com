@@ -4,7 +4,8 @@
 #
 # Org fields: name, note, location, roles (newest first), each with role, start,
 # end ("present"), summary, highlights and an optional `project` slug that links
-# to a case study in content/projects/.
+# to a case study in content/projects/. Optional role `team_size` powers the home
+# leadership highlight; without it, the role title is shown instead.
 
 [[org]]
 name = "CARIAD"
@@ -14,6 +15,7 @@ location = "Berlin"
 
 [[org.roles]]
 role = "Head of AI Deployment"
+team_size = 12
 start = "Oct 2025"
 end = "present"
 summary = "Leads a team of 12 engineers that takes AI models from research prototypes to production on a volume-production ADAS platform (CARIAD–Bosch Automated Driving Alliance)."

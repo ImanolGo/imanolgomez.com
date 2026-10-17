@@ -3,7 +3,7 @@ title = "Light & interactive installations"
 template = "projects/page.html"
 description = "Facades, kinetic light and computer-vision pieces for museums, brands and events."
 date = 2014-07-01
-weight = 60
+weight = 70
 [taxonomies]
 tags = ["installations", "lighting", "computer-vision"]
 [extra]
@@ -11,7 +11,7 @@ period = "2011 – 2018"
 org = "Freelance & Ars Electronica"
 location = "Berlin & international"
 role = "Creative technologist"
-featured = true
+featured = false
 confidential = false
 cover = ""
 cover_alt = ""

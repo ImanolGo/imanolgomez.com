@@ -3,7 +3,7 @@ title = "Alibi: LLM agents that lie"
 template = "projects/page.html"
 description = "A murder-mystery game where every suspect is an LLM agent — with RAG memory, tool use and eval gates in CI."
 date = 2026-01-01
-weight = 70
+weight = 20
 [taxonomies]
 tags = ["llm-agents", "evaluation"]
 [extra]
@@ -11,7 +11,7 @@ period = "2026"
 org = "Open source"
 location = ""
 role = "Personal project"
-featured = false
+featured = true
 confidential = false
 cover = ""
 cover_alt = ""

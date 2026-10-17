@@ -23,25 +23,41 @@
 }
 
 // --- Button -----------------------------------------------------------------
-// Used sparingly: primary calls to action. Mono, outlined, quiet lift on hover.
+// A clear primary action; secondary buttons keep a quieter outline.
 .btn {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  padding: var(--space-2) var(--space-4);
-  font-family: var(--font-mono);
+  min-height: var(--space-7);
+  padding: var(--space-3) var(--space-4);
   font-size: var(--text-sm);
   color: var(--text);
   text-decoration: none;
-  background-color: var(--surface);
+  background-color: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  transition: border-color 120ms ease, color 120ms ease;
+  transition: border-color 120ms ease, color 120ms ease, background-color 120ms ease;
 }
 
 .btn:hover {
   color: var(--accent);
   border-color: var(--accent);
+}
+
+.btn--primary {
+  color: var(--bg);
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn--primary:hover {
+  color: var(--bg);
+  background-color: var(--text);
+  border-color: var(--text);
+}
+
+.btn__detail {
+  font-size: var(--text-xs);
 }
 
 // Inline icons sit on the text baseline and never shrink.
@@ -60,12 +76,13 @@
   border-radius: var(--radius);
   background-color: var(--bg);
   overflow: hidden;
-  transition: border-color 120ms ease;
+  transition: border-color 120ms ease, background-color 120ms ease;
 }
 
 .card:hover,
 .card:focus-within {
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  border-color: var(--accent);
+  background-color: var(--surface);
 }
 
 .card__link {
@@ -76,6 +93,10 @@
   text-decoration: none;
 }
 
+.card__link:focus-visible {
+  outline-offset: calc(-1 * var(--space-1));
+}
+
 .card__cover {
   display: block;
   width: 100%;
@@ -84,34 +105,33 @@
   background-color: var(--surface);
 }
 
-// Stand-in for a project with no cover yet: same 3:2 box so the grid does not
-// jump once the image lands, with a faint grid-paper hatch.
-.card__cover--missing {
-  display: grid;
-  place-content: center;
-  gap: var(--space-1);
-  background-color: var(--surface);
-  background-image: repeating-linear-gradient(
-    45deg,
-    transparent 0 7px,
-    var(--border) 7px 8px
-  );
-}
-
-.card__missing-note {
+.card__eyebrow {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
+  letter-spacing: 0.04em;
   color: var(--text-muted);
 }
 
 .card__body {
   display: grid;
-  gap: var(--space-2);
-  padding: var(--space-4) var(--space-5) var(--space-5);
+  flex: 1;
+  align-content: start;
+  gap: var(--space-3);
+  padding: var(--space-5);
+}
+
+.card--text .card__body {
+  min-height: var(--card-text-min-height);
+}
+
+.card--lead {
+  background-color: var(--surface);
+  border-block-start: var(--focus-width) solid var(--accent);
 }
 
 .card__title {
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
+  letter-spacing: -0.03em;
   transition: color 120ms ease;
 }
 
@@ -123,6 +143,57 @@
 .card__desc {
   font-size: var(--text-sm);
   color: var(--text-muted);
+}
+
+.card__body > p {
+  margin: 0;
+}
+
+.card__note {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+.card__cta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding-block-start: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--accent);
+}
+
+@media (min-width: 48rem) {
+  .card__body {
+    padding: var(--space-6);
+  }
+
+  .card--lead.card--text .card__body {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    column-gap: var(--space-8);
+    padding: var(--space-7);
+  }
+
+  .card--lead.card--text .card__eyebrow {
+    grid-column: 1 / -1;
+    margin-block-end: var(--space-3);
+  }
+
+  .card--lead.card--text .card__title {
+    grid-column: 1;
+    grid-row: 2 / 6;
+    max-width: 18ch;
+    font-size: var(--text-statement);
+  }
+
+  .card--lead.card--text :is(.card__desc, .meta, .card__note, .card__cta) {
+    grid-column: 2;
+  }
+
+  .card--lead .card__desc {
+    font-size: var(--text-base);
+    color: var(--text);
+  }
 }
 
 // --- Meta row ---------------------------------------------------------------

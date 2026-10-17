@@ -7,9 +7,10 @@ phase until they pass. Follow the rules in `/AGENTS.md` throughout.
 
 ## 0. Design brief (read first)
 
-**Feel:** minimal, modern, calm, typographic. Like a well-set technical document with room to breathe —
+**Feel:** minimal, modern, calm, editorial. Confident typography, precise alignment and room to breathe —
 not a template, not a "dev portfolio" with gradients and particle effects. The visuals are Imanol's
-project photos (light installations, wearables, stages); the interface stays quiet so they carry the page.
+real project photos (light installations, wearables, stages); projects without imagery get an intentional
+typographic treatment, not decorative stock artwork or a large missing-image box.
 
 **Story the site tells (one line, used on the home page and in meta):**
 > Technical lead & AI engineer. I turn ambitious ideas into reliable software.
@@ -25,7 +26,10 @@ not as the umbrella headline. See `docs/PROFILE.md` for the canonical copy.
 - Prose measure: max ~68ch.
 
 **Layout**
-- Single column. Prose width `--measure: 42rem`; media may "break out" to `--wide: 64rem`.
+- Prose width `--measure: 42rem`; projects use `--wide: 64rem`. At desktop widths the home hero
+  and experience section use two columns; mobile reading order remains linear.
+- The hero leads with identity and a short statement, then **View work / Download CV**. Social links
+  are secondary. A compact strip makes experience and the current role visible at a glance.
 - Header: name (links home) on the left, nav on the right: **Work · About · CV** (+ **Writing** only once it has a published post). No hamburger menu — these fit on a 360 px screen.
 - Footer: email, LinkedIn, GitHub, © year, and links to Impressum/Privacy (Phase 9).
 - Generous vertical rhythm from a spacing scale (`--space-1` … `--space-8`).
@@ -39,7 +43,10 @@ not as the umbrella headline. See `docs/PROFILE.md` for the canonical copy.
 **Motion:** essentially none. Subtle hover/underline transitions ≤ 150 ms, disabled under `prefers-reduced-motion`.
 
 **Components**
-- *Project card:* cover image (3:2, object-fit cover), title, one-line description, mono meta row `2017–2020 · ProtoPixel · embedded, lighting`. Whole card is one link. Grid: 1 column on mobile, 2 columns ≥ 48rem.
+- *Project card:* optional real cover image (3:2, object-fit cover), organisation, title, summary,
+  period/tags and a reading affordance. Without a cover, use a text-only layout; confidential cards
+  never show media. Whole card is one link. Grid: 1 column on mobile, 2 columns ≥ 48rem, with the
+  first selected project spanning both columns. An even final entry also spans both to close the grid.
 - *Case-study header:* title, one-sentence summary, a compact meta list (Role, Organisation, Period, Stack, Links).
 - *Figure:* responsive image, optional caption in muted small text; optional `wide` break-out.
 - *Callout:* bordered note box (used for the confidentiality notice).

@@ -3,7 +3,7 @@ title = "AI deployment for automated driving"
 template = "projects/page.html"
 description = "Optimizing, integrating and deploying AI models on automotive embedded hardware."
 date = 2023-04-01
-weight = 20
+weight = 10
 [taxonomies]
 tags = ["edge-ai", "automotive", "embedded"]
 [extra]

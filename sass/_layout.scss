@@ -62,21 +62,32 @@ main {
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
-  gap: var(--space-3) var(--space-5);
+  gap: var(--space-3);
 }
 
 .site-header__brand {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   font-weight: 650;
   letter-spacing: -0.02em;
   text-decoration: none;
+}
+
+.site-header__brand::before {
+  content: "";
+  display: inline-block;
+  width: var(--space-2);
+  height: var(--space-2);
+  margin-inline-end: var(--space-3);
+  background: var(--accent);
+  border-radius: var(--radius-pill);
+  vertical-align: middle;
 }
 
 .site-header__end {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 
 .site-nav__list {
@@ -102,6 +113,11 @@ main {
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
   color: var(--accent);
+}
+
+.site-nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-color: currentColor;
 }
 
 .theme-toggle {
@@ -165,30 +181,156 @@ main {
   font-size: var(--text-xs);
 }
 
-// Home page
-.home-header {
-  margin-block-end: var(--space-6);
+// Home: an editorial opening, then evidence. Reading order stays identical on
+// mobile, desktop, and with CSS/JS disabled.
+.home-hero {
+  display: grid;
+  gap: var(--space-7);
+  padding-block: var(--space-4) var(--space-7);
 }
 
-// A second prose block on the same page ("Selected work", "Experience").
-.home-section {
-  margin-block-start: var(--space-7);
+.home-hero h1 {
+  font-size: var(--text-display);
+  letter-spacing: -0.055em;
+  line-height: 1.05;
+  text-wrap: initial;
 }
 
 .home-tagline {
-  margin-block-start: var(--space-3);
-  font-size: var(--text-lg);
-  text-wrap: pretty;
+  max-width: 22ch;
+  margin-block-start: var(--space-5);
+  font-size: var(--text-statement);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
 }
 
-// Call-to-action row: centred on the prose measure, buttons wrapped.
 .cta-row {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
-  max-width: var(--measure);
-  margin-inline: auto;
+  margin-block-start: var(--space-6);
+}
+
+.home-hero__intro .prose {
+  color: var(--text-muted);
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
   margin-block-start: var(--space-5);
+  font-size: var(--text-sm);
+}
+
+.contact-links a,
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--space-6);
+}
+
+.text-link {
+  font-size: var(--text-sm);
+}
+
+.home-facts {
+  display: grid;
+  gap: var(--space-5);
+  padding-block: var(--space-5);
+  border-block: 1px solid var(--border);
+}
+
+.home-facts > div {
+  min-width: 0;
+}
+
+.home-facts dt {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+}
+
+.home-facts dd {
+  margin-block-start: var(--space-1);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.home-section {
+  margin-block-start: var(--space-8);
+}
+
+.section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin-block-end: var(--space-5);
+}
+
+.heading-dot {
+  color: var(--accent);
+}
+
+#selected-work {
+  scroll-margin-block-start: var(--space-6);
+}
+
+.home-experience {
+  display: grid;
+  gap: var(--space-6);
+  padding-block-start: var(--space-7);
+  border-block-start: 1px solid var(--border);
+}
+
+.home-experience__intro > p:not(.eyebrow) {
+  margin-block: var(--space-4) var(--space-3);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+.page-heading {
+  margin-block-end: var(--space-5);
+}
+
+.page-prose > h1 {
+  margin-block-end: var(--space-5);
+}
+
+.page-prose > h1 + p {
+  font-size: var(--text-lg);
+}
+
+.project-filters {
+  margin-block: var(--space-6) var(--space-7);
+  padding-block: var(--space-5);
+  border-block: 1px solid var(--border);
+}
+
+.project-list {
+  margin-block-start: var(--space-7);
+}
+
+@media (max-width: 24rem) {
+  // Keep navigation and both primary actions on one row at 360px. The name
+  // matters more than its decorative mark on the smallest screens.
+  .site-header__brand::before {
+    display: none;
+  }
+
+  .site-header__inner {
+    column-gap: var(--space-2);
+  }
+
+  .cta-row .btn {
+    padding-inline: var(--space-3);
+    gap: var(--space-1);
+  }
 }
 
 // Card grid: one column on mobile, two from 48rem.
@@ -199,7 +341,53 @@ main {
 }
 
 @media (min-width: 48rem) {
+  .home-hero {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    gap: var(--space-8);
+    align-items: start;
+    padding-block: 0 var(--space-7);
+  }
+
+  .home-facts {
+    grid-template-columns: 1fr 1fr 1.4fr;
+    gap: var(--space-6);
+  }
+
+  .home-facts > div + div {
+    border-inline-start: 1px solid var(--border);
+    padding-inline-start: var(--space-6);
+  }
+
+  .home-experience {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
+    gap: var(--space-8);
+  }
+
   .card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card-grid--selected > :first-child {
+    grid-column: 1 / -1;
+  }
+
+  // A lead card plus an odd number of supporting entries must not leave a hole.
+  .card-grid--selected > :last-child:nth-child(even) {
+    grid-column: 1 / -1;
+  }
+
+  .card-grid--selected > :last-child:nth-child(even).card--text .card__body {
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: var(--space-7);
+  }
+
+  .card-grid--selected > :last-child:nth-child(even).card--text :is(.card__eyebrow, .card__title) {
+    grid-column: 1;
+  }
+
+  .card-grid--selected > :last-child:nth-child(even).card--text .card__desc {
+    grid-column: 2;
+    grid-row: 1 / 3;
   }
 }

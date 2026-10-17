@@ -1,6 +1,37 @@
 # QA pass
 
-Phase 8 of `docs/PLAN.md`. Everything below was run against the built site
+## Visual refinement — 2026-10-17
+
+Validated the editorial home page, project cards, headings and action hierarchy with
+Zola 0.23.6 and headless Chromium 154.0.8037.97. No new site JavaScript, dependencies,
+fonts or external services were introduced.
+
+| Check | Result |
+|---|---|
+| `zola build` / `zola check` | pass, no warnings |
+| Responsive and theme checks | 10 pages × 360/768/1280 px × light/dark × JS on/off: **120 combinations**, no overflow |
+| Structure | one `h1`, ordered headings and readable content in all 120 combinations |
+| Home actions, 360 px | first action at about **354 px** from the top, versus 787 px before this pass (JS disabled) |
+| Narrow-screen navigation | header navigation and work/CV buttons each fit their own single row at 360 px, including with the theme toggle visible and classic scrollbars |
+| Real keyboard input | Tab reaches the skip link, navigation, toggle, work/CV actions, contact links and first card, all with visible focus; Enter operates the theme toggle |
+| Reduced motion | transitions suppressed when `prefers-reduced-motion: reduce` is emulated |
+| Third-party requests | no external subresource references across all 32 HTML pages; home-page browser network trace also confirms none |
+| Runtime errors | no home-page JavaScript exceptions |
+| Budget | one CSS file; largest HTML + CSS page remains below **47 KB** uncompressed (50 KB budget) |
+| CSS size | 19.8 KB uncompressed; the historical Phase 2 target of 15 KB remains exceeded, but the per-page 50 KB budget holds |
+| Confidentiality / media | confidential cards and the CARIAD page render no media; a non-confidential card cover without alt text fails the build |
+| Image-free cards | intentional text-only layouts; case-study body TODOs remain visible |
+| Social preview | refreshed 1200×630 fallback image using the current headline and design-token colours |
+| CV print pagination | still 3 A4 pages; the existing 1–2-page acceptance deviation remains |
+| Launch gate | **34 TODO occurrences** remain in generated HTML; this is not a publication-ready content pass |
+
+Screenshots were inspected on desktop, tablet and mobile in light and dark themes.
+Lighthouse scores/LCP/CLS measurements and a human screen-reader pass remain unverified;
+the structural and browser checks above do not establish those results.
+
+## Earlier baseline — 2026-10-16
+
+Phase 8 of `docs/PLAN.md`. The historical results below were run against the built site
 (`zola build` and `zola build --drafts`), on 2026-10-16, with Chromium
 154.0.8037.97. Re-run after any change; the commands are short enough to be worth
 it.

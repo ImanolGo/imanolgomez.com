@@ -41,8 +41,8 @@ links = [{ label = "Live site", url = "https://example.com" }]
   by "Selected work" on the home page — and because Zola does not expose `page.weight` to templates,
   the section itself is sorted by weight and the Work page re-sorts by date.
 - **`cover`** is a filename inside the bundle, e.g. `cover.jpg`. `cover_alt` must be meaningful —
-  a missing `alt` fails the build. If you leave `cover` out, the card shows a visible TODO instead
-  of collapsing.
+  a missing `alt` fails the build. Without a cover, cards use a text-only layout; case-study pages
+  still flag the missing photograph with a TODO. The first featured project gets the lead layout.
 - **`confidential = true`** means the page renders no media at all; it shows a short confidentiality
   note next to the title. Use it for current-employer work: describe only what is public plus your
   own role and scope.

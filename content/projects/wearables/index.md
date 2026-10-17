@@ -3,7 +3,7 @@ title = "Light-emitting wearables"
 template = "projects/page.html"
 description = "Driver firmware and visuals for LED wearables and fashion-tech pieces, from the driver board to the runway."
 date = 2015-01-01
-weight = 50
+weight = 60
 [taxonomies]
 tags = ["wearables", "lighting", "embedded"]
 [extra]
