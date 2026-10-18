@@ -14,6 +14,7 @@ role = "Software Engineer – Wearable Technology"
 featured = false
 confidential = false
 cover = "cover.jpg"
+cover_card = "card.jpg"
 cover_alt = "A model wearing a floor-length light-emitting garment with LEDs tracing the fabric"
 stack = ["microcontrollers", "embedded systems", "C++"]
 links = []

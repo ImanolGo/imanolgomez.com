@@ -32,7 +32,7 @@
     typographic default. Confidential pages only expose explicitly approved public covers. -#}
 {%- set cover = "" -%}
 {%- if page and (not page.extra?.confidential or page.extra?.cover_public) -%}
-  {%- set cover = page.extra?.cover or "" -%}
+  {%- set cover = page.extra?.cover_card or page.extra?.cover or "" -%}
 {%- endif -%}
 {%- if cover -%}
   {%- set crop = resize_image(path=(page.path | trim_start(pat="/")) ~ cover, width=1200, height=630, op="fill", format="auto", quality=82) -%}

@@ -13,6 +13,7 @@ role = "Personal learning project"
 featured = false
 confidential = false
 cover = "cover.jpg"
+cover_card = "card.jpg"
 cover_alt = "Dashcam frame with lane shading, object detections, a speed-limit sign and a rendered instrument cluster"
 stack = ["Rust", "ONNX", "tract", "image", "imageproc", "ffmpeg"]
 links = [{ label = "GitHub", url = "https://github.com/ImanolGo/ADAS-Projects-In-Rust" }]

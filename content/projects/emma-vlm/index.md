@@ -15,6 +15,8 @@ role = "Personal project"
 featured = true
 confidential = false
 cover = "cover.jpg"
+cover_card = "card.jpg"
+cover_card_alt = "EMMA-VLM camera view of an urban road with the predicted path in green and the recorded path in red"
 cover_alt = "EMMA-VLM road-camera view beside a bird's-eye trajectory plot and the model's driving explanation"
 stack = ["Python", "OpenRouter", "vision-language models", "nuImages", "nuScenes"]
 links = [{ label = "GitHub", url = "https://github.com/ImanolGo/emma-vlm" }, { label = "EMMA paper", url = "https://arxiv.org/abs/2410.23262" }]

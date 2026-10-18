@@ -13,6 +13,7 @@ role = "Personal project"
 featured = true
 confidential = false
 cover = "cover.jpg"
+cover_card = "card.jpg"
 cover_alt = "Particle Atlas drawing a luminous spiral of cyan and amber particles against a dark background"
 stack = ["CUDA", "C++", "OpenGL", "GLSL", "GLFW"]
 links = [{ label = "GitHub", url = "https://github.com/ImanolGo/cuda-particles" }]

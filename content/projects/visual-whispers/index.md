@@ -13,7 +13,7 @@ role = "Personal project"
 featured = true
 confidential = false
 cover = "cover.jpg"
-cover_alt = "Visual Whispers interface showing generated paintings and character descriptions, with new words highlighted"
+cover_alt = "Visual Whispers results: the prompt words foxes, sharing and Tokyo struck out, beside the first painting of two foxes under an umbrella and the final one of two dogs"
 stack = ["Python", "TypeScript", "OpenRouter", "FLUX", "Replicate", "Server-Sent Events"]
 links = [{ label = "GitHub", url = "https://github.com/ImanolGo/Visual-Whispers" }]
 +++

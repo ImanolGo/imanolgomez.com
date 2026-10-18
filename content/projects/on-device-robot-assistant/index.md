@@ -15,6 +15,7 @@ featured = true
 highlight = "Vision answers in ~37 ms and the language model runs at ~30 tokens/s, all on the robot."
 confidential = false
 cover = "cover.jpg"
+cover_card = "card.jpg"
 cover_alt = "Jetson Orin Nano mounted on a small four-wheel rover chassis with a camera, speaker and cooling fan"
 stack = ["Python", "ROS 2", "TensorRT", "DeepStream", "Whisper", "YOLO", "llama.cpp"]
 links = [{ label = "Rover Assistant on GitHub", url = "https://github.com/ImanolGo/rover-assistant" }]

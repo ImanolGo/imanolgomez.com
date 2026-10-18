@@ -41,12 +41,12 @@
 <ul class="card-grid">
   {%- for p in pages %}
   {% set cover = "" %}
-  {% if p.extra?.cover %}{% set cover = (p.path | trim_start(pat="/")) ~ p.extra.cover %}{% endif %}
+  {% if p.extra?.cover %}{% set cover = (p.path | trim_start(pat="/")) ~ (p.extra?.cover_card or p.extra.cover) %}{% endif %}
   {{ <project_card
        title={p.title}
        url={p.permalink}
         cover={cover}
-       cover_alt={p.extra?.cover_alt or ""}
+       cover_alt={p.extra?.cover_card_alt or p.extra?.cover_alt or ""}
        description={p.description or ""}
        period={p.extra?.period or ""}
        org={p.extra?.org or ""}

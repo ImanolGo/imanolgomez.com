@@ -27,6 +27,8 @@ featured = true                              # show in "Selected work" on the ho
 highlight = "One concrete, verified result"   # optional; shown on the card and as "Result"
 confidential = false                         # true = hide media by default, retain confidentiality note
 cover = "cover.jpg"                          # filename inside this page bundle
+cover_card = "card.jpg"                      # optional 3:2 crop for cards, when the centre crop of cover fails
+cover_card_alt = ""                          # optional; only if the card image shows something different
 cover_alt = "Describe the image"             # required when cover is set; empty alt fails the build
 cover_public = false                         # true only for an explicitly approved public press cover
 cover_caption = ""                           # required source credit for a public cover on confidential work

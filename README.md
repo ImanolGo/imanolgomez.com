@@ -123,6 +123,10 @@ Cards without a `cover` use a deliberate text-only layout; a cover with missing 
 press image can be shown with `cover_public = true`; add `cover_caption` with its source credit
 and a source link in `links`. The confidentiality note stays visible. This exception applies
 only to the cover, not to internal screenshots or galleries.
+Cards crop covers to 3:2 from the centre. When that cuts off the subject, add a pre-cropped
+3:2 `cover_card` image (for example `card.jpg`) to the bundle: cards and the social preview
+use it, and the case study keeps the full `cover`. If the card image shows something
+different from the cover, describe it in `cover_card_alt`; otherwise `cover_alt` is used.
 Optional `highlight` is one concrete result, taken from the case study's own Outcome
 section. It appears in bold on the project card and as a "Result" row on the case study.
 Leave it out rather than writing a vague one. On home page cards, the first four `stack`
