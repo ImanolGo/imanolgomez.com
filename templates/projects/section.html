@@ -51,6 +51,7 @@
        period={p.extra?.period or ""}
        org={p.extra?.org or ""}
        tags={p.taxonomies?.tags | default(value=[]) | join(sep=", ")}
+       highlight={p.extra?.highlight or ""}
         level={2}
          confidential={p.extra?.confidential or false}
          cover_public={p.extra?.cover_public or false} /> }}

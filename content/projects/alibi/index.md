@@ -12,6 +12,7 @@ org = "Open source"
 location = ""
 role = "Personal project"
 featured = true
+highlight = "2.9% contradiction rate across evaluation runs, at $0.03 per run."
 confidential = false
 cover = "cover.jpg"
 cover_alt = "Alibi's detective board with suspect cards, collected evidence, an interrogation and the story clock"

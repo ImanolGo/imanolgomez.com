@@ -13,11 +13,14 @@
       {%- if page.extra?.role %}
       <div class="case-meta__row"><dt class="case-meta__label">Role</dt><dd>{{ page.extra.role }}</dd></div>
       {%- endif %}
-      {%- if page.extra?.org %}
+      {%- if page.extra?.org and page.extra.org != page.extra?.role %}
       <div class="case-meta__row"><dt class="case-meta__label">Organisation</dt><dd>{{ page.extra.org }}</dd></div>
       {%- endif %}
       {%- if page.extra?.period %}
       <div class="case-meta__row"><dt class="case-meta__label">Period</dt><dd>{{ page.extra.period }}{% if page.extra?.location %} · {{ page.extra.location }}{% endif %}</dd></div>
+      {%- endif %}
+      {%- if page.extra?.highlight %}
+      <div class="case-meta__row"><dt class="case-meta__label">Result</dt><dd>{{ page.extra.highlight }}</dd></div>
       {%- endif %}
       {%- if stack | length > 0 %}
       <div class="case-meta__row"><dt class="case-meta__label">Stack</dt><dd>{{ stack | join(sep=", ") }}</dd></div>

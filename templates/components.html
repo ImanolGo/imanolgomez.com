@@ -121,6 +121,8 @@
 <svg class="icon" width="{{ size }}" height="{{ size }}" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 2v8M3 7l3 3 3-3"/></svg>
 {%- elif name == "external" -%}
 <svg class="icon" width="{{ size }}" height="{{ size }}" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 7.5 9.5 2.5M6 2.5h3.5V6M9 8.5v1.5a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h1.5"/></svg>
+{%- elif name == "arrow" -%}
+<svg class="icon" width="{{ size }}" height="{{ size }}" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 6h8M7 3l3 3-3 3"/></svg>
 {%- endif -%}
 {%- endcomponent icon %}
 
@@ -145,12 +147,14 @@
 
 {#
   Project card. The whole card is a single link. `period`, `org` and `tags` make
-  the mono meta row; empty ones are simply dropped. Without a cover the card
+  the mono meta row; empty ones are simply dropped. `stack`, when given, replaces
+  the tags with the first technologies, which read better to a non-specialist.
+  `highlight` is one concrete result, shown only when the case study has one. Without a cover the card
    is deliberately typographic. Confidential cards only show explicitly approved public covers. `level` keeps the
   heading order valid: 3 under "Selected work" on the home page, 2 everywhere the
   grid sits directly under the h1.
 #}
-{% component project_card(title, url, cover="", cover_alt="", description="", period="", org="", tags="", level=3, confidential=false, cover_public=false, lead=false) -%}
+{% component project_card(title, url, cover="", cover_alt="", description="", period="", org="", tags="", stack="", highlight="", level=3, confidential=false, cover_public=false, lead=false) -%}
 {%- set show_cover = cover and (not confidential or cover_public) -%}
 {%- if show_cover and cover_alt == "" -%}{{ throw(message="project_card: a cover requires meaningful `cover_alt`") }}{%- endif -%}
 <li class="card{% if lead %} card--lead{% endif %}{% if not show_cover %} card--text{% endif %}">
@@ -169,10 +173,13 @@
       {%- if description %}
       <p class="card__desc">{{ description }}</p>
       {%- endif %}
-      {%- if period != "" or tags != "" %}
+      {%- if highlight %}
+      <p class="card__highlight">{{ highlight }}</p>
+      {%- endif %}
+      {%- if period != "" or tags != "" or stack != "" %}
       <p class="meta">
         {%- if period %}<span>{{ period }}</span>{% endif %}
-        {%- if tags %}<span>{{ tags }}</span>{% endif %}
+        {%- if stack %}<span>{{ stack }}</span>{% elif tags %}<span>{{ tags }}</span>{% endif %}
       </p>
       {%- endif %}
       {% if confidential %}<p class="card__note">Public role &amp; scope. No internal material.</p>{% endif %}

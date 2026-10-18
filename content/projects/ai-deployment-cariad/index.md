@@ -12,6 +12,7 @@ org = "CARIAD"
 location = "Berlin"
 role = "Senior ML Software Engineer → Head of AI Deployment"
 featured = true
+highlight = "AI models from research prototypes to production on a volume-production ADAS platform."
 confidential = true
 cover = "cover.jpg"
 cover_alt = "Overhead view of a car at a road junction with green sensor rings extending towards pedestrians"

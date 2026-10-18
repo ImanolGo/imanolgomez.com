@@ -12,6 +12,7 @@ org = "Personal project"
 location = ""
 role = "Personal project"
 featured = true
+highlight = "Vision answers in ~37 ms and the language model runs at ~30 tokens/s, all on the robot."
 confidential = false
 cover = "cover.jpg"
 cover_alt = "Jetson Orin Nano mounted on a small four-wheel rover chassis with a camera, speaker and cooling fan"

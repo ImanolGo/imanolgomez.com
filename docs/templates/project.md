@@ -24,6 +24,7 @@ org = "ProtoPixel"
 location = ""                                # optional
 role = "Software Engineer – Real-Time Hardware"
 featured = true                              # show in "Selected work" on the home page
+highlight = "One concrete, verified result"   # optional; shown on the card and as "Result"
 confidential = false                         # true = hide media by default, retain confidentiality note
 cover = "cover.jpg"                          # filename inside this page bundle
 cover_alt = "Describe the image"             # required when cover is set; empty alt fails the build

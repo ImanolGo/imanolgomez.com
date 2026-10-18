@@ -123,6 +123,10 @@ Cards without a `cover` use a deliberate text-only layout; a cover with missing 
 press image can be shown with `cover_public = true`; add `cover_caption` with its source credit
 and a source link in `links`. The confidentiality note stays visible. This exception applies
 only to the cover, not to internal screenshots or galleries.
+Optional `highlight` is one concrete result, taken from the case study's own Outcome
+section. It appears in bold on the project card and as a "Result" row on the case study.
+Leave it out rather than writing a vague one. On home page cards, the first four `stack`
+entries replace the tag slugs.
 Non-confidential case studies without a cover render a TODO placeholder. Keep incomplete
 pages as drafts rather than publishing placeholders. Optional outcomes or metrics can
 stay in `docs/CONTENT.md` until they are confirmed; do not invent them to fill a section.
