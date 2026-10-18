@@ -3,7 +3,7 @@ title = "Edge AI for remote patient monitoring"
 template = "projects/page.html"
 description = "NELA Cough: AI tele-monitoring for chronic-disease patients, from requirements to series production."
 date = 2020-08-01
-weight = 50
+weight = 100
 [taxonomies]
 tags = ["edge-ai", "medical", "embedded"]
 [extra]
@@ -11,7 +11,7 @@ period = "Aug 2020 – Apr 2023"
 org = "NELA by Carepath Technologies"
 location = "Berlin"
 role = "AI Software Engineer → Senior IoT Engineer"
-featured = true
+featured = false
 confidential = false
 cover = "cover.jpg"
 cover_alt = "NELA Cough monitoring device, a small rounded white unit on a pale background"

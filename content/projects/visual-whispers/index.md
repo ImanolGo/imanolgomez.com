@@ -3,14 +3,14 @@ title = "Visual Whispers: picture telephone"
 template = "projects/page.html"
 description = "An image model paints, a character describes what it sees, and that description becomes the next painting."
 date = 2024-01-01
-weight = 140
+weight = 50
 [taxonomies]
 tags = ["generative-ai", "creative-code"]
 [extra]
 period = "Started 2024"
 org = "Open source"
 role = "Personal project"
-featured = false
+featured = true
 confidential = false
 cover = "cover.jpg"
 cover_alt = "Visual Whispers interface showing generated paintings and character descriptions, with new words highlighted"

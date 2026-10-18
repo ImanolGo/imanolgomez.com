@@ -3,7 +3,7 @@ title = "Real-time smart lighting"
 template = "projects/page.html"
 description = "Firmware and GPU-based generative content for real-time smart lighting hardware."
 date = 2017-01-01
-weight = 40
+weight = 140
 [taxonomies]
 tags = ["lighting", "embedded", "real-time"]
 [extra]
@@ -11,7 +11,7 @@ period = "Jan 2017 – Aug 2020"
 org = "ProtoPixel"
 location = ""
 role = "Software Engineer – Real-Time Hardware"
-featured = true
+featured = false
 confidential = false
 cover = "stage.jpg"
 cover_alt = "Blue and violet illuminated arches spanning the Primavera Sound festival stage above a crowd"

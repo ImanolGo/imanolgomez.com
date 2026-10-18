@@ -24,7 +24,7 @@ served from this domain.
 Imanol Gómez, Berlin, Germany. Contact:
 [imanol@steinergomez.com](mailto:imanol@steinergomez.com).
 
-TODO(imanol): decide whether a postal address belongs here too (see the Impressum).
+TODO(imanol): decide whether a postal address belongs here too.
 
 ## Hosting
 

@@ -60,9 +60,8 @@ Unused alternate photos remain in Downloads; they have not been copied into the 
 
 ## Still to collect
 
-- Legal review and the details needed to finish the draft Impressum and privacy
-  pages: an appropriate public business/c/o address, applicable operator details,
-  and email-provider and retention information. Do not publish a private home address.
+- Legal review and the details needed to finish the draft privacy page:
+  email-provider and retention information. There is no Impressum by decision.
 - The missing media credits listed above.
 - Full citation for the third publication: title, authors, venue and date.
 - EMMA-VLM evaluation findings, if there are results worth publishing. The current

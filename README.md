@@ -30,7 +30,7 @@ Lighthouse scores, field performance and a human screen-reader pass remain unver
 the earlier CV print check produced three A4 pages against a one-to-two-page target.
 See [the QA record](docs/QA.md) for the scope and results of each check.
 
-Impressum and Privacy remain drafts. Missing media credits and a few content
+The Privacy page remains a draft; there is no Impressum (the site is treated as private). Missing media credits and a few content
 clarifications still need Imanol's input. The CV lists two confirmed publications;
 a third citation is unresolved. These questions are tracked in
 [the content notes](docs/CONTENT.md), outside the generated site. Writing has no
@@ -171,7 +171,7 @@ Add a `[[repo]]` block to `data/repos.toml` with `name`, `url`, `year`, `lang`, 
 `data/skills.toml` is a list of `[[group]]` entries (`name` + `items`); `data/languages.toml` is a list of `[[language]]` entries (`name` + `level`). Both render on `/cv/` only.
 
 ### Publishing the legal pages
-`content/impressum.md` and `content/privacy.md` are `draft = true`, so they are not built and the footer does not link to them. Delete `draft = true` when the content is reviewed — the footer links appear on their own.
+`content/privacy.md` is `draft = true`, so it is not built and the footer does not link to it. Delete `draft = true` when the content is reviewed — the footer link appears on its own. There is no `content/impressum.md`; if one is added later, the footer links to it automatically.
 
 ### A new post
 Add `content/writing/<slug>.md` with a title and date. Set `extra.show_writing = true`

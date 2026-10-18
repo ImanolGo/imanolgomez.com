@@ -77,7 +77,7 @@ Jetson with TensorRT and llama.cpp.
 - **LLM & agents:** LLM-powered agents, agentic workflows, multi-step agents with tool use, RAG, embeddings, vector databases (pgvector), LangGraph, MCP (Model Context Protocol), structured outputs (Pydantic), prompt engineering, LiteLLM, OpenRouter, frontier models.
 - **Evaluation & observability:** evaluation frameworks, LLM-as-judge, automated eval gates in CI, accuracy/safety/latency/cost metrics, OpenTelemetry, Arize Phoenix, tracing, cost and token accounting.
 - **Machine learning:** PyTorch, TensorFlow, fine-tuning (DistilBERT), ONNX, TensorRT, model optimization and deployment.
-- **Software engineering:** Python (production), C++, Rust, FastAPI, PostgreSQL, REST APIs, Docker, Docker Compose, GitHub Actions, CI/CD, testing, HTMX/Jinja, Linux (Ubuntu on Azure VMs), snap packaging.
+- **Software engineering:** Python (production), C++, Rust, FastAPI, PostgreSQL, REST APIs, Docker, Docker Compose, GitHub Actions, CI/CD, testing, HTMX/Jinja, Linux (Ubuntu on Azure VMs), deb packaging.
 - **Edge & embedded:** Qualcomm NPU / AI accelerators, NVIDIA Jetson Orin, ROS 2, embedded Linux, QNX, RTOS, firmware, MCUs, GLSL/OpenCL/CUDA.
 - **Regulated environments:** security, compliance and auditability; healthcare (IEC 60601); automotive safety (ISO 26262, ASPICE).
 - **Creative technology:** OpenGL, openFrameworks (contributor), OpenCV/computer vision, DMX lighting hardware, LED systems, interactive installations, generative graphics.

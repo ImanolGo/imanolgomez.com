@@ -3,7 +3,7 @@ title = "EMMA-VLM: driving plans from vision models"
 template = "projects/page.html"
 description = "An EMMA-style driving planner with interchangeable vision models and trajectory evaluation against recorded driving data."
 date = 2024-11-01
-weight = 100
+weight = 40
 aliases = ["/projects/emma-claude/"]
 [taxonomies]
 tags = ["edge-ai", "automotive", "llm-agents"]
@@ -12,7 +12,7 @@ period = "Started 2024"
 org = "Open source"
 location = ""
 role = "Personal project"
-featured = false
+featured = true
 confidential = false
 cover = "cover.jpg"
 cover_alt = "EMMA-VLM road-camera view beside a bird's-eye trajectory plot and the model's driving explanation"
