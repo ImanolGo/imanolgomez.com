@@ -27,14 +27,14 @@ summary = "Hands-on workshop on working with light and creativity."
 image = "talks/factory-berlin-workshop.jpg"
 alt = "Imanol Gómez presenting to a seated group in the Creative Code space at Factory Berlin, with a screen beside him"
 credit = "Photo: Factory Berlin workshop."
-links = [{ label = "Event post", url = "https://lnkd.in/p/di4HH4ix" }]
+links = [{ label = "Creators Lab project page", url = "https://www.protopixel.io/builtwithprotopixel/showcases/creators-lab-space" }]
 
 [[talk]]
 title = "Expressive Generative Lighting"
 kind = "Talk"
 event = "Porto Tech Hub Conference"
 place = "Porto"
-date = "2019"
+date = "Oct 2019"
 featured = true
 summary = "Using light to create an emotional response rather than a realistic effect."
 image = "talks/porto-tech-hub-2019.jpg"
