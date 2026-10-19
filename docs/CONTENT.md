@@ -87,7 +87,7 @@ Porto still is the YouTube thumbnail with letterbox bars removed; the Future Fas
 artbangkok.com. The Hack the Light UP page had no photo clearly from the 2020 edition, so none is used.
 
 Open questions for Imanol:
-- Factory Berlin: now links to the ProtoPixel Creators Lab page, which dates the space project to 2020 while the workshop is shown as 2019 (LinkedIn post, about Dec 2019). Exact workshop date? Photo credit?
+- Factory Berlin: workshop confirmed as Dec 2019 by Imanol. Photo credit still pending.
 - Any photos from Factory Berlin, Llum BCN and the university teaching (UPF, HfG Offenbach)?
 - The static CV PDF (`static/cv/imanol-gomez-cv.pdf`) is supplied by Imanol and was not changed.
 
