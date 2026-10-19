@@ -78,3 +78,16 @@ Unused alternate photos remain in Downloads; they have not been copied into the 
 The exact start dates of the new learning projects were not supplied. Year-only
 periods are shown publicly; January 1 front-matter dates are sorting anchors, not
 claims about a launch day.
+
+## Talks and workshops (October 2026)
+
+Sources: the organisers' pages, the Porto Tech Hub video title, and Imanol's links.
+`IoTmasterclassAccra.jpeg` is cropped to remove the phone number printed on the poster.
+Porto still is the YouTube thumbnail with letterbox bars removed; the Future Fashion poster is from
+artbangkok.com. The Hack the Light UP page had no photo clearly from the 2020 edition, so none is used.
+
+Open questions for Imanol:
+- Factory Berlin Creators Lab date: shown as 2019 (the LinkedIn post is from about Dec 2019). Exact date?
+- Porto Tech Hub Conference: exact date (shown as 2019).
+- Any photos from Factory Berlin, Llum BCN and the university teaching (UPF, HfG Offenbach)?
+- The static CV PDF (`static/cv/imanol-gomez-cv.pdf`) is supplied by Imanol and was not changed.

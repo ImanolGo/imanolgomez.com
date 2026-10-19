@@ -1,0 +1,62 @@
+# Talks, workshops and hackathons, newest first. Rendered on the CV page (all
+# entries) and on the home page (entries with `featured = true`). Facts come from
+# the organisers' own pages and Imanol's notes; see docs/CONTENT.md.
+#
+# Fields: title, kind, event, place, date, summary, optional image (path relative
+# to content/), alt (required with image), credit, and links = [{ label, url }].
+
+[[talk]]
+title = "Hack the Light UP: mentor"
+kind = "Hackathon"
+event = "Llum Barcelona Festival, organised by ProtoPixel"
+place = "Barcelona"
+date = "Feb 2020"
+summary = "Mentor at the first interactive lighting hackathon in Spain: 24 hours for designers, architects, programmers and makers to prototype lighting projects."
+links = [{ label = "Event page", url = "https://hackthelightup.protopixel.net/" }]
+
+[[talk]]
+title = "Factory Berlin Creators Lab: light and creativity"
+kind = "Workshop"
+event = "Factory Berlin Creators Lab, with ProtoPixel"
+place = "Berlin"
+date = "2019"
+summary = "Hands-on workshop on working with light and creativity."
+links = [{ label = "Event post", url = "https://lnkd.in/p/di4HH4ix" }]
+
+[[talk]]
+title = "Expressive Generative Lighting"
+kind = "Talk"
+event = "Porto Tech Hub Conference"
+place = "Porto"
+date = "2019"
+featured = true
+summary = "Using light to create an emotional response rather than a realistic effect."
+image = "talks/porto-tech-hub-2019.jpg"
+alt = "Imanol Gómez speaking on stage at Porto Tech Hub 2019, one hand raised"
+credit = "Still from the Porto Tech Hub 2019 recording."
+links = [{ label = "Watch the talk", url = "https://www.youtube.com/watch?v=7MaxtLq4vuU" }, { label = "Conference announcement", url = "https://lnkd.in/p/dDfyZWZD" }]
+
+[[talk]]
+title = "IoT Master Class"
+kind = "Workshop"
+event = "iSpace Foundation, with Eden Labs"
+place = "Accra"
+date = "Jan 2019"
+featured = true
+summary = "Free two-day masterclass on the Internet of Things, 7–8 January 2019."
+image = "talks/iot-masterclass-accra.jpg"
+alt = "Poster for the free IoT Master Class with Imanol Gomez at iSpace Foundation, 7th and 8th January 2019"
+credit = "Poster: iSpace Foundation and Eden Labs."
+
+[[talk]]
+title = "Future Fashion: Enhancing Life"
+kind = "Workshop and seminar"
+event = "Goethe-Institut Thailand, IKAT eCUT project, with ElektroCouture"
+place = "Bangkok"
+date = "Aug 2016"
+featured = true
+summary = "ElektroCouture ran the five-day Future Fashion workshop for 12 selected participants at FabCafé Bangkok. I spoke at the public seminar on wearable technology that responds to us."
+image = "talks/future-fashion-bangkok.jpg"
+alt = "Poster for the Future Fashion seminar at NOW26 Studio, Siam Square, on 6 August 2016"
+credit = "Poster: Goethe-Institut Thailand and IKAT eCUT."
+links = [{ label = "Seminar listing", url = "https://www.artbangkok.com/?p=43210" }, { label = "Workshop participants (PDF, German)", url = "https://www.goethe.de/resources/files/pdf88/Future_Fashion_Announcement_Deutsch.pdf" }]

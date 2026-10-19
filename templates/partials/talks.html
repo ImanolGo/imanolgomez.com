@@ -1,0 +1,30 @@
+{#
+  Talks & workshops from data/talks.toml. `compact` shows only featured entries
+  as a card strip (home page); otherwise every entry is listed (CV page).
+  `level` is the heading level of each entry title.
+#}
+{% set talks = load_data(path="data/talks.toml") %}
+<ul class="talks{% if compact %} talks--compact{% endif %}">
+  {%- for t in talks.talk %}
+  {%- if not compact or t.featured %}
+  <li class="talk">
+    {%- if t.image %}
+    <div class="talk__media">
+      {{ <figure src={t.image} alt={t.alt} caption={t.credit} sizes="(min-width: 48rem) 20rem, 100vw" /> }}
+    </div>
+    {%- endif %}
+    <div class="talk__body">
+      <p class="meta"><span>{{ t.kind }}</span><span>{{ t.place }}</span><span>{{ t.date }}</span></p>
+      <h{{ level }} class="talk__title">{{ t.title }}</h{{ level }}>
+      <p class="talk__event">{{ t.event }}</p>
+      <p>{{ t.summary }}</p>
+      {%- if t.links %}
+      <p class="talk__links">
+        {%- for l in t.links %}<a href="{{ l.url }}">{{ l.label }} {{ <icon name="external" /> }}</a>{% endfor -%}
+      </p>
+      {%- endif %}
+    </div>
+  </li>
+  {%- endif %}
+  {%- endfor %}
+</ul>

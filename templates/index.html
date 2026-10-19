@@ -70,6 +70,15 @@
 </section>
 {% endif %}
 
+<section class="home-section" aria-labelledby="talks">
+  <div class="section-heading">
+    <h2 id="talks">Talks &amp; workshops<span class="heading-dot" aria-hidden="true">.</span></h2>
+    <a class="text-link" href="{{ get_url(path='@/cv.md') }}#cv-talks">All talks {{ <icon name="arrow" /> }}</a>
+  </div>
+  {% set compact = true %}{% set level = 3 %}
+  {% include "partials/talks.html" %}
+</section>
+
 {% if experience.org | length > 0 %}
 <section class="home-section home-experience" aria-labelledby="experience">
   <div class="home-experience__intro">
@@ -81,10 +90,11 @@
   <ol class="timeline timeline--compact">
     {%- for o in experience.org %}
     <li class="timeline__group">
-      <p class="timeline__period">{{ o.period }}</p>
+      <p class="timeline__period">{{ o.roles[0].start }} – {{ o.roles[0].end }}</p>
       <div>
         <p class="timeline__org">{{ o.name }}{% if o.location %} <span class="timeline__location">· {{ o.location }}</span>{% endif %}</p>
         <p class="timeline__role-title">{{ o.roles[0].role }}</p>
+        {%- if o.roles | length > 1 %}<p class="timeline__note">At {{ o.name }} since {{ o.roles[o.roles | length - 1].start }}</p>{% endif %}
       </div>
     </li>
     {%- endfor %}

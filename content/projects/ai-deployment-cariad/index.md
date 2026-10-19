@@ -24,9 +24,9 @@ links = [{ label = "CARIAD–Bosch announcement", url = "https://cariad.technolo
 
 ## Context
 
-CARIAD is the Volkswagen Group software company, in Berlin. Since April 2023 I have
-worked there full-time as part of the **Automated Driving Alliance** between CARIAD and
-Bosch, building an ADAS software platform for Volkswagen Group vehicles on Qualcomm SoCs.
+CARIAD is the Volkswagen Group software company, in Berlin. I joined in April 2023 as
+Senior ML Software Engineer and have worked there full-time since,
+as part of the **Automated Driving Alliance** between CARIAD and Bosch, building an ADAS software platform for Volkswagen Group vehicles on Qualcomm SoCs.
 
 ## The problem
 

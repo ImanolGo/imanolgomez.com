@@ -82,6 +82,11 @@ Domain and repository setup are documented in [docs/DEPLOY.md](docs/DEPLOY.md).
 
 ## Adding content
 
+### Talks & workshops
+Entries live in `data/talks.toml` (fields documented at the top of the file) and render on the
+CV page and, when `featured = true`, in a strip on the home page. Images go in `content/talks/`
+and need `alt` and a `credit`. Add a talk by adding a `[[talk]]` block; no template edit needed.
+
 ### Home page positioning
 `config.toml` holds the site-wide `description` (metadata) and `extra.short_description`
 (professional headline, also used in the home page title and eyebrow). `content/_index.md`

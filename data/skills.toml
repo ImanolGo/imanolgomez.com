@@ -10,7 +10,7 @@ items = ["Eval frameworks & LLM-as-judge", "CI eval gates", "Accuracy / safety /
 
 [[group]]
 name = "Machine learning"
-items = ["PyTorch", "TensorFlow", "Fine-tuning", "ONNX", "TensorRT", "Model optimization & deployment"]
+items = ["PyTorch", "TensorFlow", "Fine-tuning", "ONNX", "TensorRT", "Vision-language driving planner (EMMA-VLM)", "Model optimization & deployment"]
 
 [[group]]
 name = "Software engineering"
@@ -18,7 +18,7 @@ items = ["Python (production)", "C++", "Rust", "FastAPI", "PostgreSQL", "Docker 
 
 [[group]]
 name = "Edge & embedded"
-items = ["Qualcomm NPU", "NVIDIA Jetson Orin", "ROS 2", "Embedded Linux / QNX", "RTOS & MCUs", "Firmware", "GLSL / CUDA"]
+items = ["Qualcomm NPU", "NVIDIA Jetson Orin", "ROS 2", "Embedded Linux / QNX", "RTOS & MCUs", "Firmware", "GLSL", "CUDA (Particle Atlas, open source)"]
 
 [[group]]
 name = "Regulated environments"
