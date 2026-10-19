@@ -87,7 +87,8 @@ Porto still is the YouTube thumbnail with letterbox bars removed; the Future Fas
 artbangkok.com. The Hack the Light UP page had no photo clearly from the 2020 edition, so none is used.
 
 Open questions for Imanol:
-- Factory Berlin Creators Lab date: shown as 2019 (the LinkedIn post is from about Dec 2019). Exact date?
-- Porto Tech Hub Conference: exact date (shown as 2019).
+- Factory Berlin: the message mentioned a replacement link for the LinkedIn post but no URL arrived; still on LinkedIn. Exact date (shown as 2019)? Photo credit?
+- Porto Tech Hub Conference: the conference page gives no dates (shown as 2019).
+- Scope Sessions: the page gives no city; "Berlin" assumes the Panke venue it links to. The image on that page is a low-res exhibit photo; its Ars Electronica credit comes from Imanol, not the page.
 - Any photos from Factory Berlin, Llum BCN and the university teaching (UPF, HfG Offenbach)?
 - The static CV PDF (`static/cv/imanol-gomez-cv.pdf`) is supplied by Imanol and was not changed.

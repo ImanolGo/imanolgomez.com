@@ -12,6 +12,9 @@ event = "Llum Barcelona Festival, organised by ProtoPixel"
 place = "Barcelona"
 date = "Feb 2020"
 summary = "Mentor at the first interactive lighting hackathon in Spain: 24 hours for designers, architects, programmers and makers to prototype lighting projects."
+image = "talks/hack-the-light-up.jpg"
+alt = "A hackathon participant holding an open umbrella lined with glowing red and blue LED strips"
+credit = "Photo: ProtoPixel, from the Hack the Light UP site."
 links = [{ label = "Event page", url = "https://hackthelightup.protopixel.net/" }]
 
 [[talk]]
@@ -21,6 +24,9 @@ event = "Factory Berlin Creators Lab, with ProtoPixel"
 place = "Berlin"
 date = "2019"
 summary = "Hands-on workshop on working with light and creativity."
+image = "talks/factory-berlin-workshop.jpg"
+alt = "Imanol Gómez presenting to a seated group in the Creative Code space at Factory Berlin, with a screen beside him"
+credit = "Photo: Factory Berlin workshop."
 links = [{ label = "Event post", url = "https://lnkd.in/p/di4HH4ix" }]
 
 [[talk]]
@@ -34,7 +40,7 @@ summary = "Using light to create an emotional response rather than a realistic e
 image = "talks/porto-tech-hub-2019.jpg"
 alt = "Imanol Gómez speaking on stage at Porto Tech Hub 2019, one hand raised"
 credit = "Still from the Porto Tech Hub 2019 recording."
-links = [{ label = "Watch the talk", url = "https://www.youtube.com/watch?v=7MaxtLq4vuU" }, { label = "Conference announcement", url = "https://lnkd.in/p/dDfyZWZD" }]
+links = [{ label = "Watch the talk", url = "https://www.youtube.com/watch?v=7MaxtLq4vuU" }, { label = "Conference page", url = "https://portotechhub.com/conference-2019/" }]
 
 [[talk]]
 title = "IoT Master Class"
@@ -60,3 +66,15 @@ image = "talks/future-fashion-bangkok.jpg"
 alt = "Poster for the Future Fashion seminar at NOW26 Studio, Siam Square, on 6 August 2016"
 credit = "Poster: Goethe-Institut Thailand and IKAT eCUT."
 links = [{ label = "Seminar listing", url = "https://www.artbangkok.com/?p=43210" }, { label = "Workshop participants (PDF, German)", url = "https://www.goethe.de/resources/files/pdf88/Future_Fashion_Announcement_Deutsch.pdf" }]
+
+[[talk]]
+title = "Science Inspires Art"
+kind = "Talk"
+event = "Scope Sessions #35, artist talks and media salon"
+place = "Berlin"
+date = "Sep 2014"
+summary = "How art and science are converging: media artists building scientific communication and working with research data. Based on my time at Ars Electronica."
+image = "talks/scope-sessions-2014.jpg"
+alt = "Three people playing with a field of glowing fibre-optic rods in a dark room"
+credit = "Photo: Ars Electronica."
+links = [{ label = "Session page", url = "https://scopesessions.org/session/2014/09/11/035.html" }]
