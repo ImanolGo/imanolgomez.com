@@ -26,7 +26,7 @@ date = "Dec 2019"
 summary = "Workshop launching the Creators Lab space, whose lighting ProtoPixel designed. It covered expressive lighting in spaces and how to use ProtoPixel technology."
 image = "talks/factory-berlin-workshop.jpg"
 alt = "Imanol Gómez presenting to a seated group in the Creative Code space at Factory Berlin, with a screen beside him"
-credit = "Photo: Factory Berlin workshop."
+credit = "Photo: ProtoPixel."
 links = [{ label = "Creators Lab space and project", url = "https://www.protopixel.io/builtwithprotopixel/showcases/creators-lab-space" }]
 
 [[talk]]
