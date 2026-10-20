@@ -192,7 +192,22 @@ in `config.toml` when ready to expose the section. The Writing navigation link n
 both that flag and at least one non-draft post.
 
 ### Updating the CV PDF
-Replace `static/cv/imanol-gomez-cv.pdf`.
+The PDF is generated from the same data as the site. Run `scripts/build-cv.sh` and commit
+`static/cv/imanol-gomez-cv.pdf` (needs `zola`, `chromium` and `python3`). It prints `/cv/print/`
+(`templates/cv-pdf.html`, `sass/cv-pdf.scss`) from `data/experience.toml`, `education.toml`,
+`skills.toml`, `languages.toml`, `talks.toml` (the `short` event names), the project pages and
+`data/cv.toml`, which holds the PDF-only choices: `headline`, `summary`, `photo` (`""` for none),
+`max_highlights` per role, `skill_groups`, `talks` / `talks_extra`, `open_source` and the
+`[[project]]` list (`slug`, optional `bullets`). Links in the PDF point at the live site. Zilla
+Slab is self-hosted in `static/fonts/` (SIL OFL, licence included).
+
+**Tailored variants** live outside this repo (rule 10): a TOML file with any of the keys above,
+plus `phone`, `[[skill]]` groups (`name`, `items`) that replace `skill_groups`, and `[[role]]`
+overrides (`role` = the exact title in experience.toml, optional `summary` and `highlights`).
+`scripts/build-cv.sh --variant path/cv.toml [--out file.pdf]` builds it in a throwaway copy of
+the site and writes `Imanol_Gomez_CV.pdf` next to the variant. The phone number never goes in
+the repo; for the generic PDF use `CV_PHONE="+49 ..." scripts/build-cv.sh` only for a copy you
+send, not the one you commit.
 
 ## Project docs
 
