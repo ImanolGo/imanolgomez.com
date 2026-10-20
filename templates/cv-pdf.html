@@ -54,12 +54,12 @@
         <h1>{{ config.extra.author }}</h1>
         <p class="head__role">{{ cv.headline }}</p>
         <ul class="head__contact">
-          <li><a href="mailto:{{ config.extra.email }}">{{ config.extra.email }}</a></li>
-          {%- if phone %}<li><a href="tel:{{ phone | replace(from=' ', to='') }}">{{ phone }}</a></li>{% endif %}
-          <li>Berlin, Germany</li>
-          <li><a href="{{ site }}/">{{ site | trim_start(pat="https://") }}</a></li>
-          <li><a href="{{ config.extra.linkedin }}">{{ config.extra.linkedin | trim_start(pat="https://www.") | trim_end(pat="/") }}</a></li>
-          <li><a href="{{ config.extra.github }}">{{ config.extra.github | trim_start(pat="https://") }}</a></li>
+          <li>{{ <icon name="mail" size={10} /> }}<a href="mailto:{{ config.extra.email }}">{{ config.extra.email }}</a></li>
+          {%- if phone %}<li>{{ <icon name="phone" size={10} /> }}<a href="tel:{{ phone | replace(from=' ', to='') }}">{{ phone }}</a></li>{% endif %}
+          <li>{{ <icon name="pin" size={10} /> }}Berlin, Germany</li>
+          <li>{{ <icon name="globe" size={10} /> }}<a href="{{ site }}/">{{ site | trim_start(pat="https://") }}</a></li>
+          <li>{{ <icon name="linkedin" size={10} /> }}<a href="{{ config.extra.linkedin }}">{{ config.extra.linkedin | trim_start(pat="https://www.") | trim_end(pat="/") }}</a></li>
+          <li>{{ <icon name="github" size={10} /> }}<a href="{{ config.extra.github }}">{{ config.extra.github | trim_start(pat="https://") }}</a></li>
         </ul>
       </div>
     </header>
