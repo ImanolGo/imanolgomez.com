@@ -27,6 +27,7 @@ skill_groups = [
   "Machine learning",
   "Software engineering",
   "Edge & embedded",
+  "GPU & parallel computing",
   "Regulated environments",
   "Delivery & leadership",
 ]
@@ -48,4 +49,4 @@ slug = "alibi"
 slug = "on-device-robot-assistant"
 
 [[project]]
-slug = "emma-vlm"
+slug = "cuda-particles"

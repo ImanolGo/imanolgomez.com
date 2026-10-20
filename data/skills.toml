@@ -18,7 +18,11 @@ items = ["Python (production)", "C++", "Rust", "FastAPI", "PostgreSQL", "Docker 
 
 [[group]]
 name = "Edge & embedded"
-items = ["Qualcomm NPU", "NVIDIA Jetson Orin", "ROS 2", "Embedded Linux / QNX", "RTOS & MCUs", "Firmware", "GLSL", "CUDA (Particle Atlas, open source)"]
+items = ["Qualcomm NPU", "NVIDIA Jetson Orin", "ROS 2", "Embedded Linux / QNX", "RTOS & MCUs", "Firmware"]
+
+[[group]]
+name = "GPU & parallel computing"
+items = ["CUDA (Particle Atlas, open source)", "CUDA/OpenGL interop", "OpenCL", "GLSL", "wgpu / WGSL compute shaders (Rust)", "Real-time GPU particle and flocking simulations", "TensorRT inference on NVIDIA Jetson"]
 
 [[group]]
 name = "Regulated environments"
