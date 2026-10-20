@@ -1,0 +1,51 @@
+# The generic PDF CV (templates/cv-pdf.html, page /cv/print/, built by
+# scripts/build-cv.sh). Experience, education, skills, languages and talks come from
+# the other data/*.toml files, so the PDF never drifts from the site. This file only
+# holds what is specific to the PDF.
+#
+# A variant (a CV tailored to one application) is a TOML file with the same keys that
+# lives OUTSIDE this repo (AGENTS.md rule 10); every key it sets replaces the one here.
+# See README.md → "Updating the CV PDF". Never put the phone number here
+# (docs/PROFILE.md): pass it at build time.
+
+headline = "Technical lead & AI engineer"
+
+# Empty string = no photo.
+photo = "cv/photo.jpg"
+photo_alt = "Portrait of Imanol Gómez"
+
+# Facts from docs/PROFILE.md (short bio, positioning) and the project pages.
+summary = "Technical lead and AI engineer with 15+ years of building production software end to end in Python and C++, from automotive AI and medical devices to interactive installations. As Head of AI Deployment at CARIAD (Volkswagen Group), I lead 12 engineers taking AI models from research prototypes to production on a volume-production ADAS platform, working directly with Volkswagen Group brands and with Qualcomm, Samsung and NVIDIA. Before that I built an AI tele-monitoring medical product from requirements to production under IEC 60601, and as a creative technologist I delivered installations, taught, gave talks and ran workshops. In my own time I build LLM agents with automated evaluation and on-device AI on NVIDIA Jetson."
+
+# Highlights shown per role, taken from the top of each role's list in experience.toml.
+# A role's `summary` is always shown above them.
+max_highlights = 3
+
+# Skill groups to include, by name as written in skills.toml, in this order.
+skill_groups = [
+  "LLM & agents",
+  "Machine learning",
+  "Software engineering",
+  "Edge & embedded",
+  "Regulated environments",
+  "Delivery & leadership",
+]
+
+# One line listing talks and workshops (the `short` names in data/talks.toml), plus
+# this tail. Set `talks = false` to leave the line out.
+talks = true
+talks_extra = "university teaching at Universitat Pompeu Fabra and HfG Offenbach"
+
+# One closing line under the projects. Empty string = none.
+open_source = "contributor to openFrameworks (C++); 80+ public repositories on GitHub."
+
+# Projects to list, by folder name under content/projects/. Without `bullets` a
+# project is one line: its description plus its highlight, if it has one.
+[[project]]
+slug = "alibi"
+
+[[project]]
+slug = "on-device-robot-assistant"
+
+[[project]]
+slug = "emma-vlm"

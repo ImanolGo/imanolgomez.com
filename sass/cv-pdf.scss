@@ -1,0 +1,189 @@
+// Stylesheet for the print layout of the CV (templates/cv-pdf.html). Compiled to
+// public/cv-pdf.css and used by that one page only. Colours come from the print
+// tokens; the font is self-hosted in static/fonts/ (Zilla Slab, SIL OFL).
+
+@import "tokens";
+
+@font-face {
+  font-family: "Zilla Slab";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/ZillaSlab-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Zilla Slab";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/fonts/ZillaSlab-Italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Zilla Slab";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/fonts/ZillaSlab-Bold.woff2") format("woff2");
+}
+
+:root {
+  color-scheme: light;
+}
+
+@page {
+  size: A4;
+  margin: 12mm 14mm;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--print-paper);
+  color: var(--print-ink);
+  font: 9.5pt/1.38 "Zilla Slab", Georgia, serif;
+  max-width: 182mm;
+  margin-inline: auto;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+dl,
+dd {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 6mm;
+  padding: 0 0 4mm;
+}
+
+.head__photo {
+  width: 26mm;
+  height: 26mm;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+h1 {
+  font-size: 20pt;
+  line-height: 1.1;
+}
+
+.head__role {
+  font-size: 11pt;
+  color: var(--print-muted);
+  margin-block: 1mm 2mm;
+}
+
+.head__contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 4mm;
+  padding: 0;
+  list-style: none;
+  font-size: 8.5pt;
+}
+
+h2 {
+  background: var(--print-bar);
+  text-align: center;
+  font-size: 10.5pt;
+  padding: 0.8mm 0;
+  margin: 4mm 0 2mm;
+  break-after: avoid;
+}
+
+.skills div {
+  display: flex;
+  gap: 2mm;
+  margin-block-end: 0.6mm;
+}
+
+.skills dt {
+  flex: 0 0 38mm;
+  font-weight: 700;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 38mm 1fr;
+  gap: 3mm;
+  margin-block-end: 2.2mm;
+  break-inside: avoid;
+}
+
+.row__when {
+  color: var(--print-muted);
+}
+
+h3 {
+  font-size: 10pt;
+  line-height: 1.25;
+}
+
+.row__sub {
+  font-style: italic;
+  color: var(--print-muted);
+}
+
+ul {
+  padding-inline-start: 4mm;
+}
+
+li + li {
+  margin-block-start: 0.4mm;
+}
+
+.row__case {
+  margin-inline-start: 2mm;
+  font-style: normal;
+  font-size: 8.5pt;
+  text-decoration: underline;
+}
+
+.projects > li {
+  break-inside: avoid;
+}
+
+.projects > li + li {
+  margin-block-start: 1.2mm;
+}
+
+.project__link {
+  margin-inline-start: 1mm;
+  color: var(--print-muted);
+}
+
+// Stack and the one-line description each start on their own line.
+.project__stack,
+.project__line {
+  display: block;
+}
+
+.project__stack {
+  font-style: italic;
+  color: var(--print-muted);
+}
+
+.after-list {
+  margin-block-start: 1.5mm;
+}
+
+.langs {
+  display: flex;
+  gap: 10mm;
+  padding: 0;
+  list-style: none;
+}

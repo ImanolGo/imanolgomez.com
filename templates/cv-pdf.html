@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+{#
+  Print layout of the CV. It is the source of static/cv/imanol-gomez-cv.pdf, which
+  scripts/build-cv.sh renders with headless Chromium. Everything comes from data/*.toml
+  (see data/cv.toml for the PDF-only choices), so adding a job or a skill never means
+  editing this file. Self-contained: own stylesheet, self-hosted font, no scripts.
+
+  data/cv-variant.toml never exists in the repo: build-cv.sh copies a tailored variant
+  there, in a throwaway copy of the site, and each key it sets replaces data/cv.toml's.
+#}
+{%- set base = load_data(path="data/cv.toml") -%}
+{%- set v = load_data(path="data/cv-variant.toml", required=false) or {} -%}
+{%- set experience = load_data(path="data/experience.toml") -%}
+{%- set education = load_data(path="data/education.toml") -%}
+{%- set skills = load_data(path="data/skills.toml") -%}
+{%- set languages = load_data(path="data/languages.toml") -%}
+{%- set talks = load_data(path="data/talks.toml") -%}
+
+{%- set cv = {
+  "headline": v["headline"] if "headline" in v else base["headline"] if "headline" in base else "",
+  "photo": v["photo"] if "photo" in v else base["photo"] if "photo" in base else "",
+  "photo_alt": v["photo_alt"] if "photo_alt" in v else base["photo_alt"] if "photo_alt" in base else "",
+  "summary": v["summary"] if "summary" in v else base["summary"] if "summary" in base else "",
+  "max_highlights": v["max_highlights"] if "max_highlights" in v else base["max_highlights"] if "max_highlights" in base else "",
+  "skill_groups": v["skill_groups"] if "skill_groups" in v else base["skill_groups"] if "skill_groups" in base else "",
+  "skill": v["skill"] if "skill" in v else base["skill"] if "skill" in base else "",
+  "talks": v["talks"] if "talks" in v else base["talks"] if "talks" in base else "",
+  "talks_extra": v["talks_extra"] if "talks_extra" in v else base["talks_extra"] if "talks_extra" in base else "",
+  "open_source": v["open_source"] if "open_source" in v else base["open_source"] if "open_source" in base else "",
+  "project": v["project"] if "project" in v else base["project"] if "project" in base else "",
+  "role": v["role"] if "role" in v else base["role"] if "role" in base else "",
+  "phone": v["phone"] if "phone" in v else "",
+} -%}
+
+{#- The phone number is never committed: it comes from CV_PHONE or from a variant,
+    which lives outside the repo. Links point at the live site even though the page
+    is printed from a local build. -#}
+{%- set phone = get_env(name="CV_PHONE", default="") or cv.phone -%}
+{%- set site = get_env(name="CV_SITE_URL", default=config.base_url) | trim_end(pat="/") -%}
+<html lang="{{ lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>{{ config.extra.author }} — CV</title>
+    <link rel="stylesheet" href="{{ get_url(path='cv-pdf.css') }}">
+  </head>
+  <body>
+    <header class="head">
+      {%- if cv.photo %}
+      <img class="head__photo" src="{{ get_url(path=cv.photo) }}" width="600" height="600" alt="{{ cv.photo_alt }}">
+      {%- endif %}
+      <div class="head__text">
+        <h1>{{ config.extra.author }}</h1>
+        <p class="head__role">{{ cv.headline }}</p>
+        <ul class="head__contact">
+          <li><a href="mailto:{{ config.extra.email }}">{{ config.extra.email }}</a></li>
+          {%- if phone %}<li><a href="tel:{{ phone | replace(from=' ', to='') }}">{{ phone }}</a></li>{% endif %}
+          <li>Berlin, Germany</li>
+          <li><a href="{{ site }}/">{{ site | trim_start(pat="https://") }}</a></li>
+          <li><a href="{{ config.extra.linkedin }}">{{ config.extra.linkedin | trim_start(pat="https://www.") | trim_end(pat="/") }}</a></li>
+          <li><a href="{{ config.extra.github }}">{{ config.extra.github | trim_start(pat="https://") }}</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>Profile</h2>
+        <p>{{ cv.summary }}</p>
+      </section>
+
+      <section>
+        <h2>Skills</h2>
+        <dl class="skills">
+          {%- if cv.skill %}
+            {%- for g in cv.skill %}
+          <div><dt>{{ g.name }}</dt><dd>{{ g.items | join(sep=", ") }}</dd></div>
+            {%- endfor %}
+          {%- else %}
+            {%- for name in cv.skill_groups %}{% for g in skills.group %}{% if g.name == name %}
+          <div><dt>{{ g.name }}</dt><dd>{{ g.items | join(sep=", ") }}</dd></div>
+            {%- endif %}{% endfor %}{% endfor %}
+          {%- endif %}
+        </dl>
+      </section>
+
+      <section>
+        <h2>Professional experience</h2>
+        {%- for o in experience.org %}{% for r in o.roles %}
+        {#- A variant may rewrite a role's summary or highlights, matched by role title. -#}
+        {%- set matches = [x for x in (cv.role or []) if x.role == r.role] -%}
+        {%- set over = matches[0] if matches else {} -%}
+        {%- set summary = over.summary if "summary" in over else r.summary -%}
+        {%- set highlights = over.highlights if "highlights" in over else r.highlights[:cv.max_highlights] -%}
+        <article class="row">
+          <p class="row__when">{{ r.start }} – {{ r.end | capitalize }}<br>{{ o.location }}</p>
+          <div class="row__what">
+            <h3>{{ o.name }}</h3>
+            <p class="row__sub">{{ r.role }}{% if r.project %}<a class="row__case" href="{{ site }}/projects/{{ r.project }}/">Case study</a>{% endif %}</p>
+            {%- if summary %}<p>{{ summary }}</p>{% endif %}
+            {%- if highlights | length > 0 %}
+            <ul>
+              {%- for h in highlights %}<li>{{ h }}</li>{% endfor -%}
+            </ul>
+            {%- endif %}
+          </div>
+        </article>
+        {%- endfor %}{% endfor %}
+      </section>
+
+      {%- if cv.project | length > 0 %}
+      <section>
+        <h2>Projects</h2>
+        <ul class="projects">
+          {%- for p in cv.project %}
+          {%- set page = get_page(path="projects/" ~ p.slug ~ "/index.md") %}
+          {%- set url = page.extra.links[0].url if page.extra.links else site ~ page.path %}
+          <li>
+            <strong>{{ page.title }}</strong> <a class="project__link" href="{{ url }}">{{ url | trim_start(pat="https://") | trim_end(pat="/") }}</a>
+            {%- if page.extra.stack %}<span class="project__stack">{{ page.extra.stack | join(sep=", ") }}</span>{% endif %}
+            {%- if p.bullets %}
+            <ul>
+              {%- for b in p.bullets %}<li>{{ b }}</li>{% endfor -%}
+            </ul>
+            {%- else %}
+            <span class="project__line">{{ page.description }}{% if page.extra.highlight %} {{ page.extra.highlight }}{% endif %}</span>
+            {%- endif %}
+          </li>
+          {%- endfor %}
+        </ul>
+        {%- if cv.open_source %}<p class="after-list"><strong>Open source:</strong> {{ cv.open_source }}</p>{% endif %}
+        {%- if cv.talks %}
+        <p class="after-list"><strong>Talks &amp; workshops:</strong>
+          {{ [t.short for t in talks.talk] | join(sep=" · ") }}{% if cv.talks_extra %}; {{ cv.talks_extra }}{% endif %}.</p>
+        {%- endif %}
+      </section>
+      {%- endif %}
+
+      <section>
+        <h2>Education</h2>
+        {%- for e in education.education %}
+        <article class="row">
+          <p class="row__when">{{ e.period }}<br>{{ e.location }}</p>
+          <div class="row__what">
+            <h3>{{ e.degree }}</h3>
+            <p class="row__sub">{{ e.institution }}</p>
+            {%- if e.summary %}<p>{{ e.summary }}</p>{% endif %}
+            {%- if e.highlights | length > 0 %}
+            <ul>
+              {%- for h in e.highlights %}<li>{{ h }}</li>{% endfor -%}
+            </ul>
+            {%- endif %}
+          </div>
+        </article>
+        {%- endfor %}
+      </section>
+
+      <section>
+        <h2>Languages</h2>
+        <ul class="langs">
+          {%- for l in languages.language %}<li><strong>{{ l.name }}</strong> {{ l.level }}</li>{% endfor -%}
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

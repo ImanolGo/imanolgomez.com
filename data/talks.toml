@@ -2,13 +2,15 @@
 # entries) and on the home page (entries with `featured = true`). Facts come from
 # the organisers' own pages and Imanol's notes; see docs/CONTENT.md.
 #
-# Fields: title, kind, event, place, date, summary, optional image (path relative
+# Fields: title, kind, event, short (event name for the PDF CV's one-line list),
+# place, date, summary, optional image (path relative
 # to content/), alt (required with image), credit, and links = [{ label, url }].
 
 [[talk]]
 title = "Hack the Light UP: mentor"
 kind = "Hackathon"
 event = "Llum Barcelona Festival, organised by ProtoPixel"
+short = "Llum BCN Festival"
 place = "Barcelona"
 date = "Feb 2020"
 summary = "Mentor at the first interactive lighting hackathon in Spain: 24 hours for designers, architects, programmers and makers to prototype lighting projects."
@@ -21,6 +23,7 @@ links = [{ label = "Event page", url = "https://hackthelightup.protopixel.net/" 
 title = "Factory Berlin Creators Lab: light and creativity"
 kind = "Workshop"
 event = "Factory Berlin Creators Lab, with ProtoPixel"
+short = "Factory Berlin"
 place = "Berlin"
 date = "Dec 2019"
 summary = "Workshop launching the Creators Lab space, whose lighting ProtoPixel designed. It covered expressive lighting in spaces and how to use ProtoPixel technology."
@@ -33,6 +36,7 @@ links = [{ label = "Creators Lab space and project", url = "https://www.protopix
 title = "Expressive Generative Lighting"
 kind = "Talk"
 event = "Porto Tech Hub Conference"
+short = "Porto Tech Hub"
 place = "Porto"
 date = "Oct 2019"
 featured = true
@@ -46,6 +50,7 @@ links = [{ label = "Watch the talk", url = "https://www.youtube.com/watch?v=7Max
 title = "IoT Master Class"
 kind = "Workshop"
 event = "iSpace Foundation, with Eden Labs"
+short = "iSpace Accra"
 place = "Accra"
 date = "Jan 2019"
 featured = true
@@ -58,6 +63,7 @@ credit = "Poster: iSpace Foundation and Eden Labs."
 title = "Future Fashion: Enhancing Life"
 kind = "Workshop and seminar"
 event = "Goethe-Institut Thailand, IKAT eCUT project, with ElektroCouture"
+short = "Goethe-Institut Bangkok"
 place = "Bangkok"
 date = "Aug 2016"
 featured = true
@@ -71,6 +77,7 @@ links = [{ label = "Seminar listing", url = "https://www.artbangkok.com/?p=43210
 title = "Science Inspires Art"
 kind = "Talk"
 event = "Scope Sessions #35, artist talks and media salon"
+short = "Scope Sessions Berlin"
 place = "Berlin"
 date = "Sep 2014"
 summary = "How art and science are converging: media artists building scientific communication and working with research data. Based on my time at Ars Electronica."
