@@ -3,7 +3,7 @@
 
 base_url = "https://imanolgomez.com"
 title = "Imanol Gómez"
-description = "Technical lead & AI engineer with 15+ years building production software, from AI systems and medical devices to interactive installations."
+description = "Technical lead & AI engineer with 15+ years building production software, from automotive AI and medical devices to real-time and embedded systems."
 default_language = "en"
 
 # The default author for pages (used by feeds).

@@ -1,6 +1,6 @@
 +++
 title = "About"
-description = "Hands-on engineering, team leadership and a creative background — from interactive installations to medical devices and production AI."
+description = "Hands-on engineering and team leadership in real-time and embedded AI, from firmware and interactive systems to medical devices and production automotive AI."
 +++
 
 I'm a technical lead and AI engineer based in Berlin. I've spent 15+ years building
@@ -13,20 +13,24 @@ and developers, from the first requirements through to production.
 I'm Head of AI Deployment at CARIAD, the Volkswagen Group software company, where I
 lead 12 engineers taking AI models from research prototypes to automotive hardware. I work
 with engineering teams, Volkswagen Group brands and semiconductor partners to integrate
-models, meet performance and reliability requirements, and deliver releases.
+models, meet performance and reliability requirements, and deliver releases. Our
+deployments target QNX.
 
 Before leading the team, I built a Python SDK for model conversion and optimization,
 and a runtime abstraction layer used by other engineering teams. I worked with those
 teams from their first requirements through production integration, and enjoyed seeing
 the tools become part of their day-to-day work.
 
-At NELA by Carepath Technologies, I worked on model design, device firmware and IoT
-architecture for an AI-based tele-monitoring product for chronic-disease patients.
+At NELA by Carepath Technologies, I worked on model design, device firmware (an RTOS on
+microcontrollers) and IoT architecture for an AI-based tele-monitoring product for chronic-disease patients.
 That work ran from requirements to series production in a regulated healthcare environment.
 
-## Creative work
+## Embedded and real-time work
 
-My background is in telecommunication engineering and sound and music computing. At
+My background is in telecommunication engineering and sound and music computing. For most
+of my career I have written bare-metal microcontroller firmware and real-time software for
+lighting, wearables and installations, alongside interactive and video applications running
+at 30 FPS or more on the GPU under Linux. At
 Ars Electronica in Linz, I built interactive computer-vision installations and led
 development of GeoPulse, a spatial-data visualization platform.
 

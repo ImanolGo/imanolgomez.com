@@ -1,17 +1,18 @@
 +++
 title = "Imanol Gómez"
-description = "Technical lead & AI engineer with 15+ years building production software, from AI systems and medical devices to interactive installations."
+description = "Technical lead & AI engineer with 15+ years building production software, from automotive AI and medical devices to real-time and embedded systems."
 [extra]
 tagline = "I turn ambitious ideas into reliable software."
 highlights = [
   { label = "Hands-on engineering", value = "15+ years" },
   { source = "current_role" },
-  { label = "Across disciplines", value = "AI, systems & creative tech" },
+  { label = "Specialty", value = "Real-time & embedded AI" },
 ]
 +++
 
-I build AI and embedded software for production, with a background in medical devices
-and interactive installations.
+I build real-time AI and embedded software for production, in automotive and medical devices.
 
-Today I lead AI deployment at CARIAD, part of the Volkswagen Group. Outside work, I build
+Today I lead AI deployment at CARIAD, part of the Volkswagen Group, where my team of 12
+engineers takes AI models to a volume-production ADAS platform. I started in embedded
+systems and real-time software for live performance and lighting. Outside work, I build
 LLM agents, on-device robot assistants and real-time graphics.

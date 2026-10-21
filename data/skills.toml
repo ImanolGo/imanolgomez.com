@@ -18,7 +18,7 @@ items = ["Python (production)", "C++", "Rust", "FastAPI", "PostgreSQL", "Docker 
 
 [[group]]
 name = "Edge & embedded"
-items = ["Qualcomm NPU", "NVIDIA Jetson Orin", "ROS 2", "Embedded Linux / QNX", "RTOS & MCUs", "Firmware"]
+items = ["Qualcomm NPU", "NVIDIA Jetson Orin", "ROS 2", "QNX deployment", "Embedded Linux", "RTOS & bare-metal MCU firmware", "MCUs: Nordic nRF53, ESP32, STM32, Raspberry Pi Pico", "Real-time GPU applications (30+ FPS)"]
 
 [[group]]
 name = "GPU & parallel computing"

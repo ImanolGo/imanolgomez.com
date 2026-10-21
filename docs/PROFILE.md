@@ -29,7 +29,8 @@ the case study remains confidential and shows no internal material.
 ## Positioning — site default
 
 Lead with hands-on engineering and technical leadership. AI is a clear area of expertise;
-embedded systems and creative technology demonstrate range rather than competing identities.
+real-time and embedded systems are the specialty; creative technology is the origin story and
+shows range, not a competing identity.
 Keep the first screen accessible to a non-specialist, with technical detail in the projects and CV.
 
 **Professional headline:**
@@ -40,7 +41,7 @@ Keep the first screen accessible to a non-specialist, with technical detail in t
 
 **Site description (metadata):**
 > Technical lead & AI engineer with 15+ years building production software, from AI systems
-> and medical devices to interactive installations.
+> and medical devices to real-time and embedded systems.
 
 **Short bio:**
 > Imanol Gómez is a technical lead and AI engineer based in Berlin. He has spent 15+ years
@@ -79,6 +80,7 @@ Jetson with TensorRT and llama.cpp.
 - **Machine learning:** PyTorch, TensorFlow, fine-tuning (DistilBERT), ONNX, TensorRT, model optimization and deployment.
 - **Software engineering:** Python (production), C++, Rust, FastAPI, PostgreSQL, REST APIs, Docker, Docker Compose, GitHub Actions, CI/CD, testing, HTMX/Jinja, Linux (Ubuntu on Azure VMs), deb packaging.
 - **Edge & embedded:** Qualcomm NPU / AI accelerators, NVIDIA Jetson Orin, ROS 2, embedded Linux, QNX, RTOS, firmware, MCUs, GLSL/OpenCL/CUDA.
+- **Real-time & embedded (added 2026-10-21, stated by Imanol):** CARIAD deployments target QNX only. NELA: device firmware on an RTOS and MCUs. Bare-metal MCU firmware for most of the career: Ars Electronica and freelance work (ElektroCouture, Moritz Waldemeyer, ProtoPixel). Interactive and video applications running at 30 FPS or more on the GPU under a general-purpose OS (Linux); these are not hard real-time systems. MCU families worked with (stated by Imanol): Nordic nRF53 series, ESP32 series, STM32, Raspberry Pi Pico, and others. Use "real-time & embedded AI" as the specialty label.
 - **GPU & parallel computing (added 2026-10-21, from the public murmuration-kernels repo):** CUDA C++, cuTile Rust (tile-based kernels, Tile IR), cuda-oxide (Rust to PTX), wgpu/WGSL compute; GPU profiling with Nsight Compute and Nsight Systems, compute-sanitizer, ptxas/cuobjdump; occupancy, register and instruction-count analysis; GPU event timing; CPU-oracle parity testing across backends. Learned CUDA in 2026; cuTile is an alpha-stage toolchain.
 - **Regulated environments:** security, compliance and auditability; healthcare (IEC 60601); automotive safety (ISO 26262, ASPICE).
 - **Creative technology:** OpenGL, openFrameworks (contributor), OpenCV/computer vision, DMX lighting hardware, LED systems, interactive installations, generative graphics.

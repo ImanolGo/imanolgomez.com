@@ -1,7 +1,7 @@
 # imanolgomez.com
 
 Personal site and portfolio of [Imanol Gómez](https://imanolgomez.com), a technical lead
-and AI engineer working across AI, embedded systems and creative technology. The site
+and AI engineer working across real-time and embedded AI, automotive and medical devices. The site
 gives a quick introduction to his work, with case studies and a CV for readers who
 want more detail.
 
