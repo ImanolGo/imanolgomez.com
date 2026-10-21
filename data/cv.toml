@@ -50,3 +50,6 @@ slug = "on-device-robot-assistant"
 
 [[project]]
 slug = "cuda-particles"
+
+[[project]]
+slug = "murmuration-kernels"

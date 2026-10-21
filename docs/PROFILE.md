@@ -79,6 +79,7 @@ Jetson with TensorRT and llama.cpp.
 - **Machine learning:** PyTorch, TensorFlow, fine-tuning (DistilBERT), ONNX, TensorRT, model optimization and deployment.
 - **Software engineering:** Python (production), C++, Rust, FastAPI, PostgreSQL, REST APIs, Docker, Docker Compose, GitHub Actions, CI/CD, testing, HTMX/Jinja, Linux (Ubuntu on Azure VMs), deb packaging.
 - **Edge & embedded:** Qualcomm NPU / AI accelerators, NVIDIA Jetson Orin, ROS 2, embedded Linux, QNX, RTOS, firmware, MCUs, GLSL/OpenCL/CUDA.
+- **GPU & parallel computing (added 2026-10-21, from the public murmuration-kernels repo):** CUDA C++, cuTile Rust (tile-based kernels, Tile IR), cuda-oxide (Rust to PTX), wgpu/WGSL compute; GPU profiling with Nsight Compute and Nsight Systems, compute-sanitizer, ptxas/cuobjdump; occupancy, register and instruction-count analysis; GPU event timing; CPU-oracle parity testing across backends. Learned CUDA in 2026; cuTile is an alpha-stage toolchain.
 - **Regulated environments:** security, compliance and auditability; healthcare (IEC 60601); automotive safety (ISO 26262, ASPICE).
 - **Creative technology:** OpenGL, openFrameworks (contributor), OpenCV/computer vision, DMX lighting hardware, LED systems, interactive installations, generative graphics.
 - **Delivery & leadership:** team leadership (12 engineers), product ownership (SAFe PO/PM), enterprise stakeholder management, translating business needs into technical specifications, mentoring, talks, workshops, hackathons, university teaching.
@@ -158,6 +159,20 @@ Driving Alliance**, a volume-production ADAS platform.
   The current interactive default is 8,000 birds. The README reports a 15-second windowed
   startup measurement of 59.11 FPS on a GTX 1650 Max-Q at 1268×1380, with seed 1.
   Million-bird counts are for profiling and offline rendering, not real-time playback on that GPU.
+- **murmuration-kernels** (Rust/CUDA, Oct 2026) — the same reduced starling-flock step written four
+  ways: CUDA C++, cuda-oxide, wgpu/WGSL and cuTile Rust, each checked against a CPU oracle through
+  a shared binary exchange format. Public repo
+  github.com/ImanolGo/murmuration-kernels; write-up in docs/ARTICLE.md, "The same starling flock on
+  the GPU, four ways". Measured on a GTX 1650 Max-Q (own laptop) and a rented RTX 4000 Ada.
+  Neighbour-search (`decide`) time per step at 100,000 birds on the RTX 4000 Ada: CUDA 1.24 ms,
+  wgpu 1.54, cuda-oxide 1.64, cuTile tuned 2.59, cuTile defaults 5.57. Nsight Compute showed cuTile
+  defaults at 246 registers per thread (48 when tuned) against 62 for CUDA, and about 4.8x CUDA's
+  instructions even when tuned (the cause is a hypothesis, not established). cuTile's regular passes
+  (integrate, scan) ran faster than CUDA at 1M birds. Caveats to keep: one workload, two GPUs, an
+  alpha cuTile revision, tuning applied to cuTile; not a general ranking of the frameworks.
+  Upstream (NVIDIA/cuda-rust, as ImanolGo, 2026-10-21): reported four issues (#1594 to #1597), added
+  repros to two existing ones (#1470, #1378) and opened docs PR #1599 (open, not merged at writing).
+  Personal project, not employer work.
 - **EMMA-VLM** (Python, started 2024) — renamed and reworked from `emma-claude`.
   An EMMA-style driving planner using vision models through OpenRouter. Inputs: front-camera
   image, recent ego motion and routing command. Outputs: scene description, critical objects,
@@ -242,6 +257,7 @@ on the site if Imanol confirms it's OK — `TODO(imanol)`.
 - **pico-deployment-demo** (CMake, 2023) — no description; `TODO(imanol)`: what it is (deployment on Raspberry Pi Pico?).
 - **alibi** (Python, 2026) — murder-mystery game where each suspect is an LLM agent; LangGraph, MCP tools, RAG memory, CI evals, and a fine-tuned lie detector.
 - **murmuration-gpu** (Rust, 2026) — GPU starling-flock simulation with wgpu; 8,000-bird interactive default, with larger counts for profiling and offline rendering.
+- **murmuration-kernels** (Rust/CUDA, 2026) — one starling-flock step in CUDA C++, cuda-oxide, wgpu and cuTile Rust, with Nsight profiling and an article.
 - **murmuration** (Rust, 2026) — terminal starling-flock simulation modelled on murmuration research.
 - **cuda-particles** (CUDA, 2026) — step-by-step CUDA course for creative coders, ending in an interactive GPU particle system.
 - **overflight** (Rust, 2026) — terminal app showing planes overhead as a live sky from real-time data.

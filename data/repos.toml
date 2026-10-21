@@ -14,6 +14,14 @@ blurb = "Seven ADAS learning activities in Rust, ending in an integrated dashcam
 group = "Edge AI & systems"
 
 [[repo]]
+name = "murmuration-kernels"
+url = "https://github.com/ImanolGo/murmuration-kernels"
+year = "2026"
+lang = "Rust"
+blurb = "One starling-flock step written in CUDA C++, cuda-oxide, wgpu and cuTile Rust, profiled with Nsight."
+group = "GPU & creative code"
+
+[[repo]]
 name = "murmuration-gpu"
 url = "https://github.com/ImanolGo/murmuration-gpu"
 year = "2026"

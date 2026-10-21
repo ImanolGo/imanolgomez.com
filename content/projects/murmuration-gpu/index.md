@@ -65,4 +65,4 @@ not a validated predictor of wild flock behaviour.
 
 Rust · wgpu · WGSL.
 
-Related repositories: `murmuration-gpu`, `murmuration`, `cuda-particles`.
+Related repositories: `murmuration-gpu`, `murmuration`, `cuda-particles`, `murmuration-kernels` (the same flock in CUDA, cuTile, cuda-oxide and wgpu, [profiled with Nsight](@/projects/murmuration-kernels/index.md)).

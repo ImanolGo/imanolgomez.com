@@ -22,7 +22,7 @@ items = ["Qualcomm NPU", "NVIDIA Jetson Orin", "ROS 2", "Embedded Linux / QNX", 
 
 [[group]]
 name = "GPU & parallel computing"
-items = ["CUDA (Particle Atlas, open source)", "CUDA/OpenGL interop", "OpenCL", "GLSL", "wgpu / WGSL compute shaders (Rust)", "Real-time GPU particle and flocking simulations", "TensorRT inference on NVIDIA Jetson"]
+items = ["CUDA C++", "cuTile Rust & cuda-oxide", "GPU profiling (Nsight Compute & Systems)", "CUDA/OpenGL interop", "OpenCL", "GLSL", "wgpu / WGSL compute shaders (Rust)", "Real-time GPU particle and flocking simulations", "TensorRT inference on NVIDIA Jetson"]
 
 [[group]]
 name = "Regulated environments"
