@@ -120,6 +120,8 @@ Driving Alliance**, a volume-production ADAS platform.
   suppliers through to series production.
 - Supported customers and partners on integration and deployment issues; built demos and
   technical documentation.
+- Outcome (stated by Imanol, 2026-10-22): by the time he left (Apr 2023), 250 devices had been
+  produced and shipped to 50 patients for clinical trials.
 
 ### Self-employed — Berlin & international · Jun 2014 – Aug 2020 (Creative Technologist)
 

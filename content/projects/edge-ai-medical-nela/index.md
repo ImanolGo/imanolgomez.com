@@ -3,7 +3,7 @@ title = "Edge AI for remote patient monitoring"
 template = "projects/page.html"
 description = "NELA Cough: AI tele-monitoring for chronic-disease patients, from requirements to series production."
 date = 2020-08-01
-weight = 100
+weight = 15
 [taxonomies]
 tags = ["edge-ai", "medical", "embedded"]
 [extra]
@@ -11,8 +11,9 @@ period = "Aug 2020 – Apr 2023"
 org = "NELA by Carepath Technologies"
 location = "Berlin"
 role = "AI Software Engineer → Senior IoT Engineer"
-featured = false
+featured = true
 confidential = false
+highlight = "250 devices produced and shipped to 50 patients for clinical trials"
 cover = "cover.jpg"
 cover_alt = "NELA Cough monitoring device, a small rounded white unit on a pale background"
 stack = ["Python", "TensorFlow", "Azure IoT", "RTOS", "embedded systems", "IEC 60601"]
@@ -49,6 +50,11 @@ change. The device also had to meet certification requirements.
 - Worked directly with customers, partners and external medical hardware suppliers on
   integration and deployment issues, and wrote the demos and technical documentation
   to support that work.
+
+## Outcome
+
+By the time I left in April 2023, we had produced 250 devices and shipped them to
+50 patients for clinical trials.
 
 ## Stack & notes
 

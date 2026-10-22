@@ -56,7 +56,7 @@ summary = "Built NELA Cough, an AI-based tele-monitoring product, in a regulated
 highlights = [
   "AI model design and real-time deployment on edge devices and MCUs, in line with IEC 60601.",
   "Led the IoT system architecture end to end, from requirements to production: Azure IoT cloud back end and device firmware.",
-  "Worked with external medical hardware suppliers through to series production.",
+  "Worked with external medical hardware suppliers through to series production: 250 devices produced and shipped to 50 patients for clinical trials by April 2023.",
   "Supported customers and partners on integration and deployment issues; built demos and technical documentation.",
 ]
 skills = ["Python", "TensorFlow", "Azure IoT", "RTOS", "embedded systems"]

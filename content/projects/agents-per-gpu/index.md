@@ -3,7 +3,7 @@ title = "How many AI agents fit on one GPU?"
 template = "projects/page.html"
 description = "A benchmark of vLLM, SGLang and TensorRT-LLM on agent-shaped traffic: concurrent agents served within a latency SLO, and the cost per agent task."
 date = 2026-10-20
-weight = 25
+weight = 40
 [taxonomies]
 tags = ["llm-agents", "gpu", "evaluation"]
 [extra]
