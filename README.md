@@ -15,9 +15,9 @@ site to GitHub Pages at **https://imanolgomez.com**.
 
 The site has 16 project case studies, plus About and CV pages. The six projects in
 the home page's Selected work section are AI deployment at CARIAD, Alibi, the
-on-device robot assistant, ProtoPixel lighting, NELA and CUDA particles. Wearables
-remains on Work. Other case studies include EMMA-VLM, Visual Whispers and the Rust
-TUI experiments.
+on-device robot assistant, EMMA-VLM, murmuration-kernels and CUDA particles. Other
+case studies include Visual Whispers, NELA, ProtoPixel lighting and the Rust TUI
+experiments.
 
 Project pages have covers and use click-to-play video where recordings are available.
 The CARIAD page uses an approved public press image with attribution, while retaining

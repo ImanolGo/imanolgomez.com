@@ -3,14 +3,14 @@ title = "Visual Whispers: picture telephone"
 template = "projects/page.html"
 description = "An image model paints, a character describes what it sees, and that description becomes the next painting."
 date = 2024-01-01
-weight = 50
+weight = 55
 [taxonomies]
 tags = ["generative-ai", "creative-code"]
 [extra]
 period = "Started 2024"
 org = "Open source"
 role = "Personal project"
-featured = true
+featured = false
 confidential = false
 cover = "cover.jpg"
 cover_alt = "Visual Whispers results: the prompt words foxes, sharing and Tokyo struck out, beside the first painting of two foxes under an umbrella and the final one of two dogs"

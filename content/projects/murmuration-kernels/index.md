@@ -3,7 +3,7 @@ title = "One starling flock on the GPU, four ways"
 template = "projects/page.html"
 description = "The same flock step written in CUDA C++, cuda-oxide, wgpu and cuTile Rust, checked against a CPU reference and profiled with Nsight."
 date = 2026-10-01
-weight = 65
+weight = 50
 [taxonomies]
 tags = ["gpu", "rust", "real-time"]
 [extra]
@@ -11,7 +11,7 @@ period = "Oct 2026"
 org = "Open source"
 location = ""
 role = "Personal project"
-featured = false
+featured = true
 confidential = false
 cover = "cover.jpg"
 cover_alt = "A simulated starling flock above the title One flock, four ways on the GPU, and a bar chart of neighbour-search time per step at 100,000 birds on an RTX 4000 Ada: CUDA C++ 1.24 ms, wgpu 1.54, cuda-oxide 1.64, cuTile Rust tuned 2.59, cuTile Rust defaults 5.57"
