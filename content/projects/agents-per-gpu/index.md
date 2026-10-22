@@ -3,7 +3,7 @@ title = "How many AI agents fit on one GPU?"
 template = "projects/page.html"
 description = "A benchmark of vLLM, SGLang and TensorRT-LLM on agent-shaped traffic: concurrent agents served within a latency SLO, and the cost per agent task."
 date = 2026-10-20
-weight = 55
+weight = 25
 [taxonomies]
 tags = ["llm-agents", "gpu", "evaluation"]
 [extra]
@@ -11,7 +11,7 @@ period = "Oct 2026"
 org = "Open source"
 location = ""
 role = "Personal project"
-featured = false
+featured = true
 confidential = false
 highlight = "Prefix caching took one A40 from 2–3 to 6 concurrent agents, at a third to two fifths of the cost per task"
 cover = "cover.jpg"

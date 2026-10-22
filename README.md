@@ -14,9 +14,9 @@ site to GitHub Pages at **https://imanolgomez.com**.
 ## Current status
 
 The site has 16 project case studies, plus About and CV pages. The six projects in
-the home page's Selected work section are AI deployment at CARIAD, Alibi, the
-on-device robot assistant, EMMA-VLM, murmuration-kernels and the Amazon Barcelona office
-lighting. Other case studies include CUDA particles, Visual Whispers, NELA, ProtoPixel lighting and the Rust TUI
+the home page's Selected work section are AI deployment at CARIAD, Alibi, agents-per-gpu,
+the on-device robot assistant, murmuration-kernels and the Amazon Barcelona office
+lighting. Other case studies include EMMA-VLM, CUDA particles, Visual Whispers, NELA, ProtoPixel lighting and the Rust TUI
 experiments.
 
 Project pages have covers and use click-to-play video where recordings are available.
