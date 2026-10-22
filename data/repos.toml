@@ -14,6 +14,14 @@ blurb = "Seven ADAS learning activities in Rust, ending in an integrated dashcam
 group = "Edge AI & systems"
 
 [[repo]]
+name = "agents-per-gpu"
+url = "https://github.com/ImanolGo/agents-per-gpu"
+year = "2026"
+lang = "Python"
+blurb = "How many concurrent AI agents one GPU serves within a latency SLO, on vLLM, SGLang and TensorRT-LLM."
+group = "GPU & creative code"
+
+[[repo]]
 name = "murmuration-kernels"
 url = "https://github.com/ImanolGo/murmuration-kernels"
 year = "2026"

@@ -5,6 +5,10 @@ name = "LLM & agents"
 items = ["Agentic workflows (LangGraph)", "RAG & pgvector", "MCP", "Structured outputs (Pydantic)", "Prompt engineering", "LiteLLM / OpenRouter"]
 
 [[group]]
+name = "LLM inference & serving"
+items = ["vLLM", "SGLang", "TensorRT-LLM", "SLO capacity benchmarking (TTFT, ITL, NVIDIA AIPerf)", "Prefix / KV-cache reuse", "Quantization (AWQ, GPTQ, TensorRT Model Optimizer)", "GPU cost per task"]
+
+[[group]]
 name = "Evaluation & observability"
 items = ["Eval frameworks & LLM-as-judge", "CI eval gates", "Accuracy / safety / latency / cost metrics", "OpenTelemetry", "Arize Phoenix"]
 

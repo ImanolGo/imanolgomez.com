@@ -43,7 +43,8 @@ hackathons, from Barcelona and Berlin to Bangkok and Accra.
 ## Personal projects
 
 Outside work, I build [Alibi](@/projects/alibi/index.md), a murder-mystery game with LLM
-suspects, memory and automated evaluations. My [on-device robot assistant](@/projects/on-device-robot-assistant/index.md)
+suspects, memory and automated evaluations, and I measured [how many AI agents one GPU
+can serve](@/projects/agents-per-gpu/index.md) on vLLM, SGLang and TensorRT-LLM. My [on-device robot assistant](@/projects/on-device-robot-assistant/index.md)
 combines voice and vision without the cloud. I also write [GPU flocking simulations](@/projects/murmuration-gpu/index.md)
 in Rust, and I recently wrote one flock step four ways (CUDA C++, cuda-oxide, wgpu and
 cuTile) and [profiled them with Nsight](@/projects/murmuration-kernels/index.md). My main languages are Python and C++; I use Rust for personal projects.

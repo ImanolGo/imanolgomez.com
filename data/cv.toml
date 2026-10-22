@@ -24,6 +24,7 @@ max_highlights = 3
 # Skill groups to include, by name as written in skills.toml, in this order.
 skill_groups = [
   "LLM & agents",
+  "LLM inference & serving",
   "Machine learning",
   "Software engineering",
   "Edge & embedded",
@@ -44,6 +45,9 @@ open_source = "contributor to openFrameworks (C++); 80+ public repositories on G
 # project is one line: its description plus its highlight, if it has one.
 [[project]]
 slug = "alibi"
+
+[[project]]
+slug = "agents-per-gpu"
 
 [[project]]
 slug = "on-device-robot-assistant"

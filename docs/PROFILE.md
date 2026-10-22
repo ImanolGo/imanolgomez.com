@@ -81,6 +81,7 @@ Jetson with TensorRT and llama.cpp.
 - **Software engineering:** Python (production), C++, Rust, FastAPI, PostgreSQL, REST APIs, Docker, Docker Compose, GitHub Actions, CI/CD, testing, HTMX/Jinja, Linux (Ubuntu on Azure VMs), deb packaging.
 - **Edge & embedded:** Qualcomm NPU / AI accelerators, NVIDIA Jetson Orin, ROS 2, embedded Linux, QNX, RTOS, firmware, MCUs, GLSL/OpenCL/CUDA.
 - **Real-time & embedded (added 2026-10-21, stated by Imanol):** CARIAD deployments target QNX only. NELA: device firmware on an RTOS and MCUs. Bare-metal MCU firmware for most of the career: Ars Electronica and freelance work (ElektroCouture, Moritz Waldemeyer, ProtoPixel). Interactive and video applications running at 30 FPS or more on the GPU under a general-purpose OS (Linux); these are not hard real-time systems. MCU families worked with (stated by Imanol): Nordic nRF53 series, ESP32 series, STM32, Raspberry Pi Pico, and others. Use "real-time & embedded AI" as the specialty label.
+- **LLM inference & serving (added 2026-10-22, from the public agents-per-gpu repo):** vLLM, SGLang, TensorRT-LLM (trtllm-serve), NVIDIA AIPerf, SLO-based capacity benchmarking (TTFT, ITL, step latency), prefix/KV-cache reuse, quantization (AWQ INT4, GPTQ INT8, TensorRT Model Optimizer), tool-calling evaluation, GPU cost per task.
 - **GPU & parallel computing (added 2026-10-21, from the public murmuration-kernels repo):** CUDA C++, cuTile Rust (tile-based kernels, Tile IR), cuda-oxide (Rust to PTX), wgpu/WGSL compute; GPU profiling with Nsight Compute and Nsight Systems, compute-sanitizer, ptxas/cuobjdump; occupancy, register and instruction-count analysis; GPU event timing; CPU-oracle parity testing across backends. Learned CUDA in 2026; cuTile is an alpha-stage toolchain.
 - **Regulated environments:** security, compliance and auditability; healthcare (IEC 60601); automotive safety (ISO 26262, ASPICE).
 - **Creative technology:** OpenGL, openFrameworks (contributor), OpenCV/computer vision, DMX lighting hardware, LED systems, interactive installations, generative graphics.
@@ -187,6 +188,20 @@ Driving Alliance**, a volume-production ADAS platform.
   Upstream (NVIDIA/cuda-rust, as ImanolGo, 2026-10-21): reported four issues (#1594 to #1597), added
   repros to two existing ones (#1470, #1378) and opened docs PR #1599 (open, not merged at writing).
   Personal project, not employer work.
+- **agents-per-gpu** (Python, Oct 2026) — benchmark of LLM serving engines on agent-shaped traffic:
+  how many concurrent AI agents one GPU serves within a latency SLO, and the cost per agent task.
+  vLLM 0.32.0, SGLang 0.5.9 and TensorRT-LLM 1.2.1 on one rented whole NVIDIA A40 (48 GB), measured
+  2026-10-21/22. Own async streaming load client (`apg`), cross-checked against NVIDIA AIPerf; seeded
+  agent workload (shared 2,000-token tool prefix, growing context) with a chat control; capacity =
+  highest concurrency before the first SLO failure, worst of 3 to 6 runs. Results (Qwen3-4B BF16, agent,
+  `interactive` SLO p95 TTFT <= 1 s, ITL <= 50 ms): prefix caching takes capacity from 2/3/2 to 6/6/6
+  (vLLM/SGLang/TensorRT-LLM) and cuts cost per task to a third to two fifths (0.0018/0.0013/0.0018 to
+  0.0006/0.0005/0.0006 USD at a 0.535 USD/h rental offer). At an 8 s step SLO: SGLang 4, vLLM 3,
+  TensorRT-LLM 2. Qwen3-8B INT4-AWQ serves 4/6/4 agents at the 8 s step SLO vs 3/4/2 for 4B BF16, at
+  91.0 to 92.0 % tool-calling accuracy on a 200-case BFCL-style subset (4B BF16: 91.0 %); 8B BF16 cannot
+  meet it. Quantized an INT4-AWQ checkpoint with TensorRT Model Optimizer when TensorRT-LLM could not
+  load the published one. Caveats: one GPU, synthetic workload, own SLOs, default engine settings.
+  Public repo github.com/ImanolGo/agents-per-gpu; analysis in reports/REPORT.md. Personal project.
 - **EMMA-VLM** (Python, started 2024) — renamed and reworked from `emma-claude`.
   An EMMA-style driving planner using vision models through OpenRouter. Inputs: front-camera
   image, recent ego motion and routing command. Outputs: scene description, critical objects,
@@ -271,6 +286,7 @@ on the site if Imanol confirms it's OK — `TODO(imanol)`. Amazon: confirmed OK 
 - **pico-deployment-demo** (CMake, 2023) — no description; `TODO(imanol)`: what it is (deployment on Raspberry Pi Pico?).
 - **alibi** (Python, 2026) — murder-mystery game where each suspect is an LLM agent; LangGraph, MCP tools, RAG memory, CI evals, and a fine-tuned lie detector.
 - **murmuration-gpu** (Rust, 2026) — GPU starling-flock simulation with wgpu; 8,000-bird interactive default, with larger counts for profiling and offline rendering.
+- **agents-per-gpu** (Python, 2026) — how many concurrent AI agents one GPU serves within a latency SLO, on vLLM, SGLang and TensorRT-LLM.
 - **murmuration-kernels** (Rust/CUDA, 2026) — one starling-flock step in CUDA C++, cuda-oxide, wgpu and cuTile Rust, with Nsight profiling and an article.
 - **murmuration** (Rust, 2026) — terminal starling-flock simulation modelled on murmuration research.
 - **cuda-particles** (CUDA, 2026) — step-by-step CUDA course for creative coders, ending in an interactive GPU particle system.
