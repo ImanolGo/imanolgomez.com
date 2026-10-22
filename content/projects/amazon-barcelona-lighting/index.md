@@ -26,8 +26,8 @@ links = [
 
 ## Context
 
-In 2020 ProtoPixel commissioned me to build the main software for the entrance
-hall of Amazon's new office building in Barcelona. The space was designed by
+ProtoPixel commissioned me to build the main software for the entrance hall of
+Amazon's new office building in Barcelona, completed in 2020. The space was designed by
 Emotion Technologies and lit with ProtoPixel hardware. I had worked with
 ProtoPixel on [real-time lighting products](@/projects/realtime-lighting-protopixel/index.md)
 since 2017.

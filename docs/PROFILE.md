@@ -134,7 +134,7 @@ Driving Alliance**, a volume-production ADAS platform.
   iSpace Accra, Universitat Pompeu Fabra, HfG Offenbach).
 - Engineered and ran live the show software for the multimedia dance performance **Murmur**
   (Aakash Odedra Company) on its world tour.
-- **Amazon office, Barcelona (2020, commissioned by ProtoPixel; stated by Imanol 2026-10-22):**
+- **Amazon office, Barcelona (completed 2020, commissioned by ProtoPixel; stated by Imanol 2026-10-22; start date not given):**
   Imanol built the main software for the entrance hall: it processes live data and API data from
   the area to run scenes and real-time generative visuals, keeping the hall always changing, and
   plugs into ProtoPixel's system so LED panels and LED strip lights play as one installation.
