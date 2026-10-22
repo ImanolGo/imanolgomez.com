@@ -134,6 +134,18 @@ Driving Alliance**, a volume-production ADAS platform.
   iSpace Accra, Universitat Pompeu Fabra, HfG Offenbach).
 - Engineered and ran live the show software for the multimedia dance performance **Murmur**
   (Aakash Odedra Company) on its world tour.
+- **Amazon office, Barcelona (2020, commissioned by ProtoPixel; stated by Imanol 2026-10-22):**
+  Imanol built the main software for the entrance hall: it processes live data and API data from
+  the area to run scenes and real-time generative visuals, keeping the hall always changing, and
+  plugs into ProtoPixel's system so LED panels and LED strip lights play as one installation.
+  Naming Amazon is OK (Imanol, 2026-10-22). ProtoPixel's public case study (fetched 2026-10-22,
+  protopixel.io/builtwithprotopixel/showcases/protopixel-transforms-amazons-uk-headquarters; the
+  slug says UK, the page says Barcelona, Spain, 2020): lights visualise urban and aerial traffic and
+  weather data in real time; visitors interact via the ProtoPixel App and two floor fixtures;
+  170 m of digital RGB LEDs, 5 ProtoPixel Controllers, ProtoPixel Mapping Tool. Design: Emotion
+  Technologies. Photos: ProtoPixel (used with credit; Imanol is on good terms with ProtoPixel).
+  Related repo: AmazonOffice (openFrameworks, Windows 10), one of the applications Imanol wrote for it.
+  Case study on the site: `amazon-barcelona-lighting`.
 - Case study on the site: `realtime-lighting-protopixel`.
 
 ### Ars Electronica Linz GmbH — Linz · Oct 2011 – Jul 2014 (Creative Engineer)
@@ -249,7 +261,7 @@ Driving Alliance**, a volume-production ADAS platform.
 Descriptions below are taken from the repos' own descriptions. Many older repos have no README;
 before linking a repo from the site, check it has one (`TODO(imanol)` if not). Repos that name a
 client or brand (Jimmy Choo, Bentley, Amazon, Telekom, Instagram/ThePowerHouse) may only be named
-on the site if Imanol confirms it's OK — `TODO(imanol)`.
+on the site if Imanol confirms it's OK — `TODO(imanol)`. Amazon: confirmed OK (2026-10-22).
 
 ### Recent personal work (2023–2026) — edge AI, GPU, Rust
 - **local-ai-robot-assistant** (Python, 2025–26) — private, autonomous AI robot assistant running fully on an NVIDIA Jetson Orin Nano.
@@ -309,4 +321,4 @@ on the site if Imanol confirms it's OK — `TODO(imanol)`.
 - Contributor to **openFrameworks** (C++); author of **ofxDmx4All**. **80+ public repositories** on GitHub, mostly C/C++ and Python on real hardware.
 
 ### Do not feature
-Forks (adobe.github.com, Arduino), dotfiles, myscripts, MailChecker, c-unit-test, c-actions-test, advent-of-code-2024, open-sauced-goals, Sculpteo (empty), ImanolGo (profile README), and client repos without descriptions (AmazonOffice, Bentley, TelekomAnimations, AudioOnsetImagesApp, PNC, Jukebox, WearableEK) unless Imanol adds context.
+Forks (adobe.github.com, Arduino), dotfiles, myscripts, MailChecker, c-unit-test, c-actions-test, advent-of-code-2024, open-sauced-goals, Sculpteo (empty), ImanolGo (profile README), and client repos without descriptions (Bentley, TelekomAnimations, AudioOnsetImagesApp, PNC, Jukebox, WearableEK) unless Imanol adds context. AmazonOffice now has context (see ProtoPixel above) and is linked from its case study.

@@ -28,7 +28,8 @@ tech and design evangelist.
 
 Three case studies are public: *Designing the Ultimate Club Experience*, *Bringing
 Dynamism to a Creative Space*, and *Primavera Sound's First Smart Stage* — smart
-lighting for an autonomous festival stage.
+lighting for an autonomous festival stage. ProtoPixel also commissioned me to
+build the main software for [Amazon's Barcelona office](@/projects/amazon-barcelona-lighting/index.md).
 
 ## What I did
 
