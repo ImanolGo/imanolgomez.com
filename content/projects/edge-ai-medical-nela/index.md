@@ -10,7 +10,7 @@ tags = ["edge-ai", "medical", "embedded"]
 period = "Aug 2020 – Apr 2023"
 org = "NELA by Carepath Technologies"
 location = "Berlin"
-role = "AI Software Engineer → Senior IoT Engineer"
+role = "AI Software Engineer"
 featured = true
 confidential = false
 highlight = "250 devices produced and shipped to 50 patients for clinical trials"
@@ -22,10 +22,17 @@ links = []
 
 ## Context
 
-I spent almost three years at NELA (Carepath Technologies GmbH), building NELA Cough,
-a system for tele-monitoring and self-management of patients with chronic diseases.
-I joined as an AI Software Engineer and left as Senior IoT Engineer, working on the
-product from the first model to production hardware used by patients.
+I spent almost three years at NELA (Carepath Technologies GmbH) as an AI Software
+Engineer, building NELA Cough, a system for tele-monitoring and self-management of
+patients with chronic diseases. I worked on the product from the first model to
+production hardware used by patients.
+
+A small device in the patient's room records audio continuously. On the device,
+speech is removed and only coughs are kept, together with ambient readings: light
+level, room temperature, humidity and air quality. The coughs and ambient data then
+go to the cloud, where the system rates each cough's quality (productive or not),
+intensity and frequency, and uses the patient's cough fingerprint to check that it
+was the patient coughing.
 
 The work involved IEC 60601 requirements, traceability and clinical stakeholders
 in a regulated medical device environment.
@@ -42,6 +49,9 @@ change. The device also had to meet certification requirements.
 
 ## What I did
 
+- Developed the on-device symptom-monitoring system: it removes speech and detects
+  only coughs in a continuous audio recording, and processes the ambient data
+  (light, temperature, humidity and air quality).
 - Led development of AI models for medical applications, and their real-time
   deployment on edge devices and MCUs.
 - Owned the IoT system architecture end to end: requirements, hardware and software
@@ -59,3 +69,6 @@ By the time I left in April 2023, we had produced 250 devices and shipped them t
 ## Stack & notes
 
 Python · TensorFlow · Azure IoT · embedded systems · RTOS · IEC 60601.
+
+The cloud-side cough analysis (quality, intensity, frequency and the patient
+fingerprint) was built by others in the team; my part was the device and the system around it.

@@ -110,11 +110,20 @@ Driving Alliance**, a volume-production ADAS platform.
   and deployment. Daily work on Ubuntu VMs on Azure.
 - Case study on the site: `ai-deployment-cariad` (confidential).
 
-### NELA by Carepath Technologies — Berlin · Aug 2020 – Apr 2023 (AI Software Engineer → Senior IoT Engineer)
+### NELA by Carepath Technologies — Berlin · Aug 2020 – Apr 2023 (AI Software Engineer)
+
+Title: Imanol asked (2026-10-23) to show only **AI Software Engineer**, keeping all the work below
+(earlier copies said "AI Software Engineer → Senior IoT Engineer").
 
 - Built **NELA Cough**, an AI-based tele-monitoring product for chronic-disease patients in a
   regulated healthcare environment (**IEC 60601**): AI model design and real-time deployment on
   edge devices and MCUs.
+- Developed the **on-device symptom-monitoring system** (stated by Imanol, 2026-10-23): it removes
+  speech and detects only coughs in a continuous audio recording, and processes ambient data
+  (light level, room temperature, humidity, air quality).
+- System context, **not developed by Imanol**: the coughs and ambient data were sent to the cloud
+  for further processing: cough quality (productive or not), intensity and frequency, and a
+  patient fingerprint to check that it was the patient coughing.
 - Led the IoT system architecture end to end, from requirements to production, including the
   cloud IoT back end (**Azure IoT**) and device firmware; worked with external medical hardware
   suppliers through to series production.

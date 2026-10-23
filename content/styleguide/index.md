@@ -110,7 +110,7 @@ A second kind, for warnings.
       <h3 class="timeline__org">NELA by Carepath Technologies <span class="timeline__location">· Berlin</span></h3>
     </header>
     <div class="timeline__role">
-      <p class="timeline__role-title">AI Software Engineer → Senior IoT Engineer</p>
+      <p class="timeline__role-title">AI Software Engineer</p>
       <p class="timeline__role-summary">Built NELA Cough in a regulated healthcare environment.</p>
     </div>
   </li>

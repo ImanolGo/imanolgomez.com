@@ -49,12 +49,12 @@ note = "NELA Cough: AI-based tele-monitoring for chronic-disease patients"
 location = "Berlin"
 
 [[org.roles]]
-role = "AI Software Engineer → Senior IoT Engineer"
+role = "AI Software Engineer"
 start = "Aug 2020"
 end = "Apr 2023"
 summary = "Built NELA Cough, an AI-based tele-monitoring product, in a regulated healthcare environment."
 highlights = [
-  "AI model design and real-time deployment on edge devices and MCUs, in line with IEC 60601.",
+  "Developed the on-device symptom monitoring, in line with IEC 60601: cough detection in continuous audio with speech removed, plus ambient light, temperature, humidity and air-quality sensing.",
   "Led the IoT system architecture end to end, from requirements to production: Azure IoT cloud back end and device firmware.",
   "Worked with external medical hardware suppliers through to series production: 250 devices produced and shipped to 50 patients for clinical trials by April 2023.",
   "Supported customers and partners on integration and deployment issues; built demos and technical documentation.",
