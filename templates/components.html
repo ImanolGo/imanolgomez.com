@@ -162,7 +162,9 @@
   Project card. The whole card is a single link. `period`, `org` and `tags` make
   the mono meta row; empty ones are simply dropped. `stack`, when given, replaces
   the tags with the first technologies, which read better to a non-specialist.
-  `highlight` is one concrete result, shown only when the case study has one. Without a cover the card
+  `highlight` is the one concrete result line. When a project has one, it
+  replaces the description so the card says one thing once; projects without a
+  result fall back to the description. Without a cover the card
    is deliberately typographic. Confidential cards only show explicitly approved public covers. `level` keeps the
   heading order valid: 3 under "Selected work" on the home page, 2 everywhere the
   grid sits directly under the h1.
@@ -183,11 +185,10 @@
     <div class="card__body">
       <p class="card__eyebrow">{{ org or "Project" }}</p>
       <h{{ level }} class="card__title">{{ title }}</h{{ level }}>
-      {%- if description %}
-      <p class="card__desc">{{ description }}</p>
-      {%- endif %}
       {%- if highlight %}
       <p class="card__highlight">{{ highlight }}</p>
+      {%- elif description %}
+      <p class="card__desc">{{ description }}</p>
       {%- endif %}
       {%- if period != "" or tags != "" or stack != "" %}
       <p class="meta">
