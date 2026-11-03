@@ -72,6 +72,8 @@ main {
   text-decoration: none;
 }
 
+// The signature element: a small LED that slowly pulses like a live
+// indicator. It is the only glow on the site — don't reuse it elsewhere.
 .site-header__brand::before {
   content: "";
   display: inline-block;
@@ -80,7 +82,28 @@ main {
   margin-inline-end: var(--space-3);
   background: var(--accent);
   border-radius: var(--radius-pill);
+  box-shadow: 0 0 var(--space-2) var(--accent-glow);
   vertical-align: middle;
+  animation: led-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes led-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 var(--space-2) var(--accent-glow);
+  }
+
+  50% {
+    opacity: 0.55;
+    box-shadow: 0 0 2px var(--accent-glow);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header__brand::before {
+    animation: none;
+  }
 }
 
 .site-header__end {
@@ -249,8 +272,7 @@ main {
 
 .home-facts dt {
   color: var(--text-muted);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
 }
 
 .home-facts dd {
@@ -271,10 +293,6 @@ main {
   align-items: baseline;
   gap: var(--space-3);
   margin-block-end: var(--space-5);
-}
-
-.heading-dot {
-  color: var(--accent);
 }
 
 #selected-work {
@@ -317,10 +335,10 @@ main {
 }
 
 @media (max-width: 24rem) {
-  // Keep navigation and both primary actions on one row at 360px. The name
-  // matters more than its decorative mark on the smallest screens.
+  // Keep navigation and both primary actions on one row at 360px. The LED
+  // stays (it is the signature) but tucks in closer to the name.
   .site-header__brand::before {
-    display: none;
+    margin-inline-end: var(--space-2);
   }
 
   .site-header__inner {
@@ -386,7 +404,7 @@ main {
     grid-column: 1;
   }
 
-  .card-grid--selected > :last-child:nth-child(even).card--text .card__desc {
+  .card-grid--selected > :last-child:nth-child(even).card--text :is(.card__desc, .card__highlight) {
     grid-column: 2;
     grid-row: 1 / 3;
   }

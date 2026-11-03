@@ -2,26 +2,41 @@
 // AGENTS.md rule 8: no hard-coded colour values anywhere else in sass/.
 // Colour pairs are checked for WCAG AA contrast in both themes.
 
-// Dark theme values, applied both by `prefers-color-scheme` and by the
-// `data-theme` attribute the theme toggle sets. Declared once as a mixin so the
-// two can never drift apart.
+// Dark is the default theme for every visitor, whatever the OS setting (the
+// site should feel lit, not painted). Light only applies when the visitor
+// picks it with the toggle, which sets `data-theme="light"`.
 @mixin theme-dark {
   color-scheme: dark;
 
-  --bg: #101214;
-  --surface: #181b1e;
-  --text: #ecedee;
-  --text-muted: #a3aab2;
-  --accent: #6fd3de;
-  --border: #2a2f35;
+  // LED cyan from the Amazon Barcelona installation (Portfolio Style Guide).
+  --bg: #0e1013;
+  --surface: #15181c;
+  --text: #e8eaed;
+  --text-muted: #8b9099;
+  --accent: #29c4e8;
+  --accent-glow: rgba(41, 196, 232, 0.45);
+  --border: #23272d;
 
   // Focus ring needs 3:1 against both the background and the surface it sits on.
-  --focus-ring: #6fd3de;
+  --focus-ring: #29c4e8;
+}
+
+@mixin theme-light {
+  color-scheme: light;
+
+  --bg: #fbf9f6;
+  --surface: #f3f0eb;
+  --text: #17191c;
+  --text-muted: #5c6268;
+  // Same cyan hue as the dark theme, darkened to keep AA on the light paper.
+  --accent: #086982;
+  --accent-glow: rgba(8, 105, 130, 0.35);
+  --border: #e4dfd8;
+  --focus-ring: #086982;
 }
 
 :root {
-  // Light theme is the default.
-  color-scheme: light;
+  @include theme-dark;
 
   // Font stacks — system fonts only, no webfont download (AGENTS.md rule 3).
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -65,15 +80,6 @@
   // Focus
   --focus-width: 2px;
   --focus-offset: 2px;
-
-  // Light theme colours
-  --bg: #fbf9f6;
-  --surface: #f3f0eb;
-  --text: #17191c;
-  --text-muted: #5c6268;
-  --accent: #0b6b76;
-  --border: #e4dfd8;
-  --focus-ring: #0b6b76;
 }
 
 // Print is always black on white, whatever the theme. Declared here so that
@@ -84,21 +90,10 @@
   --print-rule: #999999;
   --print-bar: #f1f1f1;
   --print-muted: #444444;
-  --print-accent: #0b6b76;
+  --print-accent: #086982;
 }
 
-// Dark theme: follow the OS unless the visitor has explicitly chosen light.
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    @include theme-dark;
-  }
-}
-
-// Explicit choice wins over the OS setting.
-:root[data-theme="dark"] {
-  @include theme-dark;
-}
-
+// The visitor's explicit choice from the toggle.
 :root[data-theme="light"] {
-  color-scheme: light;
+  @include theme-light;
 }

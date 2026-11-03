@@ -7,12 +7,12 @@
     {#
       Theme: the saved choice is applied before first paint so there is no flash
       of the wrong theme. Storage access is wrapped because it throws in some
-      privacy modes. Without JavaScript the button stays hidden and the theme
-      still follows prefers-color-scheme from the CSS.
+      privacy modes. Dark is the default; without JavaScript the button stays
+      hidden and the page simply stays dark.
     #}
     <script>
       (function(){var r=document.documentElement;try{var s=localStorage.getItem("theme");if(s=="light"||s=="dark")r.dataset.theme=s}catch(e){}
-      function c(){return r.dataset.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}
+      function c(){return r.dataset.theme||"dark"}
       function h(t){return t=="dark"?"Switch to light theme":"Switch to dark theme"}
       function go(){var b=document.querySelector("[data-theme-toggle]");if(!b)return;b.hidden=false;b.setAttribute("aria-label",h(c()));
       b.addEventListener("click",function(){var n=c()=="dark"?"light":"dark";r.dataset.theme=n;b.setAttribute("aria-label",h(n));try{localStorage.setItem("theme",n)}catch(e){}})}
