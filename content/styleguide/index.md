@@ -31,7 +31,7 @@ Scratch page for checking that every component renders correctly in both themes 
 </picture>
 <div class="card__body">
 <h2 class="card__title">A card with a cover</h2>
-<p class="card__desc">Whole card is one link; the border brightens on hover.</p>
+<p class="card__desc">Whole card is one link, title turns accent on hover.</p>
 <p class="meta"><span>2017 – 2020</span><span>ProtoPixel</span><span>embedded, lighting</span></p>
 </div>
 </a>

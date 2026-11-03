@@ -1,14 +1,15 @@
 // Components. Every value comes from _tokens.scss (AGENTS.md rule 8).
-// Design language (Portfolio Style Guide): dark and calm, hairline borders,
-// sans for anything a person reads, mono only for machine-ish data (dates,
-// stacks, metrics). The accent is reserved for links, the primary button and
-// the LED dot in the header — never headings, labels or decoration.
+// Design language: hairline borders, quiet mono labels, one accent, fast
+// (≤150 ms) transitions — minimal, slightly techie.
 
 // --- Eyebrow ----------------------------------------------------------------
-// Quiet sentence-case label above titles and section headers.
+// Quiet mono micro-label above titles and section headers.
 .eyebrow {
   margin-block-end: var(--space-3);
-  font-size: var(--text-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   color: var(--text-muted);
 }
 
@@ -39,7 +40,8 @@
 }
 
 .btn:hover {
-  border-color: var(--text-muted);
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 .btn--primary {
@@ -67,7 +69,7 @@
 // --- Card -------------------------------------------------------------------
 // The whole card is one link. Hairline border, cover flush with the card
 // edges, text in a padded body. Lifting the card on hover would move the
-// border too, so the border brightens instead (neutral — no accent).
+// border too, so the border colour warms instead.
 
 .card {
   border: 1px solid var(--border);
@@ -79,7 +81,7 @@
 
 .card:hover,
 .card:focus-within {
-  border-color: var(--text-muted);
+  border-color: var(--accent);
   background-color: var(--surface);
 }
 
@@ -104,7 +106,9 @@
 }
 
 .card__eyebrow {
-  font-size: var(--text-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
   color: var(--text-muted);
 }
 
@@ -122,11 +126,18 @@
 
 .card--lead {
   background-color: var(--surface);
+  border-block-start: var(--focus-width) solid var(--accent);
 }
 
 .card__title {
   font-size: var(--text-xl);
   letter-spacing: -0.03em;
+  transition: color 120ms ease;
+}
+
+.card__link:hover .card__title,
+.card:focus-within .card__title {
+  color: var(--accent);
 }
 
 .card__desc {
@@ -139,6 +150,7 @@
 }
 
 .card__highlight {
+  font-size: var(--text-sm);
   font-weight: 600;
   color: var(--text);
 }
@@ -155,12 +167,6 @@
   padding-block-start: var(--space-4);
   font-size: var(--text-sm);
   color: var(--accent);
-}
-
-.card__link:hover .card__cta,
-.card__link:focus-visible .card__cta {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
 }
 
 @media (min-width: 48rem) {
@@ -186,12 +192,12 @@
     font-size: var(--text-statement);
   }
 
-  .card--lead.card--text :is(.card__desc, .card__highlight, .meta, .card__note, .card__cta) {
+  .card--lead.card--text :is(.card__desc, .meta, .card__note, .card__cta) {
     grid-column: 2;
   }
 
-  .card--lead :is(.card__desc, .card__highlight) {
-    font-size: var(--text-lg);
+  .card--lead .card__desc {
+    font-size: var(--text-base);
     color: var(--text);
   }
 }
@@ -220,12 +226,10 @@ figure {
   margin: 0;
 }
 
-// The hairline frame keeps light-background photos from glaring on the dark page.
 figure img,
 figure video {
   display: block;
   width: 100%;
-  border: 1px solid var(--border);
   border-radius: var(--radius);
 }
 
@@ -352,7 +356,7 @@ ul.timeline__highlights li + li {
 }
 
 ul.timeline__highlights li::marker {
-  color: var(--text-muted);
+  color: var(--accent);
 }
 
 .timeline__case {
@@ -423,13 +427,11 @@ ul.timeline__highlights li::marker {
 }
 
 .case-meta__label {
-  color: var(--text-muted);
-}
-
-// Dates and stacks are machine-ish data, so they get the mono voice.
-.case-meta__data {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
 .case-meta__row dd {
@@ -490,7 +492,10 @@ ul.timeline__highlights li::marker {
 }
 
 .skill-group__name {
-  font-size: var(--text-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--text-muted);
 }
 
@@ -534,8 +539,11 @@ ul.timeline__highlights li::marker {
 
 .repo-group__name {
   margin-block-end: var(--space-3);
-  font-size: var(--text-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
   font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--text-muted);
 }
 
@@ -605,6 +613,7 @@ ul.timeline__highlights li::marker {
 
 .prev-next__label {
   display: block;
+  font-family: var(--font-mono);
   font-size: var(--text-xs);
   color: var(--text-muted);
 }

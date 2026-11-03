@@ -2,23 +2,22 @@
 // AGENTS.md rule 8: no hard-coded colour values anywhere else in sass/.
 // Colour pairs are checked for WCAG AA contrast in both themes.
 
-// Dark is the default theme for every visitor, whatever the OS setting (the
-// site should feel lit, not painted). Light only applies when the visitor
-// picks it with the toggle, which sets `data-theme="light"`.
+// Dark is the default theme for every visitor, whatever the OS setting.
+// Light only applies when the visitor picks it with the toggle, which sets
+// `data-theme="light"`.
 @mixin theme-dark {
   color-scheme: dark;
 
-  // LED cyan from the Amazon Barcelona installation (Portfolio Style Guide).
-  --bg: #0e1013;
-  --surface: #15181c;
-  --text: #e8eaed;
-  --text-muted: #8b9099;
-  --accent: #29c4e8;
-  --accent-glow: rgba(41, 196, 232, 0.45);
-  --border: #23272d;
+  --bg: #101214;
+  --surface: #181b1e;
+  --text: #ecedee;
+  --text-muted: #a3aab2;
+  --accent: #6fd3de;
+  --accent-glow: rgba(111, 211, 222, 0.45);
+  --border: #2a2f35;
 
   // Focus ring needs 3:1 against both the background and the surface it sits on.
-  --focus-ring: #29c4e8;
+  --focus-ring: #6fd3de;
 }
 
 @mixin theme-light {
@@ -28,11 +27,10 @@
   --surface: #f3f0eb;
   --text: #17191c;
   --text-muted: #5c6268;
-  // Same cyan hue as the dark theme, darkened to keep AA on the light paper.
-  --accent: #086982;
-  --accent-glow: rgba(8, 105, 130, 0.35);
+  --accent: #0b6b76;
+  --accent-glow: rgba(11, 107, 118, 0.35);
   --border: #e4dfd8;
-  --focus-ring: #086982;
+  --focus-ring: #0b6b76;
 }
 
 :root {
@@ -90,7 +88,7 @@
   --print-rule: #999999;
   --print-bar: #f1f1f1;
   --print-muted: #444444;
-  --print-accent: #086982;
+  --print-accent: #0b6b76;
 }
 
 // The visitor's explicit choice from the toggle.

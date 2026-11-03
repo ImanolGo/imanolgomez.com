@@ -133,9 +133,8 @@ Cards crop covers to 3:2 from the centre. When that cuts off the subject, add a 
 use it, and the case study keeps the full `cover`. If the card image shows something
 different from the cover, describe it in `cover_card_alt`; otherwise `cover_alt` is used.
 Optional `highlight` is one concrete result, taken from the case study's own Outcome
-section. It appears in bold on the project card, replacing the `description` there, and as a
-"Result" row on the case study. Without it the card shows the `description` instead. Leave it
-out rather than writing a vague one; ideally it carries a number. On home page cards, the first four `stack`
+section. It appears in bold on the project card and as a "Result" row on the case study.
+Leave it out rather than writing a vague one. On home page cards, the first four `stack`
 entries replace the tag slugs.
 Non-confidential case studies without a cover render a TODO placeholder. Keep incomplete
 pages as drafts rather than publishing placeholders. Optional outcomes or metrics can

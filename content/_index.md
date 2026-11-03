@@ -11,7 +11,7 @@ highlights = [
 +++
 
 I build AI and embedded software that has to work in real time, in cars, in medical devices, and
-once upon a time in exhibitions and museums.
+once upon a time in exhibitions and shows.
 
 Today I lead AI deployment for ADAS at CARIAD, part of the Volkswagen Group, taking models from
 research to production on automotive hardware. Outside work, I build LLM agents, on-device robot

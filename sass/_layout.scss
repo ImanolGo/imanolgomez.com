@@ -72,8 +72,7 @@ main {
   text-decoration: none;
 }
 
-// The signature element: a small LED that slowly pulses like a live
-// indicator. It is the only glow on the site — don't reuse it elsewhere.
+// A small LED that slowly pulses like a live indicator.
 .site-header__brand::before {
   content: "";
   display: inline-block;
@@ -272,7 +271,8 @@ main {
 
 .home-facts dt {
   color: var(--text-muted);
-  font-size: var(--text-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
 }
 
 .home-facts dd {
@@ -293,6 +293,10 @@ main {
   align-items: baseline;
   gap: var(--space-3);
   margin-block-end: var(--space-5);
+}
+
+.heading-dot {
+  color: var(--accent);
 }
 
 #selected-work {
@@ -335,10 +339,10 @@ main {
 }
 
 @media (max-width: 24rem) {
-  // Keep navigation and both primary actions on one row at 360px. The LED
-  // stays (it is the signature) but tucks in closer to the name.
+  // Keep navigation and both primary actions on one row at 360px. The name
+  // matters more than its decorative mark on the smallest screens.
   .site-header__brand::before {
-    margin-inline-end: var(--space-2);
+    display: none;
   }
 
   .site-header__inner {
@@ -404,7 +408,7 @@ main {
     grid-column: 1;
   }
 
-  .card-grid--selected > :last-child:nth-child(even).card--text :is(.card__desc, .card__highlight) {
+  .card-grid--selected > :last-child:nth-child(even).card--text .card__desc {
     grid-column: 2;
     grid-row: 1 / 3;
   }
