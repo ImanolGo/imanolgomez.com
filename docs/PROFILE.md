@@ -10,8 +10,8 @@ earlier revisions. When a resume contradicts this file, the newest resume wins; 
 Project updates below also use Imanol's October 2026 notes, the READMEs in `~/repos/`,
 and media supplied in `~/Downloads/References/`. These are approved sources for this update.
 Imanol confirmed that the supplied media may be published. Keep known credits; request missing
-photographer credits before launch. Hyundai and unidentified Studio Waldemeyer projects
-remain excluded until their names and Imanol's role are confirmed. Bentley is confirmed (2026-11-04). Imanol confirmed that the
+photographer credits before launch. Unidentified Studio Waldemeyer projects
+remain excluded until their names and Imanol's role are confirmed. Bentley and Hyundai are confirmed (2026-11-04). Imanol confirmed that the
 CARIAD reference images come from CARIAD's public website and requested their use. The
 public image `Cariad/luxoft-and-cariad-16-9.webp` is his preferred contextual cover, with
 attribution to CARIAD and a link to Luxoft's announcement;
@@ -175,6 +175,23 @@ Title: Imanol asked (2026-10-23) to show only **AI Software Engineer**, keeping 
   modes). The 8,982 LED count is confirmed. The screen recording is from June 2019 testing; the
   show was in July 2019. Not featured in Selected work (Imanol, 2026-11-04).
   Case study on the site: `bentley-exp-100-gt`.
+- **Hyundai Le Fil Rouge light painting (2018, for Studio Waldemeyer; stated by Imanol 2026-11-04):**
+  Imanol created the software that translated an imagined 3D surface above the car into motion
+  for DMX winches and an LED pattern per frame on a flexible RGB LED bar, and created the colour
+  patterns. The winches moved the bar vertically and horizontally and could bend it from the
+  middle, left and right independently; a predefined motion was coordinated with the LED pattern
+  and the result only appeared at the end, through long exposure. Studio Waldemeyer's page
+  (waldemeyer.com/projects/hyundai, fetched 2026-11-04): Wallpaper* commissioned the studio to
+  celebrate Hyundai's concept car Le Fil Rouge; a photoshoot under a custom light-painting machine;
+  results "exceeded our own expectations and impressed the client". Repo: WinchesLightPainting
+  (created Mar 2018; openFrameworks; 6 winches over DMX; timeline playback; calibration app).
+  Photos: Studio Waldemeyer. Imanol worked on it until March 2018 (repo commits 14–21 Mar 2018).
+  All the software in the repo is his, including the ESP32/Huzzah receiver firmware (432 WS2812B
+  LEDs over Wi-Fi UDP; 6 winches and 432 LEDs confirmed by Imanol 2026-11-04). Wallpaper* Bespoke
+  feature "Poetry in motion" (PDF supplied, Apr 2018; photography Luke Kirwan, writer Jonathan Bell)
+  quotes Waldemeyer: "The LED line creates a surface and draws it into the air" and says the
+  ribbon of LEDs was anchored to six winches via slender wires.
+  Case study on the site: `hyundai-light-painting`.
 
 ### Ars Electronica Linz GmbH — Linz · Oct 2011 – Jul 2014 (Creative Engineer)
 
