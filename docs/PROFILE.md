@@ -10,8 +10,8 @@ earlier revisions. When a resume contradicts this file, the newest resume wins; 
 Project updates below also use Imanol's October 2026 notes, the READMEs in `~/repos/`,
 and media supplied in `~/Downloads/References/`. These are approved sources for this update.
 Imanol confirmed that the supplied media may be published. Keep known credits; request missing
-photographer credits before launch. Bentley, Hyundai and unidentified Studio Waldemeyer projects
-remain excluded until their names and Imanol's role are confirmed. Imanol confirmed that the
+photographer credits before launch. Hyundai and unidentified Studio Waldemeyer projects
+remain excluded until their names and Imanol's role are confirmed. Bentley is confirmed (2026-11-04). Imanol confirmed that the
 CARIAD reference images come from CARIAD's public website and requested their use. The
 public image `Cariad/luxoft-and-cariad-16-9.webp` is his preferred contextual cover, with
 attribution to CARIAD and a link to Luxoft's announcement;
@@ -159,6 +159,22 @@ Title: Imanol asked (2026-10-23) to show only **AI Software Engineer**, keeping 
   Related repo: AmazonOffice (openFrameworks, Windows 10), one of the applications Imanol wrote for it.
   Case study on the site: `amazon-barcelona-lighting`.
 - Case study on the site: `realtime-lighting-protopixel`.
+- **Bentley EXP 100 GT (Jul 2019, contracted by Studio Waldemeyer; stated by Imanol 2026-11-04):**
+  Imanol wrote the light-driving software for the concept car, with a 3D mapping of the LEDs,
+  plus content, control and management software, and sync with external show software that
+  triggers predefined animations, modes and moods on command. Many people worked on the car.
+  Studio Waldemeyer's page (waldemeyer.com/projects/bentley-exp-100-gt, fetched 2026-11-04):
+  made for Bentley's 100-year anniversary; light as a new luxury material; the studio designed
+  and engineered all of the car's illumination (matrix grille, Flying B mascot, central spine,
+  cabin). Repo: github.com/ImanolGo/Bentley (openFrameworks C++, GLSL; OSC and TCP control, UDP
+  pixel output; its 3D map lists 8,982 LED positions in 35 brancher files). Media: Studio
+  Waldemeyer photo (credit "Photo: Studio Waldemeyer"), Imanol's own screen recording of the
+  app (June 2019). Full-car video: youtube.com/watch?v=dAndN-vkaIY (link only, no embed).
+  Also Imanol's (confirmed 2026-11-04), mainly for testing: ESP32 firmware receiving LED data,
+  a Python DXF-to-KiCad board tool, and a gesture-tracking app (part of the concept for changing
+  modes). The 8,982 LED count is confirmed. The screen recording is from June 2019 testing; the
+  show was in July 2019. Not featured in Selected work (Imanol, 2026-11-04).
+  Case study on the site: `bentley-exp-100-gt`.
 
 ### Ars Electronica Linz GmbH — Linz · Oct 2011 – Jul 2014 (Creative Engineer)
 
@@ -288,6 +304,7 @@ Descriptions below are taken from the repos' own descriptions. Many older repos 
 before linking a repo from the site, check it has one (`TODO(imanol)` if not). Repos that name a
 client or brand (Jimmy Choo, Bentley, Amazon, Telekom, Instagram/ThePowerHouse) may only be named
 on the site if Imanol confirms it's OK — `TODO(imanol)`. Amazon: confirmed OK (2026-10-22).
+Bentley: confirmed OK (2026-11-04).
 
 ### Recent personal work (2023–2026) — edge AI, GPU, Rust
 - **local-ai-robot-assistant** (Python, 2025–26) — private, autonomous AI robot assistant running fully on an NVIDIA Jetson Orin Nano.
