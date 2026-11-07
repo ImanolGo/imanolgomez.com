@@ -375,7 +375,7 @@ Bentley: confirmed OK (2026-11-04).
 - **MHD-barcelona-2011** (★9) — "Drop'Em Dub", Music Hack Day Barcelona 2011 (Sónar). **MHD-Barcelona-2014**.
   Drop'Em Dub (17 Jun 2011, during the UPF Master's; added at Imanol's request 2026-11-07): facts from
   the repo README. Kinect, SimpleOpenNI, Processing, OSC to Max/MSP, MIDI to Ableton Live. Video:
-  youtube.com/watch?v=IC3nC8ZmeoA ("Kinect Dubstep", link only). Event (hipermedula.org/2011/06/music-hack-day-en-el-festival-sonar-pro/,
+  youtube.com/watch?v=IC3nC8ZmeoA ("Kinect Dubstep"; the page hosts a 75-second excerpt from Imanol's original file and links to the full video). Event (hipermedula.org/2011/06/music-hack-day-en-el-festival-sonar-pro/,
   supplied by Imanol): Music Hack Day at Sónar PRO with UPF's Music Technology Group, CCCB, 16–17 Jun 2011, 24 hours. Case study on the site: `drop-em-dub`.
 - **Slime-Mold** (C, 2012), **MushroomAutomator** (Python, 2014), **QUINL** (Java), **OneColor** (Java app).
 

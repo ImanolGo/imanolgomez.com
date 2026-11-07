@@ -19,7 +19,7 @@ cover_caption = "A frame from the project video."
 stack = ["Processing", "Kinect", "SimpleOpenNI", "OSC", "Max/MSP", "MIDI", "Ableton Live"]
 links = [
   { label = "About the event", url = "https://hipermedula.org/2011/06/music-hack-day-en-el-festival-sonar-pro/" },
-  { label = "Video (YouTube)", url = "https://www.youtube.com/watch?v=IC3nC8ZmeoA" },
+  { label = "Full video (YouTube)", url = "https://www.youtube.com/watch?v=IC3nC8ZmeoA" },
   { label = "GitHub", url = "https://github.com/ImanolGo/MHD-barcelona-2011" },
 ]
 +++
@@ -52,9 +52,11 @@ play even though the controls behind it are quite technical.
 
 ## Outcome
 
-A working two-person instrument, shown in the
-[project video](https://www.youtube.com/watch?v=IC3nC8ZmeoA). The source is public on
-[GitHub](https://github.com/ImanolGo/MHD-barcelona-2011).
+A working two-person instrument. The clip below is an excerpt with sound; the
+[full recording](https://www.youtube.com/watch?v=IC3nC8ZmeoA) runs about seven minutes.
+The source is public on [GitHub](https://github.com/ImanolGo/MHD-barcelona-2011).
+
+{{ <video src="projects/drop-em-dub/kinect-dubstep.mp4" poster="projects/drop-em-dub/kinect-dubstep.jpg" alt="Two people playing with their hands in the air, seen as a Kinect depth image with their tracked hands marked as dots, while an Ableton Live session responds behind it" caption="Two players on the instrument, with sound. A 75-second excerpt." /> }}
 
 ## Stack & notes
 
