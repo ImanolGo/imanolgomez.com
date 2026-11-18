@@ -1,6 +1,7 @@
 // Entry point. Zola compiles this to public/main.css.
 
 @import "tokens";
+@import "fonts";
 @import "base";
 @import "layout";
 @import "components";

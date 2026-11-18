@@ -1,0 +1,18 @@
+// Jost, self-hosted (AGENTS.md rule 3). Variable weight, Latin subset, SIL OFL:
+// licence in static/fonts/Jost-OFL.txt. Shared by the site and the CV PDF.
+
+@font-face {
+  font-family: "Jost";
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Jost.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Jost";
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+  src: url("/fonts/Jost-Italic.woff2") format("woff2");
+}

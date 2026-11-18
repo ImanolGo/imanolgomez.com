@@ -12,12 +12,11 @@
   --surface: #181b1e;
   --text: #ecedee;
   --text-muted: #a3aab2;
-  --accent: #6fd3de;
-  --accent-glow: rgba(111, 211, 222, 0.45);
+  --accent: #e5508a;
   --border: #2a2f35;
 
   // Focus ring needs 3:1 against both the background and the surface it sits on.
-  --focus-ring: #6fd3de;
+  --focus-ring: #e5508a;
 }
 
 @mixin theme-light {
@@ -27,17 +26,16 @@
   --surface: #f3f0eb;
   --text: #17191c;
   --text-muted: #5c6268;
-  --accent: #0b6b76;
-  --accent-glow: rgba(11, 107, 118, 0.35);
+  --accent: #a8174f;
   --border: #e4dfd8;
-  --focus-ring: #0b6b76;
+  --focus-ring: #a8174f;
 }
 
 :root {
   @include theme-dark;
 
-  // Font stacks — system fonts only, no webfont download (AGENTS.md rule 3).
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  // Font stacks. Jost is self-hosted (sass/_fonts.scss); the rest are fallbacks.
+  --font-sans: "Jost", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
 
   // Type scale, fluid. Body sits at 17–18px.
@@ -88,7 +86,7 @@
   --print-rule: #999999;
   --print-bar: #f1f1f1;
   --print-muted: #444444;
-  --print-accent: #0b6b76;
+  --print-accent: #a8174f;
 }
 
 // The visitor's explicit choice from the toggle.

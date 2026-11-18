@@ -198,8 +198,8 @@ The PDF is generated from the same data as the site. Run `scripts/build-cv.sh` a
 `skills.toml`, `languages.toml`, `talks.toml` (the `short` event names), the project pages and
 `data/cv.toml`, which holds the PDF-only choices: `headline`, `summary`, `photo` (`""` for none),
 `max_highlights` per role, `skill_groups`, `talks` / `talks_extra`, `open_source` and the
-`[[project]]` list (`slug`, optional `bullets`). Links in the PDF point at the live site. Zilla
-Slab is self-hosted in `static/fonts/` (SIL OFL, licence included).
+`[[project]]` list (`slug`, optional `bullets`). Links in the PDF point at the live site. Jost
+is self-hosted in `static/fonts/` (SIL OFL, licence included).
 
 **Tailored variants** live outside this repo (rule 10): a TOML file with any of the keys above,
 plus `phone`, `[[skill]]` groups (`name`, `items`) that replace `skill_groups`, and `[[role]]`

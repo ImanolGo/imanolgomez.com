@@ -72,39 +72,6 @@ main {
   text-decoration: none;
 }
 
-// A small LED that slowly pulses like a live indicator.
-.site-header__brand::before {
-  content: "";
-  display: inline-block;
-  width: var(--space-2);
-  height: var(--space-2);
-  margin-inline-end: var(--space-3);
-  background: var(--accent);
-  border-radius: var(--radius-pill);
-  box-shadow: 0 0 var(--space-2) var(--accent-glow);
-  vertical-align: middle;
-  animation: led-pulse 2.4s ease-in-out infinite;
-}
-
-@keyframes led-pulse {
-  0%,
-  100% {
-    opacity: 1;
-    box-shadow: 0 0 var(--space-2) var(--accent-glow);
-  }
-
-  50% {
-    opacity: 0.55;
-    box-shadow: 0 0 2px var(--accent-glow);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .site-header__brand::before {
-    animation: none;
-  }
-}
-
 .site-header__end {
   display: flex;
   flex-wrap: wrap;
@@ -339,12 +306,7 @@ main {
 }
 
 @media (max-width: 24rem) {
-  // Keep navigation and both primary actions on one row at 360px. The name
-  // matters more than its decorative mark on the smallest screens.
-  .site-header__brand::before {
-    display: none;
-  }
-
+  // Keep navigation and both primary actions on one row at 360px.
   .site-header__inner {
     column-gap: var(--space-2);
   }
