@@ -5,7 +5,9 @@
 # Org fields: name, note, location, roles (newest first), each with role, start,
 # end ("present"), summary, highlights and an optional `project` slug that links
 # to a case study in content/projects/. Optional role `team_size` powers the home
-# leadership highlight; without it, the role title is shown instead.
+# leadership highlight; without it, the role title is shown instead. Optional
+# `cv_highlights` overrides how many highlights the PDF CV shows for that role
+# (default: `max_highlights` in data/cv.toml).
 
 [[org]]
 name = "CARIAD"
@@ -23,21 +25,19 @@ highlights = [
   "Owns production reliability, performance and auditability under ISO 26262 and ASPICE: latency, memory and power targets, release quality and traceability.",
   "Works directly with enterprise stakeholders at Volkswagen Group brands (Volkswagen, Audi) on requirements, priorities and delivery.",
   "Leads technical discussions with semiconductor partners Qualcomm, Samsung and NVIDIA on integration and performance.",
-  "Drives shared tooling and automation so model teams deliver consistently across multiple platforms.",
 ]
 skills = ["Python", "C++", "ISO 26262", "ASPICE", "team leadership"]
 project = "ai-deployment-cariad"
 
 [[org.roles]]
-role = "Senior ML Software Engineer"
+role = "Technical Product Owner – AI Runtime & Perception"
 start = "Apr 2023"
 end = "Oct 2025"
-summary = "Technical Product Owner for the AI Runtime Environment; developed and deployed AI perception models on Qualcomm accelerators."
+summary = "Owned the AI Runtime Environment and supervised the delivery of the AI perception use cases, from requirements to deployment on Qualcomm accelerators."
 highlights = [
-  "Built a Python SDK for model conversion, quantization and optimization, plus a runtime abstraction layer used by engineering teams across the organization.",
+  "Owned roadmap, backlog and requirements for a Python SDK for model conversion, quantization and optimization, plus a runtime abstraction layer used by engineering teams across the organization.",
+  "Supervised and managed the sensor-fusion, 3D-occupancy and behaviour-prediction use cases through to deployment on Qualcomm AI accelerators under real-time constraints.",
   "Supported internal customer teams end to end, from scoping their use cases to production integration.",
-  "Developed sensor-fusion, 3D-occupancy and behaviour-prediction models and deployed them on Qualcomm AI accelerators under real-time constraints.",
-  "Mentored engineers on model optimization and deployment.",
 ]
 skills = ["Python", "Qualcomm NPU", "TensorRT", "embedded systems"]
 project = "ai-deployment-cariad"
@@ -49,16 +49,17 @@ note = "NELA Cough: AI-based tele-monitoring for chronic-disease patients"
 location = "Berlin"
 
 [[org.roles]]
-role = "AI Software Engineer"
+role = "Tech Lead – Hardware & Firmware"
 start = "Aug 2020"
 end = "Apr 2023"
-summary = "Built NELA Cough, an AI-based tele-monitoring product, in a regulated healthcare environment."
+summary = "Led the hardware and firmware of NELA Cough, an AI-based tele-monitoring medical device, in a regulated healthcare environment, combining project management with hands-on development."
 highlights = [
-  "Developed the on-device symptom monitoring, in line with IEC 60601: cough detection in continuous audio with speech removed, plus ambient light, temperature, humidity and air-quality sensing.",
+  "Owned the complete hardware stack and its suppliers: main single-board computer, LTE modules, sensor module, tamper-detection module, further components and the enclosure.",
+  "Responsible for the device firmware, including on-device symptom monitoring in line with IEC 60601: cough detection in continuous audio with speech removed, plus ambient light, temperature, humidity and air-quality sensing.",
   "Led the IoT system architecture end to end, from requirements to production: Azure IoT cloud back end and device firmware.",
-  "Worked with external medical hardware suppliers through to series production: 250 devices produced and shipped to 50 patients for clinical trials by April 2023.",
-  "Supported customers and partners on integration and deployment issues; built demos and technical documentation.",
+  "Managed the device with external suppliers through to series production: 250 devices produced and shipped to 50 patients for clinical trials by April 2023.",
 ]
+cv_highlights = 4
 skills = ["Python", "TensorFlow", "Azure IoT", "RTOS", "embedded systems"]
 project = "edge-ai-medical-nela"
 

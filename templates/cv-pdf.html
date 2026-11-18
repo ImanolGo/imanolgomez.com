@@ -92,7 +92,7 @@
         {%- set matches = [x for x in (cv.role or []) if x.role == r.role] -%}
         {%- set over = matches[0] if matches else {} -%}
         {%- set summary = over.summary if "summary" in over else r.summary -%}
-        {%- set highlights = over.highlights if "highlights" in over else r.highlights[:cv.max_highlights] -%}
+        {%- set highlights = over.highlights if "highlights" in over else r.highlights[:(r.cv_highlights or cv.max_highlights)] -%}
         <article class="row">
           <p class="row__when">{{ r.start }} – {{ r.end | capitalize }}<br>{{ o.location }}</p>
           <div class="row__what">

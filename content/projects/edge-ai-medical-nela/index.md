@@ -10,7 +10,7 @@ tags = ["edge-ai", "medical", "embedded"]
 period = "Aug 2020 – Apr 2023"
 org = "NELA by Carepath Technologies"
 location = "Berlin"
-role = "AI Software Engineer"
+role = "Tech Lead – Hardware & Firmware"
 featured = true
 confidential = false
 highlight = "250 devices produced and shipped to 50 patients for clinical trials"
@@ -22,8 +22,8 @@ links = []
 
 ## Context
 
-I spent almost three years at NELA (Carepath Technologies GmbH) as an AI Software
-Engineer, building NELA Cough, a system for tele-monitoring and self-management of
+I spent almost three years at NELA (Carepath Technologies GmbH) as Tech Lead for
+hardware and firmware, building NELA Cough, a system for tele-monitoring and self-management of
 patients with chronic diseases. I worked on the product from the first model to
 production hardware used by patients.
 
@@ -54,6 +54,9 @@ change. The device also had to meet certification requirements.
   (light, temperature, humidity and air quality).
 - Led development of AI models for medical applications, and their real-time
   deployment on edge devices and MCUs.
+- Owned the complete hardware stack and its suppliers: main single-board computer,
+  LTE modules, sensor module, tamper-detection module, further components and the
+  enclosure, combining project management with hands-on development.
 - Owned the IoT system architecture end to end: requirements, hardware and software
   design, and firmware, from prototype to series production.
 - Built the cloud back end on Azure IoT, and production firmware for the devices.

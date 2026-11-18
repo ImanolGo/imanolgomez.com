@@ -197,7 +197,7 @@ The PDF is generated from the same data as the site. Run `scripts/build-cv.sh` a
 (`templates/cv-pdf.html`, `sass/cv-pdf.scss`) from `data/experience.toml`, `education.toml`,
 `skills.toml`, `languages.toml`, `talks.toml` (the `short` event names), the project pages and
 `data/cv.toml`, which holds the PDF-only choices: `headline`, `summary`, `photo` (`""` for none),
-`max_highlights` per role, `skill_groups`, `talks` / `talks_extra`, `open_source` and the
+`max_highlights` per role (a role can override it with `cv_highlights` in experience.toml), `skill_groups`, `talks` / `talks_extra`, `open_source` and the
 `[[project]]` list (`slug`, optional `bullets`). Links in the PDF point at the live site. Jost
 is self-hosted in `static/fonts/` (SIL OFL, licence included).
 

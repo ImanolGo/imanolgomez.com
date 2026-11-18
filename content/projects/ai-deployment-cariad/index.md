@@ -10,7 +10,7 @@ tags = ["edge-ai", "automotive", "embedded"]
 period = "Apr 2023 – present"
 org = "CARIAD"
 location = "Berlin"
-role = "Senior ML Software Engineer → Head of AI Deployment"
+role = "Technical Product Owner → Head of AI Deployment"
 featured = true
 highlight = "AI models from research prototypes to production on a volume-production ADAS platform."
 confidential = true
@@ -25,7 +25,7 @@ links = [{ label = "CARIAD–Bosch announcement", url = "https://cariad.technolo
 ## Context
 
 CARIAD is the Volkswagen Group software company, in Berlin. I joined in April 2023 as
-Senior ML Software Engineer and have worked there full-time since,
+Technical Product Owner for AI Runtime & Perception and have worked there full-time since,
 as part of the **Automated Driving Alliance** between CARIAD and Bosch, building an ADAS software platform for Volkswagen Group vehicles on Qualcomm SoCs.
 
 ## The problem
@@ -51,10 +51,12 @@ platform:
 - Drive shared tooling and automation so model teams deliver consistently across multiple
   platforms.
 
-Earlier, as Senior ML Software Engineer, I was Technical Product Owner for the AI Runtime
-Environment. I built a Python SDK for model conversion, quantization and optimization,
-plus a runtime abstraction layer. I also integrated and deployed prediction, occupancy
-and sensor-fusion models on Qualcomm AI accelerators.
+Earlier, as Technical Product Owner for AI Runtime & Perception, I owned the AI Runtime
+Environment and supervised the delivery of the AI perception use cases. I owned the roadmap,
+backlog and requirements for a Python SDK for model conversion, quantization and
+optimization, plus a runtime abstraction layer. I also supervised the sensor-fusion,
+3D-occupancy and behaviour-prediction use cases through to deployment on Qualcomm AI
+accelerators.
 
 ## Stack & notes
 

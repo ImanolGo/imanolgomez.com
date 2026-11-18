@@ -89,7 +89,7 @@ Jetson with TensorRT and llama.cpp.
 
 ## Experience (grouped by org, newest first)
 
-### CARIAD — Berlin · Oct 2025 – present (Head of AI Deployment); Apr 2023 – Oct 2025 (Senior ML Software Engineer)
+### CARIAD — Berlin · Oct 2025 – present (Head of AI Deployment); Apr 2023 – Oct 2025 (Technical Product Owner – AI Runtime & Perception)
 
 CARIAD is the Volkswagen Group software company. Work is part of the **CARIAD–Bosch Automated
 Driving Alliance**, a volume-production ADAS platform.
@@ -101,19 +101,26 @@ Driving Alliance**, a volume-production ADAS platform.
   enterprise stakeholders at Volkswagen Group brands (**Volkswagen, Audi**) and leads technical
   discussions with semiconductor partners **Qualcomm, Samsung and NVIDIA**. Drives shared
   tooling and automation so model teams deliver consistently across multiple platforms.
-- **Senior ML Software Engineer — Apr 2023 – Oct 2025.** Technical Product Owner for the AI
-  Runtime Environment: built a Python SDK for model conversion, quantization and optimization,
-  plus a runtime abstraction layer used by engineering teams across the organization. Supported
-  internal customer teams end to end, from scoping to production integration. Developed AI
-  perception models (sensor fusion, 3D occupancy, behaviour prediction) and deployed them on
-  Qualcomm AI accelerators under real-time constraints. Mentored engineers on model optimization
-  and deployment. Daily work on Ubuntu VMs on Azure.
+- **Technical Product Owner – AI Runtime & Perception — Apr 2023 – Oct 2025.** Title and
+  wording from Imanol's reviewed CV (2026-11-18; earlier copies said "Senior ML Software
+  Engineer"). Owned the AI Runtime Environment and supervised the delivery of the AI perception
+  use cases, from requirements to deployment on Qualcomm accelerators. Owned roadmap, backlog and
+  requirements for a Python SDK for model conversion, quantization and optimization, plus a
+  runtime abstraction layer used by engineering teams across the organization. Supervised and
+  managed the sensor-fusion, 3D-occupancy and behaviour-prediction use cases through to
+  deployment on Qualcomm AI accelerators under real-time constraints. Supported internal customer
+  teams end to end, from scoping to production integration. Mentored engineers on model
+  optimization and deployment. Daily work on Ubuntu VMs on Azure.
 - Case study on the site: `ai-deployment-cariad` (confidential).
 
-### NELA by Carepath Technologies — Berlin · Aug 2020 – Apr 2023 (AI Software Engineer)
+### NELA by Carepath Technologies — Berlin · Aug 2020 – Apr 2023 (Tech Lead – Hardware & Firmware)
 
-Title: Imanol asked (2026-10-23) to show only **AI Software Engineer**, keeping all the work below
-(earlier copies said "AI Software Engineer → Senior IoT Engineer").
+Title: from Imanol's reviewed CV (2026-11-18), **Tech Lead – Hardware & Firmware** (before that the
+site showed "AI Software Engineer"; earlier copies said "AI Software Engineer → Senior IoT Engineer").
+Led the hardware and firmware of NELA Cough, combining project management with hands-on
+development. Owned the complete hardware stack and its suppliers: main single-board computer, LTE
+modules, sensor module, tamper-detection module, further components and the enclosure. Responsible
+for the device firmware. Managed the device with external suppliers through to series production.
 
 - Built **NELA Cough**, an AI-based tele-monitoring product for chronic-disease patients in a
   regulated healthcare environment (**IEC 60601**): AI model design and real-time deployment on
