@@ -16,14 +16,18 @@ with engineering teams, Volkswagen Group brands and semiconductor partners to in
 models, meet performance and reliability requirements, and deliver releases. Our
 deployments target QNX.
 
-Before leading the team, I built a Python SDK for model conversion and optimization,
-and a runtime abstraction layer used by other engineering teams. I worked with those
-teams from their first requirements through production integration, and enjoyed seeing
-the tools become part of their day-to-day work.
+Before leading the team, I was Technical Product Owner for AI Runtime & Perception. I
+owned the AI Runtime Environment, including a Python SDK for model conversion and
+optimization and a runtime abstraction layer used by other engineering teams, and
+supervised the delivery of the perception use cases to Qualcomm accelerators. I worked
+with those teams from their first requirements through production integration, and
+enjoyed seeing the tools become part of their day-to-day work.
 
-At NELA by Carepath Technologies, I worked on model design, device firmware (an RTOS on
-microcontrollers) and IoT architecture for an AI-based tele-monitoring product for chronic-disease patients.
-That work ran from requirements to series production in a regulated healthcare environment.
+At NELA by Carepath Technologies, I was tech lead for the hardware and firmware of an
+AI-based tele-monitoring device for chronic-disease patients. I owned the hardware stack
+and its suppliers, the device firmware (an RTOS on microcontrollers) and the IoT
+architecture, combining project management with hands-on development. That work ran from
+requirements to series production in a regulated healthcare environment.
 
 ## Embedded and real-time work
 
