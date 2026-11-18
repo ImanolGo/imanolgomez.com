@@ -38,6 +38,7 @@ highlights = [
   "Owned roadmap, backlog and requirements for a Python SDK for model conversion, quantization and optimization, plus a runtime abstraction layer used by engineering teams across the organization.",
   "Supervised and managed the sensor-fusion, 3D-occupancy and behaviour-prediction use cases through to deployment on Qualcomm AI accelerators under real-time constraints.",
   "Supported internal customer teams end to end, from scoping their use cases to production integration.",
+  "Mentored engineers on model optimization and deployment.",
 ]
 skills = ["Python", "Qualcomm NPU", "TensorRT", "embedded systems"]
 project = "ai-deployment-cariad"
