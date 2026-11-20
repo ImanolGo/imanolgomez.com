@@ -25,7 +25,11 @@
 
     <header class="site-header">
       <div class="container site-header__inner">
-        <a class="site-header__brand" href="{{ get_url(path='@/_index.md') }}">{{ config.title }}</a>
+        <a class="site-header__brand" href="{{ get_url(path='@/_index.md') }}">
+          {#- The light-trail mark, same drawing as static/favicon.svg. Colours come from tokens via CSS. -#}
+          <svg class="brand-mark" viewBox="2 9 28 14" width="28" height="14" aria-hidden="true" focusable="false"><defs><linearGradient id="brand-trail" x1="2" x2="30" y1="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" class="brand-mark__tail"/><stop offset="1" class="brand-mark__head"/></linearGradient></defs><path d="M4 20C8 20 8 11 12 11S16 20 20 20S24 11 28 11" stroke="url(#brand-trail)"/></svg>
+          {{- config.title -}}
+        </a>
 
         {# Writing only appears once it has at least one published post. #}
         {% set writing = get_section(path="writing/_index.md") %}

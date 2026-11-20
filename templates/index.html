@@ -6,7 +6,9 @@
   <div class="home-hero__identity">
     <p class="eyebrow">{{ config.extra.short_description }}</p>
     <h1>{{ section.title }}</h1>
-    <p class="home-tagline">{{ section.extra.tagline }}</p>
+    {#- A trailing full stop is drawn in the accent colour, like the section headings. -#}
+    {%- set tagline = section.extra.tagline %}
+    <p class="home-tagline">{% if tagline is ending_with(pat=".") %}{{ tagline | truncate(length=(tagline | length) - 1, end="") }}<span class="heading-dot" aria-hidden="true">.</span>{% else %}{{ tagline }}{% endif %}</p>
     <nav class="cta-row" aria-label="Explore my work">
       <a class="btn btn--primary" href="#selected-work">View work {{ <icon name="down" /> }}</a>
       <a class="btn" href="{{ get_url(path='cv/imanol-gomez-cv.pdf') }}" download>Download CV <span class="btn__detail">(PDF)</span> {{ <icon name="down" /> }}</a>

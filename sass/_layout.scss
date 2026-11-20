@@ -72,6 +72,30 @@ main {
   text-decoration: none;
 }
 
+// Light-trail mark before the name: a long-exposure stroke that fades in from the left.
+.brand-mark {
+  width: 1.75em;
+  height: auto;
+  margin-inline-end: 0.5em;
+  vertical-align: -0.05em;
+  overflow: visible;
+
+  path {
+    fill: none;
+    stroke-width: 3.2;
+    stroke-linecap: round;
+  }
+}
+
+.brand-mark__tail {
+  stop-color: var(--accent);
+  stop-opacity: 0.15;
+}
+
+.brand-mark__head {
+  stop-color: var(--accent);
+}
+
 .site-header__end {
   display: flex;
   flex-wrap: wrap;
@@ -264,6 +288,11 @@ main {
 
 .heading-dot {
   color: var(--accent);
+}
+
+// The tagline is set light; give its full stop the weight of the heading dots.
+.home-tagline .heading-dot {
+  font-weight: 700;
 }
 
 #selected-work {
