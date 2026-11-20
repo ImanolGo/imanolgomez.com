@@ -46,6 +46,7 @@ templates/            Tera page templates, shared components and head metadata
 sass/                 Design tokens, layout, component and print styles
 static/               Files copied into the site, including the CV PDF and icons
 docs/                 Profile facts, content notes, QA, deployment and build plan
+design/               HTML sources for the business card and the link-preview image
 .github/workflows/    Build checks and GitHub Pages deployment
 config.toml           Site settings, taxonomies and metadata
 AGENTS.md             Rules for coding agents
@@ -208,6 +209,19 @@ overrides (`role` = the exact title in experience.toml, optional `summary` and `
 the site and writes `Imanol_Gomez_CV.pdf` next to the variant. The phone number never goes in
 the repo; for the generic PDF use `CV_PHONE="+49 ..." scripts/build-cv.sh` only for a copy you
 send, not the one you commit.
+
+### Brand mark, business card and link-preview image
+The mark is a light trail that fades in from the left, like a long exposure. It is drawn in
+`static/favicon.svg` and inline in the site header (`templates/base.html`, coloured by
+`--accent` in `sass/_layout.scss`). Keep the path the same in all places.
+
+- `design/og-image/og.html` is the source of `static/og-default.png` (1200×630):
+  `chromium --headless --hide-scrollbars --window-size=1200,630 --screenshot=static/og-default.png design/og-image/og.html`
+- `design/business-card/card.html` is the business card, 85×55 mm with 3 mm bleed, front and
+  back as two pages. The QR code links to https://imanolgomez.com:
+  `chromium --headless --no-pdf-header-footer --print-to-pdf=business-card.pdf design/business-card/card.html`
+  Check the QR with `pdftoppm -r 300 -png business-card.pdf card && zbarimg card-2.png`.
+  Do not commit the PDF, and never add a phone number to this file.
 
 ## Project docs
 
