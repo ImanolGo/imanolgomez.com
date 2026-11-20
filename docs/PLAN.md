@@ -209,7 +209,7 @@ not as the umbrella headline. See `docs/PROFILE.md` for the canonical copy.
    - `AAAA` `@` → `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
    - `CNAME` `www` → `imanolgo.github.io.`
 3. **Repo → Settings → Pages → Custom domain:** `imanolgomez.com`, then tick **Enforce HTTPS** once the certificate is issued (can take up to an hour or so).
-4. Do **not** touch DNS for `steinergomez.com` (it carries Imanol's email).
+4. Leave the email records for `imanolgomez.com` (Tuta: MX, SPF, DKIM, DMARC, MTA-STS — see `docs/DEPLOY.md` → "Email (Tuta)") untouched when changing Pages records. `steinergomez.com` also carries email via Tuta and is out of scope.
 
 **Accept:** `https://imanolgomez.com` and `https://www.imanolgomez.com` both load over HTTPS; `www` redirects to the apex.
 

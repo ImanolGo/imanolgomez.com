@@ -4,8 +4,9 @@ Everything in this file is done **by hand, once**, by Imanol. The two workflows 
 `.github/workflows/` take over after that (`deploy.yml` on `main`, `check.yml` on
 pull requests).
 
-Nothing here touches DNS for `steinergomez.com` — it carries email and must be left
-alone.
+This file covers `imanolgomez.com` only. Both `imanolgomez.com` and
+`steinergomez.com` carry email (hosted by Tuta), but `steinergomez.com` is out of
+scope here — nothing in this file touches its DNS.
 
 ## 1. Repo settings (GitHub)
 
@@ -63,13 +64,6 @@ Two records exist today and both must go:
 | A | `@` | `192.64.119.15` | delete (registrar parking) |
 | CNAME | `www` | `parkingpage.namecheap.com.` | delete (registrar parking) |
 
-**Keep this one — do not delete it.** It is Namecheap email forwarding, and
-deleting it breaks mail for the domain:
-
-| Type | Host | Value |
-|---|---|---|
-| TXT | `@` | `v=spf1 include:spf.efwd.registrar-servers.com ~all` |
-
 Then add:
 
 | Type | Host | Value | TTL |
@@ -84,14 +78,51 @@ Then add:
 | AAAA | `@` | `2606:50c0:8003::153` | Automatic |
 | CNAME | `www` | `imanolgo.github.io.` | Automatic |
 
-Keep the `TXT` record from step 2 as well. Do not touch DNS for `steinergomez.com` —
-that is a different domain and carries email.
+Keep the `TXT` record from step 2 as well.
+
+### Email (Tuta)
+
+Since 2026-11-20, mail for `imanolgomez.com` is hosted by **Tuta** (Revolutionary
+plan, the same account as `steinergomez.com`). It replaced Namecheap email
+forwarding. At Namecheap, **Mail Settings** is set to **Custom MX**.
+
+These records exist and **must not be deleted** — removing any of them breaks or
+weakens mail for the domain:
+
+| Type | Host | Value |
+|---|---|---|
+| TXT | `@` | `t-verify=…` (Tuta domain verification) |
+| MX | `@` | `mail.tutanota.de` (priority 10) |
+| TXT | `@` | `v=spf1 include:spf.tutanota.de -all` |
+| CNAME | `s1._domainkey` | `s1.domainkey.tutanota.de.` |
+| CNAME | `s2._domainkey` | `s2.domainkey.tutanota.de.` |
+| TXT | `_dmarc` | `v=DMARC1; p=quarantine; adkim=s` |
+| CNAME | `mta-sts` | `mta-sts.tutanota.de.` |
+| CNAME | `_mta-sts` | `mta-sts.tutanota.de.` |
+
+The MX record is set under **Mail Settings → Custom MX**, not in the host-records
+list. `_mta-sts` points at `mta-sts.tutanota.de.` (no underscore), the same as on
+`steinergomez.com`; it resolves to Tuta's MTA-STS policy record.
+
+- **One SPF record only.** The old Namecheap forwarding SPF record
+  (`v=spf1 include:spf.efwd.registrar-servers.com ~all`) has been deleted and must
+  **not** be re-added: a domain may have only one SPF record, and a second one makes
+  SPF fail.
+- **`_dmarc` is TXT only.** Do not add a CNAME at `_dmarc` — it conflicts with the
+  TXT record.
+
+**Email and website records coexist.** The email records above and the GitHub Pages
+records (`A`/`AAAA` at `@`, `CNAME` `www`, the `_github-pages-challenge` TXT) live
+side by side in the same zone. Changing one set must never touch the other: when
+updating Pages records, leave the MX/TXT/CNAME email records alone, and vice versa.
 
 ## 4. Verify
 
 ```sh
 dig +short @1.1.1.1 imanolgomez.com A       # the four 185.199.x.153 addresses
 dig +short @1.1.1.1 www.imanolgomez.com     # -> imanolgo.github.io.
+dig +short @1.1.1.1 imanolgomez.com MX        # -> 10 mail.tutanota.de.
+dig +short @1.1.1.1 _dmarc.imanolgomez.com TXT
 curl -sI https://imanolgomez.com | head -1                     # HTTP/2 200
 curl -sI http://imanolgomez.com | head -3                      # 301 -> https://
 curl -sI https://www.imanolgomez.com | grep -i '^location'     # -> https://imanolgomez.com/
