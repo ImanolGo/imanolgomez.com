@@ -221,7 +221,11 @@ The mark is a light trail that fades in from the left, like a long exposure. It 
   back as two pages. The QR code links to https://imanolgomez.com:
   `chromium --headless --no-pdf-header-footer --print-to-pdf=business-card.pdf design/business-card/card.html`
   Check the QR with `pdftoppm -r 300 -png business-card.pdf card && zbarimg card-2.png`.
-  Do not commit the PDF, and never add a phone number to this file.
+  Never add a phone number to this file.
+- `design/business-card/imanol-gomez-visitenkarte-85x55.ai` and `.pdf` are the print files
+  sent to the printer: CMYK, text as outlines, 2 pages of 91×61 mm (85×55 mm plus 3 mm
+  bleed), the PDF as PDF/X-1a. The `.ai` opens editable in VectorCraft or Illustrator.
+  They are made from `card.html`, so regenerate them when the card changes.
 
 ## Project docs
 
