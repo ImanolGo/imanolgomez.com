@@ -22,7 +22,7 @@ the case study remains confidential and shows no internal material.
 - **Name:** Imanol Gómez (he/him)
 - **Location:** Berlin, Germany
 - **Current title:** Head of AI Deployment @ CARIAD (Volkswagen Group software company)
-- **Public email:** `imanol@steinergomez.com`
+- **Public email:** `info@imanolgomez.com`
 - **Links:** LinkedIn https://www.linkedin.com/in/imanolgo/ · GitHub https://github.com/ImanolGo
 - **Interests (optional for About):** environment and animal welfare (vegan), sports and nutrition; causes: arts & culture, environment, health, science & technology, human rights, humanitarian relief.
 

@@ -22,7 +22,7 @@ served from this domain.
 ## Controller
 
 Imanol Gómez, Berlin, Germany. Contact:
-[imanol@steinergomez.com](mailto:imanol@steinergomez.com).
+[info@imanolgomez.com](mailto:info@imanolgomez.com).
 
 TODO(imanol): decide whether a postal address belongs here too.
 
